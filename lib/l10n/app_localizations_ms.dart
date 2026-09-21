@@ -632,7 +632,36 @@ class AppLocalizationsMs extends AppLocalizations {
   String get securityHeader => 'Keselamatan';
 
   @override
+  String get securitySettingsBiometrics =>
+      'Authenticate to Access Security Settings';
+
+  @override
+  String get securitySettingsPin => 'Enter PIN to Access Security Settings';
+
+  @override
   String get seed => 'Benih';
+
+  @override
+  String get signMessage => 'Sign Message';
+
+  @override
+  String get signMessageCopySignature => 'Copy Signature';
+
+  @override
+  String get signMessageDescription =>
+      'Sign a message with one of your wallet addresses';
+
+  @override
+  String get signMessageHint => 'Enter a message to sign';
+
+  @override
+  String get signMessageSignatureCopied => 'Signature Copied';
+
+  @override
+  String get signMessageSigned => 'Message Signed';
+
+  @override
+  String get signMessageTooLong => 'Message is too long';
 
   @override
   String get seedInvalid => 'Benih tidak sah';

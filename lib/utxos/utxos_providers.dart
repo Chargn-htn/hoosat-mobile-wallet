@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/core_providers.dart';
 import '../database/boxes.dart';
+import '../hoosat/grpc/rpc.pb.dart';
 import '../hoosat/transaction/types.dart';
 import '../wallet_address/wallet_address_providers.dart';
 import '../wallet_auth/wallet_auth_providers.dart';
@@ -23,8 +26,79 @@ final utxosChangedProvider = StreamProvider.autoDispose((ref) {
   final client = ref.watch(hoosatClientProvider);
   final addresses = ref.watch(allAddressesProvider);
 
-  return client.notifyUtxosChanged(addresses);
+  return _debounceUtxoChanges(client.notifyUtxosChanged(addresses));
 });
+
+Stream<UtxosChangedNotificationMessage> _debounceUtxoChanges(
+  Stream<UtxosChangedNotificationMessage> source,
+) {
+  late StreamController<UtxosChangedNotificationMessage> controller;
+  StreamSubscription<UtxosChangedNotificationMessage>? subscription;
+  Timer? timer;
+  final pending = <UtxosChangedNotificationMessage>[];
+
+  controller = StreamController<UtxosChangedNotificationMessage>(
+    onListen: () {
+      subscription = source.listen(
+        (event) {
+          pending.add(event);
+          timer?.cancel();
+          timer = Timer(const Duration(milliseconds: 500), () {
+            if (pending.isEmpty) {
+              return;
+            }
+            controller.add(_mergeUtxoChanges(pending));
+            pending.clear();
+          });
+        },
+        onError: controller.addError,
+        onDone: () {
+          timer?.cancel();
+          if (pending.isNotEmpty) {
+            controller.add(_mergeUtxoChanges(pending));
+            pending.clear();
+          }
+          controller.close();
+        },
+      );
+    },
+    onCancel: () async {
+      timer?.cancel();
+      await subscription?.cancel();
+    },
+  );
+
+  return controller.stream;
+}
+
+UtxosChangedNotificationMessage _mergeUtxoChanges(
+  List<UtxosChangedNotificationMessage> changes,
+) {
+  String keyFor(RpcUtxosByAddressesEntry entry) {
+    final outpoint = entry.outpoint;
+    return '${entry.address}:${outpoint.transactionId}:${outpoint.index}';
+  }
+
+  final added = <String, RpcUtxosByAddressesEntry>{};
+  final removed = <String, RpcUtxosByAddressesEntry>{};
+  for (final change in changes) {
+    for (final entry in change.removed) {
+      final key = keyFor(entry);
+      added.remove(key);
+      removed[key] = entry;
+    }
+    for (final entry in change.added) {
+      final key = keyFor(entry);
+      removed.remove(key);
+      added[key] = entry;
+    }
+  }
+
+  return UtxosChangedNotificationMessage(
+    added: added.values,
+    removed: removed.values,
+  );
+}
 
 final utxoNotifierProvider =
     ChangeNotifierProvider.autoDispose<UtxosNotifier>((ref) {

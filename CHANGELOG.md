@@ -5,6 +5,7 @@
 - Target Android 16 (API 36) so Google Play accepts a new release.
 - Build with Android Gradle Plugin 9.1, Gradle 9.3.1, and NDK r28 for 16 KB page size support.
 - Drop broad storage access. Gallery QR import uses the system photo picker.
+- Bring over compatible Kaspium wallet improvements: sign a message, choose UTXOs when sending, require authentication before security settings, and keep balance and transaction refresh from failing when the node blips.
 
 ## 1.0.2 - Hoosat Mobile
 

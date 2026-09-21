@@ -11,12 +11,14 @@ import 'wallet_address_providers.dart';
 
 class AddressListWidget extends HookConsumerWidget {
   final AddressType addressType;
+  final List<AddressType>? addressTypes;
   final ScrollController scrollController;
   final void Function(WalletAddress address)? onSelection;
 
   const AddressListWidget({
     super.key,
     required this.addressType,
+    this.addressTypes,
     required this.scrollController,
     this.onSelection,
   });
@@ -27,9 +29,16 @@ class AddressListWidget extends HookConsumerWidget {
     final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
-    var addresses = ref.watch(filteredAddressesOfTypeProvider(addressType));
+    final types = addressTypes ?? [addressType];
+    final groups = [
+      for (final type in types)
+        ref.watch(filteredAddressesOfTypeProvider(type)),
+    ];
+    var addresses = [for (final group in groups) ...group].lock;
     final receiveAddress = ref.watch(receiveAddressProvider);
-    if (addressType == AddressType.receive && addresses.isEmpty) {
+    if (types.length == 1 &&
+        types.first == AddressType.receive &&
+        addresses.isEmpty) {
       addresses = [receiveAddress].lock;
     }
 

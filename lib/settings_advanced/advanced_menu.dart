@@ -6,6 +6,7 @@ import '../app_providers.dart';
 import '../l10n/l10n.dart';
 import '../settings_drawer/double_line_item_two.dart';
 import '../transactions/tx_filter_settings.dart';
+import '../sign_message/sign_message_sheet.dart';
 import '../tx_report/tx_report_sheet.dart';
 import '../util/ui_util.dart';
 import '../widgets/app_icon_button.dart';
@@ -61,6 +62,14 @@ class AdvancedMenu extends ConsumerWidget {
         context: context,
         widget: const KpubSheet(),
         theme: theme,
+      );
+    }
+
+    Future<void> signMessage() async {
+      Sheets.showAppHeightNineSheet(
+        context: context,
+        theme: theme,
+        widget: const SignMessageSheet(),
       );
     }
 
@@ -125,6 +134,14 @@ class AdvancedMenu extends ConsumerWidget {
                         ),
                       ),
                       if (!wallet.isViewOnly) ...[
+                        Divider(height: 2, color: theme.text15),
+                        DoubleLineItemTwo(
+                          heading: l10n.signMessage,
+                          text: l10n.signMessageDescription,
+                          icon: Icons.draw,
+                          iconSize: 28,
+                          onPressed: signMessage,
+                        ),
                         Divider(height: 2, color: theme.text15),
                         DoubleLineItemTwo(
                           heading: l10n.compoundUtxos,

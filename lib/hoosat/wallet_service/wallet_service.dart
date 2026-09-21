@@ -4,6 +4,7 @@ import '../hoosat_client.dart';
 import '../transaction.dart';
 import '../transaction/mass_calculator.dart';
 import '../types.dart';
+import '../utils.dart';
 import 'send_tx.dart';
 import 'signer_base.dart';
 
@@ -103,6 +104,20 @@ class WalletService {
 
     final txId = await client.submitTransaction(rpcTx);
     return txId;
+  }
+
+  Future<({String signature, String hash})> signPersonalMessage(
+    String message, {
+    required Address address,
+  }) async {
+    final canSign = await signer.canSignForAddress(address);
+    if (!canSign) {
+      throw Exception('Cannot sign for address $address');
+    }
+
+    final hash = hashPersonalMessage(message);
+    final signature = await signer.sign(hash, address);
+    return (signature: signature.hex, hash: hash.hex);
   }
 
   Future<void> _signTransaction(Transaction tx) async {

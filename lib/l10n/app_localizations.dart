@@ -1332,11 +1332,65 @@ abstract class AppLocalizations {
   /// **'Security'**
   String get securityHeader;
 
+  /// No description provided for @securitySettingsBiometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Authenticate to Access Security Settings'**
+  String get securitySettingsBiometrics;
+
+  /// No description provided for @securitySettingsPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter PIN to Access Security Settings'**
+  String get securitySettingsPin;
+
   /// No description provided for @seed.
   ///
   /// In en, this message translates to:
   /// **'Seed'**
   String get seed;
+
+  /// No description provided for @signMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Message'**
+  String get signMessage;
+
+  /// No description provided for @signMessageCopySignature.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy Signature'**
+  String get signMessageCopySignature;
+
+  /// No description provided for @signMessageDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign a message with one of your wallet addresses'**
+  String get signMessageDescription;
+
+  /// No description provided for @signMessageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a message to sign'**
+  String get signMessageHint;
+
+  /// No description provided for @signMessageSignatureCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature Copied'**
+  String get signMessageSignatureCopied;
+
+  /// No description provided for @signMessageSigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Message Signed'**
+  String get signMessageSigned;
+
+  /// No description provided for @signMessageTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Message is too long'**
+  String get signMessageTooLong;
 
   /// No description provided for @seedInvalid.
   ///

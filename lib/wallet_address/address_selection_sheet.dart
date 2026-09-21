@@ -17,10 +17,12 @@ import 'wallet_address.dart';
 
 class AddressSelectionSheet extends HookConsumerWidget {
   final AddressType addressType;
+  final bool anyType;
 
   const AddressSelectionSheet({
     super.key,
     required this.addressType,
+    this.anyType = false,
   });
 
   @override
@@ -71,7 +73,10 @@ class AddressSelectionSheet extends HookConsumerWidget {
               key: listGlobalKey.value,
               children: [
                 AddressListWidget(
-                  addressType: AddressType.receive,
+                  addressType: addressType,
+                  addressTypes: anyType
+                      ? const [AddressType.receive, AddressType.change]
+                      : null,
                   scrollController: scrollController,
                   onSelection: (address) {
                     final notifier = ref.read(selectedAddressProvider.notifier);

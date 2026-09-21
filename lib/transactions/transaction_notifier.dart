@@ -286,6 +286,33 @@ class TransactionNotifier extends SafeChangeNotifier {
     _loading = false;
   }
 
+  Future<void> checkForMissingTxs(Iterable<String> txIds) async {
+    if (txIds.isEmpty) {
+      return;
+    }
+
+    final missingTxs = <String>{};
+    for (final txId in txIds) {
+      if (!cache.isWalletTxId(txId)) {
+        missingTxs.add(txId);
+      }
+    }
+    if (missingTxs.isEmpty) {
+      return;
+    }
+
+    try {
+      final txs = await api.getTxsWithIds(missingTxs);
+      if (txs.isEmpty) {
+        return;
+      }
+      await cache.cacheWalletTxs(txs);
+      await reload();
+    } catch (e) {
+      log.e('Failed to load transactions for wallet UTXOs', error: e);
+    }
+  }
+
   Future<void> reload() async {
     if (_loading) {
       return;

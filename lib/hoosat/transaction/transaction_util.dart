@@ -12,6 +12,7 @@ import 'types.dart';
 const kTransactionHashDomain = 'TransactionHash';
 const kTransactionIdDomain = 'TransactionID';
 const kTransactionSigningDomain = 'TransactionSigningHash';
+const kPersonalMessageSigningDomain = 'PersonalMessageSigningHash';
 
 Uint8List _getUint16(int value) {
   final data = ByteData(2);
@@ -284,6 +285,11 @@ Uint8List calculateSignatureHash({
   final key = stringToBytesUtf8(kTransactionSigningDomain);
   final blake3luint8 = blake3WithKey(builder.takeBytes(), key);
   return blake3luint8;
+}
+
+Uint8List hashPersonalMessage(String message) {
+  final key = stringToBytesUtf8(kPersonalMessageSigningDomain);
+  return blake3WithKey(stringToBytesUtf8(message), key);
 }
 
 Uint8List calculateSignatureHashSchnorr({

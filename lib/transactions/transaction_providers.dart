@@ -176,6 +176,13 @@ final txNotifierForWalletProvider = ChangeNotifierProvider.autoDispose
     unawaited(notifier.syncHistoryForAddresses(next));
   }, fireImmediately: true);
 
+  // UTXOs can appear before their transactions are in the local cache.
+  ref.listen(utxoListProvider, (_, utxos) {
+    notifier.checkForMissingTxs(
+      utxos.take(100).map((utxo) => utxo.outpoint.transactionId),
+    );
+  }, fireImmediately: true);
+
   // Refresh transactions when balance changes
   ref.listen(lastBalanceChangesProvider, (_, next) {
     if (next.isEmpty) {

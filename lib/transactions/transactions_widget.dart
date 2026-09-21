@@ -41,12 +41,12 @@ List<TxListItem> _txListItemsFromTxs(
         );
 
     final outputs = tx.apiTx.outputs;
-    final hasSingleChangeOutput = tx.apiTx.outputs.length == 1 &&
-        addressNotifier.containsChangeAddress(
-          tx.apiTx.outputs.first.scriptPublicKeyAddress,
+    final hasSingleWalletOutput = outputs.length == 1 &&
+        addressNotifier.containsAddress(
+          outputs.first.scriptPublicKeyAddress,
         );
 
-    if (hasWalletInputs && hasSingleChangeOutput) {
+    if (hasWalletInputs && hasSingleWalletOutput) {
       return [
         TxListItem.txItem(
           TxItem(

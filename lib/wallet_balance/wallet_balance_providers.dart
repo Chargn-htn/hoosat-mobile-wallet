@@ -112,6 +112,9 @@ final formatedTotalFiatProvider = Provider.autoDispose((ref) {
   final price = ref.watch(hoosatPriceProvider);
   final currency = ref.watch(currencyProvider);
   final fiat = balance.value * price.price;
+  if (fiat == Decimal.zero) {
+    return '';
+  }
   final decimals = fiat >= Decimal.parse('1')
       ? 2
       : fiat >= Decimal.parse('0.01')
