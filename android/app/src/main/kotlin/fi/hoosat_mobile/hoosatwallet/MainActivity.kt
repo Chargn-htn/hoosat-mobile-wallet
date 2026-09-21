@@ -1,12 +1,14 @@
 package fi.hoosat_mobile.hoosatwallet
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.nfc.NdefMessage
 import android.nfc.NdefRecord
 import android.nfc.NfcAdapter
+import android.os.Parcelable
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.plugin.common.MethodChannel
 
@@ -31,7 +33,7 @@ class MainActivity: FlutterFragmentActivity() {
 
         // Handle NFC URIs delivered via ACTION_NDEF_DISCOVERED.
         if (data == null && intent.action == NfcAdapter.ACTION_NDEF_DISCOVERED) {
-            val rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES)
+            val rawMsgs = ndefMessages(intent)
             if (rawMsgs != null) {
                 for (raw in rawMsgs) {
                     val msg = raw as? NdefMessage ?: continue
@@ -77,6 +79,16 @@ class MainActivity: FlutterFragmentActivity() {
             flutterEngine?.dartExecutor?.binaryMessenger?.let { messenger ->
                 MethodChannel(messenger, CHANNEL).invokeMethod("link", link, null)
             }
+        }
+    }
+
+    private fun ndefMessages(intent: Intent): Array<out Parcelable>? {
+        val key = NfcAdapter.EXTRA_NDEF_MESSAGES
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableArrayExtra(key, NdefMessage::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableArrayExtra(key)
         }
     }
 }

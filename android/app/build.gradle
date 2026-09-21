@@ -1,28 +1,29 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
+    id "org.jetbrains.kotlin.android"
     id "dev.flutter.flutter-gradle-plugin"
 }
 
 def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
+def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
+    localPropertiesFile.withReader("UTF-8") { reader ->
         localProperties.load(reader)
     }
 }
 
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
+def keystorePropertiesFile = rootProject.file("key.properties")
 if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    keystorePropertiesFile.withReader("UTF-8") { reader ->
+        keystoreProperties.load(reader)
+    }
 }
 
 android {
     namespace "fi.hoosat_mobile.hoosatwallet"
-    compileSdkVersion 36
+    compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
-
 
     compileOptions {
         coreLibraryDesugaringEnabled true
@@ -30,75 +31,54 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlin {
-        jvmToolchain {
-            languageVersion = JavaLanguageVersion.of(17)
-        }
-    }
-
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-
     defaultConfig {
         applicationId "fi.hoosat_mobile.hoosatwallet"
-        minSdkVersion 24  // Keep compatibility with older devices
-        targetSdkVersion 36
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutter.versionCode
         versionName flutter.versionName
-        
-        // Enable 16KB page size support
-        ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
-        }
     }
 
     signingConfigs {
         release {
             if (keystorePropertiesFile.exists()) {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile file(keystoreProperties['storeFile'])
-                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties["keyAlias"]
+                keyPassword keystoreProperties["keyPassword"]
+                storeFile keystoreProperties["storeFile"] ? file(keystoreProperties["storeFile"]) : null
+                storePassword keystoreProperties["storePassword"]
             }
         }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            // Play Console rejects a bundle signed with the debug key.
+            // android/key.properties supplies the upload key when it is present.
+            signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : signingConfigs.debug
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            ndk {
-                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
-            }
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
-    // Support for 16KB page sizes (Android 15+ requirement)
+    // Uncompressed JNI libs are zip-aligned to 16 KB by AGP 8.5.1+.
     packagingOptions {
         jniLibs {
-            useLegacyPackaging false
+            useLegacyPackaging = false
         }
     }
+}
 
-    // Additional 16KB page size support configuration
-    android.applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            if (outputFileName.endsWith('.apk')) {
-                outputFileName = outputFileName.replace('.apk', '-16kb-aligned.apk')
-            }
-        }
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
-
 }
 
 flutter {
-    source '../..'
+    source "../.."
 }
 
 dependencies {
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4' // Update to latest version
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.5"
 }
