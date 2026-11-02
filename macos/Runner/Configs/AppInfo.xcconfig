@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = hoosat_mobile
+PRODUCT_NAME = Hoosat Mobile Wallet
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = fi.hoosat_mobile.hoosatwallet
+PRODUCT_BUNDLE_IDENTIFIER = network.hoosat.wallet.macos
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 fi.hoosat. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 Hoosat Network. All rights reserved.

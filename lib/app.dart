@@ -55,7 +55,7 @@ class App extends HookConsumerWidget {
       final sub = appLinks.uriLinkStream.listen((uri) {
         ref.read(appLinkProvider.notifier).state = uri.toString();
       });
-      const channel = MethodChannel('fi.hoosat_mobile.hoosatwallet/links');
+      const channel = MethodChannel('network.hoosat.wallet/links');
       channel.setMethodCallHandler((call) async {
         if (call.method == 'link') {
           final s = call.arguments as String?;

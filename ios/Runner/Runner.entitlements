@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)fi.hoosat.hoosat-mobile</string>
+		<string>$(AppIdentifierPrefix)network.hoosat.wallet.ios</string>
 	</array>
 </dict>
 </plist>

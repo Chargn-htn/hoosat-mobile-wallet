@@ -1,4 +1,4 @@
-package fi.hoosat_mobile.hoosatwallet
+package network.hoosat.wallet.android
 
 import android.content.Intent
 import android.os.Build
@@ -13,7 +13,7 @@ import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity: FlutterFragmentActivity() {
-    private val CHANNEL = "fi.hoosat_mobile.hoosatwallet/links"
+    private val CHANNEL = "network.hoosat.wallet/links"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
