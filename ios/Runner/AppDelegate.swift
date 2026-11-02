@@ -20,7 +20,7 @@ import Flutter
             GeneratedPluginRegistrant.register(with: existingController)
 
             methodChannel = FlutterMethodChannel(
-                name: "fi.hoosat_mobile.hoosatwallet/links",
+                name: "network.hoosat.wallet/links",
                 binaryMessenger: existingController.binaryMessenger
             )
         } else {
@@ -38,7 +38,7 @@ import Flutter
             window?.makeKeyAndVisible()
 
             methodChannel = FlutterMethodChannel(
-                name: "fi.hoosat_mobile.hoosatwallet/links",
+                name: "network.hoosat.wallet/links",
                 binaryMessenger: controller.binaryMessenger
             )
         }

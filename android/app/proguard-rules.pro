@@ -11,4 +11,4 @@
 -dontwarn com.google.android.play.core.**
 
 # App entry point and the NFC / app-link method channel.
--keep class fi.hoosat_mobile.hoosatwallet.** { *; }
+-keep class network.hoosat.wallet.android.** { *; }
