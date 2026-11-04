@@ -1023,6 +1023,12 @@ class AppLocalizationsSk extends AppLocalizations {
   String get sendFromAny => 'Any';
 
   @override
+  String get home => 'Home';
+
+  @override
+  String get activity => 'Activity';
+
+  @override
   String get balance => 'Zostatok';
 
   @override

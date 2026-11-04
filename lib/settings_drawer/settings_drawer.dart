@@ -13,6 +13,7 @@ import '../settings/available_language.dart';
 import '../settings/available_themes.dart';
 import '../settings_advanced/advanced_menu.dart';
 import '../util/ui_util.dart';
+import '../wallet_home/main_tab_provider.dart';
 import '../widgets/app_simpledialog.dart';
 import '../widgets/dialog.dart';
 import '../widgets/gradient_widgets.dart';
@@ -174,7 +175,9 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
       setState(() => _donateOpen = false);
       _donateController.reverse();
     } else if (!didPop) {
-      appRouter.pop(context);
+      // Settings is a main-screen tab now, not a dismissible drawer --
+      // back here means "leave Settings," not "pop the app's navigator."
+      ref.read(mainTabProvider.notifier).state = MainTab.home;
     }
   }
 

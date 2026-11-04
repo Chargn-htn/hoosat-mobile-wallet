@@ -9,11 +9,9 @@ import '../app_router.dart';
 import '../chain_state/chain_state.dart';
 import '../l10n/l10n.dart';
 import '../settings/wallet_settings.dart';
-import '../settings_drawer/settings_drawer.dart';
 import '../util/lock_settings.dart';
 import '../util/routes.dart';
-import '../util/ui_util.dart';
-import '../wallet_home/wallet_home.dart';
+import '../wallet_home/main_tab_scaffold.dart';
 import '../widgets/network_banner.dart';
 import 'lock_screen.dart';
 import 'password_lock_screen.dart';
@@ -109,20 +107,14 @@ class HomeScreen extends HookConsumerWidget {
     });
 
     return Scaffold(
-      drawerEdgeDragWidth: 60,
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.background,
-      drawerScrimColor: theme.barrierWeaker,
-      drawer: SizedBox(
-        width: UIUtil.drawerWidth(context),
-        child: const Drawer(child: SettingsSheet()),
-      ),
       body: SafeArea(
         child: ClipRect(
           child: NetworkBanner(
             child: Padding(
               padding: const EdgeInsets.only(top: 4),
-              child: const WalletHome(),
+              child: const MainTabScaffold(),
             ),
           ),
         ),

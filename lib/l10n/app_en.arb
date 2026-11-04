@@ -454,6 +454,8 @@
   "addUppercased": "ADD",
   "sendFromLabel": "From",
   "sendFromAny": "Any",
+  "home": "Home",
+  "activity": "Activity",
   "balance": "Balance",
   "maxSend": "Max Send",
   "compoundUppercased": "COMPOUND",
