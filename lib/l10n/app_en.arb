@@ -425,6 +425,22 @@
   "compoundSuccess": "Compound successful",
   "compoundFailure": "Failed to compound transactions",
   "compoundTooFewUtxos": "At least two UTXOs are required",
+  "moveToMain": "Move to Main",
+  "moveToMainDescription": "Sweep every other address's balance into your main address",
+  "moveToMainConfirmation": "Move everything to Main?",
+  "moveToMainConfirmationDescription": "This will move {amount} {symbol} from {count} other address(es) into your main address. This creates one or more transactions and will incur network fees.",
+  "@moveToMainConfirmationDescription": {
+    "placeholders": {
+      "amount": {"type": "String", "example": "12,480,500"},
+      "symbol": {"type": "String", "example": "HTN"},
+      "count": {"type": "int", "example": "2"}
+    }
+  },
+  "moveToMainNothingToMove": "Every address's balance is already on Main",
+  "movingToMain": "Moving to Main",
+  "moveToMainSuccess": "Move to Main successful",
+  "moveToMainFailure": "Failed to move to Main",
+  "moveToMainUppercased": "MOVE",
   "balance": "Balance",
   "maxSend": "Max Send",
   "compoundUppercased": "COMPOUND",
