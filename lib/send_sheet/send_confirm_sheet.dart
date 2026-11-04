@@ -20,6 +20,7 @@ import '../widgets/dialog.dart';
 import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_util.dart';
 import '../widgets/sheet_widget.dart';
+import '../settings/address_settings.dart';
 import 'fee_sheet.dart';
 import 'send_complete_sheet.dart';
 import 'send_note_widget.dart';
@@ -109,7 +110,8 @@ class SendConfirmSheet extends HookConsumerWidget {
       required Amount priorityFee,
     }) async {
       final addressNotifier = ref.read(addressNotifierProvider);
-      final changeAddress = await addressNotifier.nextChangeAddress;
+      final changeAddressMode = ref.read(changeAddressModeProvider);
+      final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
       final spendableUtxos = ref.read(spendableUtxosProvider);
       final txBuilder = TransactionBuilder(
         utxos: spendableUtxos,

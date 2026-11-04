@@ -30,4 +30,10 @@ class AddressSettingsStateNotifier extends StateNotifier<AddressSettings> {
     await repository.setAddressSettings(settings);
     state = settings;
   }
+
+  Future<void> setChangeAddressMode(ChangeAddressMode mode) async {
+    final settings = state.copyWith(changeAddressMode: mode);
+    await repository.setAddressSettings(settings);
+    state = settings;
+  }
 }

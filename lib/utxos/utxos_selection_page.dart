@@ -6,6 +6,7 @@ import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
 import '../util/ui_util.dart';
+import '../settings/address_settings.dart';
 import '../widgets/buttons.dart';
 import '../widgets/sheet_widget.dart';
 import 'utxos_widget.dart';
@@ -145,7 +146,8 @@ class UtxosSelectionPage extends HookConsumerWidget {
     Future<void> onConfirm() async {
       try {
         final addressNotifier = ref.read(addressNotifierProvider);
-        final changeAddress = await addressNotifier.nextChangeAddress;
+        final changeAddressMode = ref.read(changeAddressModeProvider);
+        final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
         final spendableUtxos = ref.read(spendableUtxosProvider);
         final selectedUtxos = ref.read(selectedUtxosProvider).toList();
 

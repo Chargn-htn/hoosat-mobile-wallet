@@ -21,6 +21,7 @@ AddressSettings _$AddressSettingsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AddressSettings {
   AddressFilter get addressFilter => throw _privateConstructorUsedError;
+  ChangeAddressMode get changeAddressMode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $AddressSettingsCopyWith<$Res> {
           AddressSettings value, $Res Function(AddressSettings) then) =
       _$AddressSettingsCopyWithImpl<$Res, AddressSettings>;
   @useResult
-  $Res call({AddressFilter addressFilter});
+  $Res call({AddressFilter addressFilter, ChangeAddressMode changeAddressMode});
 }
 
 /// @nodoc
@@ -51,12 +52,17 @@ class _$AddressSettingsCopyWithImpl<$Res, $Val extends AddressSettings>
   @override
   $Res call({
     Object? addressFilter = null,
+    Object? changeAddressMode = null,
   }) {
     return _then(_value.copyWith(
       addressFilter: null == addressFilter
           ? _value.addressFilter
           : addressFilter // ignore: cast_nullable_to_non_nullable
               as AddressFilter,
+      changeAddressMode: null == changeAddressMode
+          ? _value.changeAddressMode
+          : changeAddressMode // ignore: cast_nullable_to_non_nullable
+              as ChangeAddressMode,
     ) as $Val);
   }
 }
@@ -69,7 +75,7 @@ abstract class _$$AddressSettingsImplCopyWith<$Res>
       __$$AddressSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AddressFilter addressFilter});
+  $Res call({AddressFilter addressFilter, ChangeAddressMode changeAddressMode});
 }
 
 /// @nodoc
@@ -84,12 +90,17 @@ class __$$AddressSettingsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? addressFilter = null,
+    Object? changeAddressMode = null,
   }) {
     return _then(_$AddressSettingsImpl(
       addressFilter: null == addressFilter
           ? _value.addressFilter
           : addressFilter // ignore: cast_nullable_to_non_nullable
               as AddressFilter,
+      changeAddressMode: null == changeAddressMode
+          ? _value.changeAddressMode
+          : changeAddressMode // ignore: cast_nullable_to_non_nullable
+              as ChangeAddressMode,
     ));
   }
 }
@@ -97,7 +108,10 @@ class __$$AddressSettingsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AddressSettingsImpl implements _AddressSettings {
-  const _$AddressSettingsImpl({this.addressFilter = AddressFilter.all});
+  const _$AddressSettingsImpl({
+    this.addressFilter = AddressFilter.all,
+    this.changeAddressMode = ChangeAddressMode.keepPerAddress,
+  });
 
   factory _$AddressSettingsImpl.fromJson(Map<String, dynamic> json) =>
       _$$AddressSettingsImplFromJson(json);
@@ -105,10 +119,13 @@ class _$AddressSettingsImpl implements _AddressSettings {
   @override
   @JsonKey()
   final AddressFilter addressFilter;
+  @override
+  @JsonKey()
+  final ChangeAddressMode changeAddressMode;
 
   @override
   String toString() {
-    return 'AddressSettings(addressFilter: $addressFilter)';
+    return 'AddressSettings(addressFilter: $addressFilter, changeAddressMode: $changeAddressMode)';
   }
 
   @override
@@ -117,12 +134,15 @@ class _$AddressSettingsImpl implements _AddressSettings {
         (other.runtimeType == runtimeType &&
             other is _$AddressSettingsImpl &&
             (identical(other.addressFilter, addressFilter) ||
-                other.addressFilter == addressFilter));
+                other.addressFilter == addressFilter) &&
+            (identical(other.changeAddressMode, changeAddressMode) ||
+                other.changeAddressMode == changeAddressMode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, addressFilter);
+  int get hashCode =>
+      Object.hash(runtimeType, addressFilter, changeAddressMode);
 
   @JsonKey(ignore: true)
   @override
@@ -140,14 +160,18 @@ class _$AddressSettingsImpl implements _AddressSettings {
 }
 
 abstract class _AddressSettings implements AddressSettings {
-  const factory _AddressSettings({final AddressFilter addressFilter}) =
-      _$AddressSettingsImpl;
+  const factory _AddressSettings({
+    final AddressFilter addressFilter,
+    final ChangeAddressMode changeAddressMode,
+  }) = _$AddressSettingsImpl;
 
   factory _AddressSettings.fromJson(Map<String, dynamic> json) =
       _$AddressSettingsImpl.fromJson;
 
   @override
   AddressFilter get addressFilter;
+  @override
+  ChangeAddressMode get changeAddressMode;
   @override
   @JsonKey(ignore: true)
   _$$AddressSettingsImplCopyWith<_$AddressSettingsImpl> get copyWith =>

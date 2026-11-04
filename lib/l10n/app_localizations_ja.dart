@@ -1233,6 +1233,27 @@ class AppLocalizationsJa extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
+  String get changeAddressModeTitle => 'Change Address Behavior';
+
+  @override
+  String get changeAddressModeDescriptionKeepPerAddress =>
+      'Change and compounds return to your main address';
+
+  @override
+  String get changeAddressModeDescriptionPrivate =>
+      'A new address is used each time (private, balance spreads out)';
+
+  @override
+  String get changeAddressModeDialogTitle => 'Change Address Behavior';
+
+  @override
+  String get changeAddressModeDialogOptionKeepPerAddress =>
+      'Keep Balances On Each Address';
+
+  @override
+  String get changeAddressModeDialogOptionPrivate => 'Private';
+
+  @override
   String get requestPasswordHeader => 'Request Password';
 
   @override

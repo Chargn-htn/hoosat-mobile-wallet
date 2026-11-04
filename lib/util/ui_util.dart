@@ -15,6 +15,7 @@ import '../transactions/transaction_types.dart';
 import '../widgets/app_simpledialog.dart';
 import '../widgets/dialog.dart';
 import '../widgets/pending_tx_dialog.dart';
+import '../settings/address_settings.dart';
 import '../widgets/sheet_util.dart';
 import '../widgets/toast_widget.dart';
 import 'numberutil.dart';
@@ -51,7 +52,8 @@ abstract class UIUtil {
       final amount = Amount.raw(BigInt.from(tx.apiTx.outputs.first.amount));
       final fees = tx.fees;
 
-      final changeAddress = await notifier.nextChangeAddress;
+      final changeAddressMode = ref.read(changeAddressModeProvider);
+      final changeAddress = await notifier.changeAddressFor(changeAddressMode);
 
       final toAddress = Address.tryParse(
         address,
@@ -285,7 +287,8 @@ abstract class UIUtil {
     }
 
     try {
-      final changeAddress = await addressNotifier.nextChangeAddress;
+      final changeAddressMode = ref.read(changeAddressModeProvider);
+      final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
 
       Amount? priorityFee;
       if (rbf) {

@@ -14,6 +14,7 @@ import '../widgets/app_simpledialog.dart';
 import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_util.dart';
 import 'address_discovery_dialog.dart';
+import 'change_address_mode_settings.dart';
 import 'compound_utxos_dialog.dart';
 import 'kpub_sheet.dart';
 
@@ -151,6 +152,8 @@ class AdvancedMenu extends ConsumerWidget {
                           onPressed: compoundUtxos,
                         ),
                       ],
+                      Divider(height: 2, color: theme.text15),
+                      const ChangeAddressModeSettings(),
                       Divider(height: 2, color: theme.text15),
                       DoubleLineItemTwo(
                         heading: l10n.addressDiscovery,
