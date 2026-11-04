@@ -4,7 +4,11 @@ import 'package:flutter/services.dart';
 import 'base_theme.dart';
 
 class HoosatLightTheme extends BaseTheme {
-  static const deepTeal = Color(0xFF116466);
+  // Mock4 home-screen design (2026-11, owner-approved), reskinned across
+  // the whole app per the owner's call: one accent, near-black/white
+  // backgrounds instead of stark black/white, "colours need to be smooth."
+  static const accentGreen = Color(0xFF1FAE66);
+  static const accentGreenDarkened = Color(0xFF188850); // darken(accentGreen, 0.22), matching Mock4's own darken() helper exactly
 
   static const teal = Color(0xFF1E7A7A);
 
@@ -12,8 +16,10 @@ class HoosatLightTheme extends BaseTheme {
 
   static const white = Color(0xFFFFFFFF);
 
-  static const whiteishDark = Color(0xFFF0F7F7);
+  static const offWhiteBg = Color(0xFFF6F7F7);
+  static const chipBg = Color(0xFFF0F1F1);
 
+  static const nearBlackText = Color(0xFF0A0A0A);
   static const grey = Color(0xFF454868);
 
   static const black = Color(0xFF000000);
@@ -22,13 +28,13 @@ class HoosatLightTheme extends BaseTheme {
 
   bool isLightTheme = true;
 
-  Color primary = deepTeal;
-  Color primary60 = deepTeal.withOpacitySafe(0.9);
-  Color primary45 = deepTeal.withOpacitySafe(0.8);
-  Color primary30 = deepTeal.withOpacitySafe(0.6);
-  Color primary20 = deepTeal.withOpacitySafe(0.45);
-  Color primary15 = deepTeal.withOpacitySafe(0.3);
-  Color primary10 = deepTeal.withOpacitySafe(0.2);
+  Color primary = accentGreenDarkened;
+  Color primary60 = accentGreen.withOpacitySafe(0.9);
+  Color primary45 = accentGreen.withOpacitySafe(0.8);
+  Color primary30 = accentGreen.withOpacitySafe(0.6);
+  Color primary20 = accentGreen.withOpacitySafe(0.45);
+  Color primary15 = accentGreen.withOpacitySafe(0.3);
+  Color primary10 = accentGreen.withOpacitySafe(0.2);
 
   Color success = teal;
   Color success60 = teal.withOpacitySafe(0.6);
@@ -38,16 +44,16 @@ class HoosatLightTheme extends BaseTheme {
   Color successDark = tealLight;
   Color successDark30 = tealLight.withOpacitySafe(0.3);
 
-  Color background = white;
-  Color background40 = white.withOpacitySafe(0.4);
-  Color background00 = white.withOpacitySafe(0.0);
+  Color background = offWhiteBg;
+  Color background40 = offWhiteBg.withOpacitySafe(0.4);
+  Color background00 = offWhiteBg.withOpacitySafe(0.0);
 
   Color backgroundDark = white;
   Color backgroundDark00 = white.withOpacitySafe(0.0);
 
-  Color backgroundDarkest = whiteishDark;
+  Color backgroundDarkest = chipBg;
 
-  Color text = grey.withOpacitySafe(0.9);
+  Color text = nearBlackText;
   Color text60 = grey.withOpacitySafe(0.6);
   Color text45 = grey.withOpacitySafe(0.45);
   Color text30 = grey.withOpacitySafe(0.3);
