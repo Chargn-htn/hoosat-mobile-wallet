@@ -1969,6 +1969,72 @@ abstract class AppLocalizations {
   /// **'MOVE'**
   String get moveToMainUppercased;
 
+  /// No description provided for @manageAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounts'**
+  String get manageAccounts;
+
+  /// No description provided for @manageAccountsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add and manage named addresses'**
+  String get manageAccountsDescription;
+
+  /// No description provided for @mainAccountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Main'**
+  String get mainAccountLabel;
+
+  /// No description provided for @archiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get archiveAction;
+
+  /// No description provided for @restoreAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get restoreAction;
+
+  /// No description provided for @archivedAccountsHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get archivedAccountsHeader;
+
+  /// No description provided for @noAdditionalAccountsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No additional accounts yet'**
+  String get noAdditionalAccountsYet;
+
+  /// No description provided for @renameAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename Account'**
+  String get renameAccount;
+
+  /// No description provided for @accountLabelHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Account name'**
+  String get accountLabelHint;
+
+  /// No description provided for @saveUppercased.
+  ///
+  /// In en, this message translates to:
+  /// **'SAVE'**
+  String get saveUppercased;
+
+  /// No description provided for @addUppercased.
+  ///
+  /// In en, this message translates to:
+  /// **'ADD'**
+  String get addUppercased;
+
   /// No description provided for @balance.
   ///
   /// In en, this message translates to:

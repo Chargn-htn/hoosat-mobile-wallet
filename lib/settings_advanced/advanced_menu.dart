@@ -13,6 +13,7 @@ import '../widgets/app_icon_button.dart';
 import '../widgets/app_simpledialog.dart';
 import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_util.dart';
+import 'accounts_screen.dart';
 import 'address_discovery_dialog.dart';
 import 'change_address_mode_settings.dart';
 import 'compound_utxos_dialog.dart';
@@ -52,6 +53,14 @@ class AdvancedMenu extends ConsumerWidget {
           builder: (_) => MoveToMainDialog(rbf: rbf),
         );
       }
+    }
+
+    void showAccounts() {
+      Sheets.showAppHeightNineSheet(
+        context: context,
+        theme: theme,
+        widget: const AccountsScreen(),
+      );
     }
 
     Future<void> scanMoreAddresses() async {
@@ -171,6 +180,14 @@ class AdvancedMenu extends ConsumerWidget {
                           onPressed: moveToMain,
                         ),
                       ],
+                      Divider(height: 2, color: theme.text15),
+                      DoubleLineItemTwo(
+                        heading: l10n.manageAccounts,
+                        text: l10n.manageAccountsDescription,
+                        icon: Icons.people_outline,
+                        iconSize: 28,
+                        onPressed: showAccounts,
+                      ),
                       Divider(height: 2, color: theme.text15),
                       const ChangeAddressModeSettings(),
                       Divider(height: 2, color: theme.text15),

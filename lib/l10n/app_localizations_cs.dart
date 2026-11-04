@@ -986,6 +986,39 @@ class AppLocalizationsCs extends AppLocalizations {
   String get moveToMainUppercased => 'MOVE';
 
   @override
+  String get manageAccounts => 'Accounts';
+
+  @override
+  String get manageAccountsDescription => 'Add and manage named addresses';
+
+  @override
+  String get mainAccountLabel => 'Main';
+
+  @override
+  String get archiveAction => 'Archive';
+
+  @override
+  String get restoreAction => 'Restore';
+
+  @override
+  String get archivedAccountsHeader => 'Archived';
+
+  @override
+  String get noAdditionalAccountsYet => 'No additional accounts yet';
+
+  @override
+  String get renameAccount => 'Rename Account';
+
+  @override
+  String get accountLabelHint => 'Account name';
+
+  @override
+  String get saveUppercased => 'SAVE';
+
+  @override
+  String get addUppercased => 'ADD';
+
+  @override
   String get balance => 'Balance';
 
   @override
