@@ -11,7 +11,12 @@ part 'node_types.g.dart';
 const mainnetNodeConfig = NodeConfig(
   id: '57b0fe448a279d9273bf4868ec7317a3',
   name: 'Hoosat Mainnet',
-  urls: ['mainnet-node-1.hoosat.fi'],
+  // DNS round-robin pool, one A record per node (node-nz/node-uk/node-pl).
+  // isDns: true makes the app resolve all A records and pick the fastest
+  // healthy one itself, rather than relying on whichever one DNS/gRPC
+  // happens to connect to first. See NodePoolResolver.
+  urls: ['rpc.hoosat.network'],
+  isDns: true,
   isSecure: false,
   network: HoosatNetwork.mainnet,
 );

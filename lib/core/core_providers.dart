@@ -120,10 +120,16 @@ final HoosatApiServiceProvider = Provider<HoosatApiService>((ref) {
 final hoosatClientProvider = Provider((ref) {
   final config = ref.watch(hoosatNodeConfigProvider);
   final inBackground = ref.watch(inBackgroundProvider);
+  // For a DNS-pool-backed node (e.g. rpc.hoosat.network), use the fastest
+  // healthy node the resolver found. Falls back to the configured url
+  // directly for non-DNS configs, while still resolving, or if nothing
+  // in the pool answered -- never leaves the client with nothing to try.
+  final resolvedHost = ref.watch(resolvedNodeHostProvider).valueOrNull;
+  final url = resolvedHost ?? config.url;
 
   final client = inBackground
       ? VoidHoosatClient()
-      : HoosatClient.url(config.url, isSecure: config.isSecure);
+      : HoosatClient.url(url, isSecure: config.isSecure);
 
   ref.onDispose(() {
     client.close();
