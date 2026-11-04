@@ -4,9 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../app_providers.dart';
 import '../app_router.dart';
 import '../hoosat/hoosat.dart';
+import '../hoosat/transaction/compound_grouping.dart';
 import '../l10n/l10n.dart';
 import '../util/numberutil.dart';
-import '../settings/address_settings.dart';
 import '../util/ui_util.dart';
 import '../widgets/app_simpledialog.dart';
 import '../transactions/recent_outpoints_provider.dart';
@@ -54,36 +54,34 @@ class _CompoundUtxosDialogState extends ConsumerState<CompoundUtxosDialog> {
         }
 
         final walletService = ref.read(walletServiceProvider);
-        final addressNotifier = ref.read(addressNotifierProvider);
-        final changeAddressMode = ref.read(changeAddressModeProvider);
-        final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
+        final addressPrefix = ref.read(addressPrefixProvider);
 
         final List<Utxo> allSpendableUtxos = ref.read(spendableUtxosProvider);
-        // Select the first chunk for the compound tx (or iterate spendableChunks if you want to process all)
-        if (allSpendableUtxos.length <= 1) {
+
+        // Self-compound: each address merges only its OWN utxos back into
+        // itself, as separate transactions -- balance never moves between
+        // addresses here. A lone utxo has nothing to merge with, so
+        // addresses with fewer than 2 are left alone.
+        final spendableChunks = groupUtxosForSelfCompound(allSpendableUtxos);
+
+        if (spendableChunks.isEmpty) {
           UIUtil.showSnackbar(l10n.compoundTooFewUtxos, context);
           // Close dialog since there's nothing to do
           if (mounted) setState(() => _isCompounding = false);
           appRouter.pop(context);
           return;
         }
-        const int chunkSize = 84;
-        final List<List<Utxo>> spendableChunks = [];
-        for (var i = 0; i < allSpendableUtxos.length; i += chunkSize) {
-          final end = (i + chunkSize) > allSpendableUtxos.length
-              ? allSpendableUtxos.length
-              : i + chunkSize;
-          spendableChunks.add(allSpendableUtxos.sublist(i, end));
-        }
 
         // Pre-seed recent outpoints cache with the inputs we are about to spend
         final recent = ref.read(recentOutpointsProvider.notifier);
-        for (final u in allSpendableUtxos) {
-          recent.add(
-            u.outpoint,
-            u.address,
-            u.utxoEntry.amount.toInt(),
-          );
+        for (final (_, chunk) in spendableChunks) {
+          for (final u in chunk) {
+            recent.add(
+              u.outpoint,
+              u.address,
+              u.utxoEntry.amount.toInt(),
+            );
+          }
         }
         if (mounted) {
           setState(() {
@@ -109,11 +107,21 @@ class _CompoundUtxosDialogState extends ConsumerState<CompoundUtxosDialog> {
         // Fire transactions at ~200ms intervals to speed up compounding while
         // avoiding a flood. Schedule all sends and wait for completion.
         for (var i = 0; i < spendableChunks.length; i++) {
-          log.d('Compound Iteration $i, (chunk=${spendableChunks[i].length})');
+          final (address, chunk) = spendableChunks[i];
+          log.d('Compound Iteration $i, address=$address (chunk=${chunk.length})');
+
+          final compoundAddress = Address.tryParse(
+            address,
+            expectedPrefix: addressPrefix,
+          );
+          if (compoundAddress == null) {
+            log.e('Compound Iteration $i: could not parse address $address');
+            continue;
+          }
 
           final compoundTx = walletService.createCompoundTx(
-            compoundAddress: changeAddress.address,
-            spendableUtxos: spendableChunks[i],
+            compoundAddress: compoundAddress,
+            spendableUtxos: chunk,
             feePerInput: kFeePerInput,
             priorityFee: priorityFee,
           );
