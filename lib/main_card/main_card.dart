@@ -10,6 +10,7 @@ import '../hoosat/types.dart';
 import '../l10n/l10n.dart';
 import '../themes/hoosat_light_theme.dart';
 import '../util/ui_util.dart';
+import '../wallet_home/main_tab_provider.dart';
 import '../util/user_data_util.dart';
 import '../widgets/app_icon_button.dart';
 
@@ -77,7 +78,9 @@ class MainCard extends ConsumerWidget {
                     final error = ref.watch(networkErrorProvider);
                     return AppIconButton(
                       icon: error ? AppIcons.warning : AppIcons.settings,
-                      onPressed: () => Scaffold.maybeOf(context)?.openDrawer(),
+                      onPressed: () => ref
+                          .read(mainTabProvider.notifier)
+                          .state = MainTab.settings,
                     );
                   }),
                   Column(

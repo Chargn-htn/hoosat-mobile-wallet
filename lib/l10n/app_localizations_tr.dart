@@ -1033,6 +1033,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sendFromAny => 'Any';
 
   @override
+  String get home => 'Home';
+
+  @override
+  String get activity => 'Activity';
+
+  @override
   String get balance => 'Bakiye';
 
   @override

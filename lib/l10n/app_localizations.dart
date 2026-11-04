@@ -2047,6 +2047,18 @@ abstract class AppLocalizations {
   /// **'Any'**
   String get sendFromAny;
 
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @activity.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity'**
+  String get activity;
+
   /// No description provided for @balance.
   ///
   /// In en, this message translates to:

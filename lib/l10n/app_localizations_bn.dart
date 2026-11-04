@@ -1026,6 +1026,12 @@ class AppLocalizationsBn extends AppLocalizations {
   String get sendFromAny => 'Any';
 
   @override
+  String get home => 'Home';
+
+  @override
+  String get activity => 'Activity';
+
+  @override
   String get balance => 'ব্যালেন্স';
 
   @override
