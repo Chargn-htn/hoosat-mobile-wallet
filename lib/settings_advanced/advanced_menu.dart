@@ -16,6 +16,7 @@ import '../widgets/sheet_util.dart';
 import 'address_discovery_dialog.dart';
 import 'change_address_mode_settings.dart';
 import 'compound_utxos_dialog.dart';
+import 'move_to_main_dialog.dart';
 import 'kpub_sheet.dart';
 
 class AdvancedMenu extends ConsumerWidget {
@@ -39,6 +40,16 @@ class AdvancedMenu extends ConsumerWidget {
         showAppDialog(
           context: context,
           builder: (_) => CompoundUtxosDialog(rbf: rbf),
+        );
+      }
+    }
+
+    Future<void> moveToMain() async {
+      final (:cont, :rbf) = await UIUtil.checkForPendingTx(context, ref: ref);
+      if (cont) {
+        showAppDialog(
+          context: context,
+          builder: (_) => MoveToMainDialog(rbf: rbf),
         );
       }
     }
@@ -150,6 +161,14 @@ class AdvancedMenu extends ConsumerWidget {
                           icon: Icons.refresh,
                           iconSize: 28,
                           onPressed: compoundUtxos,
+                        ),
+                        Divider(height: 2, color: theme.text15),
+                        DoubleLineItemTwo(
+                          heading: l10n.moveToMain,
+                          text: l10n.moveToMainDescription,
+                          icon: Icons.call_merge,
+                          iconSize: 28,
+                          onPressed: moveToMain,
                         ),
                       ],
                       Divider(height: 2, color: theme.text15),

@@ -953,6 +953,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
+  String get moveToMain => 'Move to Main';
+
+  @override
+  String get moveToMainDescription =>
+      'Sweep every other address\'s balance into your main address';
+
+  @override
+  String get moveToMainConfirmation => 'Move everything to Main?';
+
+  @override
+  String moveToMainConfirmationDescription(
+      String amount, String symbol, int count) {
+    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+  }
+
+  @override
+  String get moveToMainNothingToMove =>
+      'Every address\'s balance is already on Main';
+
+  @override
+  String get movingToMain => 'Moving to Main';
+
+  @override
+  String get moveToMainSuccess => 'Move to Main successful';
+
+  @override
+  String get moveToMainFailure => 'Failed to move to Main';
+
+  @override
+  String get moveToMainUppercased => 'MOVE';
+
+  @override
   String get balance => 'Balance';
 
   @override

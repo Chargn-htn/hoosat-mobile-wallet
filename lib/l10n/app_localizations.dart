@@ -1914,6 +1914,61 @@ abstract class AppLocalizations {
   /// **'At least two UTXOs are required'**
   String get compoundTooFewUtxos;
 
+  /// No description provided for @moveToMain.
+  ///
+  /// In en, this message translates to:
+  /// **'Move to Main'**
+  String get moveToMain;
+
+  /// No description provided for @moveToMainDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Sweep every other address\'s balance into your main address'**
+  String get moveToMainDescription;
+
+  /// No description provided for @moveToMainConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Move everything to Main?'**
+  String get moveToMainConfirmation;
+
+  /// No description provided for @moveToMainConfirmationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This will move {amount} {symbol} from {count} other address(es) into your main address. This creates one or more transactions and will incur network fees.'**
+  String moveToMainConfirmationDescription(
+      String amount, String symbol, int count);
+
+  /// No description provided for @moveToMainNothingToMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Every address\'s balance is already on Main'**
+  String get moveToMainNothingToMove;
+
+  /// No description provided for @movingToMain.
+  ///
+  /// In en, this message translates to:
+  /// **'Moving to Main'**
+  String get movingToMain;
+
+  /// No description provided for @moveToMainSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Move to Main successful'**
+  String get moveToMainSuccess;
+
+  /// No description provided for @moveToMainFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to move to Main'**
+  String get moveToMainFailure;
+
+  /// No description provided for @moveToMainUppercased.
+  ///
+  /// In en, this message translates to:
+  /// **'MOVE'**
+  String get moveToMainUppercased;
+
   /// No description provided for @balance.
   ///
   /// In en, this message translates to:
