@@ -79,7 +79,7 @@ class TransactionNotifier extends SafeChangeNotifier {
           }
 
           final limit = remoteCount < warmPageSize ? remoteCount : warmPageSize;
-          return api.getTxIdsForAddressPage(
+          return await api.getTxIdsForAddressPage(
             address,
             limit: limit,
             offset: 0,
