@@ -4,14 +4,17 @@ import 'package:flutter/services.dart';
 import 'base_theme.dart';
 
 class HoosatDarkTheme extends BaseTheme {
-  static const brightBlue = Color(0xFF116466);
+  // Mock4 home-screen design (2026-11, owner-approved), reskinned across
+  // the whole app per the owner's call: one accent, near-black/white
+  // backgrounds instead of stark black/white, "colours need to be smooth."
+  static const accentGreen = Color(0xFF1FAE66);
 
   static const teal = Color(0xFF1E7A7A);
 
   static const greenDark = Color(0xfffc865a);
 
-  static const blueishGreyDark = Color(0xFF3A3A3A);
-  static const blueishGreyLight = Color(0xFF2F2F2F);
+  static const nearBlackBg = Color(0xFF0B0B0C);
+  static const nearBlackCard = Color(0xFF17181A);
 
   static const blueishGreyDarkest = Color.fromARGB(255, 99, 99, 100);
 
@@ -21,13 +24,13 @@ class HoosatDarkTheme extends BaseTheme {
 
   bool isLightTheme = false;
 
-  Color primary = brightBlue;
-  Color primary60 = brightBlue.withOpacitySafe(0.6);
-  Color primary45 = brightBlue.withOpacitySafe(0.45);
-  Color primary30 = brightBlue.withOpacitySafe(0.3);
-  Color primary20 = brightBlue.withOpacitySafe(0.2);
-  Color primary15 = brightBlue.withOpacitySafe(0.15);
-  Color primary10 = brightBlue.withOpacitySafe(0.1);
+  Color primary = accentGreen;
+  Color primary60 = accentGreen.withOpacitySafe(0.6);
+  Color primary45 = accentGreen.withOpacitySafe(0.45);
+  Color primary30 = accentGreen.withOpacitySafe(0.3);
+  Color primary20 = accentGreen.withOpacitySafe(0.2);
+  Color primary15 = accentGreen.withOpacitySafe(0.15);
+  Color primary10 = accentGreen.withOpacitySafe(0.1);
 
   Color success = teal;
   Color success60 = teal.withOpacitySafe(0.6);
@@ -37,17 +40,17 @@ class HoosatDarkTheme extends BaseTheme {
   Color successDark = greenDark;
   Color successDark30 = greenDark.withOpacitySafe(0.3);
 
-  Color background = blueishGreyDark;
-  Color background40 = blueishGreyDark.withOpacitySafe(0.4);
-  Color background00 = blueishGreyDark.withOpacitySafe(0.0);
+  Color background = nearBlackBg;
+  Color background40 = nearBlackBg.withOpacitySafe(0.4);
+  Color background00 = nearBlackBg.withOpacitySafe(0.0);
 
-  Color backgroundDark = blueishGreyLight;
-  Color backgroundDark00 = blueishGreyLight.withOpacitySafe(0.0);
+  Color backgroundDark = nearBlackCard;
+  Color backgroundDark00 = nearBlackCard.withOpacitySafe(0.0);
 
   Color backgroundDarkest = blueishGreyDarkest;
 
-  Color text = white.withOpacitySafe(0.9);
-  Color text60 = white.withOpacitySafe(0.6);
+  Color text = white.withOpacitySafe(0.92);
+  Color text60 = white.withOpacitySafe(0.5);
   Color text45 = white.withOpacitySafe(0.45);
   Color text30 = white.withOpacitySafe(0.3);
   Color text20 = white.withOpacitySafe(0.2);
