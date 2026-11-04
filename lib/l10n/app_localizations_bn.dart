@@ -1020,6 +1020,12 @@ class AppLocalizationsBn extends AppLocalizations {
   String get addUppercased => 'ADD';
 
   @override
+  String get sendFromLabel => 'From';
+
+  @override
+  String get sendFromAny => 'Any';
+
+  @override
   String get balance => 'ব্যালেন্স';
 
   @override

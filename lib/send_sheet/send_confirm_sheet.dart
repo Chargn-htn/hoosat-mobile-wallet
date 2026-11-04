@@ -23,6 +23,7 @@ import '../widgets/sheet_widget.dart';
 import '../settings/address_settings.dart';
 import 'fee_sheet.dart';
 import 'send_complete_sheet.dart';
+import 'send_from_providers.dart';
 import 'send_note_widget.dart';
 
 class SendConfirmSheet extends HookConsumerWidget {
@@ -112,7 +113,8 @@ class SendConfirmSheet extends HookConsumerWidget {
       final addressNotifier = ref.read(addressNotifierProvider);
       final changeAddressMode = ref.read(changeAddressModeProvider);
       final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
-      final spendableUtxos = ref.read(spendableUtxosProvider);
+      final sendFromAddress = ref.read(sendFromAddressProvider);
+      final spendableUtxos = ref.read(sendSpendableUtxosForProvider(sendFromAddress));
       final txBuilder = TransactionBuilder(
         utxos: spendableUtxos,
         feePerInput: kFeePerInput,

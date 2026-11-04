@@ -1016,6 +1016,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get addUppercased => 'ADD';
 
   @override
+  String get sendFromLabel => 'From';
+
+  @override
+  String get sendFromAny => 'Any';
+
+  @override
   String get balance => 'बैलेंस';
 
   @override

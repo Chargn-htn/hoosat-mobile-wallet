@@ -2035,6 +2035,18 @@ abstract class AppLocalizations {
   /// **'ADD'**
   String get addUppercased;
 
+  /// No description provided for @sendFromLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get sendFromLabel;
+
+  /// No description provided for @sendFromAny.
+  ///
+  /// In en, this message translates to:
+  /// **'Any'**
+  String get sendFromAny;
+
   /// No description provided for @balance.
   ///
   /// In en, this message translates to:
