@@ -2454,6 +2454,42 @@ abstract class AppLocalizations {
   /// **'Hide Not Accepted Coinbase Transactions'**
   String get txFilterDialogOptionHideNotAcceptedCoinbase;
 
+  /// No description provided for @changeAddressModeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Address Behavior'**
+  String get changeAddressModeTitle;
+
+  /// No description provided for @changeAddressModeDescriptionKeepPerAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Change and compounds return to your main address'**
+  String get changeAddressModeDescriptionKeepPerAddress;
+
+  /// No description provided for @changeAddressModeDescriptionPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'A new address is used each time (private, balance spreads out)'**
+  String get changeAddressModeDescriptionPrivate;
+
+  /// No description provided for @changeAddressModeDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Address Behavior'**
+  String get changeAddressModeDialogTitle;
+
+  /// No description provided for @changeAddressModeDialogOptionKeepPerAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Balances On Each Address'**
+  String get changeAddressModeDialogOptionKeepPerAddress;
+
+  /// No description provided for @changeAddressModeDialogOptionPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Private'**
+  String get changeAddressModeDialogOptionPrivate;
+
   /// No description provided for @requestPasswordHeader.
   ///
   /// In en, this message translates to:

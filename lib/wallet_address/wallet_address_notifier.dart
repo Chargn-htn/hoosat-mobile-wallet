@@ -2,6 +2,7 @@ import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 
 import '../database/boxes.dart';
 import '../hoosat/hoosat.dart';
+import '../settings/address_settings.dart';
 import '../util/safe_change_notifier.dart';
 import 'wallet_address.dart';
 import 'wallet_address_aware.dart';
@@ -65,6 +66,16 @@ class WalletAddressNotifier extends SafeChangeNotifier
       type: AddressType.change,
     );
     return walletAddress;
+  }
+
+  /// The address change (from a send) or a compound result should go to,
+  /// for the given [mode]. keepPerAddress always returns the wallet's
+  /// main address, so balance stops spreading across new addresses.
+  Future<WalletAddress> changeAddressFor(ChangeAddressMode mode) async {
+    if (mode == ChangeAddressMode.keepPerAddress) {
+      return defaultReceiveAddress;
+    }
+    return nextChangeAddress;
   }
 
   Future<WalletAddress> _getWalletAddress({

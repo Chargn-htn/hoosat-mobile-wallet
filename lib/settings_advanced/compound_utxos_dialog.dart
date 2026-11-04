@@ -6,6 +6,7 @@ import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
 import '../util/numberutil.dart';
+import '../settings/address_settings.dart';
 import '../util/ui_util.dart';
 import '../widgets/app_simpledialog.dart';
 import '../transactions/recent_outpoints_provider.dart';
@@ -54,7 +55,8 @@ class _CompoundUtxosDialogState extends ConsumerState<CompoundUtxosDialog> {
 
         final walletService = ref.read(walletServiceProvider);
         final addressNotifier = ref.read(addressNotifierProvider);
-        final changeAddress = await addressNotifier.nextChangeAddress;
+        final changeAddressMode = ref.read(changeAddressModeProvider);
+        final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
 
         final List<Utxo> allSpendableUtxos = ref.read(spendableUtxosProvider);
         // Select the first chunk for the compound tx (or iterate spendableChunks if you want to process all)

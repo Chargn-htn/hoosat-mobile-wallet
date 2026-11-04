@@ -14,3 +14,8 @@ final addressFilterProvider = Provider.autoDispose((ref) {
   final settings = ref.watch(addressSettingsProvider);
   return settings.addressFilter;
 });
+
+final changeAddressModeProvider = Provider.autoDispose((ref) {
+  final settings = ref.watch(addressSettingsProvider);
+  return settings.changeAddressMode;
+});
