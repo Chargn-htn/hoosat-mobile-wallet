@@ -15,6 +15,7 @@ import '../transactions/transaction_types.dart';
 import '../widgets/app_simpledialog.dart';
 import '../widgets/dialog.dart';
 import '../widgets/pending_tx_dialog.dart';
+import '../send_sheet/send_from_providers.dart';
 import '../settings/address_settings.dart';
 import '../widgets/sheet_util.dart';
 import '../widgets/toast_widget.dart';
@@ -274,7 +275,8 @@ abstract class UIUtil {
       return;
     }
 
-    final spendableUtxos = ref.read(spendableUtxosProvider);
+    final sendFromAddress = ref.read(sendFromAddressProvider);
+    final spendableUtxos = ref.read(sendSpendableUtxosForProvider(sendFromAddress));
     final walletService = ref.read(walletServiceProvider);
     final addressNotifier = ref.read(addressNotifierProvider);
 

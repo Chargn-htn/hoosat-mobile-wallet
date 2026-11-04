@@ -452,6 +452,8 @@
   "accountLabelHint": "Account name",
   "saveUppercased": "SAVE",
   "addUppercased": "ADD",
+  "sendFromLabel": "From",
+  "sendFromAny": "Any",
   "balance": "Balance",
   "maxSend": "Max Send",
   "compoundUppercased": "COMPOUND",

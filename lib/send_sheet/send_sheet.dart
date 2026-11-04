@@ -27,6 +27,8 @@ import '../widgets/sheet_handle.dart';
 import '../widgets/tap_outside_unfocus.dart';
 import 'balance_text_widget.dart';
 import 'fee_widget.dart';
+import 'send_from_picker.dart';
+import 'send_from_providers.dart';
 import 'send_note_widget.dart';
 
 enum AddressStyle { TEXT60, TEXT90, PRIMARY }
@@ -356,6 +358,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
                 const SizedBox(width: 60, height: 60),
               ],
             ),
+            const SendFromRow(),
             Container(
               margin: const EdgeInsets.only(
                 top: 10,
@@ -373,7 +376,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
                 ),
               ),
             ),
-            const BalanceTextWidget(),
+            BalanceTextWidget(address: ref.watch(sendFromAddressProvider)),
             // A main container that holds everything
             Expanded(
               child: Container(
@@ -597,8 +600,11 @@ class _SendSheetState extends ConsumerState<SendSheet> {
       return false;
     }
 
-    final balanceRaw = ref.read(totalBalanceProvider).raw;
-    final utxoCount = ref.read(utxoListProvider).length;
+    final fromAddress = ref.read(sendFromAddressProvider);
+    final balanceRaw = fromAddress == null
+        ? ref.read(totalBalanceProvider).raw
+        : ref.read(balanceForAddressProvider(fromAddress.encoded)).raw;
+    final utxoCount = ref.read(sendSpendableUtxosForProvider(fromAddress)).length;
     final maxFees = BigInt.from(utxoCount) * kFeePerInput;
 
     if (amountRaw! > balanceRaw - maxFees) {
@@ -608,7 +614,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
       return false;
     }
 
-    final maxSend = ref.read(maxSendProvider);
+    final maxSend = ref.read(maxSendForProvider(fromAddress));
     if (amountRaw! > maxSend.raw) {
       showAppDialog(
         context: context,
@@ -654,7 +660,8 @@ class _SendSheetState extends ConsumerState<SendSheet> {
 
       final hoosatFormatter = ref.watch(hoosatFormatterProvider);
       final fiatFormatter = ref.watch(fiatFormatterProvider);
-      final maxSend = ref.watch(maxSendProvider);
+      final fromAddress = ref.watch(sendFromAddressProvider);
+      final maxSend = ref.watch(maxSendForProvider(fromAddress));
       final isMaxSend = amountRaw == maxSend.raw || maxSend.raw == BigInt.zero;
 
       final amount = Amount.raw(amountRaw ?? BigInt.zero);

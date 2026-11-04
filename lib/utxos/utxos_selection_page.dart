@@ -5,6 +5,7 @@ import '../app_providers.dart';
 import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
+import '../send_sheet/send_from_providers.dart';
 import '../util/ui_util.dart';
 import '../settings/address_settings.dart';
 import '../widgets/buttons.dart';
@@ -13,7 +14,9 @@ import 'utxos_widget.dart';
 
 final selectionSummaryProvider =
     Provider.family.autoDispose<SendTx, (SendTx, Address)>((ref, state) {
-  final spendableUtxos = ref.watch(spendableUtxosProvider);
+  final sendFromAddress = ref.watch(sendFromAddressProvider);
+  final spendableUtxos =
+      ref.watch(sendSpendableUtxosForProvider(sendFromAddress));
   final selectedUtxos = ref.watch(selectedUtxosProvider).toList();
 
   final tx = state.$1;
