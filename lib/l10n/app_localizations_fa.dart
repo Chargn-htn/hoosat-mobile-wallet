@@ -680,6 +680,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get seedInvalid => 'Seed نامعتبر است';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'ارسال';
 
   @override

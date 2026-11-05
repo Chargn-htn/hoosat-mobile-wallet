@@ -690,6 +690,13 @@ class AppLocalizationsTe extends AppLocalizations {
   String get seedInvalid => 'Seed చెల్లదు';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'పంపండి';
 
   @override

@@ -13,6 +13,7 @@ import '../util/lock_settings.dart';
 import '../util/routes.dart';
 import '../wallet_home/main_tab_scaffold.dart';
 import '../widgets/network_banner.dart';
+import '../widgets/node_unreachable_banner.dart';
 import 'lock_screen.dart';
 import 'password_lock_screen.dart';
 
@@ -112,9 +113,11 @@ class HomeScreen extends HookConsumerWidget {
       body: SafeArea(
         child: ClipRect(
           child: NetworkBanner(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 4),
-              child: const MainTabScaffold(),
+            child: NodeUnreachableBanner(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: const MainTabScaffold(),
+              ),
             ),
           ),
         ),

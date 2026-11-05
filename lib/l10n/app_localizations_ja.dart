@@ -677,6 +677,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get seedInvalid => 'シードが無効です';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => '送金';
 
   @override

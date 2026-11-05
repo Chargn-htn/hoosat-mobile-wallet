@@ -312,6 +312,8 @@
   "signMessageSigned": "Message Signed",
   "signMessageTooLong": "Message is too long",
   "seedInvalid": "Seed is Invalid",
+  "nodeUnreachable": "Can't reach your node. Balances may be out of date.",
+  "nodeUnreachableRetry": "Retry",
   "send": "Send",
   "sendConfirm": "Send",
   "sendError": "An error occurred. Please try again",
