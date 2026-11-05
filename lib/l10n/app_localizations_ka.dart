@@ -108,6 +108,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get available => 'ხელმისაწვდომი';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'მე შევქმენი სარეზერვო ასლი';
 
   @override
@@ -612,6 +615,12 @@ class AppLocalizationsKa extends AppLocalizations {
   String get scanQrCodeError => 'qr კოდის გარჩევა ვერ მოხერხდა';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'შემდეგ ეკრანზე ნახავთ თქვენს საიდუმლო ფრაზას. ეს არის პაროლი თქვენს სახსრებზე წვდომისთვის. გადამწყვეტი მნიშვნელობა აქვს მისი სარეზერვო ასლის შენახვას, რომელიც არასოდეს უნდა გაუზიაროთ ვინმეს.';
 
@@ -771,6 +780,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get themeLight => 'ღია თემა';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#ეს საფულე';

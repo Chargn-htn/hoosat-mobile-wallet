@@ -107,6 +107,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get available => 'دستیاب';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'میں نے اس کا بیک اپ لیا ہے';
 
   @override
@@ -606,6 +609,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get scanQrCodeError => 'کیو آر کوڈ کو پارس کرنے میں ناکام';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'اگلی اسکرین میں، آپ کو اپنا خفیہ جملہ نظر آئے گا۔ یہ آپ کے فنڈز تک رسائی کا پاس ورڈ ہے۔ یہ بہت ضروری ہے کہ آپ اس کا بیک اپ لیں اور اسے کبھی کسی کے ساتھ شیئر نہ کریں۔';
 
@@ -765,6 +774,9 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get themeLight => 'ہلکی تھیم';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#یہ بٹوا';

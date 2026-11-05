@@ -108,6 +108,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get available => 'అందుబాటులో ఉంది';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'నేను దానిని బ్యాకప్ చేసాను';
 
   @override
@@ -616,6 +619,12 @@ class AppLocalizationsTe extends AppLocalizations {
   String get scanQrCodeError => 'qr కోడ్‌ని స్కాన్ చేయండి';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'తదుపరి స్క్రీన్‌లో, మీరు మీ రహస్య పదబంధాన్ని చూస్తారు. ఇది మీ నిధులను యాక్సెస్ చేయడానికి పాస్‌వర్డ్. మీరు దీన్ని బ్యాకప్ చేయడం మరియు ఎవరితోనూ భాగస్వామ్యం చేయకపోవడం చాలా ముఖ్యం.';
 
@@ -775,6 +784,9 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get themeLight => 'కాంతి థీమ్';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#ఈ వాలెట్';

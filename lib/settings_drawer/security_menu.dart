@@ -109,9 +109,12 @@ class _SecurityMenuState extends ConsumerState<SecurityMenu> {
                       //Back button
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: AppIconButton(
-                          icon: AppIcons.back,
-                          onPressed: widget.onBackAction,
+                        child: Tooltip(
+                          message: l10n.back,
+                          child: AppIconButton(
+                            icon: AppIcons.back,
+                            onPressed: widget.onBackAction,
+                          ),
                         ),
                       ),
                       //Security Header Text

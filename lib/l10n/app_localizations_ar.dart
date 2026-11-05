@@ -107,6 +107,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get available => 'Available';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'لقد حفظت العبارة السرية';
 
   @override
@@ -608,6 +611,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'في الشاشة التالية ، سترى العبارة السرية الخاصة بك. إنها كلمة مرور للوصول إلى أموالك. من الأهمية أن تقوم بنسخه احتياطيًا وأن لا تشاركه أبدًا مع أي شخص.';
 
@@ -767,6 +776,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

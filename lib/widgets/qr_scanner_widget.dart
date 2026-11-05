@@ -122,10 +122,13 @@ class _QrScannerWidgetState extends ConsumerState<QrScannerWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppIconButton(
-                      icon: Icons.arrow_back,
-                      color: Colors.white,
-                      onPressed: () => appRouter.pop(context),
+                    Tooltip(
+                      message: l10n.back,
+                      child: AppIconButton(
+                        icon: Icons.arrow_back,
+                        color: Colors.white,
+                        onPressed: () => appRouter.pop(context),
+                      ),
                     ),
                     Text(
                       l10n.scanQrCode,
@@ -133,10 +136,13 @@ class _QrScannerWidgetState extends ConsumerState<QrScannerWidget> {
                           .copyWith(color: Colors.white),
                     ),
                     kPlatformIsAndroid || kPlatformIsIOS
-                        ? AppIconButton(
-                            icon: Icons.image_outlined,
-                            color: Colors.white,
-                            onPressed: scanFromImage,
+                        ? Tooltip(
+                            message: l10n.scanFromImage,
+                            child: AppIconButton(
+                              icon: Icons.image_outlined,
+                              color: Colors.white,
+                              onPressed: scanFromImage,
+                            ),
                           )
                         : const SizedBox(width: 48),
                   ],
@@ -155,6 +161,7 @@ class _QrScannerWidgetState extends ConsumerState<QrScannerWidget> {
                           ? Icons.flashlight_off_rounded
                           : Icons.flashlight_on_rounded,
                     ),
+                    tooltip: l10n.toggleFlash,
                     onPressed: toggleFlash,
                   ),
                 ),

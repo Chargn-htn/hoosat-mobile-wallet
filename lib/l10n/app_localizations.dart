@@ -366,6 +366,12 @@ abstract class AppLocalizations {
   /// **'Available'**
   String get available;
 
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
   /// No description provided for @backupConfirmButton.
   ///
   /// In en, this message translates to:
@@ -1290,6 +1296,18 @@ abstract class AppLocalizations {
   /// **'Failed to parse qr code'**
   String get scanQrCodeError;
 
+  /// No description provided for @scanFromImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan from image'**
+  String get scanFromImage;
+
+  /// No description provided for @toggleFlash.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle flashlight'**
+  String get toggleFlash;
+
   /// No description provided for @secretInfo.
   ///
   /// In en, this message translates to:
@@ -1589,6 +1607,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Light Theme'**
   String get themeLight;
+
+  /// No description provided for @toggleTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch theme'**
+  String get toggleTheme;
 
   /// No description provided for @thisWallet.
   ///

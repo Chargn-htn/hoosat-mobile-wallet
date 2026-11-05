@@ -107,6 +107,9 @@ class AppLocalizationsNo extends AppLocalizations {
   String get available => 'Tilgjengelig';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Jeg har tatt sikkerhetskopi';
 
   @override
@@ -611,6 +614,12 @@ class AppLocalizationsNo extends AppLocalizations {
   String get scanQrCodeError => 'Klarte ikke å lese QR-kode';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'På neste skjerm vil du se din hemmelige frase. Den er et passord som gir tilgang til midlene dine. Det er avgjørende at du sikkerhetskopierer denne og aldri deler den med noen.';
 
@@ -769,6 +778,9 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get themeLight => 'Lyst tema';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Denne lommeboken';

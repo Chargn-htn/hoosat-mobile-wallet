@@ -107,6 +107,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get available => 'در دسترس';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'من آن را بکاپ گرفته ام';
 
   @override
@@ -606,6 +609,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get scanQrCodeError => 'عدم موفقیت در تفکیک QR کد';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'در صفحه بعدی، عبارت مخفی خود را خواهید دید. این کلمه عبور شما برای دسترسی به ارزهای شما است. بسیار ضروری است که از آن بکاپ تهیه کنید و هرگز آن را با کسی به اشتراک نگذارید.';
 
@@ -764,6 +773,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get themeLight => 'تم روشن';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#این کیف پول';

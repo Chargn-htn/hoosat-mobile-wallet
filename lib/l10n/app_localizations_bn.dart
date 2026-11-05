@@ -108,6 +108,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get available => 'উপলব্ধ';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'আমি এটা ব্যাকআপ করেছি';
 
   @override
@@ -609,6 +612,12 @@ class AppLocalizationsBn extends AppLocalizations {
   String get scanQrCodeError => 'কিউআর কোড পার্স করতে ব্যর্থ হয়েছে';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'পরবর্তী পর্দায়, আপনি আপনার গোপন বাক্যাংশ দেখতে পাবেন। আপনার তহবিল অ্যাক্সেস করার জন্য এটি একটি পাসওয়ার্ড। এটি গুরুত্বপূর্ণ যে আপনি এটি ব্যাক আপ করুন এবং এটি কারও সাথে শেয়ার করবেন না।';
 
@@ -768,6 +777,9 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get themeLight => 'লাইট থিম';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#এই ওয়ালেট';

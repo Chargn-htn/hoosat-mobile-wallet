@@ -107,6 +107,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get available => 'Tillgängligt';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Jag har sparat den';
 
   @override
@@ -611,6 +614,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get scanQrCodeError => 'Misslyckades att tolka QR-kod';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'På nästa skärm kommer du att se din hemliga fras. Det är ett lösenord för att komma åt dina tillgångar. Det är viktigt att du sparar ner den och aldrig delar den med någon.';
 
@@ -770,6 +779,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get themeLight => 'Ljust tema';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Den här plånboken';

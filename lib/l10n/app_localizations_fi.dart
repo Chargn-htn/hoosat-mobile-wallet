@@ -107,6 +107,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get available => 'Saatavilla';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Olen varmuuskopioinut';
 
   @override
@@ -606,6 +609,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get scanQrCodeError => 'QR-koodin jäsentäminen epäonnistui';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Seuraavalla sivulla näet turvasanasi. Ne ovat salasanasi päästäksesi käsiksi varoihisi. On todella tärkeää, että varmuuskopioit ne etkä ikinä jaa niitä kenellekään.';
 
@@ -765,6 +774,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get themeLight => 'Vaalea teema';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Tämä lompakko';

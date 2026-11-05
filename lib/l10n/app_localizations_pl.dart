@@ -107,6 +107,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get available => 'Dostępny';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Zapisałem\\am frazę';
 
   @override
@@ -610,6 +613,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get scanQrCodeError => 'Nie udało się odczytać kodu QR';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Na następnym ekranie zobaczysz swoją sekretną frazę. Jest to hasło umożliwiające dostęp do twoich środków. Ważne jest, aby ją zapisać i nigdy nie udostępniać komukolwiek.';
 
@@ -769,6 +778,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get themeLight => 'Jasny motyw';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Ten portfel';

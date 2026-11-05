@@ -107,6 +107,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get available => 'Disponível';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Eu Fiz o Backup';
 
   @override
@@ -613,6 +616,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get scanQrCodeError => 'Falha ao analisar o código QR';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Na próxima tela, você verá sua frase secreta. É uma senha para acessar seus fundos. É crucial que você faça o backup e nunca o compartilhe com ninguém.';
 
@@ -772,6 +781,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema Claro';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Esta Carteira';

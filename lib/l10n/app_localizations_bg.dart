@@ -108,6 +108,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get available => 'Налично';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Направих резервно копие';
 
   @override
@@ -610,6 +613,12 @@ class AppLocalizationsBg extends AppLocalizations {
   String get scanQrCodeError => 'Неуспешно сканиране на QR кода';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'На следващия екран ще видите тайната си фраза.  Това е парола за достъп до средствата ви.  От решаващо значение е да направите резервно копие и никога да не я споделяте с никого.';
 
@@ -769,6 +778,9 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get themeLight => 'Светла тема';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Този портфейл';

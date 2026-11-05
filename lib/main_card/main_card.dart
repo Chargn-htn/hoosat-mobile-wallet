@@ -76,11 +76,14 @@ class MainCard extends ConsumerWidget {
                 children: [
                   Consumer(builder: (context, ref, _) {
                     final error = ref.watch(networkErrorProvider);
-                    return AppIconButton(
-                      icon: error ? AppIcons.warning : AppIcons.settings,
-                      onPressed: () => ref
-                          .read(mainTabProvider.notifier)
-                          .state = MainTab.settings,
+                    return Tooltip(
+                      message: error ? l10n.nodeUnreachable : l10n.settingsHeader,
+                      child: AppIconButton(
+                        icon: error ? AppIcons.warning : AppIcons.settings,
+                        onPressed: () => ref
+                            .read(mainTabProvider.notifier)
+                            .state = MainTab.settings,
+                      ),
                     );
                   }),
                   Column(
@@ -127,9 +130,12 @@ class MainCard extends ConsumerWidget {
                   if (wallet.isViewOnly)
                     const SizedBox(width: 40, height: 40)
                   else
-                    AppIconButton(
-                      icon: Icons.qr_code_scanner,
-                      onPressed: scanQrCode,
+                    Tooltip(
+                      message: l10n.scanQrCode,
+                      child: AppIconButton(
+                        icon: Icons.qr_code_scanner,
+                        onPressed: scanQrCode,
+                      ),
                     ),
                 ],
               ),

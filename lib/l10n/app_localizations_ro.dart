@@ -110,6 +110,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get available => 'Disponibil';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Am salvat-o într-un loc sigur';
 
   @override
@@ -617,6 +620,12 @@ class AppLocalizationsRo extends AppLocalizations {
   String get scanQrCodeError => 'Codul QR nu a putut fi analizat';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'În continuare, veți vedea formula secretă a portofelului. Aceasta este o parolă care permite accesul la fonduri. Este vital să fie notată într-un caiet și să nu fie arătată vreodată nimănui.';
 
@@ -776,6 +785,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get themeLight => 'Aspect deschis';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Acest Portofel';

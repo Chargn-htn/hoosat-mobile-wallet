@@ -108,6 +108,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get available => 'Verfügbar';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Ich habe den Seed gesichert';
 
   @override
@@ -613,6 +616,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get scanQrCodeError => 'Auswertung des QR-Codes fehlgeschlagen';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Auf der nächsten Seite sehen Sie Ihre Geheimsequenz. Diese erlaubt den Zugriff auf Ihr Guthaben. Es ist sehr wichtig, dass Sie sie sichern und geheim halten.';
 
@@ -772,6 +781,9 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get themeLight => 'Hell';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Dieses Wallet';

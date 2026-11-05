@@ -110,6 +110,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get available => 'Διαθέσιμο';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Κράτησα αντίγραφο ασφαλείας';
 
   @override
@@ -624,6 +627,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get scanQrCodeError => 'Η σάρωση του κωδικού QR απέτυχε';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Στην επόμενη οθόνη θα δείτε την μυστικής σας φράση. Αυτή είναι ο κωδικός για να έχετε πρόσβαση στα κεφάλαιά σας. Είναι εξαιρετικά σημαντικό να κάνετε ένα αντίγραφο ασφαλείας και να μην μοιραστείτε αυτή την φράση με κανέναν άλλο.';
 
@@ -786,6 +795,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get themeLight => 'Φωτεινό θέμα';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Αυτό το πορτοφόλι';

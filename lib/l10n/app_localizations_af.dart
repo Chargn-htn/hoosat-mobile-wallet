@@ -107,6 +107,9 @@ class AppLocalizationsAf extends AppLocalizations {
   String get available => 'Available';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'I\'ve Backed It Up';
 
   @override
@@ -608,6 +611,12 @@ class AppLocalizationsAf extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'In the next screen, you will see your secret phrase. It is a password to access your funds. It is crucial that you back it up and never share it with anyone.';
 
@@ -767,6 +776,9 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

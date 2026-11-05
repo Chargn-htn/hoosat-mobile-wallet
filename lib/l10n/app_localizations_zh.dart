@@ -106,6 +106,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get available => '可用余额';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => '我已备份';
 
   @override
@@ -590,6 +593,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get scanQrCodeError => '解析二维码已失败';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo => '下一屏，将会看到您的助记词，它是存取资金的密码。请确保备份好，且不要与任何人透露。';
 
   @override
@@ -746,6 +755,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get themeLight => '浅色主题';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#当前钱包';

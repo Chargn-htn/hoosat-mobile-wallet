@@ -106,6 +106,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get available => '사용 가능';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => '백업을 했습니다';
 
   @override
@@ -595,6 +598,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get scanQrCodeError => 'QR 코드를 해석하는 데 실패했습니다';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'In the next screen, you will see your secret phrase. It is a password to access your funds. It is crucial that you back it up and never share it with anyone.';
 
@@ -753,6 +762,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

@@ -108,6 +108,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get available => 'Mevcut';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Yedekledim';
 
   @override
@@ -612,6 +615,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get scanQrCodeError => 'QR kodu okuma başarısız';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Bir sonraki ekranda gizli cümlenizi göreceksiniz. Gizli cümle, cüzdanınıza ve bakiyenize erişmenizi sağlayan bir çeşit şifredir. Gizli cümlenizi güvenli bir yerde yedeklemeniz ve kimseyle paylaşmamanız çok önemlidir.';
 
@@ -770,6 +779,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get themeLight => 'Aydınlık Tema';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Bu Cüzdan';

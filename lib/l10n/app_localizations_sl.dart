@@ -107,6 +107,9 @@ class AppLocalizationsSl extends AppLocalizations {
   String get available => 'Available';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Varno shranjeno';
 
   @override
@@ -606,6 +609,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Na naslednjem zaslonu boste videli vaš skrivni niz. Ta niz je geslo za dostop do vašega računa. Nujno je, da ga varno shranite in ne delite z nikomur.';
 
@@ -765,6 +774,9 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

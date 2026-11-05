@@ -106,6 +106,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get available => 'זמין';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'גיביתי במקום בטוח';
 
   @override
@@ -598,6 +601,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get scanQrCodeError => 'ניתוח קוד ה-QR נכשל';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'המסך הבא יראה את הביטוי הסודי שלכם. זה ביטוי שמאפשר לכם גישה לכספים שלכם.\nמאוד חשוב שתשמרו את הביטוי במקום בטוח בנפרד למכשיר ושלא תשתפו אותו עם אנשים אחרים!';
 
@@ -756,6 +765,9 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get themeLight => 'מצב תצוגה בהיר';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#ארנק זה';

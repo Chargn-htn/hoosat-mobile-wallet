@@ -107,6 +107,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get available => 'Tersedia';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Saya telah menyokongnya';
 
   @override
@@ -609,6 +612,12 @@ class AppLocalizationsMs extends AppLocalizations {
   String get scanQrCodeError => 'Gagal menghuraikan kod qr';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Dalam skrin seterusnya, anda akan melihat frasa rahsia anda. ';
 
@@ -769,6 +778,9 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema Cahaya';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Dompet Ini';

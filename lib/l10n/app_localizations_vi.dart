@@ -107,6 +107,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get available => 'Available';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Tôi đã sao lưu';
 
   @override
@@ -607,6 +610,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Tiếp theo, bạn sẽ nhìn thấy một cụm từ bí mật. Nó là mật khẩu để truy cập vào ví của bạn. Đừng quên sao lưu nó lại và tuyệt đối không chia sẻ cho bất kỳ ai';
 
@@ -766,6 +775,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

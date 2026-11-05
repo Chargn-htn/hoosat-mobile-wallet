@@ -108,6 +108,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get available => 'Eskuragarri';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'babeskopia egin dut';
 
   @override
@@ -610,6 +613,12 @@ class AppLocalizationsEu extends AppLocalizations {
   String get scanQrCodeError => 'Ezin izan da qr kodea ulertzea';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Hurrengo pantailan, zure esaldi sekretua ikusiko duzu. Zure fondoak sartzeko pasahitza da. Funtsezkoa da babeskopia egitea eta inoiz inorekin partekatzea.';
 
@@ -769,6 +778,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get themeLight => 'Gai Argia';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Kartera hau';

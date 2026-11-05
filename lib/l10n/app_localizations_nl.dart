@@ -107,6 +107,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get available => 'Beschikbaar';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Ik heb er een back-up van gemaakt';
 
   @override
@@ -612,6 +615,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get scanQrCodeError => 'Kan QR-code niet analyseren';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'In het volgende scherm zie je jouw Secret Phrase. Het is een wachtwoord voor toegang tot jouw fondsen. Het is cruciaal dat je er een back-up van maakt en het nooit met iemand deelt.';
 
@@ -773,6 +782,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get themeLight => 'Licht thema';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Deze Wallet';
