@@ -167,7 +167,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
           _contacts = [];
           final prefix = ref.read(addressPrefixProvider);
           final address = Address.tryParse(
-            _addressController.text,
+            _addressController.text.trim(),
             expectedPrefix: prefix,
           );
           if (address != null) {
@@ -759,7 +759,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
             //FocusScope.of(context).unfocus();
             final prefix = ref.read(addressPrefixProvider);
             final address = Address.tryParse(
-              _addressController.text,
+              _addressController.text.trim(),
               expectedPrefix: prefix,
             );
             if (address == null) {
@@ -826,7 +826,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
               }
               final prefix = ref.read(addressPrefixProvider);
               final address = Address.tryParse(
-                data.text!,
+                data.text!.trim(),
                 expectedPrefix: prefix,
               );
               if (address != null) {
@@ -902,7 +902,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
           });
           final prefix = ref.read(addressPrefixProvider);
           if (!isContact &&
-              Address.tryParse(text, expectedPrefix: prefix) != null) {
+              Address.tryParse(text.trim(), expectedPrefix: prefix) != null) {
             FocusManager.instance.primaryFocus?.unfocus();
 
             setState(() {
