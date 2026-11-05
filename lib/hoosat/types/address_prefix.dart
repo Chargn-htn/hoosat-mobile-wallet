@@ -9,7 +9,7 @@ enum AddressPrefix {
     switch (prefix) {
       case 'hoosat':
         return AddressPrefix.hoosat;
-      case 'hooosattest':
+      case 'hoosattest':
         return AddressPrefix.hoosatTest;
       case 'hoosatdev':
         return AddressPrefix.hoosatDev;
