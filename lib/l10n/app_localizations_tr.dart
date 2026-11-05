@@ -686,6 +686,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get seedInvalid => 'Anahtar cümle (seed) geçersiz';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Gönder';
 
   @override

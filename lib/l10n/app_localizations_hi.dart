@@ -681,6 +681,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get seedInvalid => 'सीड अमान्य है';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'भेजें';
 
   @override

@@ -687,6 +687,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get seedInvalid => 'A frase-seed é inválida';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Enviar';
 
   @override

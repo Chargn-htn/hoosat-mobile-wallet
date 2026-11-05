@@ -685,6 +685,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get seedInvalid => 'Seed është i pavlefshëm';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Dërgo';
 
   @override

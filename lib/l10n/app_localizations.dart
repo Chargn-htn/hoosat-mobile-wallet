@@ -1422,6 +1422,18 @@ abstract class AppLocalizations {
   /// **'Seed is Invalid'**
   String get seedInvalid;
 
+  /// No description provided for @nodeUnreachable.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reach your node. Balances may be out of date.'**
+  String get nodeUnreachable;
+
+  /// No description provided for @nodeUnreachableRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get nodeUnreachableRetry;
+
   /// No description provided for @send.
   ///
   /// In en, this message translates to:

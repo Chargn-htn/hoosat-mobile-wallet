@@ -682,6 +682,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get seedInvalid => 'Helytelen Seed Phrase';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Küldés';
 
   @override

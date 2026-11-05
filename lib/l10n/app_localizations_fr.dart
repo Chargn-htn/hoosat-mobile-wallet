@@ -695,6 +695,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get seedInvalid => 'La phrase secrète est invalide';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Envoyer';
 
   @override

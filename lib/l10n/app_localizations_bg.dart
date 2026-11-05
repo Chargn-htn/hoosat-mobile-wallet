@@ -684,6 +684,13 @@ class AppLocalizationsBg extends AppLocalizations {
   String get seedInvalid => 'Невалиден seed';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Изпрати';
 
   @override

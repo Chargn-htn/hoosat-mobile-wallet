@@ -685,6 +685,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get seedInvalid => 'Angiven hemlig fras är ogiltig';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Skicka';
 
   @override

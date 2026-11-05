@@ -686,6 +686,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get seedInvalid => 'Seed is ongeldig';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Verstuur';
 
   @override

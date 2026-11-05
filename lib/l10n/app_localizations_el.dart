@@ -698,6 +698,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get seedInvalid => 'Η μυστική σας φράση δεν είναι έγκυρη.';
 
   @override
+  String get nodeUnreachable =>
+      'Can\'t reach your node. Balances may be out of date.';
+
+  @override
+  String get nodeUnreachableRetry => 'Retry';
+
+  @override
   String get send => 'Αποστολή';
 
   @override
