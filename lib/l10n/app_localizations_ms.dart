@@ -770,7 +770,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Lihat Hoosat Mobile - Dompet Mobile Hoosat.\nLaman web - mobile.hoosat.fi';
+      'Lihat Hoosat Mobile - Dompet Mobile Hoosat.\nLaman web - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Sesuatu telah berlaku';

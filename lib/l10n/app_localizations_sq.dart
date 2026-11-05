@@ -771,7 +771,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Shikoni Hoosat Mobile - Hoosat Mobile Wallet.\nFaqja e internetit - mobile.hoosat.fi';
+      'Shikoni Hoosat Mobile - Hoosat Mobile Wallet.\nFaqja e internetit - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Dicka shkoj keq';

@@ -92,6 +92,28 @@ final addressPrefixProvider = Provider((ref) {
   return prefix;
 });
 
+// api.network.hoosat.fi was Tonto's own explorer API (indexed/database
+// backed -- full-transactions, search, etc. -- not something a bare node
+// can serve) and is now dead/hijacked, along with every other *.hoosat.fi
+// domain. explorer-nz.hoosat.network is the current, correct domain for
+// our own Retro500 explorer's REST API since Tonto's departure -- schema
+// confirmed compatible (same /addresses/{address}/full-transactions
+// shape) and already proven in htn-rest's own /txhistory handler.
+// api.explorer-eu.hoosat.network is a genuinely independent third-party
+// explorer already proven reliable as a fallback (used by the Owl bank's
+// chain.go). Mainnet tries ours first, falls back to the EU one only on
+// a clean failure. Note: this LAN cannot reach explorer-nz.hoosat.network
+// itself (router hairpin-NAT gap for this VLAN, not a code bug -- see
+// htn_wallet_monitor_revamp.md) so this can only be verified from a
+// genuinely external device (e.g. the owner's phone), never from Node1/
+// Node2/Retro500/Retro600 or this app's own emulator.
+final _mainnetHoosatApiProvider = Provider<HoosatApi>((ref) {
+  return HoosatApiFallback(
+    HoosatApiMainnet('https://explorer-nz.hoosat.network'),
+    HoosatApiMainnet('https://api.explorer-eu.hoosat.network'),
+  );
+});
+
 final _HoosatApiProvider = Provider<HoosatApi>((ref) {
   final networkId = ref.watch(networkIdProvider);
 
@@ -103,11 +125,14 @@ final _HoosatApiProvider = Provider<HoosatApi>((ref) {
       : networkId;
 
   return switch (normalizedNetworkId) {
-    'mainnet' => HoosatApiMainnet('https://api.network.hoosat.fi'),
-    'testnet' => HoosatApiMainnet('https://api.network.hoosat.fi'),
+    'mainnet' => ref.watch(_mainnetHoosatApiProvider),
+    // No explorer exists for testnet yet -- HoosatApiEmpty returns clean
+    // empty results instead of throwing, so the Activity tab shows "no
+    // history" gracefully rather than crashing to a blank screen.
+    'testnet' => HoosatApiEmpty(),
     // Keep the constants working too.
-    kHoosatNetworkIdMainnet => HoosatApiMainnet('https://api.network.hoosat.fi'),
-    kHoosatNetworkIdTestnet => HoosatApiMainnet('https://api.network.hoosat.fi'),
+    kHoosatNetworkIdMainnet => ref.watch(_mainnetHoosatApiProvider),
+    kHoosatNetworkIdTestnet => HoosatApiEmpty(),
     _ => HoosatApiEmpty(),
   };
 });

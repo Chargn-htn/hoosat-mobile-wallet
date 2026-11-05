@@ -777,7 +777,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Descoperă Hoosat Mobile - Portofelul mobil HTN.\nWebsite - mobile.hoosat.fi';
+      'Descoperă Hoosat Mobile - Portofelul mobil HTN.\nWebsite - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Ceva nu a mers bine';

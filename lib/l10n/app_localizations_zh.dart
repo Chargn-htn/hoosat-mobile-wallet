@@ -747,7 +747,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      '查看 Hoosat Mobile - Hoosat 移动钱包\n网站 - mobile.hoosat.fi';
+      '查看 Hoosat Mobile - Hoosat 移动钱包\n网站 - hoosatworld.net';
 
   @override
   String get somethingWentWrong => '发生了错误';

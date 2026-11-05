@@ -35,9 +35,9 @@ class IntroPasswordOnLaunch extends ConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.075,
         ),
-        child: Column(children: [
-          Expanded(
-            child: Column(
+        child: SingleChildScrollView(
+          child: Column(children: [
+            Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(children: [
@@ -82,22 +82,23 @@ class IntroPasswordOnLaunch extends ConsumerWidget {
                 ),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28),
-            child: Column(children: [
-              PrimaryButton(
-                title: l10n.noSkipButton,
-                onPressed: skipPassword,
-              ),
-              const SizedBox(height: 16),
-              PrimaryOutlineButton(
-                title: l10n.yesButton,
-                onPressed: setPassword,
-              ),
-            ]),
-          ),
-        ]),
+            const SizedBox(height: 48),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28),
+              child: Column(children: [
+                PrimaryButton(
+                  title: l10n.noSkipButton,
+                  onPressed: skipPassword,
+                ),
+                const SizedBox(height: 16),
+                PrimaryOutlineButton(
+                  title: l10n.yesButton,
+                  onPressed: setPassword,
+                ),
+              ]),
+            ),
+          ]),
+        ),
       ),
     );
   }

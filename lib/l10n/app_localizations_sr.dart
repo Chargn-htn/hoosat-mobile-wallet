@@ -770,7 +770,7 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Погледај Каспиум - Каспа Мобилни Новчаник.\nВебсајт - mobile.hoosat.fi';
+      'Погледај Каспиум - Каспа Мобилни Новчаник.\nВебсајт - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Негде је дошло до грешке';

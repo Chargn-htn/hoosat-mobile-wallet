@@ -96,7 +96,8 @@ class IntroImportSelect extends ConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.075,
         ),
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -143,7 +144,7 @@ class IntroImportSelect extends ConsumerWidget {
               description: l10n.importOptionKpubDescription,
               onPressed: importViewOnlyWallet,
             ),
-            Expanded(child: SizedBox()),
+            const SizedBox(height: 48),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(children: [
@@ -154,6 +155,7 @@ class IntroImportSelect extends ConsumerWidget {
               ]),
             ),
           ],
+          ),
         ),
       ),
     );

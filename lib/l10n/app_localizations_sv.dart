@@ -771,7 +771,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Prova Hoosat Mobile! Hoosats mobila plånbok. Webbsida - mobile.hoosat.fi';
+      'Prova Hoosat Mobile! Hoosats mobila plånbok. Webbsida - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Något gick fel';

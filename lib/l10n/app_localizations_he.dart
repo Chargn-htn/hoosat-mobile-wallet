@@ -757,7 +757,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'תראו את כספיום - ארנק כספא לנייד.\nאתר - mobile.hoosat.fi';
+      'תראו את כספיום - ארנק כספא לנייד.\nאתר - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'משהו השתבש';

@@ -770,7 +770,7 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Sjekk ut Hoosat Mobile - Den mobile lommeboken for Hoosat.\nNettsted - mobile.hoosat.fi';
+      'Sjekk ut Hoosat Mobile - Den mobile lommeboken for Hoosat.\nNettsted - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Noe gikk galt';

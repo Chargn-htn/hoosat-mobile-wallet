@@ -771,7 +771,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Mira Hoosat Mobile - Hoosat Moneder Mòbil.\nWeb - mobile.hoosat.fi';
+      'Mira Hoosat Mobile - Hoosat Moneder Mòbil.\nWeb - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Hi ha hagut un error';

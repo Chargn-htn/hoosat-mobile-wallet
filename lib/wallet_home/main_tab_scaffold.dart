@@ -49,6 +49,13 @@ class _ActivityTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(child: TransactionsWidget());
+    // TransactionsWidget already manages its own scrolling internally
+    // (AutomaticAnimatedList/LazyLoadScrollView); wrapping it in another
+    // SingleChildScrollView gives its inner ListViews unbounded height,
+    // which overflows whenever the empty state (TransactionEmptyList,
+    // itself a ListView) renders -- only visible once an Activity-tab
+    // fetch can actually complete without throwing first, see
+    // htn_phone_wallet_roadmap.md.
+    return const TransactionsWidget();
   }
 }

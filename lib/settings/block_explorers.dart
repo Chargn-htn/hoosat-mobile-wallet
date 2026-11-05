@@ -27,29 +27,45 @@ class BlockExplorer with _$BlockExplorer {
       _$BlockExplorerFromJson(json);
 }
 
+// explorer.hoosat.fi and explorer-testnet.hoosat.fi were Tonto's domains,
+// dead/hijacked since he left the project. explorer-nz.hoosat.network is
+// the current, real replacement (confirmed /addresses/:addr and /txs/:id
+// routes match exactly, see htn-explorer's App.js). No real testnet
+// explorer exists anywhere in our infra -- kHoosatExplorerTestnet is kept
+// only as a typed default value (block_explorer_settings.dart needs one),
+// never shown as a pickable option below, so no dead link is exposed.
 const kHoosatExplorerMainnet = BlockExplorer(
   network: HoosatNetwork.mainnet,
   name: 'Hoosat Explorer',
-  url: 'explorer.hoosat.fi',
-  addressUrl: 'https://explorer.hoosat.fi/addresses/$kParamPattern',
-  txUrl: 'https://explorer.hoosat.fi/txs/$kParamPattern',
+  url: 'explorer-nz.hoosat.network',
+  addressUrl: 'https://explorer-nz.hoosat.network/addresses/$kParamPattern',
+  txUrl: 'https://explorer-nz.hoosat.network/txs/$kParamPattern',
+);
+
+const kHoosatExplorerEU = BlockExplorer(
+  network: HoosatNetwork.mainnet,
+  name: 'Hoosat Explorer (EU)',
+  url: 'explorer-eu.hoosat.network',
+  addressUrl: 'https://explorer-eu.hoosat.network/addresses/$kParamPattern',
+  txUrl: 'https://explorer-eu.hoosat.network/txs/$kParamPattern',
 );
 
 const kHoosatExplorerTestnet = BlockExplorer(
   network: HoosatNetwork.testnet,
   name: 'Hoosat Explorer',
-  url: 'explorer-testnet.hoosat.fi',
-  addressUrl: 'https://explorer-testnet.hoosat.fi/addresses/$kParamPattern',
-  txUrl: 'https://explorer-testet.hoosat.fi/txs/$kParamPattern',
+  url: 'explorer-nz.hoosat.network',
+  addressUrl: 'https://explorer-nz.hoosat.network/addresses/$kParamPattern',
+  txUrl: 'https://explorer-nz.hoosat.network/txs/$kParamPattern',
 );
 
 const kBlockExplorersOptions = <String, List<BlockExplorer>>{
   kHoosatNetworkIdMainnet: [
     kHoosatExplorerMainnet,
+    kHoosatExplorerEU,
   ],
-  kHoosatNetworkIdTestnet: [
-    kHoosatExplorerTestnet,
-  ],
+  // No real testnet explorer exists in our infra -- an empty list hides
+  // the option entirely instead of exposing a dead link.
+  kHoosatNetworkIdTestnet: [],
   kHoosatNetworkIdDevnet: [],
   kHoosatNetworkIdSimnet: [],
 };

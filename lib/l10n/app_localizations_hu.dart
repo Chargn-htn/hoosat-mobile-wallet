@@ -768,7 +768,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Próbáld ki a Hoosatot, a Hoosat mobiltárcáját!\nWebsite - mobile.hoosat.fi';
+      'Próbáld ki a Hoosatot, a Hoosat mobiltárcáját!\nWebsite - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Valami hiba történt.';

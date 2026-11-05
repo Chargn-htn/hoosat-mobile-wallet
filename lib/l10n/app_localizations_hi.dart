@@ -767,7 +767,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'कैस्पियम - कास्पा मोबाइल वॉलेट देखें।\nवेबसाइट - mobile.hoosat.fi';
+      'कैस्पियम - कास्पा मोबाइल वॉलेट देखें।\nवेबसाइट - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'कुछ गलत हो गया';
