@@ -54,7 +54,11 @@ class HoosatLightTheme extends BaseTheme {
   Color backgroundDarkest = chipBg;
 
   Color text = nearBlackText;
-  Color text60 = grey.withOpacitySafe(0.6);
+  // 0.8 not 0.6: 0.6 measured 3.01:1 on the light background, short of
+  // WCAG AA's 4.5:1 for normal text. text60 is only ever used as a text
+  // color (never a button/icon background), so this is safe to darken
+  // on its own.
+  Color text60 = grey.withOpacitySafe(0.8);
   Color text45 = grey.withOpacitySafe(0.45);
   Color text30 = grey.withOpacitySafe(0.3);
   Color text20 = grey.withOpacitySafe(0.2);

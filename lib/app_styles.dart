@@ -5,6 +5,12 @@ import 'themes/themes.dart';
 const kDefaultFontFamily = 'NunitoSans';
 const kMonospaceFontFamily = 'RobotoMono';
 
+// theme.primary meets WCAG AA contrast for buttons/icons, but falls just
+// short (4.18:1) for small text on light mode's background -- used only as
+// a text color below, never touches theme.primary itself (buttons/icons
+// stay exactly as approved).
+const kPrimaryTextOnLight = Color(0xFF167D49);
+
 class AppFontSizes {
   static const smallest = 12.0;
   static const small = 14.0;
@@ -81,7 +87,7 @@ class AppStyles {
     fontFamily: kDefaultFontFamily,
     fontSize: AppFontSizes.small,
     fontWeight: FontWeight.w600,
-    color: theme.primary,
+    color: theme.isLightTheme ? kPrimaryTextOnLight : theme.primary,
   );
 
   // Text style for thin paragraph text with success color.
