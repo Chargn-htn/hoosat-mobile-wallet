@@ -23,7 +23,7 @@ class IntroBackupSeed extends ConsumerWidget {
 
     void goNext() {
       final intro = ref.read(introStateProvider.notifier);
-      intro.showIntroBackupConfirm();
+      intro.showIntroBackupVerify();
     }
 
     return Scaffold(

@@ -81,8 +81,8 @@ class IntroStateNotifier extends StateNotifier<IntroState> {
     _goToPage(IntroPage.backupSeed);
   }
 
-  void showIntroBackupConfirm() {
-    _goToPage(IntroPage.backupConfirm);
+  void showIntroBackupVerify() {
+    _goToPage(IntroPage.backupVerify);
   }
 
   void showIntroWalletName() {
