@@ -599,6 +599,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String get toggleFlash => 'Toggle flashlight';
 
   @override
+  String get riskDisclosureHeader => 'Before You Begin';
+
+  @override
+  String get riskDisclosureBody =>
+      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+
+  @override
+  String get riskDisclosureWarning =>
+      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+
+  @override
+  String get riskDisclosureAccept => 'I Understand, Continue';
+
+  @override
   String get secretInfo => '下一屏，将会看到您的助记词，它是存取资金的密码。请确保备份好，且不要与任何人透露。';
 
   @override

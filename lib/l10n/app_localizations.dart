@@ -1308,6 +1308,30 @@ abstract class AppLocalizations {
   /// **'Toggle flashlight'**
   String get toggleFlash;
 
+  /// No description provided for @riskDisclosureHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Before You Begin'**
+  String get riskDisclosureHeader;
+
+  /// No description provided for @riskDisclosureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.'**
+  String get riskDisclosureBody;
+
+  /// No description provided for @riskDisclosureWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.'**
+  String get riskDisclosureWarning;
+
+  /// No description provided for @riskDisclosureAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'I Understand, Continue'**
+  String get riskDisclosureAccept;
+
   /// No description provided for @secretInfo.
   ///
   /// In en, this message translates to:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../app_providers.dart';
@@ -16,6 +17,7 @@ class IntroScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final walletBundle = ref.watch(walletBundleProvider);
+    final riskDisclosureAccepted = useState(false);
 
     Future<bool> checkPin() async {
       final l10n = l10nOf(context);
@@ -100,6 +102,11 @@ class IntroScreen extends HookConsumerWidget {
     final wallets = walletBundle.wallets;
     if (wallets != null && wallets.isNotEmpty) {
       return const IntroWallets();
+    }
+    if (!riskDisclosureAccepted.value) {
+      return IntroRiskDisclosure(
+        onAccept: () => riskDisclosureAccepted.value = true,
+      );
     }
     return const IntroWelcome();
   }
