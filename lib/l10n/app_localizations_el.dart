@@ -787,7 +787,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Τσεκάρετε το Hoosat Mobile! Το φορητό πορτοφόλι για το Hoosat. Ιστοσελίδα - mobile.hoosat.fi';
+      'Τσεκάρετε το Hoosat Mobile! Το φορητό πορτοφόλι για το Hoosat. Ιστοσελίδα - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Κάτι πήγε στραβά';

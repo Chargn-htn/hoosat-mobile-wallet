@@ -773,7 +773,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Confira Hoosat Mobile! Carteira Hoosat.\nWebsite - mobile.hoosat.fi';
+      'Confira Hoosat Mobile! Carteira Hoosat.\nWebsite - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Algo deu errado';

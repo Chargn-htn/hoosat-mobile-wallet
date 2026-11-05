@@ -765,7 +765,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'بررسی Hoosat Mobile - کیف پول موبایلی Hoosat\nوبسایت - mobile.hoosat.fi';
+      'بررسی Hoosat Mobile - کیف پول موبایلی Hoosat\nوبسایت - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'خطایی پیش آمد';

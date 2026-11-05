@@ -23,41 +23,34 @@ class IntroWelcome extends ConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.10,
         ),
-        child: Column(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: FractionallySizedBox(
-                      widthFactor: 0.4,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.asset('assets/hoosat.png'),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 20,
-                      ),
-                      child: AutoSizeText(
-                        l10n.welcomeText,
-                        style: styles.textStyleParagraph,
-                        minFontSize: 18,
-                        maxLines: 4,
-                        stepGranularity: 0.5,
-                      ),
-                    ),
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              FractionallySizedBox(
+                widthFactor: 0.4,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.asset('assets/hoosat.png'),
+                ),
               ),
-            ),
-            const IntroActionsWidget(),
-          ],
+              Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
+                child: AutoSizeText(
+                  l10n.welcomeText,
+                  style: styles.textStyleParagraph,
+                  minFontSize: 18,
+                  maxLines: 4,
+                  stepGranularity: 0.5,
+                ),
+              ),
+              const SizedBox(height: 48),
+              const IntroActionsWidget(),
+            ],
+          ),
         ),
       ),
     );

@@ -61,81 +61,78 @@ class IntroWalletName extends HookConsumerWidget {
             bottom: MediaQuery.of(context).size.height * 0.035,
             top: MediaQuery.of(context).size.height * 0.075,
           ),
-          child: Column(children: [
-            Expanded(
-              child: Column(children: [
-                Row(children: [
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 20),
-                    child: const IntroBackButton(),
+          child: SingleChildScrollView(
+            child: Column(children: [
+              Row(children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 20),
+                  child: const IntroBackButton(),
+                ),
+              ]),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
+                alignment: const AlignmentDirectional(-1, 0),
+                child: AutoSizeText(
+                  l10n.walletName,
+                  maxLines: 3,
+                  stepGranularity: 0.5,
+                  style: styles.textStyleHeaderColored,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 16),
+                alignment: const AlignmentDirectional(-1, 0),
+                child: AutoSizeText(
+                  l10n.walletNameDescription,
+                  style: styles.textStyleParagraph,
+                  textAlign: TextAlign.start,
+                  maxLines: 5,
+                  stepGranularity: 0.5,
+                ),
+              ),
+              Column(children: [
+                AppTextField(
+                  topMargin: 30,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  focusNode: nameFocusNode,
+                  controller: nameController,
+                  maxLines: 1,
+                  autocorrect: false,
+                  textCapitalization: TextCapitalization.words,
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(25),
+                  ],
+                  onChanged: inputChanged,
+                  hintText: l10n.walletNameHint,
+                  keyboardType: TextInputType.text,
+                  style: styles.textStyleParagraphText,
+                ),
+                Container(
+                  alignment: AlignmentDirectional(0, 0),
+                  margin: EdgeInsets.only(top: 3),
+                  child: Text(
+                    nameError.value,
+                    style: styles.textStyleParagraphThinPrimary,
+                  ),
+                ),
+              ]),
+              const SizedBox(height: 48),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 28),
+                child: Column(children: [
+                  PrimaryButton(
+                    title: l10n.nextButton,
+                    onPressed: submitAndContinue,
+                  ),
+                  const SizedBox(height: 16),
+                  PrimaryOutlineButton(
+                    title: l10n.goBackButton,
+                    onPressed: goBack,
                   ),
                 ]),
-                Container(
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
-                  alignment: const AlignmentDirectional(-1, 0),
-                  child: AutoSizeText(
-                    l10n.walletName,
-                    maxLines: 3,
-                    stepGranularity: 0.5,
-                    style: styles.textStyleHeaderColored,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 16),
-                  alignment: const AlignmentDirectional(-1, 0),
-                  child: AutoSizeText(
-                    l10n.walletNameDescription,
-                    style: styles.textStyleParagraph,
-                    textAlign: TextAlign.start,
-                    maxLines: 5,
-                    stepGranularity: 0.5,
-                  ),
-                ),
-                Expanded(
-                  child: Column(children: [
-                    AppTextField(
-                      topMargin: 30,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      focusNode: nameFocusNode,
-                      controller: nameController,
-                      maxLines: 1,
-                      autocorrect: false,
-                      textCapitalization: TextCapitalization.words,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(25),
-                      ],
-                      onChanged: inputChanged,
-                      hintText: l10n.walletNameHint,
-                      keyboardType: TextInputType.text,
-                      style: styles.textStyleParagraphText,
-                    ),
-                    Container(
-                      alignment: AlignmentDirectional(0, 0),
-                      margin: EdgeInsets.only(top: 3),
-                      child: Text(
-                        nameError.value,
-                        style: styles.textStyleParagraphThinPrimary,
-                      ),
-                    ),
-                  ]),
-                ),
-              ]),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
-              child: Column(children: [
-                PrimaryButton(
-                  title: l10n.nextButton,
-                  onPressed: submitAndContinue,
-                ),
-                const SizedBox(height: 16),
-                PrimaryOutlineButton(
-                  title: l10n.goBackButton,
-                  onPressed: goBack,
-                ),
-              ]),
-            ),
-          ]),
+              ),
+            ]),
+          ),
         ),
       ),
     );

@@ -771,7 +771,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Periksa Hoosat Mobile - Dompet Seluler Hoosat.\nSitus Web - mobile.hoosat.fi';
+      'Periksa Hoosat Mobile - Dompet Seluler Hoosat.\nSitus Web - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Ada yang salah';

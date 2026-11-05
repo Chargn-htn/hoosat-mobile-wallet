@@ -773,7 +773,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Попробуйте Hoosat Mobile - мобильный кошелёк Hoosat.\nВеб-сайт - mobile.hoosat.fi';
+      'Попробуйте Hoosat Mobile - мобильный кошелёк Hoosat.\nВеб-сайт - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Что-то пошло не так';

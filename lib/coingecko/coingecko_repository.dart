@@ -63,8 +63,10 @@ Future<num?> getCoinPaprikaApiPrice(String fiat) async {
 
 Future<num?> getHoosatApiPrice(String fiat) async {
   try {
+    // api.network.hoosat.fi was Tonto's dead domain; our own htn-rest-server
+    // (explorer-nz.hoosat.network) exposes the identical /info/price shape.
     final uri = Uri.https(
-      'api.network.hoosat.fi',
+      'explorer-nz.hoosat.network',
       '/info/price',
       {'stringOnly': 'false'},
     );

@@ -770,7 +770,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Zapoznaj się z mobilnym portfelem Hoosat Mobile. \nStrona internetowa - mobile.hoosat.fi.';
+      'Zapoznaj się z mobilnym portfelem Hoosat Mobile. \nStrona internetowa - hoosatworld.net.';
 
   @override
   String get somethingWentWrong => 'Coś poszło nie tak';

@@ -774,7 +774,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Probeer Hoosat Mobile! Hoosat Mobiele Wallet.\nWebsite - mobile.hoosat.fi';
+      'Probeer Hoosat Mobile! Hoosat Mobiele Wallet.\nWebsite - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Er is iets verkeerd gegaan';

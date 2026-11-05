@@ -766,7 +766,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Hoosat Mobile - Hoosat Mobile Wallet  ویب سائٹ - mobile.hoosat.fi چیک کریں۔';
+      'Hoosat Mobile - Hoosat Mobile Wallet  ویب سائٹ - hoosatworld.net چیک کریں۔';
 
   @override
   String get somethingWentWrong => 'کچھ غلط ہو گیا';

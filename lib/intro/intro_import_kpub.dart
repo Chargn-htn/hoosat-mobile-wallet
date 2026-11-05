@@ -95,12 +95,11 @@ class IntroImportKpub extends HookConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.075,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Expanded(
-              child: ListView(
-                shrinkWrap: true,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Column(
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
@@ -179,17 +178,18 @@ class IntroImportKpub extends HookConsumerWidget {
                   ]),
                 ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
-              child: Column(children: [
-                PrimaryButton(
-                  title: l10n.nextButton,
-                  onPressed: submitKpub,
-                ),
-              ]),
-            ),
-          ],
+              const SizedBox(height: 48),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 28),
+                child: Column(children: [
+                  PrimaryButton(
+                    title: l10n.nextButton,
+                    onPressed: submitKpub,
+                  ),
+                ]),
+              ),
+            ],
+          ),
         ),
       ),
     );

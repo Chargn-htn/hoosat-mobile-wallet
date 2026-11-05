@@ -771,7 +771,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Hoosat Mobile - Hoosat Mobil Cüzdana göz atın.\nWeb sitesi - mobile.hoosat.fi';
+      'Hoosat Mobile - Hoosat Mobil Cüzdana göz atın.\nWeb sitesi - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Bir hata oluştu';

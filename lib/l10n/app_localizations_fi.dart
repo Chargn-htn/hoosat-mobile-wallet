@@ -766,7 +766,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Käy tutustumassa Hoosatiin — Hoosat-mobiililompakko.\nVerkkosivusto — mobile.hoosat.fi';
+      'Käy tutustumassa Hoosatiin — Hoosat-mobiililompakko.\nVerkkosivusto — hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Jokin meni pieleen';

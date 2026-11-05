@@ -770,7 +770,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Научете повече за Hoosat Mobile - Официалният Hoosat мобилен портфейл. \nУебсайт - mobile.hoosat.fi';
+      'Научете повече за Hoosat Mobile - Официалният Hoosat мобилен портфейл. \nУебсайт - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Нещо се обърка';

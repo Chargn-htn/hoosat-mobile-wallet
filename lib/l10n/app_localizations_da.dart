@@ -769,7 +769,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Tjek Hoosat Mobile - Hoosat Mobil Pung.\nHjemmeside - mobile.hoosat.fi';
+      'Tjek Hoosat Mobile - Hoosat Mobil Pung.\nHjemmeside - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Noget gik galt';

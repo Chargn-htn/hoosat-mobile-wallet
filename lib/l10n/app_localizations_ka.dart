@@ -772,7 +772,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'იხილეთ Hoosat Mobile - Hoosat-ს მობილური საფულე. \nვებსაიტი - mobile.hoosat.fi';
+      'იხილეთ Hoosat Mobile - Hoosat-ს მობილური საფულე. \nვებსაიტი - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Რაღაც წავიდა არასწორად';

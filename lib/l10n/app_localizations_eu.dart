@@ -770,7 +770,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Ikusi Hoosat Mobile - Hoosat mugikorren Kartera. \nWebgunea - mobile.hoosat.fi';
+      'Ikusi Hoosat Mobile - Hoosat mugikorren Kartera. \nWebgunea - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Zerbait gaizki joan da';

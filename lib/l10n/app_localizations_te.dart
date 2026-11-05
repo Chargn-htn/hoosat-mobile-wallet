@@ -776,7 +776,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'కాస్పియం - Hoosat మొబైల్ వాలెట్‌ని తనిఖీ చేయండి.\nవెబ్సైట్ - mobile.hoosat.fi';
+      'కాస్పియం - Hoosat మొబైల్ వాలెట్‌ని తనిఖీ చేయండి.\nవెబ్సైట్ - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'ఎక్కడో తేడ జరిగింది';

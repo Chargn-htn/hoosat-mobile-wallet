@@ -1587,7 +1587,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareHoosatMobileText.
   ///
   /// In en, this message translates to:
-  /// **'Check out Hoosat Mobile - Hoosat Mobile Wallet.\nWebsite - mobile.hoosat.fi'**
+  /// **'Check out Hoosat Mobile - Hoosat Mobile Wallet.\nWebsite - hoosatworld.net'**
   String get shareHoosatMobileText;
 
   /// No description provided for @somethingWentWrong.

@@ -768,7 +768,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'Vyzkoušejte Hoosat Mobile - mobilní peněženka pro Kaspu. Web - mobile.hoosat.fi';
+      'Vyzkoušejte Hoosat Mobile - mobilní peněženka pro Kaspu. Web - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'Něco se pokazilo';

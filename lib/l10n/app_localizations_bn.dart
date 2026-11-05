@@ -769,7 +769,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get shareHoosatMobileText =>
-      'কাসপিয়াম - কাসপা মোবাইল ওয়ালেট দেখুন।\nওয়েবসাইট - mobile.hoosat.fi';
+      'কাসপিয়াম - কাসপা মোবাইল ওয়ালেট দেখুন।\nওয়েবসাইট - hoosatworld.net';
 
   @override
   String get somethingWentWrong => 'কিছু ভুল হয়েছে';
