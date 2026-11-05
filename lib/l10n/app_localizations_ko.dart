@@ -605,6 +605,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get secretPhrase => '비밀 문구';
 
   @override
+  String get verifyBackupTitle => 'Verify Your Backup';
+
+  @override
+  String get verifyBackupInstruction =>
+      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+
+  @override
+  String verifyBackupWordPrompt(int index) {
+    return 'What is word #$index?';
+  }
+
+  @override
+  String get verifyBackupWrongAnswer =>
+      'That\'s not quite right. Check your backup and try again.';
+
+  @override
   String get secretPhrase12Words => '12 WORDS';
 
   @override

@@ -12,7 +12,7 @@ enum IntroPage {
   importKpub,
   backupSeed,
   backupSafety,
-  backupConfirm,
+  backupVerify,
 }
 
 @freezed

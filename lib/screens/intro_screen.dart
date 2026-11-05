@@ -80,7 +80,7 @@ class IntroScreen extends HookConsumerWidget {
         IntroPage.importKpub => const IntroImportKpub(),
         IntroPage.backupSeed => const IntroBackupSeed(),
         IntroPage.backupSafety => const IntroBackupSafety(),
-        IntroPage.backupConfirm => const IntroBackupConfirm(),
+        IntroPage.backupVerify => const IntroBackupVerify(),
       };
     }
 

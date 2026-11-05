@@ -1308,6 +1308,30 @@ abstract class AppLocalizations {
   /// **'Secret Phrase'**
   String get secretPhrase;
 
+  /// No description provided for @verifyBackupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Your Backup'**
+  String get verifyBackupTitle;
+
+  /// No description provided for @verifyBackupInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Select the correct word for each position to confirm you\'ve saved your secret phrase.'**
+  String get verifyBackupInstruction;
+
+  /// No description provided for @verifyBackupWordPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What is word #{index}?'**
+  String verifyBackupWordPrompt(int index);
+
+  /// No description provided for @verifyBackupWrongAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s not quite right. Check your backup and try again.'**
+  String get verifyBackupWrongAnswer;
+
   /// No description provided for @secretPhrase12Words.
   ///
   /// In en, this message translates to:
