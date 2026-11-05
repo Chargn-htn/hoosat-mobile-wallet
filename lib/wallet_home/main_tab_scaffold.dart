@@ -5,9 +5,10 @@ import '../app_providers.dart';
 import '../settings_advanced/accounts_screen.dart';
 import '../settings_drawer/settings_drawer.dart';
 import '../transactions/transactions_widget.dart';
-import '../wallet_home/wallet_home.dart';
+import 'home_tab_content.dart';
 import 'main_tab_bar.dart';
 import 'main_tab_provider.dart';
+import 'wallet_background_tasks.dart';
 
 /// Root content for the main screen: whichever of the 4 tabs (Mock4
 /// design) is selected, plus the floating pill tab bar underneath.
@@ -24,7 +25,7 @@ class MainTabScaffold extends ConsumerWidget {
     final tab = ref.watch(mainTabProvider);
 
     final content = switch (tab) {
-      MainTab.home => const WalletHome(),
+      MainTab.home => const HomeTabContent(),
       MainTab.accounts => const AccountsScreen(),
       MainTab.activity => const _ActivityTab(),
       MainTab.settings => const SettingsSheet(),
@@ -32,6 +33,8 @@ class MainTabScaffold extends ConsumerWidget {
 
     return Column(
       children: [
+        // Invisible; runs regardless of which tab is showing.
+        const WalletBackgroundTasks(),
         Expanded(
           child: Container(color: theme.background, child: content),
         ),

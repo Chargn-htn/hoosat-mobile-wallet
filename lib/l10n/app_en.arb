@@ -456,6 +456,14 @@
   "sendFromAny": "Any",
   "home": "Home",
   "activity": "Activity",
+  "totalBalance": "Total balance",
+  "seeAll": "See all",
+  "homeGreeting": "Hey, {walletName}",
+  "@homeGreeting": {
+    "placeholders": {
+      "walletName": {"type": "String", "example": "My Wallet"}
+    }
+  },
   "balance": "Balance",
   "maxSend": "Max Send",
   "compoundUppercased": "COMPOUND",

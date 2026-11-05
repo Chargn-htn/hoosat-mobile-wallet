@@ -2059,6 +2059,24 @@ abstract class AppLocalizations {
   /// **'Activity'**
   String get activity;
 
+  /// No description provided for @totalBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Total balance'**
+  String get totalBalance;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAll;
+
+  /// No description provided for @homeGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hey, {walletName}'**
+  String homeGreeting(String walletName);
+
   /// No description provided for @balance.
   ///
   /// In en, this message translates to:
