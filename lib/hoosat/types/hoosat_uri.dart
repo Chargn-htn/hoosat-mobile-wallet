@@ -38,7 +38,7 @@ class HoosatUri with _$HoosatUri {
     String uri, {
     AddressPrefix prefix = AddressPrefix.unknown,
   }) {
-    final uriParts = uri.split('?');
+    final uriParts = uri.trim().split('?');
     if (uriParts.length > 2) {
       throw Exception('Invalid URI: $uri');
     }

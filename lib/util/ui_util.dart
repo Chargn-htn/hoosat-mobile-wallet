@@ -57,7 +57,7 @@ abstract class UIUtil {
       final changeAddress = await notifier.changeAddressFor(changeAddressMode);
 
       final toAddress = Address.tryParse(
-        address,
+        address.trim(),
         expectedPrefix: changeAddress.address.prefix,
       );
 

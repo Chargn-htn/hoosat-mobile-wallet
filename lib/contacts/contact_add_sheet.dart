@@ -62,7 +62,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
           _showAddressHint = true;
           final prefix = ref.read(addressPrefixProvider);
           final address = Address.tryParse(
-            _addressController.text,
+            _addressController.text.trim(),
             expectedPrefix: prefix,
           );
           if (address != null) {
@@ -111,7 +111,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
             onSubmitted: (text) {
               final scope = FocusScope.of(context);
               if (widget.address == null) {
-                final address = _addressController.text;
+                final address = _addressController.text.trim();
                 final prefix = ref.read(addressPrefixProvider);
                 if (!Address.isValid(address, prefix)) {
                   scope.requestFocus(_addressFocusNode);
@@ -157,7 +157,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
                   UIUtil.showSnackbar(l10n.qrInvalidAddress, context);
                 } else {
                   final address = Address.tryParse(
-                    data,
+                    data.trim(),
                     expectedPrefix: addressPrefix,
                   );
                   if (mounted && address != null) {
@@ -202,7 +202,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
             suffixShowFirstCondition: _showPasteButton,
             onChanged: (text) {
               final address = Address.tryParse(
-                text,
+                text.trim(),
                 expectedPrefix: addressPrefix,
               );
               if (address != null) {
@@ -276,8 +276,9 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
     }
     final newContact = Contact(
       name: _nameController.text,
-      address:
-          widget.address == null ? _addressController.text : widget.address!,
+      address: widget.address == null
+          ? _addressController.text.trim()
+          : widget.address!,
     );
     final contacts = ref.read(contactsProvider);
     await contacts.addContact(newContact);
@@ -298,7 +299,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
         setState(() {
           _addressValidationText = l10n.addressMising;
         });
-      } else if (Address.tryParse(_addressController.text,
+      } else if (Address.tryParse(_addressController.text.trim(),
               expectedPrefix: prefix) ==
           null) {
         isValid = false;
@@ -309,7 +310,7 @@ class _ContactAddSheetState extends ConsumerState<ContactAddSheet> {
         _addressFocusNode.unfocus();
         bool addressExists = await ref
             .read(contactsProvider)
-            .contactExistsWithAddress(_addressController.text);
+            .contactExistsWithAddress(_addressController.text.trim());
         if (addressExists) {
           setState(() {
             isValid = false;
