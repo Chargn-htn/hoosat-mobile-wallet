@@ -107,6 +107,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get available => 'उपलब्ध';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'मैंने इसका बैकअप कर लिया है';
 
   @override
@@ -607,6 +610,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get scanQrCodeError => 'QR कोड पार्स करने में विफल';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'अगली स्क्रीन में, आप अपना गुप्त वाक्यांश देखेंगे। यह आपके फंड तक पहुंचने के लिए एक पासवर्ड है। यह महत्वपूर्ण है कि आप इसका बैकअप लें और इसे कभी किसी के साथ साझा न करें।';
 
@@ -766,6 +775,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get themeLight => 'लाइट थीम';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#यह वॉलेट';

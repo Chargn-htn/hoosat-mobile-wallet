@@ -106,6 +106,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get available => 'Available';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'バックアップしました';
 
   @override
@@ -603,6 +606,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       '次の画面で、シークレットフレーズが表示されます。資金にアクセスするためのパスワードです。バックアップして、誰とも共有しないでください。';
 
@@ -762,6 +771,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get themeLight => 'Light Theme';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#This Wallet';

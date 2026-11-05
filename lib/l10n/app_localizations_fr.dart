@@ -110,6 +110,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get available => 'Disponible';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Je l\'ai sauvegardé';
 
   @override
@@ -621,6 +624,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get scanQrCodeError => 'Échec de l\'analyse du QR Code';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Dans l\'écran suivant, vous verrez votre phrase secrète. Il s\'agit d\'un mot de passe qui permet d\'accéder à vos fonds. Il est crucial que vous le sauvegardiez et que vous ne le partagiez jamais avec qui que ce soit.';
 
@@ -781,6 +790,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get themeLight => 'Thème clair';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Ce portefeuille';

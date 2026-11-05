@@ -107,6 +107,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get available => 'Dostupný';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Zálohoval jsem to';
 
   @override
@@ -608,6 +611,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get scanQrCodeError => 'Selhání rozebrání qr kódu';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Na následující obrazovce uvidíte svoji tajnou frázi. Jedná se o heslo pro přístup k vašim finančním prostředkům. Je klíčové, abyste jej zálohovali a nikdy s nikým nesdíleli.';
 
@@ -767,6 +776,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get themeLight => 'Světlý Motiv';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Tato Peněženka';

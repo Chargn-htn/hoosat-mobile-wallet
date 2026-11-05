@@ -109,6 +109,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get available => 'Доступно';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Я сделал резервную копию';
 
   @override
@@ -613,6 +616,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get scanQrCodeError => 'Не удалось распознать содержимое QR-кода';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'На следующем экране вы увидите свою seed-фразу. Она - ключ для управления вашими средствами. Крайне важно, чтобы вы создали ее резервную копию и никогда никому ee не передавали.';
 
@@ -772,6 +781,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get themeLight => 'Светлая тема';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Этот кошелек';

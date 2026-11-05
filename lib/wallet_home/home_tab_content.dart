@@ -259,42 +259,48 @@ class HomeTabContent extends HookConsumerWidget {
                 ),
                 Row(
                   children: [
-                    InkWell(
-                      borderRadius: BorderRadius.circular(18),
-                      onTap: toggleTheme,
-                      child: Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
-                          color: theme.backgroundDark,
-                          border: Border.all(color: theme.text10),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          theme.isLightTheme
-                              ? Icons.dark_mode_outlined
-                              : Icons.light_mode_outlined,
-                          size: 16,
-                          color: theme.text,
+                    Tooltip(
+                      message: l10n.toggleTheme,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(18),
+                        onTap: toggleTheme,
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                            color: theme.backgroundDark,
+                            border: Border.all(color: theme.text10),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            theme.isLightTheme
+                                ? Icons.dark_mode_outlined
+                                : Icons.light_mode_outlined,
+                            size: 16,
+                            color: theme.text,
+                          ),
                         ),
                       ),
                     ),
                     const SizedBox(width: 8),
-                    InkWell(
-                      borderRadius: BorderRadius.circular(18),
-                      onTap: () => goToTab(MainTab.settings),
-                      child: Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
-                          color: theme.backgroundDark,
-                          border: Border.all(color: theme.text10),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.settings_outlined,
-                          size: 16,
-                          color: theme.text,
+                    Tooltip(
+                      message: l10n.settingsHeader,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(18),
+                        onTap: () => goToTab(MainTab.settings),
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                            color: theme.backgroundDark,
+                            border: Border.all(color: theme.text10),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.settings_outlined,
+                            size: 16,
+                            color: theme.text,
+                          ),
                         ),
                       ),
                     ),

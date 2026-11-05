@@ -107,6 +107,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get available => 'Në dispozicion';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Unë e kam ruajtur atë';
 
   @override
@@ -611,6 +614,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get scanQrCodeError => 'Analizimi i kodit qr dështoi';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Në ekranin tjetër, do të shihni frazën tuaj sekrete. Është një fjalëkalim për të hyrë në fondet tuaja. Është thelbësore që ta mbështesni atë dhe të mos e ndani kurrë me askënd.';
 
@@ -770,6 +779,9 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema e lehtë';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Ky Portofol';

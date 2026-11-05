@@ -54,9 +54,12 @@ class NetworkMenu extends ConsumerWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: AppIconButton(
-                      icon: AppIcons.back,
-                      onPressed: onBackAction,
+                    child: Tooltip(
+                      message: l10n.back,
+                      child: AppIconButton(
+                        icon: AppIcons.back,
+                        onPressed: onBackAction,
+                      ),
                     ),
                   ),
                   Text(

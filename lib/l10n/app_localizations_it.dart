@@ -109,6 +109,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get available => 'Disponibile';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'L\'ho salvata';
 
   @override
@@ -620,6 +623,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get scanQrCodeError => 'Non è possibile decifrare il codice QR';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Nella prossima schermata, vedrai la tua frase segreta. È la password per accedere ai tuoi fondi. È fondamentale che tu ne faccia una copia e che non la condivida con nessuno.';
 
@@ -781,6 +790,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema chiaro';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Questo wallet';

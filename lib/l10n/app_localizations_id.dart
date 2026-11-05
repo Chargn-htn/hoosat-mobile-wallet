@@ -107,6 +107,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get available => 'Tersedia';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Saya Sudah Mencadangkannya';
 
   @override
@@ -610,6 +613,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get scanQrCodeError => 'Gagal mengurai kode QR';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'Pada layar berikutnya, Anda akan melihat frasa rahasia Anda. Ini adalah kata sandi untuk mengakses dana Anda. Sangat penting bagi Anda untuk mencadangkannya dan tidak pernah membaginya dengan siapa pun.';
 
@@ -770,6 +779,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema Terang';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Dompet Ini';

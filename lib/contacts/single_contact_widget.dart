@@ -23,6 +23,7 @@ class SingleContactWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
     final styles = ref.watch(stylesProvider);
+    final l10n = l10nOf(context);
 
     void showDetails() {
       Sheets.showAppHeightNineSheet(
@@ -34,7 +35,6 @@ class SingleContactWidget extends ConsumerWidget {
 
     Future<void> copyAddress() async {
       await Clipboard.setData(ClipboardData(text: contact.address));
-      final l10n = l10nOf(context);
       final message = l10n.contactAddressCopied(contact.address);
       UIUtil.showSnackbar(message, context);
     }
@@ -73,9 +73,12 @@ class SingleContactWidget extends ConsumerWidget {
                   ),
                 ),
                 Center(
-                  child: AppIconButton(
-                    icon: Icons.copy,
-                    onPressed: copyAddress,
+                  child: Tooltip(
+                    message: l10n.copyAddress,
+                    child: AppIconButton(
+                      icon: Icons.copy,
+                      onPressed: copyAddress,
+                    ),
                   ),
                 ),
               ],

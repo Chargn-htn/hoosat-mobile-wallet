@@ -108,6 +108,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get available => 'Disponible';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'N\'he fet una còpia de seguretat';
 
   @override
@@ -611,6 +614,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get scanQrCodeError => 'Error al obtenir codi QR';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'En la següent pantalla, veuràs una frase secreta. És una contrasenya per accedir als teus fons. És crucial que en facis una còpia de seguretat i no la comparteixis amb ningú.';
 
@@ -770,6 +779,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get themeLight => 'Tema clar';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Aquest moneder';

@@ -108,6 +108,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get available => 'Доступно';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Резервну копію створено';
 
   @override
@@ -614,6 +617,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get scanQrCodeError => 'Не вдалося розпізнати QR-код';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'На наступному екрані ви побачите свою секретну seed-фразу. Це пароль для доступу до ваших коштів. Надзвичайно важливо, щоб ви створили його резервну копію і ніколи нікому її не повідомляли.';
 
@@ -773,6 +782,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get themeLight => 'Світла тема';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Цей гаманець';

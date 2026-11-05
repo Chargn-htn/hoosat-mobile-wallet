@@ -108,6 +108,9 @@ class AppLocalizationsSr extends AppLocalizations {
   String get available => 'Доступно';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Направавио/ла сам Резервну Копију';
 
   @override
@@ -610,6 +613,12 @@ class AppLocalizationsSr extends AppLocalizations {
   String get scanQrCodeError => 'Неуспело рашчлањавање КЈУ-АР кода';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'На следећем екрану, видећете вашу тајну фразу. Она је шифра за приступ вашим средствима. Од пресудног је значаја да направите резервну копију и да је никада не поделите нисаким.';
 
@@ -769,6 +778,9 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get themeLight => 'Светла Тема';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Овај Новчаник';

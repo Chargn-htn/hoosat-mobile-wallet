@@ -107,6 +107,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get available => 'Egyenleg';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get backupConfirmButton => 'Mentés kész!';
 
   @override
@@ -608,6 +611,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get scanQrCodeError => 'Nem sikerült a QR-kód elemzése';
 
   @override
+  String get scanFromImage => 'Scan from image';
+
+  @override
+  String get toggleFlash => 'Toggle flashlight';
+
+  @override
   String get secretInfo =>
       'A következő képernyőn látni fogod a Seed Phrase-t. Ez a 24 szó az, amivel mindig el fogod tudni érni a tárcád. NAGYON fontos, hogy  másolatot készíts róla -ÍRD LE- és soha ne oszd meg senkivel.  ';
 
@@ -767,6 +776,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get themeLight => 'Világos';
+
+  @override
+  String get toggleTheme => 'Switch theme';
 
   @override
   String get thisWallet => '#Ez a tárca';
