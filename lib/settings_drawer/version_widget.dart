@@ -7,12 +7,10 @@ import '../core/core_providers.dart';
 import '../l10n/l10n.dart';
 import '../util/util.dart';
 
-// network.hoosat.fi was Tonto's dead domain. Privacy policy is live on our
-// own infra now (deployed 2026-11-05, see htn_phone_wallet_roadmap.md step
-// 7). No real EULA replacement exists anywhere yet -- flagged separately,
-// this link is still dead until real EULA content exists.
+// network.hoosat.fi was Tonto's dead domain. Both privacy policy and EULA
+// are live on our own infra now (deployed 2026-11-05).
 const kPrivacyUrl = 'https://hoosatworld.net/privacy.html';
-const kEulaUrl = 'https://network.hoosat.fi/public/HoosatMobileEULA.html';
+const kEulaUrl = 'https://hoosatworld.net/eula.html';
 
 class VersionWidget extends HookConsumerWidget {
   const VersionWidget({Key? key}) : super(key: key);
