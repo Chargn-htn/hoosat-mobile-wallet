@@ -12,6 +12,15 @@ import '../widgets/buttons.dart';
 /// when no wallet exists yet. Not part of the IntroPage push/pop state
 /// machine: gates entry into it instead, so every path (new wallet,
 /// import, view-only) sees it exactly once with no extra plumbing.
+///
+/// Deliberately avoids Expanded/Flexible/Spacer in this Column -- found via
+/// real on-device testing (2026-11-05) that an Expanded sibling before an
+/// interactive widget silently breaks touch on that widget in this app's
+/// context specifically (reproduced in isolation, does not happen in a
+/// bare Flutter app -- see the phone-wallet-roadmap memory for the full
+/// writeup). A SingleChildScrollView + fixed spacing sidesteps it entirely
+/// and is the pattern to prefer on any new screen until the real cause is
+/// found.
 class IntroRiskDisclosure extends ConsumerWidget {
   final VoidCallback onAccept;
 
@@ -31,64 +40,60 @@ class IntroRiskDisclosure extends ConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.075,
         ),
-        child: Column(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin:
-                        const EdgeInsetsDirectional.only(start: 40, top: 15),
-                    child: Icon(
-                      AppIcons.security,
-                      size: 60,
-                      color: theme.primary,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: AutoSizeText(
-                      l10n.riskDisclosureHeader,
-                      style: styles.textStyleHeaderColored,
-                      stepGranularity: 0.1,
-                      maxLines: 1,
-                      minFontSize: 12,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 40, right: 40, top: 15),
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Column(
-                      children: [
-                        AutoSizeText(
-                          l10n.riskDisclosureBody,
-                          style: styles.textStyleParagraph,
-                          maxLines: 6,
-                          stepGranularity: 0.5,
-                        ),
-                        Container(
-                          margin: const EdgeInsetsDirectional.only(top: 15),
-                          child: AutoSizeText(
-                            l10n.riskDisclosureWarning,
-                            style: styles.textStyleParagraphPrimary,
-                            maxLines: 5,
-                            stepGranularity: 0.5,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsetsDirectional.only(start: 40, top: 15),
+                child: Icon(
+                  AppIcons.security,
+                  size: 60,
+                  color: theme.primary,
+                ),
               ),
-            ),
-            PrimaryButton(
-              title: l10n.riskDisclosureAccept,
-              margin: const EdgeInsets.fromLTRB(28, 0, 28, 8),
-              onPressed: onAccept,
-            ),
-          ],
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
+                alignment: AlignmentDirectional(-1, 0),
+                child: AutoSizeText(
+                  l10n.riskDisclosureHeader,
+                  style: styles.textStyleHeaderColored,
+                  stepGranularity: 0.1,
+                  maxLines: 1,
+                  minFontSize: 12,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 15),
+                alignment: AlignmentDirectional.centerStart,
+                child: Column(
+                  children: [
+                    AutoSizeText(
+                      l10n.riskDisclosureBody,
+                      style: styles.textStyleParagraph,
+                      maxLines: 6,
+                      stepGranularity: 0.5,
+                    ),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(top: 15),
+                      child: AutoSizeText(
+                        l10n.riskDisclosureWarning,
+                        style: styles.textStyleParagraphPrimary,
+                        maxLines: 5,
+                        stepGranularity: 0.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 48),
+              PrimaryButton(
+                title: l10n.riskDisclosureAccept,
+                margin: const EdgeInsets.fromLTRB(28, 0, 28, 8),
+                onPressed: onAccept,
+              ),
+            ],
+          ),
         ),
       ),
     );

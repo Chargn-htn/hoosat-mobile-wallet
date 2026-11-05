@@ -31,72 +31,68 @@ class IntroBackupSafety extends ConsumerWidget {
           bottom: MediaQuery.of(context).size.height * 0.035,
           top: MediaQuery.of(context).size.height * 0.075,
         ),
-        child: Column(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 20),
-                      child: const IntroBackButton(),
-                    ),
-                  ]),
-                  Container(
-                    margin:
-                        const EdgeInsetsDirectional.only(start: 40, top: 15),
-                    child: Icon(
-                      AppIcons.security,
-                      size: 60,
-                      color: theme.primary,
-                    ),
-                  ),
-                  // The header
-                  Container(
-                    margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: AutoSizeText(
-                      l10n.secretInfoHeader,
-                      style: styles.textStyleHeaderColored,
-                      stepGranularity: 0.1,
-                      maxLines: 1,
-                      minFontSize: 12,
-                    ),
-                  ),
-                  // The paragraph
-                  Container(
-                    margin: const EdgeInsets.only(left: 40, right: 40, top: 15),
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Column(
-                      children: [
-                        AutoSizeText(
-                          l10n.secretInfo,
-                          style: styles.textStyleParagraph,
-                          maxLines: 5,
-                          stepGranularity: 0.5,
-                        ),
-                        Container(
-                          margin: const EdgeInsetsDirectional.only(top: 15),
-                          child: AutoSizeText(
-                            l10n.secretWarning,
-                            style: styles.textStyleParagraphPrimary,
-                            maxLines: 4,
-                            stepGranularity: 0.5,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 20),
+                  child: const IntroBackButton(),
+                ),
+              ]),
+              Container(
+                margin: const EdgeInsetsDirectional.only(start: 40, top: 15),
+                child: Icon(
+                  AppIcons.security,
+                  size: 60,
+                  color: theme.primary,
+                ),
               ),
-            ),
-            PrimaryButton(
-              title: l10n.gotItButton,
-              margin: const EdgeInsets.fromLTRB(28, 0, 28, 8),
-              onPressed: goNext,
-            ),
-          ],
+              // The header
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
+                alignment: AlignmentDirectional(-1, 0),
+                child: AutoSizeText(
+                  l10n.secretInfoHeader,
+                  style: styles.textStyleHeaderColored,
+                  stepGranularity: 0.1,
+                  maxLines: 1,
+                  minFontSize: 12,
+                ),
+              ),
+              // The paragraph
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 15),
+                alignment: AlignmentDirectional.centerStart,
+                child: Column(
+                  children: [
+                    AutoSizeText(
+                      l10n.secretInfo,
+                      style: styles.textStyleParagraph,
+                      maxLines: 5,
+                      stepGranularity: 0.5,
+                    ),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(top: 15),
+                      child: AutoSizeText(
+                        l10n.secretWarning,
+                        style: styles.textStyleParagraphPrimary,
+                        maxLines: 4,
+                        stepGranularity: 0.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 48),
+              PrimaryButton(
+                title: l10n.gotItButton,
+                margin: const EdgeInsets.fromLTRB(28, 0, 28, 8),
+                onPressed: goNext,
+              ),
+            ],
+          ),
         ),
       ),
     );
