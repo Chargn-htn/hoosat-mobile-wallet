@@ -1030,6 +1030,17 @@ class AppLocalizationsSr extends AppLocalizations {
   String get activity => 'Activity';
 
   @override
+  String get totalBalance => 'Total balance';
+
+  @override
+  String get seeAll => 'See all';
+
+  @override
+  String homeGreeting(String walletName) {
+    return 'Hey, $walletName';
+  }
+
+  @override
   String get balance => 'Balance';
 
   @override

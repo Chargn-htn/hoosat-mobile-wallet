@@ -7,14 +7,8 @@ import '../auth_sign/auth_sign_util.dart';
 import '../hoosat/hoosat.dart';
 import '../hoosat/types.dart';
 import '../l10n/l10n.dart';
-import '../main_card/main_card.dart';
-import '../transactions/transactions_widget.dart';
-import '../transactions/tx_filter_dialog.dart';
-import '../util/ui_util.dart';
-import '../utxos/utxos_widget.dart';
-import '../widgets/gradient_widgets.dart';
-import 'wallet_action_buttons.dart';
 import '../settings_advanced/compound_utxos_dialog.dart';
+import '../util/ui_util.dart';
 import '../widgets/app_simpledialog.dart';
 
 final _walletWatcherProvider = Provider.autoDispose((ref) {
@@ -31,13 +25,16 @@ final _walletWatcherProvider = Provider.autoDispose((ref) {
   ref.watch(addressMonitorProvider);
 });
 
-class WalletHome extends HookConsumerWidget {
-  const WalletHome({super.key});
+/// Keeps wallet data (balance/tx/utxo/addresses) actively watched and
+/// refreshed, handles app-link URIs, and suggests compounding when UTXOs
+/// pile up -- regardless of which of the 4 main tabs is currently
+/// visible. Extracted from the old WalletHome (which only ran this while
+/// Home itself was the only screen); renders nothing itself.
+class WalletBackgroundTasks extends HookConsumerWidget {
+  const WalletBackgroundTasks({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
     ref.watch(_walletWatcherProvider);
@@ -143,77 +140,6 @@ class WalletHome extends HookConsumerWidget {
       return null;
     }, const []);
 
-    return Column(
-      children: [
-        Expanded(
-          child: DefaultTabController(
-            length: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const MainCard(),
-                Container(
-                  margin: const EdgeInsetsDirectional.fromSTEB(16, 2, 16, 10),
-                  child: TabBar(
-                    indicatorWeight: 3,
-                    indicatorColor: theme.primary60,
-                    indicatorPadding:
-                        const EdgeInsets.symmetric(horizontal: 20),
-                    tabs: [
-                      Tab(
-                        child: GestureDetector(
-                          onLongPress: () => showTxFilterDialog(context, ref),
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 20),
-                            child: Text(
-                              l10n.transactionsUppercase,
-                              textAlign: TextAlign.center,
-                              style: styles.textStyleTabLabel,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Tab(
-                        child: Container(
-                          padding: const EdgeInsets.only(top: 20),
-                          width: double.infinity,
-                          child: Text(
-                            l10n.utxosUppercase,
-                            textAlign: TextAlign.center,
-                            style: styles.textStyleTabLabel,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      Stack(
-                        children: [
-                          const TransactionsWidget(),
-                          const TopGradientWidget(),
-                          const BottomGradientWidget(),
-                        ],
-                      ),
-                      Stack(
-                        children: [
-                          const UtxosWidget(),
-                          const TopGradientWidget(),
-                          const BottomGradientWidget(),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const WalletActionButtons(),
-      ],
-    );
+    return const SizedBox.shrink();
   }
 }
