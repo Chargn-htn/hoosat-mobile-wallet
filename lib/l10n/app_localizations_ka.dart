@@ -108,7 +108,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get available => 'ხელმისაწვდომი';
 
   @override
-  String get back => 'Back';
+  String get back => 'უკან';
 
   @override
   String get backupConfirmButton => 'მე შევქმენი სარეზერვო ასლი';
@@ -117,7 +117,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get backupSecretPhrase => 'საიდუმლო ფრაზის ბექაფი';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'საიდუმლო ფრაზა არ არის';
 
   @override
   String get biometricsMethod => 'ბიომეტრიკა';
@@ -169,7 +169,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get confirmed => 'დადასტურდა';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'დადასტურებულია · მწიფდება';
 
   @override
   String get confirming => 'დასტურდება';
@@ -618,24 +618,24 @@ class AppLocalizationsKa extends AppLocalizations {
   String get scanQrCodeError => 'qr კოდის გარჩევა ვერ მოხერხდა';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'სკანირება სურათიდან';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'ფანარის ჩართვა/გამორთვა';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'დაწყებამდე';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet არის არასაცავი (non-custodial) საფულე. თქვენი საიდუმლო ფრაზა და კერძო გასაღებები იქმნება და ინახება მხოლოდ ამ მოწყობილობაზე — ჩვენ მათ არასდროს ვხედავთ, არცერთ სერვერზე არ ვინახავთ და თქვენთვის ვერ აღვადგენთ.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'თუ საიდუმლო ფრაზას დაკარგავთ, პაროლის აღდგენა არ არსებობს და არც მხარდაჭერის გუნდს შეუძლია თქვენი სახსრების დაბრუნება. მისი უსაფრთხოდ შენახვის პასუხისმგებლობა მხოლოდ თქვენზეა.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'გავიგე, გაგრძელება';
 
   @override
   String get secretInfo =>
@@ -648,26 +648,26 @@ class AppLocalizationsKa extends AppLocalizations {
   String get secretPhrase => 'საიდუმლო ფრაზა';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'დაადასტურეთ თქვენი სარეზერვო ასლი';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'აირჩიეთ სწორი სიტყვა თითოეული პოზიციისთვის, რათა დაადასტუროთ, რომ საიდუმლო ფრაზა შეინახეთ.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'რომელია სიტყვა №$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'ზუსტად არ არის. შეამოწმეთ სარეზერვო ასლი და სცადეთ ხელახლა.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 სიტყვა';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 სიტყვა';
 
   @override
   String get secretWarning =>
@@ -678,45 +678,46 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'გაიარეთ ავტორიზაცია უსაფრთხოების პარამეტრებზე წვდომისთვის';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'შეიყვანეთ PIN უსაფრთხოების პარამეტრებზე წვდომისთვის';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'შეტყობინების ხელმოწერა';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'ხელმოწერის კოპირება';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'მოაწერეთ ხელი შეტყობინებას თქვენი საფულის ერთ-ერთი მისამართით';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'შეიყვანეთ შეტყობინება ხელმოსაწერად';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'ხელმოწერა დაკოპირდა';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'შეტყობინებას ხელი მოეწერა';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'შეტყობინება ძალიან გრძელია';
 
   @override
   String get seedInvalid => 'Seed არასწორია';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'თქვენს კვანძს ვერ ვუკავშირდებით. ბალანსები შეიძლება მოძველებული იყოს.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'ხელახლა ცდა';
 
   @override
   String get send => 'გაგზავნა';
@@ -799,7 +800,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get themeLight => 'ღია თემა';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'თემის შეცვლა';
 
   @override
   String get thisWallet => '#ეს საფულე';
@@ -1007,181 +1008,182 @@ class AppLocalizationsKa extends AppLocalizations {
   String get compoundFailure => 'ვერ მოხერხდა ტრანზაქციების გაერთიანება';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'სახსრები ჯერ კიდევ მოწმდება';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'ამ ანგარიშზე არსებული სახსრების ნაწილი ძალიან ცოტა ხნის წინ მიიღეს და ჯერ ვერ გაიგზავნება — ქსელს ჯერ მოკლე მომწიფების დრო სჭირდება, ჩვეულებრივ რამდენიმე წუთი. შეგიძლიათ დაელოდოთ და ხელახლა სცადოთ, ან გააგზავნოთ სხვა ანგარიშიდან, სადაც მომწიფებული სახსრებია.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'ანგარიშის შეცვლა';
 
   @override
   String get compoundTooFewUtxos => 'როგორც მინიმუმ ორი UTXO არის სავალდებულო';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'ძირითადზე შეგროვება';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'გადაიტანეთ ყველა სხვა მისამართის ბალანსი თქვენს ძირითად მისამართზე';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'ყველაფერი ძირითადზე გადავიტანოთ?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'ეს გადაიტანს $amount $symbol-ს $count სხვა მისამართიდან თქვენს ძირითად მისამართზე. შეიქმნება ერთი ან მეტი ტრანზაქცია და ჩამოიჭრება ქსელის საკომისიო.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'ყველა მისამართის ბალანსი უკვე ძირითადზეა';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'ძირითადზე გროვდება';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'ძირითადზე გადატანა წარმატებით დასრულდა';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'ძირითადზე გადატანა ვერ მოხერხდა';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'გადატანა';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'ანგარიშები';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'დაამატეთ და მართეთ სახელიანი მისამართები';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'ძირითადი';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'დაარქივება';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'აღდგენა';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'დაარქივებული';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'დამატებითი ანგარიშები ჯერ არ არის';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'ანგარიშის გადარქმევა';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'ანგარიშის სახელი';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'შენახვა';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'დამატება';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'საიდან';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'ნებისმიერი';
 
   @override
-  String get home => 'Home';
+  String get home => 'მთავარი';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'აქტივობა';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'მთლიანი ბალანსი';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'ახლა დასახარჯი $spendable · ჯერ კიდევ გზაშია $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'კოინები, რომლებიც ჯერ გზაშია, თქვენია და მალე დახარჯვადი იქნება.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'კოინები, რომლებიც ჯერ გზაშია, დახარჯვადი გახდება $time-ში.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'ახლა დასახარჯი $amount. დანარჩენი დახარჯვადი გახდება $time-ში.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'ახლა დასახარჯი $amount. დანარჩენი ჯერ გზაშია.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'მიღებას ელოდება';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'სტატუსი უცნობია';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'არ არის მიღებული';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'დასტურდება $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'გაგზავნილია';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'კავშირის შემოწმება';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'შენახულია სხვა საფულიდან (მხოლოდ ნახვა)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'ამ საფულეს მათი დახარჯვა არ შეუძლია, ამიტომ ისინი მის ჯამში არ ითვლება. გახსენით საფულე, რომელსაც ეკუთვნის, რათა გამოიყენოთ.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'აქტივობა ჯერ არ არის';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'გაგზავნილი';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'მიღებული';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'საფულის შიგნით';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'გაერთიანებული კოინები';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'როცა HTN-ს გააგზავნით ან მიიღებთ, აქ გამოჩნდება.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'ყველას ნახვა';
 
   @override
-  String get show => 'Show';
+  String get show => 'ჩვენება';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'ჩემი ანგარიშები';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'გამარჯობა, $walletName';
   }
 
   @override
@@ -1252,18 +1254,18 @@ class AppLocalizationsKa extends AppLocalizations {
       'თავსებადია Web Wallet-თან და KDX-თან';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'სტანდარტული საფულის იმპორტი';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '12 ან 24 სიტყვიანი საფულეები სტანდარტული წარმოებით და არჩევითი BIP39 პაროლ-ფრაზით';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'ძველი საფულის იმპორტი';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '12 სიტყვიანი საფულეები ძველი წარმოებით, თავსებადი ძველ Web Wallet-სა და KDX-თან';
 
   @override
   String get importOptionKpubTitle => 'Watch Only Wallet-ის იმპორტი';
@@ -1483,121 +1485,121 @@ class AppLocalizationsKa extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'ხურდის მისამართის ქცევა';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'თითოეული მისამართი ინარჩუნებს საკუთარ ბალანსს, ხურდა კი იქვე რჩება';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'ყოველ ჯერზე ახალი მისამართი გამოიყენება (კონფიდენციალურად, ბალანსი ნაწილდება)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'ხურდის მისამართის ქცევა';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'ბალანსების შენარჩუნება თითოეულ მისამართზე';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'კონფიდენციალური';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'პაროლის მოთხოვნა';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'გაშვებისას';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'დაბლოკვისას';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'ხელმოწერისას';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'გაფართოებული პარამეტრები';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 პაროლ-ფრაზა';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'შენიშვნა: ეს არ არის საფულის პაროლი; სხვადასხვა BIP39 პაროლ-ფრაზა სხვადასხვა საფულეს ხსნის.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'შეიყვანეთ პაროლ-ფრაზა';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'დაადასტურეთ პაროლ-ფრაზა';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'პაროლ-ფრაზები არ ემთხვევა!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'საფულე BIP39 პაროლ-ფრაზით.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'შეიყვანეთ პრიორიტეტული საკომისიო';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'საბაზისო საკომისიო';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'პრიორიტეტული საკომისიო';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'დანიშნულების მისამართი ვერ ამოიცნო';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'ტრანზაქციის ხელახლა აგება ვერ მოხერხდა';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'ტრანზაქციის ახალი საკომისიოთი ხელახლა აგება ვერ მოხერხდა';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'საკომისიოს განახლება ვერ მოხერხდა';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'საკომისიოს განახლება';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'საკომისიო ახლდება';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority =>
+      'რეკომენდებული პრიორიტეტული საკომისიოები';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'ახალი პრიორიტეტული საკომისიო მინიმუმ $amount $symbol უნდა იყოს';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'მოლოდინში';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'ეს ტრანზაქცია მოლოდინშია';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'მოლოდინში მყოფი ტრანზაქცია';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'mempool-ში მოლოდინში მყოფი ტრანზაქციებია.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'ტრანზაქციის საკომისიოს განახლება';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'საკომისიოთი ჩანაცვლება (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempool-ში';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'აირჩიეთ UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'გთხოვთ, აირჩიოთ მეტი UTXO';
 }

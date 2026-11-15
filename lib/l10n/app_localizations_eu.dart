@@ -108,7 +108,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get available => 'Eskuragarri';
 
   @override
-  String get back => 'Back';
+  String get back => 'Atzera';
 
   @override
   String get backupConfirmButton => 'babeskopia egin dut';
@@ -117,7 +117,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get backupSecretPhrase => 'Esaldi sekretua gorde';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Esaldi sekretua falta da';
 
   @override
   String get biometricsMethod => 'Biometria';
@@ -169,7 +169,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get confirmed => 'Baieztatuta';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'baieztatuta · heltzen';
 
   @override
   String get confirming => 'Baieztatzen';
@@ -616,24 +616,24 @@ class AppLocalizationsEu extends AppLocalizations {
   String get scanQrCodeError => 'Ezin izan da qr kodea ulertzea';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Eskaneatu irudi batetik';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Piztu/itzali linterna';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Hasi aurretik';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet gordailu gabeko (non-custodial) diru kartera da. Zure esaldi sekretua eta gako pribatuak gailu honetan soilik sortu eta gordetzen dira — guk ez ditugu inoiz ikusten, ez ditugu zerbitzari batean ere gordetzen eta ezin ditugu zuretzat berreskuratu.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Zure esaldi sekretua galtzen baduzu, ez dago pasahitza berrezartzerik, ezta zure funtsak itzul ditzakeen laguntza-talderik ere. Zu zara hura seguru gordetzeko erantzule bakarra.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Ulertzen dut, jarraitu';
 
   @override
   String get secretInfo =>
@@ -646,26 +646,26 @@ class AppLocalizationsEu extends AppLocalizations {
   String get secretPhrase => 'Esaldi sekretua';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Egiaztatu zure babeskopia';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Hautatu hitz zuzena posizio bakoitzerako, zure esaldi sekretua gorde duzula baieztatzeko.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Zein da $index. hitza?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Ez da guztiz zuzena. Egiaztatu zure babeskopia eta saiatu berriro.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 hitz';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 hitz';
 
   @override
   String get secretWarning =>
@@ -676,45 +676,46 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Autentifikatu segurtasun-ezarpenetara sartzeko';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Sartu PINa segurtasun-ezarpenetara sartzeko';
 
   @override
   String get seed => 'Hazia';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Sinatu mezua';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopiatu sinadura';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Sinatu mezu bat zure diru karteraren helbideetako batekin';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Sartu sinatu beharreko mezua';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Sinadura kopiatuta';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Mezua sinatuta';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Mezua luzeegia da';
 
   @override
   String get seedInvalid => 'Hazia okerra da';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Ezin da zure nodora iritsi. Balantzeak zaharkituta egon daitezke.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Saiatu berriro';
 
   @override
   String get send => 'Bidali';
@@ -797,7 +798,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get themeLight => 'Gai Argia';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Aldatu gaia';
 
   @override
   String get thisWallet => '#Kartera hau';
@@ -1004,181 +1005,183 @@ class AppLocalizationsEu extends AppLocalizations {
   String get compoundFailure => 'Ezin izan dira konposatu transakzioak';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle =>
+      'Funtsak oraindik baieztatzen ari dira';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Kontu honetako funts batzuk duela gutxi jaso dira, eta oraindik ezin dira bidali — sareak lehenik heltze-denbora labur bat eskatzen du, normalean minutu batzuk. Itxaron eta berriro saia zaitezke, edo funts helduak dituen beste kontu batetik bidali.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Aldatu kontua';
 
   @override
   String get compoundTooFewUtxos => 'Gutxienez bi UTXO behar dira';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Bildu Nagusian';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Eraman gainerako helbide guztien balantzea zure helbide nagusira';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Dena Nagusira eraman?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Honek $amount $symbol eramango ditu beste $count helbidetatik zure helbide nagusira. Transakzio bat edo gehiago sortuko dira eta sare-kuotak ordaindu beharko dira.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Helbide guztien balantzea Nagusian dago jada';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Nagusian biltzen';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Nagusira eramatea ondo atera da';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Ezin izan da Nagusira eraman';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ERAMAN';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Kontuak';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Gehitu eta kudeatu izena duten helbideak';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Nagusia';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Artxibatu';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Berrezarri';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Artxibatuta';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Oraindik ez dago kontu gehigarririk';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Aldatu kontuaren izena';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Kontuaren izena';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'GORDE';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'GEHITU';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Nondik';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Edozein';
 
   @override
-  String get home => 'Home';
+  String get home => 'Hasiera';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Jarduera';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Balantze osoa';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Gastagarri orain $spendable · Oraindik bidean $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Oraindik bidean dauden txanponak zureak dira eta laster gastatu ahal izango dituzu.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Oraindik bidean dauden txanponak $time barru gastatu ahal izango dira.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Gastagarri orain $amount. Gainerakoa $time barru gastatu ahal izango da.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Gastagarri orain $amount. Gainerakoa oraindik bidean dago.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'onartzeko zain';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'egoera ezezaguna';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'ez da onartu';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'baieztatzen $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Hona bidalita';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Probatu konexioa';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Beste diru kartera batetik gordeta (ikusteko soilik)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Diru kartera honek ezin ditu gastatu, beraz ez dira bere guztizkoan kontatzen. Ireki dagozkien diru kartera erabiltzeko.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Oraindik ez dago jarduerarik';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Bidalita';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Jasota';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Diru karteraren barruan';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Batutako txanponak';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'HTN bidaltzen edo jasotzen duzunean, hemen agertuko da.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Ikusi guztiak';
 
   @override
-  String get show => 'Show';
+  String get show => 'Erakutsi';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Nire kontuak';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Kaixo, $walletName';
   }
 
   @override
@@ -1249,18 +1252,19 @@ class AppLocalizationsEu extends AppLocalizations {
       'Web Wallet eta KDX-rekin bateragarria';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle =>
+      'Inportatu diru kartera estandarra';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '12 edo 24 hitzeko diru karterak, deribazio estandarrarekin eta aukerako BIP39 pasaesaldiarekin';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Inportatu diru kartera zaharra';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '12 hitzeko diru karterak, deribazio zaharrarekin, Web Wallet zaharrarekin eta KDXrekin bateragarriak';
 
   @override
   String get importOptionKpubTitle =>
@@ -1481,121 +1485,121 @@ class AppLocalizationsEu extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Itzulkinaren helbidearen portaera';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Helbide bakoitzak bere balantzea gordetzen du, eta itzulkina bertan geratzen da';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Helbide berri bat erabiltzen da aldi bakoitzean (pribatua, balantzea sakabanatzen da)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle =>
+      'Itzulkinaren helbidearen portaera';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Mantendu balantzeak helbide bakoitzean';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Pribatua';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Eskatu pasahitza';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Abiaraztean';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Blokeatuta dagoenean';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Sinatzean';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Aukera aurreratuak';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 pasaesaldia';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'OHARRA: Hau ez da diru karteraren pasahitza; BIP39 pasaesaldi desberdinek diru kartera desberdinak irekitzen dituzte.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Sartu pasaesaldia';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Baieztatu pasaesaldia';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Pasaesaldiak ez datoz bat!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39 pasaesaldia duen diru kartera.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Sartu lehentasun-kuota';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'OINARRIZKO KUOTA';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'LEHENTASUN-KUOTA';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Ezin izan da helmugako helbidea ezagutu';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Ezin izan da transakzioa berreraiki';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Ezin izan da transakzioa berreraiki kuota berriarekin';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Ezin izan da kuota eguneratu';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Eguneratu kuota';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Kuota eguneratzen';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Gomendatutako lehentasun-kuotak';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Lehentasun-kuota berria gutxienez $amount $symbol izan behar da';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ZAIN';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Transakzio hau zain dago';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Zain dagoen transakzioa';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Mempoolean zain dauden transakzioak daude.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Eguneratu transakzioaren kuota';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Ordezkatu kuotarekin (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempoolean';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Hautatu UTXOak';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Hautatu UTXO gehiago';
 }
