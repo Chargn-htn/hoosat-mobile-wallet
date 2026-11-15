@@ -120,6 +120,10 @@ class SendConfirmSheet extends HookConsumerWidget {
         utxos: spendableUtxos,
         feePerInput: kFeePerInput,
         priorityFee: priorityFee,
+        // The fee/coin-selection edit rebuilds the same transaction, so it
+        // must follow the same rule as the first build.
+        coinsToKeep: selectedUtxos == null ? kCoinsToKeep : 0,
+        coinsInScope: ref.read(scopeCoinCountProvider(sendFromAddress)),
       );
 
       final newTx = txBuilder.createUnsignedTransaction(

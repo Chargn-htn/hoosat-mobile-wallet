@@ -306,6 +306,8 @@ abstract class UIUtil {
         priorityFee: priorityFee,
         changeAddress: changeAddress.address,
         note: uri.message,
+        coinsToKeep: kCoinsToKeep,
+        coinsInScope: ref.read(scopeCoinCountProvider(sendFromAddress)),
       );
 
       Sheets.showAppHeightNineSheet(

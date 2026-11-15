@@ -16,6 +16,18 @@ final kStorageMassParameter = kSompiPerHoosat * BigInt.from(10000);
 final kMinChangeTarget = BigInt.from(20000000);
 final kFeePerInput = BigInt.from(10000);
 const kMaxInputsPerTransaction = 84;
+
+/// The wallet tries to keep about this many coins in a spending scope (Main, or
+/// one account), so several payments can go out one after another: a coin that
+/// has just been created cannot be spent for ~1000 units, so one big coin means
+/// one send, then a wait. It gets there GRADUALLY (one more coin per send): the
+/// node refuses a transaction that creates more than 2 extra coins unless it
+/// pays 1 HTN per extra coin (mempool "spam" rule).
+const kCoinsToKeep = 10;
+
+/// A change coin is never made smaller than this. Tiny coins make a
+/// transaction heavier (storage mass), and 100 HTN keeps that negligible.
+final kMinSplitPiece = kSompiPerHoosat * BigInt.from(100);
 final kMaximumStandardTransactionMass = BigInt.from(100000);
 const kDomainHashSize = 32;
 const kDomainSubnetworkIDSize = 20;

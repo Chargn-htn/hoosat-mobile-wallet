@@ -4,12 +4,20 @@ import 'dart:typed_data';
 import 'package:fixnum/fixnum.dart';
 
 import '../hoosat.dart';
+import 'mass_calculator.dart';
 import 'txscript.dart';
 
 class TransactionBuilder {
   final List<Utxo> utxos;
   final BigInt feePerInputRaw;
   final Amount priorityFee;
+
+  /// 0 = off. Otherwise: keep about this many coins in the scope being spent
+  /// from, by returning change as several coins when there are too few left.
+  final int coinsToKeep;
+
+  /// How many coins the scope holds in total (including ones still maturing).
+  final int coinsInScope;
 
   BigInt _change = BigInt.zero;
   Amount get change => Amount.raw(_change);
@@ -27,6 +35,8 @@ class TransactionBuilder {
     required this.utxos,
     BigInt? feePerInput,
     Amount? priorityFee,
+    this.coinsToKeep = 0,
+    this.coinsInScope = 0,
   })  : feePerInputRaw = feePerInput ?? kFeePerInput,
         priorityFee = priorityFee ?? Amount.zero;
 
@@ -102,33 +112,66 @@ class TransactionBuilder {
     final hasChange = changeAmount >= kMinChangeTarget ||
         changeAmount >= amountRaw ~/ BigInt.two;
 
-    final payments = <Address, Int64>{
-      toAddress: amountRaw.toInt64(),
-      if (hasChange) changeAddress: changeAmount.toInt64(),
-    };
-
-    if (hasChange) {
-      _change = changeAmount;
-      _changeAddress = changeAddress;
-      _baseFee = feePerInputRaw * BigInt.from(_selectedUtxos.length);
-    } else {
+    if (!hasChange) {
       _change = BigInt.zero;
       _changeAddress = null;
       _baseFee =
           feePerInputRaw * BigInt.from(_selectedUtxos.length) + changeAmount;
+      return _createUnsignedTransaction(
+        utxos: _selectedUtxos,
+        outputs: [(toAddress, amountRaw)],
+      );
     }
 
-    final unsignedTransaction = _createUnsignedTransaction(
-      utxos: _selectedUtxos,
-      payments: payments,
-    );
+    // How many coins to hand the change back as. Each extra coin costs one more
+    // "per input" fee, so the fee is worked out together with the count.
+    var pieces = 1;
+    if (coinsToKeep > 0 && preselectedUtxos == null) {
+      pieces = planChangePieces(
+        change: changeAmount,
+        coinsRemaining:
+            (coinsInScope - _selectedUtxos.length).clamp(0, 1 << 30),
+        coinsToKeep: coinsToKeep,
+        // The node refuses a transaction that creates more than 2 extra coins
+        // (outputs - inputs > 2) unless it pays 1 HTN per extra coin. One
+        // payment output + pieces change outputs, inputs spent: stay inside it.
+        maxPieces: _selectedUtxos.length + 1,
+      );
+    }
 
-    return unsignedTransaction;
+    Transaction build(int n) {
+      final each = changeAmount ~/ BigInt.from(n);
+      final outputs = <(Address, BigInt)>[(toAddress, amountRaw)];
+      for (var k = 0; k < n; k++) {
+        // the last coin takes any rounding remainder
+        final piece =
+            k == n - 1 ? changeAmount - each * BigInt.from(n - 1) : each;
+        outputs.add((changeAddress, piece));
+      }
+      _change = changeAmount;
+      _changeAddress = changeAddress;
+      _baseFee = feePerInputRaw * BigInt.from(_selectedUtxos.length);
+      return _createUnsignedTransaction(utxos: _selectedUtxos, outputs: outputs);
+    }
+
+    // A split must keep every coin a sensible size and the transaction well
+    // inside the node's limits; otherwise fall back to a single change coin.
+    while (pieces > 1) {
+      final each = changeAmount ~/ BigInt.from(pieces);
+      if (each >= kMinSplitPiece) {
+        final candidate = build(pieces);
+        final mass =
+            MassCalculator.defaultCalculator.calcTxOverallMass(tx: candidate);
+        if (mass < kMaximumStandardTransactionMass) return candidate;
+      }
+      pieces--;
+    }
+    return build(1);
   }
 
   Transaction _createUnsignedTransaction({
     required List<Utxo> utxos,
-    required Map<Address, Int64> payments,
+    required List<(Address, BigInt)> outputs,
   }) {
     final inputs = utxos.map((utxo) {
       return TxInput(
@@ -144,24 +187,25 @@ class TransactionBuilder {
       );
     });
 
-    final outputs = payments.entries.map((e) {
-      final scriptPublicKey = payToAddressScript(e.key);
+    // A LIST, not a map: paying an address that the change also goes back to
+    // (Main to Main, an account to itself) must give two outputs. As a map the
+    // two collapsed into one and the payment silently became extra fee.
+    final txOutputs = outputs.map((o) {
       return TxOutput(
-        value: e.value,
-        scriptPublicKey: scriptPublicKey,
+        value: o.$2.toInt64(),
+        scriptPublicKey: payToAddressScript(o.$1),
       );
     });
 
-    final tx = Transaction(
+    return Transaction(
       version: kMaxTransactionVersion,
       inputs: inputs.toList(),
-      outputs: outputs.toList(),
+      outputs: txOutputs.toList(),
       lockTime: Int64.ZERO,
       subnetworkId: kSubnetworkIdNative,
       gas: Int64.ZERO,
       payload: null,
     );
-    return tx;
   }
 
   List<Utxo> _userSelectedUtxos({
@@ -187,6 +231,25 @@ class TransactionBuilder {
   List<Utxo> _selectUtxos({
     required BigInt spendAmount,
   }) {
+    // When keeping spare coins, spend ONE coin if one is big enough -- the
+    // smallest that is -- and leave the rest untouched and spendable.
+    if (coinsToKeep > 0 && utxos.length > 1) {
+      final need = spendAmount + feePerInputRaw + priorityFee.raw;
+      Utxo? best;
+      for (final u in utxos) {
+        final left = u.utxoEntry.amount - need;
+        // The coin must cover the payment, and what is left over must be
+        // exactly nothing or a change coin worth keeping: a smaller leftover
+        // would just be swallowed into the fee.
+        final fits = left == BigInt.zero || left >= kMinChangeTarget;
+        if (fits &&
+            (best == null || u.utxoEntry.amount < best.utxoEntry.amount)) {
+          best = u;
+        }
+      }
+      if (best != null) return [best];
+    }
+
     final selectedUtxos = <Utxo>[];
     var totalValue = BigInt.zero;
 
@@ -230,4 +293,24 @@ class TransactionBuilder {
 
     return totalValue - totalSpend;
   }
+}
+
+
+/// How many coins the change should be handed back as. Aims to leave
+/// [coinsToKeep] coins in the scope after this send, never makes a coin
+/// smaller than [kMinSplitPiece], and is 1 whenever enough coins are left.
+int planChangePieces({
+  required BigInt change,
+  required int coinsRemaining,
+  int coinsToKeep = kCoinsToKeep,
+  BigInt? minPiece,
+  int maxPieces = 1 << 30,
+}) {
+  final wanted = coinsToKeep - coinsRemaining;
+  if (wanted <= 1) return 1;
+  final byValue = (change ~/ (minPiece ?? kMinSplitPiece)).toInt();
+  final room = byValue < 1 ? 1 : byValue;
+  var pieces = wanted < room ? wanted : room;
+  if (pieces > maxPieces) pieces = maxPieces;
+  return pieces < 1 ? 1 : pieces;
 }

@@ -33,11 +33,15 @@ class WalletService {
     Amount? priorityFee,
     required Address changeAddress,
     String? note,
+    int coinsToKeep = 0,
+    int coinsInScope = 0,
   }) {
     final txBuilder = TransactionBuilder(
       utxos: spendableUtxos,
       feePerInput: feePerInput,
       priorityFee: priorityFee,
+      coinsToKeep: coinsToKeep,
+      coinsInScope: coinsInScope,
     );
     final tx = txBuilder.createUnsignedTransaction(
       toAddress: toAddress,
