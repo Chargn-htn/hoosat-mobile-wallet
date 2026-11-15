@@ -107,7 +107,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get available => 'Saatavilla';
 
   @override
-  String get back => 'Back';
+  String get back => 'Takaisin';
 
   @override
   String get backupConfirmButton => 'Olen varmuuskopioinut';
@@ -116,7 +116,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get backupSecretPhrase => 'Varmuuskopioi turvasanat';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Turvasanat puuttuvat';
 
   @override
   String get biometricsMethod => 'Biometriikka';
@@ -168,7 +168,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get confirmed => 'Vahvistettu';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'vahvistettu · kypsyy';
 
   @override
   String get confirming => 'Vahvistetaan';
@@ -612,24 +612,24 @@ class AppLocalizationsFi extends AppLocalizations {
   String get scanQrCodeError => 'QR-koodin jäsentäminen epäonnistui';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Skannaa kuvasta';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Taskulamppu päälle/pois';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Ennen kuin aloitat';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet on omahallintoinen (non-custodial) lompakko. Turvasanasi ja yksityiset avaimesi luodaan ja tallennetaan vain tälle laitteelle – emme koskaan näe niitä, emme tallenna niitä millekään palvelimelle emmekä voi palauttaa niitä sinulle.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Jos menetät turvasanasi, salasanan nollausta ei ole, eikä mikään tukitiimi voi saada varojasi takaisin. Olet yksin vastuussa niiden turvallisesta säilyttämisestä.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Ymmärrän, jatka';
 
   @override
   String get secretInfo =>
@@ -642,26 +642,26 @@ class AppLocalizationsFi extends AppLocalizations {
   String get secretPhrase => 'Turvasanat';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Vahvista varmuuskopio';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Valitse oikea sana jokaiseen kohtaan vahvistaaksesi, että olet tallentanut turvasanasi.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Mikä on sana #$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Ei aivan oikein. Tarkista varmuuskopiosi ja yritä uudelleen.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 sanaa';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 sanaa';
 
   @override
   String get secretWarning =>
@@ -672,45 +672,46 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Tunnistaudu päästäksesi tietoturva-asetuksiin';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Syötä PIN-koodi päästäksesi tietoturva-asetuksiin';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Allekirjoita viesti';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopioi allekirjoitus';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Allekirjoita viesti jollakin lompakkosi osoitteista';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Kirjoita allekirjoitettava viesti';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Allekirjoitus kopioitu';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Viesti allekirjoitettu';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Viesti on liian pitkä';
 
   @override
   String get seedInvalid => 'Seed on virheellinen';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Solmuun ei saada yhteyttä. Saldot voivat olla vanhentuneita.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Yritä uudelleen';
 
   @override
   String get send => 'Lähetä';
@@ -793,7 +794,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get themeLight => 'Vaalea teema';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Vaihda teemaa';
 
   @override
   String get thisWallet => '#Tämä lompakko';
@@ -999,181 +1000,182 @@ class AppLocalizationsFi extends AppLocalizations {
   String get compoundFailure => 'Tapahtumien koostaminen epäonnistui';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Varat vielä vahvistumassa';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Osa tämän tilin varoista vastaanotettiin liian äskettäin lähetettäväksi – verkko vaatii ensin lyhyen kypsymisajan, yleensä muutaman minuutin. Voit odottaa ja yrittää uudelleen tai lähettää toiselta tililtä, jolla on kypsyneitä varoja.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Vaihda tiliä';
 
   @override
   String get compoundTooFewUtxos => 'Vaaditaan vähintään kaksi UTXO:ta';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Kerää päätilille';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Siirrä kaikkien muiden osoitteiden saldot päätilisi osoitteeseen';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Siirretäänkö kaikki päätilille?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Tämä siirtää $amount $symbol $count muusta osoitteesta päätilisi osoitteeseen. Tämä luo yhden tai useamman tapahtuman ja aiheuttaa verkkomaksuja.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Kaikkien osoitteiden saldo on jo päätilillä';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Kerätään päätilille';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Siirto päätilille onnistui';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Siirto päätilille epäonnistui';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'SIIRRÄ';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Tilit';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Lisää ja hallitse nimettyjä osoitteita';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Päätili';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arkistoi';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Palauta';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arkistoidut';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Ei vielä lisätilejä';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Nimeä tili uudelleen';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Tilin nimi';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'TALLENNA';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'LISÄÄ';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Mistä';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Mikä tahansa';
 
   @override
-  String get home => 'Home';
+  String get home => 'Koti';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Tapahtumat';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Kokonaissaldo';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Käytettävissä nyt $spendable · Vielä saapumassa $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Vielä saapuvat kolikot ovat sinun, ja ne voi käyttää pian.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Vielä saapuvat kolikot voi käyttää $time kuluttua.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Käytettävissä nyt $amount. Loput voi käyttää $time kuluttua.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Käytettävissä nyt $amount. Loput ovat vielä saapumassa.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'odottaa hyväksymistä';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'tila tuntematon';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'ei hyväksytty';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'vahvistetaan $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Lähetetty kohteeseen';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Testaa yhteys';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Tallennettu toisesta lompakosta (vain katselu)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Tämä lompakko ei voi käyttää näitä, joten niitä ei lasketa sen kokonaissaldoon. Avaa lompakko, johon ne kuuluvat, käyttääksesi niitä.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Ei vielä tapahtumia';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Lähetetty';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Vastaanotettu';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Lompakon sisällä';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Yhdistetyt kolikot';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Kun lähetät tai vastaanotat HTN:ää, se näkyy täällä.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Näytä kaikki';
 
   @override
-  String get show => 'Show';
+  String get show => 'Näytä';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Omat tilini';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Hei, $walletName';
   }
 
   @override
@@ -1244,18 +1246,18 @@ class AppLocalizationsFi extends AppLocalizations {
       'Yhteensopiva Web-lompakon ja KDX:n kanssa';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Tuo tavallinen lompakko';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Tavallisella johdolla luodut 12 tai 24 sanan lompakot, valinnaisella BIP39-salasanalauseella';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Tuo vanha lompakko';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Vanhalla johdolla luodut 12 sanan lompakot, jotka ovat yhteensopivia vanhan Web Walletin ja KDX:n kanssa';
 
   @override
   String get importOptionKpubTitle => 'Tuo Watch-seurantalompakko';
@@ -1475,121 +1477,121 @@ class AppLocalizationsFi extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Vaihto-osoitteen toiminta';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Jokainen osoite pitää oman saldonsa, ja vaihtoraha pysyy paikallaan';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Joka kerta käytetään uutta osoitetta (yksityinen, saldo jakautuu)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Vaihto-osoitteen toiminta';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Pidä saldot kullakin osoitteella';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Yksityinen';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Kysy salasana';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Käynnistettäessä';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Lukittuna';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Allekirjoitettaessa';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Lisäasetukset';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39-salasanalause';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'HUOM: Tämä ei ole lompakon salasana. Eri BIP39-salasanalauseet avaavat eri lompakot.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Syötä salasanalause';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Vahvista salasanalause';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Salasanalauseet eivät täsmää!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Lompakko BIP39-salasanalauseella.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Syötä prioriteettitaksa';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'PERUSTAKSA';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITEETTITAKSA';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Kohdeosoitetta ei tunnistettu';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError =>
+      'Tapahtuman uudelleenrakennus epäonnistui';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Tapahtuman uudelleenrakennus uudella taksalla epäonnistui';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Taksan päivitys epäonnistui';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Päivitä taksa';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Päivitetään taksaa';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Suositellut prioriteettitaksat';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Uuden prioriteettitaksan on oltava vähintään $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ODOTTAA';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Tämä tapahtuma odottaa';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Odottava tapahtuma';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Mempoolissa on odottavia tapahtumia.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Päivitä tapahtuman taksa';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Korvaa taksalla (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempoolissa';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Valitse UTXO:t';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Valitse lisää UTXO:ita';
 }

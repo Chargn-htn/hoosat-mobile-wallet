@@ -108,7 +108,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get available => 'Mevcut';
 
   @override
-  String get back => 'Back';
+  String get back => 'Geri';
 
   @override
   String get backupConfirmButton => 'Yedekledim';
@@ -117,7 +117,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get backupSecretPhrase => 'Gizli Cümleyi Yedekle';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Gizli cümle eksik';
 
   @override
   String get biometricsMethod => 'Biyometrik';
@@ -169,7 +169,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get confirmed => 'onaylandı';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'onaylandı · olgunlaşıyor';
 
   @override
   String get confirming => 'onaylanıyor';
@@ -618,24 +618,24 @@ class AppLocalizationsTr extends AppLocalizations {
   String get scanQrCodeError => 'QR kodu okuma başarısız';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Görüntüden tara';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'El fenerini aç/kapat';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Başlamadan önce';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet emanetsiz (non-custodial) bir cüzdandır. Gizli cümleniz ve özel anahtarlarınız yalnızca bu cihazda oluşturulur ve saklanır — onları asla görmeyiz, hiçbir sunucuda saklamayız ve sizin için kurtaramayız.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Gizli cümlenizi kaybederseniz, parola sıfırlama yoktur ve fonlarınızı geri getirebilecek bir destek ekibi de yoktur. Onu güvende tutmaktan yalnızca siz sorumlusunuz.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Anlıyorum, Devam Et';
 
   @override
   String get secretInfo =>
@@ -648,26 +648,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get secretPhrase => 'Gizli Cümle';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Yedeğinizi doğrulayın';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Gizli cümlenizi kaydettiğinizi doğrulamak için her konum için doğru kelimeyi seçin.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return '$index. kelime nedir?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Pek doğru değil. Yedeğinizi kontrol edip tekrar deneyin.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 kelime';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 kelime';
 
   @override
   String get secretWarning =>
@@ -678,45 +678,46 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Güvenlik ayarlarına erişmek için kimliğinizi doğrulayın';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Güvenlik ayarlarına erişmek için PIN girin';
 
   @override
   String get seed => 'Anahtar Cümle (Seed)';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Mesajı imzala';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'İmzayı kopyala';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Cüzdan adreslerinizden biriyle bir mesaj imzalayın';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'İmzalanacak bir mesaj girin';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'İmza kopyalandı';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Mesaj imzalandı';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Mesaj çok uzun';
 
   @override
   String get seedInvalid => 'Anahtar cümle (seed) geçersiz';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Düğümünüze ulaşılamıyor. Bakiyeler güncel olmayabilir.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Tekrar dene';
 
   @override
   String get send => 'Gönder';
@@ -798,7 +799,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get themeLight => 'Aydınlık Tema';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Temayı değiştir';
 
   @override
   String get thisWallet => '#Bu Cüzdan';
@@ -1011,181 +1012,182 @@ class AppLocalizationsTr extends AppLocalizations {
   String get compoundFailure => 'İşlemler birleştirilemedi';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Fonlar hâlâ onaylanıyor';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Bu hesaptaki bazı fonlar henüz gönderilemeyecek kadar yakın zamanda alındı — ağ önce kısa bir olgunlaşma süresi gerektirir, genellikle birkaç dakika. Bekleyip tekrar deneyebilir veya olgunlaşmış fonu olan başka bir hesaptan gönderebilirsiniz.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Hesap değiştir';
 
   @override
   String get compoundTooFewUtxos => 'En az iki UTXO gerekiyor';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Ana hesapta topla';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Diğer tüm adreslerin bakiyesini ana adresinize aktarın';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Her şey Ana hesaba taşınsın mı?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Bu işlem, $count diğer adresten $amount $symbol tutarını ana adresinize taşır. Bir veya daha fazla işlem oluşturur ve ağ ücreti doğurur.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Tüm adreslerin bakiyesi zaten Ana hesapta';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Ana hesapta toplanıyor';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Ana hesaba taşıma başarılı';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Ana hesaba taşıma başarısız';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'TAŞI';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Hesaplar';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Adlandırılmış adresleri ekleyin ve yönetin';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Ana';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arşivle';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Geri yükle';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arşivlenenler';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Henüz ek hesap yok';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Hesabı yeniden adlandır';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Hesap adı';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'KAYDET';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'EKLE';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Kaynak';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Herhangi biri';
 
   @override
-  String get home => 'Home';
+  String get home => 'Ana sayfa';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Etkinlik';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Toplam bakiye';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Şimdi harcanabilir $spendable · Hâlâ gelen $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Hâlâ gelmekte olan paralar sizindir ve yakında harcanabilir.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Hâlâ gelmekte olan paralar $time sonra harcanabilir.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Şimdi harcanabilir $amount. Geri kalanı $time sonra harcanabilir.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Şimdi harcanabilir $amount. Geri kalanı hâlâ geliyor.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'kabul edilmesi bekleniyor';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'durum bilinmiyor';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'kabul edilmedi';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'onaylanıyor $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Gönderildiği yer';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Bağlantıyı test et';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Başka bir cüzdandan kaydedildi (yalnızca görüntüleme)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Bu cüzdan bunları harcayamaz, bu yüzden toplamına dahil edilmezler. Kullanmak için ait oldukları cüzdanı açın.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Henüz etkinlik yok';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Gönderildi';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Alındı';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Cüzdan içinde';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Birleştirilen paralar';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'HTN gönderdiğinizde veya aldığınızda burada görünür.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Tümünü gör';
 
   @override
-  String get show => 'Show';
+  String get show => 'Göster';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Hesaplarım';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Merhaba, $walletName';
   }
 
   @override
@@ -1255,18 +1257,18 @@ class AppLocalizationsTr extends AppLocalizations {
   String get importOption12WordsDescription => 'Web Cüzdan ve KDX ile uyumlu';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Standart cüzdanı içe aktar';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'İsteğe bağlı BIP39 parolalı, standart türetmeli 12 veya 24 kelimelik cüzdanlar';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Eski cüzdanı içe aktar';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Eski Web Wallet ve KDX ile uyumlu, eski türetmeli 12 kelimelik cüzdanlar';
 
   @override
   String get importOptionKpubTitle => 'Sadece İzlemek için Cüzdan Aktar';
@@ -1489,121 +1491,120 @@ class AppLocalizationsTr extends AppLocalizations {
       'Kabul Edilmeyen Coinbase İşlemlerini Gizle';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Para üstü adresi davranışı';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Her adres kendi bakiyesini tutar, para üstü aynı yerde kalır';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Her seferinde yeni bir adres kullanılır (gizli, bakiye dağılır)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Para üstü adresi davranışı';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Bakiyeleri her adreste tut';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Gizli';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Parola iste';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Açılışta';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Kilitliyken';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'İmzalarken';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Gelişmiş seçenekler';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 parolası';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'NOT: Bu bir cüzdan parolası değildir; farklı BIP39 parolaları farklı cüzdanları açar.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Parolayı girin';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Parolayı onaylayın';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Parolalar eşleşmiyor!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39 parolalı cüzdan.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Öncelik ücretini girin';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'TEMEL ÜCRET';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'ÖNCELİK ÜCRETİ';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Hedef adres tanınamadı';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'İşlem yeniden oluşturulamadı';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'İşlem yeni ücretle yeniden oluşturulamadı';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Ücret güncellenemedi';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Ücreti güncelle';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Ücret güncelleniyor';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Önerilen öncelik ücretleri';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Yeni öncelik ücreti en az $amount $symbol olmalıdır';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'BEKLEMEDE';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Bu işlem beklemede';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Bekleyen işlem';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Mempool\'da bekleyen işlemler var.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'İşlem ücretini güncelle';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Ücretle değiştir (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempool\'da';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO seç';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Lütfen daha fazla UTXO seçin';
 }

@@ -109,7 +109,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get available => 'Доступно';
 
   @override
-  String get back => 'Back';
+  String get back => 'Назад';
 
   @override
   String get backupConfirmButton => 'Я сделал резервную копию';
@@ -118,7 +118,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get backupSecretPhrase => 'Сделать резервную копию seed-фразы';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Секретная фраза отсутствует';
 
   @override
   String get biometricsMethod => 'Биометрия';
@@ -171,7 +171,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get confirmed => 'подтверждено';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'подтверждено · созревает';
 
   @override
   String get confirming => 'подтверждается';
@@ -619,24 +619,24 @@ class AppLocalizationsRu extends AppLocalizations {
   String get scanQrCodeError => 'Не удалось распознать содержимое QR-кода';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Сканировать из изображения';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Включить/выключить фонарик';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Прежде чем начать';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet — некастодиальный кошелёк. Ваша секретная фраза и закрытые ключи создаются и хранятся только на этом устройстве — мы никогда их не видим, не храним ни на каких серверах и не можем восстановить их для вас.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Если вы потеряете секретную фразу, сброса пароля не существует, и никакая служба поддержки не сможет вернуть ваши средства. Вы несёте полную ответственность за её сохранность.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Я понимаю, продолжить';
 
   @override
   String get secretInfo =>
@@ -649,26 +649,26 @@ class AppLocalizationsRu extends AppLocalizations {
   String get secretPhrase => 'Секретная фраза';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Проверьте резервную копию';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Выберите правильное слово для каждой позиции, чтобы подтвердить, что вы сохранили секретную фразу.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Какое слово №$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Не совсем верно. Проверьте резервную копию и попробуйте снова.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 слов';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 слова';
 
   @override
   String get secretWarning =>
@@ -679,45 +679,46 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Подтвердите личность для доступа к настройкам безопасности';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Введите PIN-код для доступа к настройкам безопасности';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Подписать сообщение';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Копировать подпись';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Подпишите сообщение одним из адресов вашего кошелька';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Введите сообщение для подписи';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Подпись скопирована';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Сообщение подписано';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Сообщение слишком длинное';
 
   @override
   String get seedInvalid => 'Некорректная seed-фраза';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Не удаётся связаться с вашим узлом. Балансы могут быть устаревшими.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Повторить';
 
   @override
   String get send => 'Отправить';
@@ -800,7 +801,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get themeLight => 'Светлая тема';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Сменить тему';
 
   @override
   String get thisWallet => '#Этот кошелек';
@@ -1009,181 +1010,181 @@ class AppLocalizationsRu extends AppLocalizations {
   String get compoundFailure => 'Не удалось сложить транзакции';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Средства ещё подтверждаются';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Часть средств на этом счёте поступила слишком недавно, чтобы их можно было отправить — сети нужно короткое время на созревание, обычно несколько минут. Вы можете подождать и повторить попытку или отправить с другого счёта, на котором есть созревшие средства.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Сменить счёт';
 
   @override
   String get compoundTooFewUtxos => 'Необходимо наличие не менее двух UTXO';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Собрать на Основной';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Перевести балансы всех остальных адресов на основной адрес';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Перевести всё на Основной?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Это переведёт $amount $symbol с $count других адресов на ваш основной адрес. Будет создана одна или несколько транзакций, за которые взимается комиссия сети.';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => 'Баланс всех адресов уже на Основном';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Сбор на Основной';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Перевод на Основной выполнен';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Не удалось перевести на Основной';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ПЕРЕВЕСТИ';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Счета';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Добавляйте адреса с именами и управляйте ими';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Основной';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Архивировать';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Восстановить';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'В архиве';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Дополнительных счетов пока нет';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Переименовать счёт';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Название счёта';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'СОХРАНИТЬ';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'ДОБАВИТЬ';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Откуда';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Любой';
 
   @override
-  String get home => 'Home';
+  String get home => 'Главная';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Активность';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Общий баланс';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Доступно сейчас $spendable · Ещё поступает $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Поступающие монеты принадлежат вам и скоро будут доступны.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Поступающие монеты можно будет потратить через $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Доступно сейчас $amount. Остальное можно потратить через $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Доступно сейчас $amount. Остальное ещё поступает.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'ожидает принятия';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'статус неизвестен';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'не принято';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'подтверждение $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Отправлено на';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Проверить соединение';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Сохранено из другого кошелька (только просмотр)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Этот кошелёк не может тратить эти средства, поэтому они не учитываются в его общем балансе. Откройте кошелёк, которому они принадлежат, чтобы воспользоваться ими.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Пока нет операций';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Отправлено';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Получено';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Внутри кошелька';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Объединённые монеты';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Когда вы отправите или получите HTN, это появится здесь.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Показать все';
 
   @override
-  String get show => 'Show';
+  String get show => 'Показать';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Мои счета';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Привет, $walletName';
   }
 
   @override
@@ -1256,18 +1257,18 @@ class AppLocalizationsRu extends AppLocalizations {
       'Совместим с кошельком командной строки CLI и Ledger';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Импорт стандартного кошелька';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Кошельки со стандартной деривацией на 12 или 24 слова, с необязательной парольной фразой BIP39';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Импорт старого кошелька';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Кошельки со старой деривацией на 12 слов, совместимые со старым Web Wallet и KDX';
 
   @override
   String get importOptionKpubTitle =>
@@ -1488,121 +1489,121 @@ class AppLocalizationsRu extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Поведение адреса сдачи';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Каждый адрес хранит свой баланс, а сдача остаётся на месте';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Каждый раз используется новый адрес (приватно, баланс распределяется)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Поведение адреса сдачи';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Хранить балансы на каждом адресе';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Приватный';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Запрашивать пароль';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'При запуске';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'При блокировке';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'При подписи';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Дополнительные параметры';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Парольная фраза BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'ВНИМАНИЕ: это не пароль кошелька. Разные парольные фразы BIP39 открывают разные кошельки.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Введите парольную фразу';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Подтвердите парольную фразу';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Парольные фразы не совпадают!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Кошелёк с парольной фразой BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Введите приоритетную комиссию';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'БАЗОВАЯ КОМИССИЯ';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'ПРИОРИТЕТНАЯ КОМИССИЯ';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Не удалось распознать адрес получателя';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Не удалось пересобрать транзакцию';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Не удалось пересобрать транзакцию с новой комиссией';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Не удалось обновить комиссию';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Обновить комиссию';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Обновление комиссии';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority =>
+      'Рекомендуемые приоритетные комиссии';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Новая приоритетная комиссия должна быть не менее $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ОЖИДАНИЕ';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Эта транзакция ожидает подтверждения';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Ожидающая транзакция';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'В мемпуле есть ожидающие транзакции.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Обновить комиссию транзакции';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Заменить комиссией (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'в мемпуле';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Выбор UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Пожалуйста, выберите больше UTXO';
 }
