@@ -107,7 +107,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get available => 'Tillgängligt';
 
   @override
-  String get back => 'Back';
+  String get back => 'Tillbaka';
 
   @override
   String get backupConfirmButton => 'Jag har sparat den';
@@ -116,7 +116,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get backupSecretPhrase => 'Säkerhetskopiera fras';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Hemlig fras saknas';
 
   @override
   String get biometricsMethod => 'Biometrik';
@@ -168,7 +168,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get confirmed => 'bekräftad ';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'bekräftad · mognar';
 
   @override
   String get confirming => 'bekräftas';
@@ -617,24 +617,24 @@ class AppLocalizationsSv extends AppLocalizations {
   String get scanQrCodeError => 'Misslyckades att tolka QR-kod';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Skanna från bild';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Slå på/av ficklampa';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Innan du börjar';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet är en icke-förvarande (non-custodial) plånbok. Din hemliga fras och dina privata nycklar skapas och lagras endast på den här enheten – vi ser dem aldrig, lagrar dem aldrig på någon server och kan inte återställa dem åt dig.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Om du förlorar din hemliga fras finns det ingen lösenordsåterställning och inget supportteam som kan få tillbaka dina pengar. Du ansvarar själv för att hålla den säker.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Jag förstår, fortsätt';
 
   @override
   String get secretInfo =>
@@ -647,26 +647,26 @@ class AppLocalizationsSv extends AppLocalizations {
   String get secretPhrase => 'Hemlig fras';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Verifiera din säkerhetskopia';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Välj rätt ord för varje position för att bekräfta att du har sparat din hemliga fras.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Vilket är ord nr $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Det stämmer inte riktigt. Kontrollera din säkerhetskopia och försök igen.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 ord';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 ord';
 
   @override
   String get secretWarning =>
@@ -677,45 +677,46 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Autentisera dig för att komma åt säkerhetsinställningarna';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Ange PIN-kod för att komma åt säkerhetsinställningarna';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Signera meddelande';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopiera signatur';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Signera ett meddelande med en av dina plånboksadresser';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Ange ett meddelande att signera';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Signaturen kopierad';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Meddelandet signerat';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Meddelandet är för långt';
 
   @override
   String get seedInvalid => 'Angiven hemlig fras är ogiltig';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Kan inte nå din nod. Saldon kan vara inaktuella.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Försök igen';
 
   @override
   String get send => 'Skicka';
@@ -798,7 +799,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get themeLight => 'Ljust tema';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Byt tema';
 
   @override
   String get thisWallet => '#Den här plånboken';
@@ -1006,181 +1007,182 @@ class AppLocalizationsSv extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Medel bekräftas fortfarande';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'En del av medlen på det här kontot togs emot för nyligen för att kunna skickas – nätverket kräver först en kort mognadstid, oftast några minuter. Du kan vänta och försöka igen, eller skicka från ett annat konto med mogna medel.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Byt konto';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Samla på Huvud';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Flytta saldot från alla andra adresser till din huvudadress';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Flytta allt till Huvud?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Det här flyttar $amount $symbol från $count andra adress(er) till din huvudadress. Det skapar en eller flera transaktioner och medför nätverksavgifter.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Saldot på alla adresser finns redan på Huvud';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Samlar på Huvud';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Flytten till Huvud lyckades';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Det gick inte att flytta till Huvud';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'FLYTTA';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Konton';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Lägg till och hantera namngivna adresser';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Huvud';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arkivera';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Återställ';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arkiverade';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Inga ytterligare konton ännu';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Byt namn på konto';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Kontonamn';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'SPARA';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'LÄGG TILL';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Från';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Valfritt';
 
   @override
-  String get home => 'Home';
+  String get home => 'Hem';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktivitet';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Totalt saldo';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Kan spenderas nu $spendable · Fortfarande på väg $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Mynt som fortfarande är på väg är dina och kan snart spenderas.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Mynten som fortfarande är på väg kan spenderas om $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Kan spenderas nu $amount. Resten kan spenderas om $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Kan spenderas nu $amount. Resten är fortfarande på väg.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'väntar på att godkännas';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'status okänd';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'inte godkänd';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'bekräftar $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Skickad till';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Testa anslutning';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Sparade från en annan plånbok (endast visning)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Den här plånboken kan inte spendera dessa, så de räknas inte in i dess totalsumma. Öppna plånboken de tillhör för att använda dem.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Ingen aktivitet ännu';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Skickat';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Mottaget';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Inom plånboken';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Sammanslagna mynt';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'När du skickar eller tar emot HTN dyker det upp här.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Visa alla';
 
   @override
-  String get show => 'Show';
+  String get show => 'Visa';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Mina konton';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Hej, $walletName';
   }
 
   @override
@@ -1250,18 +1252,18 @@ class AppLocalizationsSv extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Importera standardplånbok';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Plånböcker med 12 eller 24 ord och standardderivering, med valfri BIP39-lösenfras';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importera äldre plånbok';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Plånböcker med 12 ord och äldre derivering, kompatibla med den gamla Web Wallet och KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1480,121 +1482,122 @@ class AppLocalizationsSv extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Beteende för växeladress';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Varje adress behåller sitt eget saldo och växeln stannar kvar';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'En ny adress används varje gång (privat, saldot sprids ut)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Beteende för växeladress';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Behåll saldon på varje adress';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privat';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Begär lösenord';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Vid start';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Vid låsning';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Vid signering';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Avancerade alternativ';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39-lösenfras';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'OBS: Detta är inte ett plånbokslösenord; olika BIP39-lösenfraser öppnar olika plånböcker.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Ange lösenfras';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Bekräfta lösenfras';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Lösenfraserna matchar inte!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Plånbok med BIP39-lösenfras.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Ange prioritetsavgift';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'BASAVGIFT';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITETSAVGIFT';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError =>
+      'Kunde inte känna igen destinationsadressen';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Kunde inte bygga om transaktionen';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Kunde inte bygga om transaktionen med den nya avgiften';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Kunde inte uppdatera avgiften';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Uppdatera avgift';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Uppdaterar avgift';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Rekommenderade prioritetsavgifter';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Den nya prioritetsavgiften måste vara minst $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'VÄNTAR';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Den här transaktionen väntar';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Väntande transaktion';
 
   @override
   String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+      'Det finns väntande transaktioner i mempoolen.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Uppdatera transaktionsavgift';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Ersätt med avgift (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'i mempoolen';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Välj UTXO:er';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Välj fler UTXO:er';
 }

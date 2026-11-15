@@ -107,7 +107,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get available => 'Beschikbaar';
 
   @override
-  String get back => 'Back';
+  String get back => 'Terug';
 
   @override
   String get backupConfirmButton => 'Ik heb er een back-up van gemaakt';
@@ -116,7 +116,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get backupSecretPhrase => 'Backup Secret Phrase';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Secret Phrase ontbreekt';
 
   @override
   String get biometricsMethod => 'Biometrie';
@@ -168,7 +168,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get confirmed => 'bevestigd';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'bevestigd · rijpt';
 
   @override
   String get confirming => 'bevestigen';
@@ -618,24 +618,24 @@ class AppLocalizationsNl extends AppLocalizations {
   String get scanQrCodeError => 'Kan QR-code niet analyseren';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Scannen vanuit afbeelding';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Zaklamp aan/uit';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Voordat je begint';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet is een non-custodial wallet. Je Secret Phrase en privésleutels worden alleen op dit apparaat aangemaakt en opgeslagen – wij zien ze nooit, slaan ze op geen enkele server op en kunnen ze niet voor je herstellen.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Als je je Secret Phrase kwijtraakt, bestaat er geen wachtwoordreset en geen supportteam dat je geld kan terughalen. Je bent zelf als enige verantwoordelijk voor het veilig bewaren ervan.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Ik begrijp het, doorgaan';
 
   @override
   String get secretInfo =>
@@ -648,26 +648,26 @@ class AppLocalizationsNl extends AppLocalizations {
   String get secretPhrase => 'Secret Phrase';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Controleer je back-up';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Kies voor elke positie het juiste woord om te bevestigen dat je je Secret Phrase hebt opgeslagen.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Wat is woord #$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Dat klopt niet helemaal. Controleer je back-up en probeer het opnieuw.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 woorden';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 woorden';
 
   @override
   String get secretWarning =>
@@ -678,45 +678,46 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Verifieer om de beveiligingsinstellingen te openen';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Voer je pincode in om de beveiligingsinstellingen te openen';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Bericht ondertekenen';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Handtekening kopiëren';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Onderteken een bericht met een van de adressen van je wallet';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Voer een bericht in om te ondertekenen';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Handtekening gekopieerd';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Bericht ondertekend';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Het bericht is te lang';
 
   @override
   String get seedInvalid => 'Seed is ongeldig';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Je node is niet bereikbaar. Saldi kunnen verouderd zijn.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Opnieuw proberen';
 
   @override
   String get send => 'Verstuur';
@@ -801,7 +802,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get themeLight => 'Licht thema';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Thema wisselen';
 
   @override
   String get thisWallet => '#Deze Wallet';
@@ -1007,181 +1008,182 @@ class AppLocalizationsNl extends AppLocalizations {
   String get compoundFailure => 'Transacties compounden is mislukt';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Tegoed wordt nog bevestigd';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Een deel van het tegoed op dit account is te recent ontvangen om al te versturen – het netwerk vereist eerst een korte rijpingstijd, meestal een paar minuten. Je kunt wachten en het opnieuw proberen, of versturen vanaf een ander account met gerijpt tegoed.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Account wisselen';
 
   @override
   String get compoundTooFewUtxos => 'Ten minste twee UTXO\'s zijn vereist';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Verzamelen op Hoofd';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Verplaats het saldo van alle andere adressen naar je hoofdadres';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Alles naar Hoofd verplaatsen?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Hiermee verplaats je $amount $symbol van $count ander(e) adres(sen) naar je hoofdadres. Er worden een of meer transacties aangemaakt en er worden netwerkkosten in rekening gebracht.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Het saldo van alle adressen staat al op Hoofd';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Verzamelen op Hoofd';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Verplaatsen naar Hoofd geslaagd';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Verplaatsen naar Hoofd mislukt';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'VERPLAATS';
 
   @override
   String get manageAccounts => 'Accounts';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Voeg benoemde adressen toe en beheer ze';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Hoofd';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Archiveren';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Herstellen';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Gearchiveerd';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Nog geen extra accounts';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Account hernoemen';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Accountnaam';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'OPSLAAN';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'TOEVOEGEN';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Van';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Elk';
 
   @override
-  String get home => 'Home';
+  String get home => 'Start';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Activiteit';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Totaalsaldo';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Nu beschikbaar $spendable · Nog onderweg $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Coins die nog onderweg zijn, zijn van jou en kunnen binnenkort worden uitgegeven.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'De coins die nog onderweg zijn, kunnen over $time worden uitgegeven.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Nu beschikbaar $amount. De rest kan over $time worden uitgegeven.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Nu beschikbaar $amount. De rest is nog onderweg.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'wacht op acceptatie';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'status onbekend';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'niet geaccepteerd';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'bevestigen $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Ingediend bij';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Verbinding testen';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Opgeslagen vanuit een andere wallet (alleen weergave)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Deze wallet kan ze niet uitgeven, dus ze tellen niet mee in het totaal. Open de wallet waartoe ze behoren om ze te gebruiken.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Nog geen activiteit';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Verzonden';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Ontvangen';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Binnen wallet';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Samengevoegde coins';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Wanneer je HTN verstuurt of ontvangt, verschijnt het hier.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Alles bekijken';
 
   @override
-  String get show => 'Show';
+  String get show => 'Tonen';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Mijn accounts';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Hoi, $walletName';
   }
 
   @override
@@ -1251,18 +1253,18 @@ class AppLocalizationsNl extends AppLocalizations {
       'Compatibel met web wallet en KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Standaardwallet importeren';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Wallets van 12 of 24 woorden met standaardafleiding en optionele BIP39-passphrase';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Oude wallet importeren';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Wallets van 12 woorden met oude afleiding, compatibel met de oude Web Wallet en KDX';
 
   @override
   String get importOptionKpubTitle => 'Importeer Watch Only Wallet';
@@ -1481,121 +1483,121 @@ class AppLocalizationsNl extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Gedrag van wisselgeldadres';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Elk adres houdt zijn eigen saldo en het wisselgeld blijft staan';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Elke keer wordt een nieuw adres gebruikt (privé, het saldo spreidt zich)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Gedrag van wisselgeldadres';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Saldi per adres bewaren';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privé';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Wachtwoord vragen';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Bij het starten';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Bij vergrendeling';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Bij ondertekenen';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Geavanceerde opties';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39-passphrase';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'LET OP: Dit is geen walletwachtwoord; verschillende BIP39-passphrases openen verschillende wallets.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Voer passphrase in';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Bevestig passphrase';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Passphrases komen niet overeen!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Wallet met BIP39-passphrase.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Voer prioriteitstarief in';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'BASISTARIEF';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITEITSTARIEF';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Bestemmingsadres niet herkend';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Transactie opnieuw opbouwen mislukt';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Transactie opnieuw opbouwen met nieuw tarief mislukt';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Tarief bijwerken mislukt';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Tarief bijwerken';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Tarief wordt bijgewerkt';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Aanbevolen prioriteitstarieven';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Het nieuwe prioriteitstarief moet minimaal $amount $symbol zijn';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'IN BEHANDELING';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Deze transactie is in behandeling';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Transactie in behandeling';
 
   @override
   String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+      'Er staan transacties in behandeling in de mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Transactietarief bijwerken';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Vervangen door tarief (RBF)';
 
   @override
   String get txInMempool => 'in mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO\'s selecteren';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Selecteer meer UTXO\'s';
 }
