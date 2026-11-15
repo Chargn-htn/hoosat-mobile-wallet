@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'themes/themes.dart';
 
-const kDefaultFontFamily = 'NunitoSans';
+// The home-screen redesign (2026-11) uses Inter; the app was already
+// reskinned to the new colors (see themes/) but its font had not been
+// switched over until now. NunitoSans stays bundled below in case anything
+// still references it directly.
+const kDefaultFontFamily = 'Inter';
 const kMonospaceFontFamily = 'RobotoMono';
 
 // theme.primary meets WCAG AA contrast for buttons/icons, but falls just
@@ -30,7 +34,7 @@ class AppStyles {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
       fontSize: AppFontSizes.medium,
-      fontWeight: FontWeight.w200,
+      fontWeight: FontWeight.w400,
       color: theme.text,
     );
   }
@@ -442,9 +446,10 @@ class AppStyles {
   TextStyle get textStyleDialogHeader {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
-      fontSize: AppFontSizes.large,
-      fontWeight: FontWeight.w700,
-      color: theme.primary,
+      fontSize: 19,
+      fontWeight: FontWeight.w800,
+      letterSpacing: -0.2,
+      color: theme.text,
     );
   }
 
@@ -454,7 +459,7 @@ class AppStyles {
       fontFamily: kDefaultFontFamily,
       fontSize: AppFontSizes.medium,
       fontWeight: FontWeight.w600,
-      color: theme.primary,
+      color: theme.text,
     );
   }
 
@@ -569,9 +574,9 @@ class AppStyles {
   TextStyle textStyleHeader(BuildContext context) {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
-      fontSize: AppFontSizes.larger,
-      letterSpacing: 1.4,
-      fontWeight: FontWeight.w700,
+      fontSize: 20,
+      letterSpacing: -0.2,
+      fontWeight: FontWeight.w800,
       color: theme.text,
     );
   }
@@ -579,10 +584,10 @@ class AppStyles {
   // Text style for data sub headers
   late final textStyleSubHeader = TextStyle(
     fontFamily: kDefaultFontFamily,
-    fontSize: AppFontSizes.medium,
-    letterSpacing: 1.4,
-    fontWeight: FontWeight.w400,
-    color: theme.text,
+    fontSize: 15,
+    letterSpacing: 0,
+    fontWeight: FontWeight.w700,
+    color: theme.text60,
   );
 
   late final textStyleSubHeaderUnselected = textStyleSubHeader.copyWith(
@@ -597,8 +602,9 @@ class AppStyles {
   TextStyle get textStyleSettingsHeader {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
-      fontSize: AppFontSizes.largest,
-      fontWeight: FontWeight.w700,
+      fontSize: 26,
+      letterSpacing: -0.4,
+      fontWeight: FontWeight.w800,
       color: theme.text,
     );
   }
@@ -608,8 +614,9 @@ class AppStyles {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
       fontSize: AppFontSizes.largest,
-      fontWeight: FontWeight.w700,
-      color: theme.primary,
+      letterSpacing: -0.3,
+      fontWeight: FontWeight.w800,
+      color: theme.text,
     );
   }
 
@@ -618,17 +625,19 @@ class AppStyles {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
       fontSize: AppFontSizes.larger,
-      fontWeight: FontWeight.w700,
-      color: theme.primary,
+      letterSpacing: -0.3,
+      fontWeight: FontWeight.w800,
+      color: theme.text,
     );
   }
 
   TextStyle get textStylePinScreenHeaderColored {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
-      fontSize: AppFontSizes.large,
-      fontWeight: FontWeight.w700,
-      color: theme.primary,
+      fontSize: 26,
+      letterSpacing: -0.4,
+      fontWeight: FontWeight.w800,
+      color: theme.text,
     );
   }
 
@@ -681,7 +690,7 @@ class AppStyles {
     return TextStyle(
       fontFamily: kDefaultFontFamily,
       fontSize: AppFontSizes.smallest,
-      fontWeight: FontWeight.w100,
+      fontWeight: FontWeight.w400,
       color: theme.text60,
     );
   }
@@ -779,10 +788,10 @@ class AppStyles {
 
   TextStyle get tagText {
     return TextStyle(
-      fontSize: 12,
+      fontSize: 11.5,
       color: theme.text60,
       fontFamily: kDefaultFontFamily,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
     );
   }
 

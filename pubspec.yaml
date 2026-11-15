@@ -69,6 +69,20 @@ dev_dependencies:
 flutter:
   generate: true
   fonts:
+    - family: Inter
+      fonts:
+        - asset: fonts/Inter-Variable.ttf
+          weight: 400
+        - asset: fonts/Inter-Variable.ttf
+          weight: 500
+        - asset: fonts/Inter-Variable.ttf
+          weight: 600
+        - asset: fonts/Inter-Variable.ttf
+          weight: 700
+        - asset: fonts/Inter-Variable.ttf
+          weight: 800
+        - asset: fonts/Inter-Variable.ttf
+          weight: 900
     - family: NunitoSans
       fonts:
         - asset: fonts/NunitoSans-Regular.ttf
