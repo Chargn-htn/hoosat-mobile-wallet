@@ -108,7 +108,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get available => 'Disponible';
 
   @override
-  String get back => 'Back';
+  String get back => 'Enrere';
 
   @override
   String get backupConfirmButton => 'N\'he fet una còpia de seguretat';
@@ -117,7 +117,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get backupSecretPhrase => 'Copiar la frase secreta';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Falta la frase secreta';
 
   @override
   String get biometricsMethod => 'Biometria';
@@ -170,7 +170,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get confirmed => 'Confirmat';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'confirmat · madurant';
 
   @override
   String get confirming => 'Confirmant';
@@ -617,24 +617,24 @@ class AppLocalizationsCa extends AppLocalizations {
   String get scanQrCodeError => 'Error al obtenir codi QR';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Escaneja des d\'una imatge';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Activa/desactiva la llanterna';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Abans de començar';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet és un moneder no custodial. La teva frase secreta i les teves claus privades es generen i s\'emmagatzemen només en aquest dispositiu: mai no les veiem, no les desem en cap servidor i no podem recuperar-les per tu.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Si perds la teva frase secreta, no hi ha cap restabliment de contrasenya ni cap equip de suport que pugui recuperar els teus fons. Ets l\'únic responsable de mantenir-la segura.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Ho entenc, continua';
 
   @override
   String get secretInfo =>
@@ -647,26 +647,26 @@ class AppLocalizationsCa extends AppLocalizations {
   String get secretPhrase => 'Frase secreta';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Verifica la còpia de seguretat';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Selecciona la paraula correcta per a cada posició per confirmar que has desat la teva frase secreta.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Quina és la paraula núm. $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'No és del tot correcte. Revisa la còpia de seguretat i torna-ho a provar.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 paraules';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 paraules';
 
   @override
   String get secretWarning =>
@@ -677,45 +677,46 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Autentica\'t per accedir a la configuració de seguretat';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Introdueix el PIN per accedir a la configuració de seguretat';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Signa el missatge';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Copia la signatura';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Signa un missatge amb una de les adreces del teu moneder';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Introdueix un missatge per signar';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Signatura copiada';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Missatge signat';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'El missatge és massa llarg';
 
   @override
   String get seedInvalid => 'Llavor no vàlida';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'No es pot connectar amb el teu node. Els saldos poden estar desactualitzats.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Torna-ho a provar';
 
   @override
   String get send => 'Enviar';
@@ -798,7 +799,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get themeLight => 'Tema clar';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Canvia el tema';
 
   @override
   String get thisWallet => '#Aquest moneder';
@@ -1005,181 +1006,180 @@ class AppLocalizationsCa extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Els fons encara s\'estan confirmant';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Alguns fons d\'aquest compte es van rebre fa massa poc per enviar-los encara: la xarxa exigeix primer una breu espera de maduració, normalment uns minuts. Pots esperar i tornar-ho a provar, o enviar des d\'un altre compte que tingui fons madurs.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Canvia de compte';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Reuneix a Principal';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Trasllada el saldo de totes les altres adreces a la teva adreça principal';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Vols moure-ho tot a Principal?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Això mourà $amount $symbol de $count altra/es adreça/es a la teva adreça principal. Es crearan una o més transaccions i s\'aplicaran comissions de xarxa.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'El saldo de totes les adreces ja és a Principal';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Reunint a Principal';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Trasllat a Principal completat';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'No s\'ha pogut traslladar a Principal';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'MOU';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Comptes';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => 'Afegeix i gestiona adreces amb nom';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Principal';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arxiva';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Restaura';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arxivats';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Encara no hi ha comptes addicionals';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Canvia el nom del compte';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Nom del compte';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'DESA';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'AFEGEIX';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Des de';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Qualsevol';
 
   @override
-  String get home => 'Home';
+  String get home => 'Inici';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Activitat';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Saldo total';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Disponible ara $spendable · Encara arribant $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Les monedes que encara arriben són teves i aviat es podran gastar.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Les monedes que encara arriben es podran gastar d\'aquí a $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Disponible ara $amount. La resta es podrà gastar d\'aquí a $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Disponible ara $amount. La resta encara està arribant.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'esperant ser acceptada';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'estat desconegut';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'no acceptada';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'confirmant $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Enviat a';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Prova la connexió';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Desats d\'un altre moneder (només visualització)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Aquest moneder no els pot gastar, per això no es compten al seu total. Obre el moneder al qual pertanyen per utilitzar-los.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Encara no hi ha activitat';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Enviat';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Rebut';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Dins del moneder';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Monedes combinades';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => 'Quan enviïs o rebis HTN, apareixerà aquí.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Mostra-ho tot';
 
   @override
-  String get show => 'Show';
+  String get show => 'Mostra';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Els meus comptes';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Hola, $walletName';
   }
 
   @override
@@ -1249,18 +1249,18 @@ class AppLocalizationsCa extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Importa un moneder estàndard';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Moneders de 12 o 24 paraules amb derivació estàndard i frase de pas BIP39 opcional';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importa un moneder antic';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Moneders de 12 paraules amb derivació antiga, compatibles amb l\'antic Web Wallet i KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1479,121 +1479,125 @@ class AppLocalizationsCa extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Comportament de l\'adreça de canvi';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Cada adreça conserva el seu propi saldo i el canvi es queda al mateix lloc';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Cada vegada s\'utilitza una adreça nova (privat, el saldo es reparteix)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle =>
+      'Comportament de l\'adreça de canvi';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Mantén els saldos a cada adreça';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privat';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Sol·licita la contrasenya';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'En iniciar';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Quan està bloquejat';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'En signar';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Opcions avançades';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Frase de pas BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'NOTA: Això no és una contrasenya del moneder; diferents frases de pas BIP39 obren moneders diferents.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Introdueix la frase de pas';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Confirma la frase de pas';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Les frases de pas no coincideixen!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Moneder amb frase de pas BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Introdueix la comissió de prioritat';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'COMISSIÓ BASE';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'COMISSIÓ DE PRIORITAT';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError =>
+      'No s\'ha pogut reconèixer l\'adreça de destinació';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError =>
+      'No s\'ha pogut reconstruir la transacció';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'No s\'ha pogut reconstruir la transacció amb la nova comissió';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'No s\'ha pogut actualitzar la comissió';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Actualitza la comissió';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Actualitzant la comissió';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority =>
+      'Comissions de prioritat recomanades';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'La nova comissió de prioritat ha de ser com a mínim $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'PENDENT';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Aquesta transacció està pendent';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Transacció pendent';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Hi ha transaccions pendents al mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee =>
+      'Actualitza la comissió de la transacció';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Substitueix per comissió (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'al mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Selecciona UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Selecciona més UTXO';
 }

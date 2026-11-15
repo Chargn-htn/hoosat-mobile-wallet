@@ -107,7 +107,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get available => 'Available';
 
   @override
-  String get back => 'Back';
+  String get back => 'Späť';
 
   @override
   String get backupConfirmButton => 'I\'ve Backed It Up';
@@ -116,7 +116,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get backupSecretPhrase => 'Zálohovať Tajnú Frázu';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Chýba tajná fráza';
 
   @override
   String get biometricsMethod => 'Biometrické údaje';
@@ -168,7 +168,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get confirmed => 'potvrdená';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'potvrdené · dozrieva';
 
   @override
   String get confirming => 'potvrdzovanie';
@@ -614,24 +614,24 @@ class AppLocalizationsSk extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Skenovať z obrázka';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Zapnúť/vypnúť baterku';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Skôr než začnete';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet je nekustodiálna peňaženka. Vaša tajná fráza a súkromné kľúče sa vytvárajú a ukladajú iba v tomto zariadení – nikdy ich nevidíme, neukladáme ich na žiadny server a nemôžeme ich pre vás obnoviť.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Ak stratíte tajnú frázu, neexistuje obnovenie hesla ani tím podpory, ktorý by vám vrátil prostriedky. Za jej bezpečné uchovanie zodpovedáte výlučne vy.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Rozumiem, pokračovať';
 
   @override
   String get secretInfo =>
@@ -644,26 +644,26 @@ class AppLocalizationsSk extends AppLocalizations {
   String get secretPhrase => 'Secret Phrase';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Overte zálohu';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Pre každú pozíciu vyberte správne slovo, aby ste potvrdili, že ste si tajnú frázu uložili.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Aké je slovo č. $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'To nie je celkom správne. Skontrolujte zálohu a skúste to znova.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 slov';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 slov';
 
   @override
   String get secretWarning =>
@@ -674,45 +674,46 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Overte sa, aby ste získali prístup k nastaveniam zabezpečenia';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Zadajte PIN pre prístup k nastaveniam zabezpečenia';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Podpísať správu';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopírovať podpis';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Podpíšte správu jednou z adries svojej peňaženky';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Zadajte správu na podpis';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Podpis skopírovaný';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Správa podpísaná';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Správa je príliš dlhá';
 
   @override
   String get seedInvalid => 'Seed is Invalid';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Nedá sa spojiť s vaším uzlom. Zostatky môžu byť zastarané.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Skúsiť znova';
 
   @override
   String get send => 'Send';
@@ -794,7 +795,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get themeLight => 'Svetlá Téma';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Prepnúť tému';
 
   @override
   String get thisWallet => '#This Wallet';
@@ -1001,181 +1002,182 @@ class AppLocalizationsSk extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Prostriedky sa stále potvrdzujú';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Časť prostriedkov na tomto účte bola prijatá príliš nedávno na to, aby sa dala odoslať – sieť najprv vyžaduje krátky čas dozrievania, zvyčajne niekoľko minút. Môžete počkať a skúsiť to znova, alebo odoslať z iného účtu, ktorý má dozreté prostriedky.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Prepnúť účet';
 
   @override
   String get compoundTooFewUtxos => 'Vyžadujú sa najmenej dve UTXO';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Zhromaždiť na Hlavnom';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Presunúť zostatok všetkých ostatných adries na vašu hlavnú adresu';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Presunúť všetko na Hlavný?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Týmto presuniete $amount $symbol z $count ďalších adries na svoju hlavnú adresu. Vytvorí sa jedna alebo viac transakcií a účtujú sa sieťové poplatky.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Zostatok všetkých adries je už na Hlavnom';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Zhromažďovanie na Hlavnom';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Presun na Hlavný bol úspešný';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Presun na Hlavný zlyhal';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'PRESUNÚŤ';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Účty';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Pridávajte pomenované adresy a spravujte ich';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Hlavný';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Archivovať';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Obnoviť';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Archivované';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Zatiaľ žiadne ďalšie účty';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Premenovať účet';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Názov účtu';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'ULOŽIŤ';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'PRIDAŤ';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Z';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Ľubovoľný';
 
   @override
-  String get home => 'Home';
+  String get home => 'Domov';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktivita';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Celkový zostatok';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Na utratenie teraz $spendable · Ešte prichádza $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Mince, ktoré ešte prichádzajú, sú vaše a čoskoro ich bude možné minúť.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Mince, ktoré ešte prichádzajú, bude možné minúť o $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Na utratenie teraz $amount. Zvyšok bude možné minúť o $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Na utratenie teraz $amount. Zvyšok ešte prichádza.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'čaká na prijatie';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'stav neznámy';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'neprijaté';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'potvrdzovanie $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Odoslané na';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Otestovať pripojenie';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Uložené z inej peňaženky (iba na zobrazenie)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Táto peňaženka ich nemôže minúť, preto sa nezapočítavajú do jej súčtu. Otvorte peňaženku, ku ktorej patria, aby ste ich mohli použiť.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Zatiaľ žiadna aktivita';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Odoslané';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Prijaté';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'V rámci peňaženky';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Zlúčené mince';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Keď odošlete alebo prijmete HTN, zobrazí sa to tu.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Zobraziť všetko';
 
   @override
-  String get show => 'Show';
+  String get show => 'Zobraziť';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Moje účty';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Ahoj, $walletName';
   }
 
   @override
@@ -1246,18 +1248,19 @@ class AppLocalizationsSk extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle =>
+      'Importovať štandardnú peňaženku';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Peňaženky s 12 alebo 24 slovami a štandardným odvodením, s voliteľnou frázou BIP39';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importovať staršiu peňaženku';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Peňaženky s 12 slovami a starším odvodením, kompatibilné so starým Web Wallet a KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1476,121 +1479,120 @@ class AppLocalizationsSk extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Správanie adresy pre drobné';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Každá adresa si ponechá svoj zostatok a drobné zostanú na mieste';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Zakaždým sa použije nová adresa (súkromne, zostatok sa rozptýli)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Správanie adresy pre drobné';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Ponechať zostatky na každej adrese';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Súkromné';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Žiadať heslo';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Pri spustení';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Pri uzamknutí';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Pri podpisovaní';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Rozšírené možnosti';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Fráza BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'POZNÁMKA: Toto nie je heslo peňaženky – rôzne frázy BIP39 otvárajú rôzne peňaženky.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Zadajte frázu';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Potvrďte frázu';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Frázy sa nezhodujú!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Peňaženka s frázou BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Zadajte prioritný poplatok';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'ZÁKLADNÝ POPLATOK';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITNÝ POPLATOK';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Cieľovú adresu sa nepodarilo rozpoznať';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Transakciu sa nepodarilo znova zostaviť';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Transakciu sa nepodarilo znova zostaviť s novým poplatkom';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Poplatok sa nepodarilo aktualizovať';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Aktualizovať poplatok';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Aktualizácia poplatku';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Odporúčané prioritné poplatky';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Nový prioritný poplatok musí byť aspoň $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ČAKÁ';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Táto transakcia čaká';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Čakajúca transakcia';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'V mempoole sú čakajúce transakcie.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Aktualizovať poplatok transakcie';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Nahradiť poplatkom (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'v mempoole';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Vybrať UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Vyberte viac UTXO';
 }
