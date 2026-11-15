@@ -106,7 +106,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get available => '사용 가능';
 
   @override
-  String get back => 'Back';
+  String get back => '뒤로';
 
   @override
   String get backupConfirmButton => '백업을 했습니다';
@@ -115,7 +115,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get backupSecretPhrase => '비밀 문구를 백업';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => '비밀 문구가 없습니다';
 
   @override
   String get biometricsMethod => '생체 인식';
@@ -167,7 +167,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get confirmed => '확인 완료';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => '확인됨 · 성숙 중';
 
   @override
   String get confirming => '확인 중입니다';
@@ -601,24 +601,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get scanQrCodeError => 'QR 코드를 해석하는 데 실패했습니다';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => '이미지에서 스캔';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => '손전등 켜기/끄기';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => '시작하기 전에';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet은 비수탁형(non-custodial) 지갑입니다. 비밀 문구와 개인 키는 이 기기에서만 생성되고 저장됩니다. 저희는 이를 절대 볼 수 없고, 어떤 서버에도 저장하지 않으며, 대신 복구해 드릴 수도 없습니다.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      '비밀 문구를 잃어버리면 비밀번호 재설정도, 자금을 되찾아 줄 지원팀도 없습니다. 안전하게 보관할 책임은 전적으로 본인에게 있습니다.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => '이해했습니다. 계속';
 
   @override
   String get secretInfo =>
@@ -631,26 +631,25 @@ class AppLocalizationsKo extends AppLocalizations {
   String get secretPhrase => '비밀 문구';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => '백업 확인';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      '비밀 문구를 저장했는지 확인하려면 각 위치에 맞는 단어를 선택하세요.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return '$index번째 단어는 무엇인가요?';
   }
 
   @override
-  String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+  String get verifyBackupWrongAnswer => '정확하지 않습니다. 백업을 확인하고 다시 시도하세요.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12단어';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24단어';
 
   @override
   String get secretWarning =>
@@ -660,46 +659,43 @@ class AppLocalizationsKo extends AppLocalizations {
   String get securityHeader => '보안';
 
   @override
-  String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+  String get securitySettingsBiometrics => '보안 설정에 접근하려면 인증하세요';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin => '보안 설정에 접근하려면 PIN을 입력하세요';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => '메시지 서명';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => '서명 복사';
 
   @override
-  String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+  String get signMessageDescription => '지갑 주소 중 하나로 메시지에 서명합니다';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => '서명할 메시지를 입력하세요';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => '서명이 복사되었습니다';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => '메시지에 서명했습니다';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => '메시지가 너무 깁니다';
 
   @override
   String get seedInvalid => '시드가 부적절합니다';
 
   @override
-  String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+  String get nodeUnreachable => '노드에 연결할 수 없습니다. 잔액이 최신이 아닐 수 있습니다.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => '다시 시도';
 
   @override
   String get send => '보내기';
@@ -781,7 +777,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get themeLight => 'Light Theme';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => '테마 전환';
 
   @override
   String get thisWallet => '#This Wallet';
@@ -988,181 +984,176 @@ class AppLocalizationsKo extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => '자금이 아직 확인 중입니다';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      '이 계정의 일부 자금은 받은 지 얼마 되지 않아 아직 보낼 수 없습니다. 네트워크는 먼저 짧은 성숙 대기 시간(보통 몇 분)을 요구합니다. 잠시 기다린 후 다시 시도하거나, 성숙한 자금이 있는 다른 계정에서 보내세요.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => '계정 전환';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => '메인으로 모으기';
 
   @override
-  String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+  String get moveToMainDescription => '다른 모든 주소의 잔액을 메인 주소로 옮깁니다';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => '모든 것을 메인으로 옮길까요?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return '다른 주소 $count개에서 $amount $symbol을(를) 메인 주소로 옮깁니다. 하나 이상의 트랜잭션이 생성되며 네트워크 수수료가 발생합니다.';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => '모든 주소의 잔액이 이미 메인에 있습니다';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => '메인으로 모으는 중';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => '메인으로 이동 성공';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => '메인으로 이동 실패';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => '이동';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => '계정';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => '이름이 지정된 주소를 추가하고 관리합니다';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => '메인';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => '보관';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => '복원';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => '보관됨';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => '추가 계정이 아직 없습니다';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => '계정 이름 변경';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => '계정 이름';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => '저장';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => '추가';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => '보내는 곳';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => '모두';
 
   @override
-  String get home => 'Home';
+  String get home => '홈';
 
   @override
-  String get activity => 'Activity';
+  String get activity => '활동';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => '총 잔액';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return '지금 사용 가능 $spendable · 아직 도착 중 $arriving $symbol';
   }
 
   @override
-  String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+  String get homeArrivingSoon => '아직 도착 중인 코인은 본인의 것이며 곧 사용할 수 있습니다.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return '아직 도착 중인 코인은 $time 후에 사용할 수 있습니다.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return '지금 사용 가능 $amount. 나머지는 $time 후에 사용할 수 있습니다.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return '지금 사용 가능 $amount. 나머지는 아직 도착 중입니다.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => '수락 대기 중';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => '상태 알 수 없음';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => '수락되지 않음';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return '확인 중 $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => '제출 대상';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => '연결 테스트';
 
   @override
-  String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+  String get accountsOtherWalletHeader => '다른 지갑에서 저장됨 (보기 전용)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      '이 지갑은 이 자금을 사용할 수 없으므로 총액에 포함되지 않습니다. 사용하려면 해당 자금이 속한 지갑을 여세요.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => '아직 활동이 없습니다';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => '보냄';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => '받음';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => '지갑 내부';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => '병합된 코인';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => 'HTN을 보내거나 받으면 여기에 표시됩니다.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => '모두 보기';
 
   @override
-  String get show => 'Show';
+  String get show => '표시';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => '내 계정';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return '안녕하세요, $walletName님';
   }
 
   @override
@@ -1232,18 +1223,18 @@ class AppLocalizationsKo extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => '표준 지갑 가져오기';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '표준 파생 방식의 12 또는 24단어 지갑(BIP39 암호 문구는 선택)';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => '레거시 지갑 가져오기';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '레거시 파생 방식의 12단어 지갑(이전 Web Wallet 및 KDX와 호환)';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1462,121 +1453,118 @@ class AppLocalizationsKo extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => '거스름돈 주소 동작';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      '각 주소가 자기 잔액을 유지하고 거스름돈은 그대로 남습니다';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      '매번 새 주소를 사용합니다 (비공개, 잔액이 분산됨)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => '거스름돈 주소 동작';
 
   @override
-  String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+  String get changeAddressModeDialogOptionKeepPerAddress => '각 주소에 잔액 유지';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => '비공개';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => '비밀번호 요청';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => '실행 시';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => '잠겼을 때';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => '서명할 때';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => '고급 옵션';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 암호 문구';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      '참고: 지갑 비밀번호가 아닙니다. BIP39 암호 문구가 다르면 다른 지갑이 열립니다.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => '암호 문구 입력';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => '암호 문구 확인';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => '암호 문구가 일치하지 않습니다!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39 암호 문구가 있는 지갑입니다.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => '우선순위 수수료 입력';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => '기본 수수료';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => '우선순위 수수료';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => '수신 주소를 인식하지 못했습니다';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => '트랜잭션을 다시 만들지 못했습니다';
 
   @override
-  String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+  String get feeUpdateRebuildError2 => '새 수수료로 트랜잭션을 다시 만들지 못했습니다';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => '수수료를 업데이트하지 못했습니다';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => '수수료 업데이트';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => '수수료 업데이트 중';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => '권장 우선순위 수수료';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return '새 우선순위 수수료는 최소 $amount $symbol 이상이어야 합니다';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => '보류 중';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => '이 트랜잭션은 보류 중입니다';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => '보류 중인 트랜잭션';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => '멤풀에 보류 중인 트랜잭션이 있습니다.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => '트랜잭션 수수료 업데이트';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => '수수료로 교체 (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => '멤풀에 있음';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO 선택';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'UTXO를 더 선택하세요';
 }

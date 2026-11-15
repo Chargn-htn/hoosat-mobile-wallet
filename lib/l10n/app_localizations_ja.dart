@@ -106,7 +106,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get available => 'Available';
 
   @override
-  String get back => 'Back';
+  String get back => '戻る';
 
   @override
   String get backupConfirmButton => 'バックアップしました';
@@ -115,7 +115,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get backupSecretPhrase => 'シークレットフレーズをバックアップする';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'シークレットフレーズがありません';
 
   @override
   String get biometricsMethod => '生体認証';
@@ -167,7 +167,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get confirmed => 'confirmed';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => '確認済み · 成熟中';
 
   @override
   String get confirming => 'confirming';
@@ -609,24 +609,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => '画像からスキャン';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'ライトのオン/オフ';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'はじめる前に';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Walletはノンカストディアル型のウォレットです。シークレットフレーズと秘密鍵は、この端末上でのみ生成・保存されます。私たちがそれらを見ることはなく、サーバーに保存することもなく、あなたに代わって復元することもできません。';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'シークレットフレーズを紛失した場合、パスワードの再設定はできず、資金を取り戻せるサポートチームも存在しません。安全に保管する責任はすべてあなたにあります。';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => '理解しました。続行';
 
   @override
   String get secretInfo =>
@@ -639,26 +639,25 @@ class AppLocalizationsJa extends AppLocalizations {
   String get secretPhrase => 'シークレットフレーズ';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'バックアップを確認';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'シークレットフレーズを保存したことを確認するため、各位置の正しい単語を選んでください。';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return '$index番目の単語は何ですか？';
   }
 
   @override
-  String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+  String get verifyBackupWrongAnswer => '少し違います。バックアップを確認してもう一度お試しください。';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12単語';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24単語';
 
   @override
   String get secretWarning =>
@@ -668,46 +667,43 @@ class AppLocalizationsJa extends AppLocalizations {
   String get securityHeader => 'セキュリティ';
 
   @override
-  String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+  String get securitySettingsBiometrics => 'セキュリティ設定にアクセスするには認証してください';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin => 'セキュリティ設定にアクセスするにはPINを入力してください';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'メッセージに署名';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => '署名をコピー';
 
   @override
-  String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+  String get signMessageDescription => 'ウォレットのアドレスのいずれかでメッセージに署名します';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => '署名するメッセージを入力';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => '署名をコピーしました';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'メッセージに署名しました';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'メッセージが長すぎます';
 
   @override
   String get seedInvalid => 'シードが無効です';
 
   @override
-  String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+  String get nodeUnreachable => 'ノードに接続できません。残高が古い可能性があります。';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => '再試行';
 
   @override
   String get send => '送金';
@@ -790,7 +786,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get themeLight => 'Light Theme';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'テーマを切り替え';
 
   @override
   String get thisWallet => '#This Wallet';
@@ -986,181 +982,176 @@ class AppLocalizationsJa extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => '資金はまだ承認中です';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'このアカウントの一部の資金は、受け取ってから間もないため、まだ送金できません。ネットワークではまず短い成熟待ち時間（通常は数分）が必要です。しばらく待ってからもう一度お試しいただくか、成熟済みの資金がある別のアカウントから送金してください。';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'アカウントを切り替え';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'メインに集める';
 
   @override
-  String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+  String get moveToMainDescription => '他のすべてのアドレスの残高をメインアドレスにまとめます';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'すべてをメインに移動しますか？';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return '$count個の他のアドレスから$amount $symbolをメインアドレスに移動します。1件以上のトランザクションが作成され、ネットワーク手数料がかかります。';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => 'すべてのアドレスの残高はすでにメインにあります';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'メインに集めています';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'メインへの移動に成功しました';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'メインへの移動に失敗しました';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => '移動';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'アカウント';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => '名前付きアドレスの追加と管理';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'メイン';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'アーカイブ';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => '復元';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'アーカイブ済み';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => '追加のアカウントはまだありません';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'アカウント名を変更';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'アカウント名';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => '保存';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => '追加';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => '送金元';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'すべて';
 
   @override
-  String get home => 'Home';
+  String get home => 'ホーム';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'アクティビティ';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => '合計残高';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return '今すぐ使える額 $spendable · 着金待ち $arriving $symbol';
   }
 
   @override
-  String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+  String get homeArrivingSoon => '着金待ちのコインはあなたのもので、まもなく使えるようになります。';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return '着金待ちのコインは$time後に使えるようになります。';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return '今すぐ使える額は$amountです。残りは$time後に使えます。';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return '今すぐ使える額は$amountです。残りはまだ着金待ちです。';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => '承認待ち';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => '状態不明';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => '承認されず';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return '確認中 $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => '送信先';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => '接続をテスト';
 
   @override
-  String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+  String get accountsOtherWalletHeader => '別のウォレットから保存（表示のみ）';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'このウォレットではこれらを使えないため、合計には含まれません。使うには、これらが属するウォレットを開いてください。';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'アクティビティはまだありません';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => '送金済み';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => '受取済み';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'ウォレット内';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => '統合したコイン';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => 'HTNを送金または受け取ると、ここに表示されます。';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'すべて表示';
 
   @override
-  String get show => 'Show';
+  String get show => '表示';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'マイアカウント';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'こんにちは、$walletName';
   }
 
   @override
@@ -1230,18 +1221,18 @@ class AppLocalizationsJa extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => '標準ウォレットをインポート';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '標準の導出方式による12語または24語のウォレット（BIP39パスフレーズは任意）';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => '旧型ウォレットをインポート';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '旧式の導出方式による12語のウォレット（旧Web WalletおよびKDXと互換）';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1460,121 +1451,118 @@ class AppLocalizationsJa extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'おつりアドレスの動作';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      '各アドレスがそれぞれの残高を保持し、おつりはそのまま残ります';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      '毎回新しいアドレスを使用します（プライベート、残高は分散します）';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'おつりアドレスの動作';
 
   @override
-  String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+  String get changeAddressModeDialogOptionKeepPerAddress => '各アドレスに残高を保持';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'プライベート';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'パスワードを要求';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => '起動時';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'ロック時';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => '署名時';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => '詳細オプション';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39パスフレーズ';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      '注意：これはウォレットのパスワードではありません。BIP39パスフレーズが異なると、別のウォレットが開きます。';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'パスフレーズを入力';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'パスフレーズを確認';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'パスフレーズが一致しません！';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39パスフレーズ付きウォレット。';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => '優先手数料を入力';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => '基本手数料';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => '優先手数料';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => '送金先アドレスを認識できませんでした';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'トランザクションを再構築できませんでした';
 
   @override
-  String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+  String get feeUpdateRebuildError2 => '新しい手数料でトランザクションを再構築できませんでした';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => '手数料を更新できませんでした';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => '手数料を更新';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => '手数料を更新中';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => '推奨の優先手数料';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return '新しい優先手数料は$amount $symbol以上にする必要があります';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => '保留中';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'このトランザクションは保留中です';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => '保留中のトランザクション';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'メモリプールに保留中のトランザクションがあります。';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'トランザクション手数料を更新';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => '手数料で置き換え (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'メモリプール内';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXOを選択';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'UTXOをさらに選択してください';
 }

@@ -106,7 +106,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get available => '可用余额';
 
   @override
-  String get back => 'Back';
+  String get back => '返回';
 
   @override
   String get backupConfirmButton => '我已备份';
@@ -115,7 +115,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get backupSecretPhrase => '备份助记词';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => '缺少助记词';
 
   @override
   String get biometricsMethod => '生物识别';
@@ -167,7 +167,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get confirmed => '已确认';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => '已确认 · 成熟中';
 
   @override
   String get confirming => '确认中';
@@ -596,24 +596,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get scanQrCodeError => '解析二维码已失败';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => '从图片扫描';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => '开启/关闭手电筒';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => '开始之前';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet 是非托管钱包。您的助记词和私钥仅在此设备上生成和存储——我们从不查看，不会存储在任何服务器上，也无法为您找回。';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      '如果您丢失助记词，没有密码重置功能，也没有任何客服团队能够帮您找回资金。妥善保管助记词的责任完全在您自己。';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => '我已了解，继续';
 
   @override
   String get secretInfo => '下一屏，将会看到您的助记词，它是存取资金的密码。请确保备份好，且不要与任何人透露。';
@@ -625,26 +625,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get secretPhrase => '助记词';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => '验证备份';
 
   @override
-  String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+  String get verifyBackupInstruction => '为每个位置选择正确的单词，以确认您已保存助记词。';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return '第 $index 个单词是什么？';
   }
 
   @override
-  String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+  String get verifyBackupWrongAnswer => '不太对。请检查您的备份后重试。';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 个单词';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 个单词';
 
   @override
   String get secretWarning => '如果手机丢失或此程序被卸载，您将需要助记词恢复钱包访问！';
@@ -653,46 +651,43 @@ class AppLocalizationsZh extends AppLocalizations {
   String get securityHeader => '安全';
 
   @override
-  String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+  String get securitySettingsBiometrics => '请验证身份以访问安全设置';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin => '输入 PIN 码以访问安全设置';
 
   @override
   String get seed => '助记词';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => '签名消息';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => '复制签名';
 
   @override
-  String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+  String get signMessageDescription => '使用您的钱包地址之一对消息签名';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => '输入要签名的消息';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => '签名已复制';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => '消息已签名';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => '消息过长';
 
   @override
   String get seedInvalid => '助记词无效';
 
   @override
-  String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+  String get nodeUnreachable => '无法连接到您的节点。余额可能已过期。';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => '重试';
 
   @override
   String get send => '发送';
@@ -774,7 +769,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get themeLight => '浅色主题';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => '切换主题';
 
   @override
   String get thisWallet => '#当前钱包';
@@ -976,181 +971,175 @@ class AppLocalizationsZh extends AppLocalizations {
   String get compoundFailure => '合并交易失败';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => '资金仍在确认中';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      '此账户中的部分资金到账时间太短，暂时无法发送——网络首先需要一小段成熟等待时间，通常为几分钟。您可以稍等后重试，或从有成熟资金的其他账户发送。';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => '切换账户';
 
   @override
   String get compoundTooFewUtxos => '至少需要两个 UTXO';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => '归集到主账户';
 
   @override
-  String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+  String get moveToMainDescription => '将其他所有地址的余额转入您的主地址';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => '全部转入主账户？';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return '这将把 $amount $symbol 从 $count 个其他地址转入您的主地址。此操作会创建一笔或多笔交易，并产生网络费用。';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => '所有地址的余额都已在主账户';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => '正在归集到主账户';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => '已成功转入主账户';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => '转入主账户失败';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => '转移';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => '账户';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => '添加并管理已命名的地址';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => '主账户';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => '归档';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => '恢复';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => '已归档';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => '暂无其他账户';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => '重命名账户';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => '账户名称';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => '保存';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => '添加';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => '来自';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => '任意';
 
   @override
-  String get home => 'Home';
+  String get home => '首页';
 
   @override
-  String get activity => 'Activity';
+  String get activity => '活动';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => '总余额';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return '现可使用 $spendable · 仍在到账 $arriving $symbol';
   }
 
   @override
-  String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+  String get homeArrivingSoon => '仍在到账的币属于您，很快即可使用。';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return '仍在到账的币可在 $time 后使用。';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return '现可使用 $amount。其余部分可在 $time 后使用。';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return '现可使用 $amount。其余部分仍在到账。';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => '等待接受';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => '状态未知';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => '未被接受';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return '确认中 $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => '提交至';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => '测试连接';
 
   @override
-  String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+  String get accountsOtherWalletHeader => '来自其他钱包的已保存项（仅查看）';
 
   @override
-  String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+  String get accountsOtherWalletNote => '此钱包无法花费这些资金，因此不计入其总额。请打开它们所属的钱包以使用。';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => '暂无活动';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => '已发送';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => '已接收';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => '钱包内部';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => '已合并的币';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => '您发送或接收 HTN 后，会显示在这里。';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => '查看全部';
 
   @override
-  String get show => 'Show';
+  String get show => '显示';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => '我的账户';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return '你好，$walletName';
   }
 
   @override
@@ -1217,18 +1206,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importOption12WordsDescription => '与网页钱包和 KDX 兼容';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => '导入标准钱包';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '标准派生的 12 或 24 个单词钱包，可选 BIP39 口令';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => '导入旧版钱包';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '旧版派生的 12 个单词钱包，兼容旧版 Web Wallet 和 KDX';
 
   @override
   String get importOptionKpubTitle => '导入只读钱包';
@@ -1437,121 +1426,115 @@ class AppLocalizationsZh extends AppLocalizations {
   String get txFilterDialogOptionHideNotAcceptedCoinbase => '隐藏未接受的创币交易';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => '找零地址行为';
 
   @override
-  String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+  String get changeAddressModeDescriptionKeepPerAddress => '每个地址保留各自的余额，找零留在原处';
 
   @override
-  String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+  String get changeAddressModeDescriptionPrivate => '每次使用新地址（私密，余额分散）';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => '找零地址行为';
 
   @override
-  String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+  String get changeAddressModeDialogOptionKeepPerAddress => '在每个地址上保留余额';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => '私密';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => '请求密码';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => '启动时';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => '锁定时';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => '签名时';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => '高级选项';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 口令';
 
   @override
-  String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+  String get bip39PassphraseWarning => '注意：这不是钱包密码，不同的 BIP39 口令会打开不同的钱包。';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => '输入口令';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => '确认口令';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => '口令不匹配！';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => '带 BIP39 口令的钱包。';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => '输入优先费用';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => '基础费用';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => '优先费用';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => '无法识别目标地址';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => '重建交易失败';
 
   @override
-  String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+  String get feeUpdateRebuildError2 => '使用新费用重建交易失败';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => '更新费用失败';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => '更新费用';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => '正在更新费用';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => '推荐的优先费用';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return '新的优先费用不得低于 $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => '待处理';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => '此交易待处理';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => '待处理交易';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => '内存池中有待处理的交易。';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => '更新交易费用';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => '费用替换 (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => '在内存池中';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => '选择 UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => '请选择更多 UTXO';
 }
