@@ -69,11 +69,21 @@ class WalletAddressNotifier extends SafeChangeNotifier
   }
 
   /// The address change (from a send) or a compound result should go to,
-  /// for the given [mode]. keepPerAddress always returns the wallet's
-  /// main address, so balance stops spreading across new addresses.
-  Future<WalletAddress> changeAddressFor(ChangeAddressMode mode) async {
+  /// for the given [mode].
+  ///
+  /// keepPerAddress returns [fromAddress] itself when one was given (the
+  /// specific account the user chose to send from), so spending from e.g.
+  /// "test20" leaves the change on "test20" rather than draining it
+  /// elsewhere -- matching what "Keep Balances On Each Address" actually
+  /// promises. Falls back to the wallet's main address when no specific
+  /// source address is known (e.g. the "Any" source option), same as
+  /// before this fix.
+  Future<WalletAddress> changeAddressFor(
+    ChangeAddressMode mode, {
+    WalletAddress? fromAddress,
+  }) async {
     if (mode == ChangeAddressMode.keepPerAddress) {
-      return defaultReceiveAddress;
+      return fromAddress ?? defaultReceiveAddress;
     }
     return nextChangeAddress;
   }

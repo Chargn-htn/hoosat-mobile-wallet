@@ -9,6 +9,7 @@ import '../hoosat/types.dart';
 import '../l10n/l10n.dart';
 import '../settings_advanced/compound_utxos_dialog.dart';
 import '../util/ui_util.dart';
+import '../wallet_address/account_adoption.dart';
 import '../widgets/app_simpledialog.dart';
 
 final _walletWatcherProvider = Provider.autoDispose((ref) {
@@ -23,6 +24,10 @@ final _walletWatcherProvider = Provider.autoDispose((ref) {
   ref.watch(pendingTxsProvider);
 
   ref.watch(addressMonitorProvider);
+  // Move this wallet's accounts out of the old shared list (once), then adopt
+  // any that belong to this wallet but are not tracked yet.
+  ref.watch(accountMigrationProvider);
+  ref.watch(accountAdoptionProvider);
 });
 
 /// Keeps wallet data (balance/tx/utxo/addresses) actively watched and

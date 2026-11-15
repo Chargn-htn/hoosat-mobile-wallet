@@ -6,18 +6,31 @@ import 'wallet_accounts_types.dart';
 
 const kWalletAccountsKey = '_kWalletAccountsKey';
 
+/// Accounts are saved PER WALLET (a wallet's id is part of the key), so two
+/// wallets in the same app can never see or mix each other's accounts.
+/// [walletId] == null is the old single shared list, kept only so it can be
+/// migrated from (and so older code and tests keep working).
 extension WalletAccountsExtension on SettingsRepository {
-  WalletAccounts getWalletAccounts() {
+  String _accountsKey(String? walletId) =>
+      walletId == null ? kWalletAccountsKey : '$kWalletAccountsKey#$walletId';
+
+  WalletAccounts getWalletAccounts({String? walletId}) {
     return box.tryGet<WalletAccounts>(
-          kWalletAccountsKey,
+          _accountsKey(walletId),
           typeFactory: WalletAccounts.fromJson,
         ) ??
         const WalletAccounts();
   }
 
-  Future<void> setWalletAccounts(WalletAccounts accounts) {
-    return box.set(kWalletAccountsKey, accounts);
+  Future<void> setWalletAccounts(WalletAccounts accounts, {String? walletId}) {
+    return box.set(_accountsKey(walletId), accounts);
   }
+
+  bool isAccountsMigrated(String walletId) =>
+      box.tryGet<bool>('_kAccountsMigrated#$walletId') ?? false;
+
+  Future<void> markAccountsMigrated(String walletId) =>
+      box.set<bool>('_kAccountsMigrated#$walletId', true);
 }
 
 /// Thrown when adding an account would exceed the active (10, incl. Main)
@@ -41,8 +54,11 @@ class AccountLabelException implements Exception {
 class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
   final SettingsRepository repository;
 
-  WalletAccountsStateNotifier(this.repository)
-      : super(repository.getWalletAccounts());
+  /// Which wallet's list this is (null = the old shared list).
+  final String? walletId;
+
+  WalletAccountsStateNotifier(this.repository, {this.walletId})
+      : super(repository.getWalletAccounts(walletId: walletId));
 
   String? _validateLabel(String raw, {String? selfAddress}) {
     final label = raw.trim();
@@ -89,7 +105,19 @@ class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
 
     final entry = WalletAccountEntry(address: address, label: label.trim());
     final updated = state.copyWith(accounts: state.accounts.add(entry));
-    await repository.setWalletAccounts(updated);
+    await repository.setWalletAccounts(updated, walletId: walletId);
+    state = updated;
+  }
+
+  /// Adds accounts carried over from the old shared list. Skips any address
+  /// already present; does not apply the label/cap rules (these are existing
+  /// accounts, not new ones).
+  Future<void> importEntries(Iterable<WalletAccountEntry> entries) async {
+    final have = state.accounts.map((a) => a.address).toSet();
+    final fresh = entries.where((e) => !have.contains(e.address)).toList();
+    if (fresh.isEmpty) return;
+    final updated = state.copyWith(accounts: state.accounts.addAll(fresh));
+    await repository.setWalletAccounts(updated, walletId: walletId);
     state = updated;
   }
 
@@ -101,7 +129,7 @@ class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
           )
           .toIList(),
     );
-    await repository.setWalletAccounts(updated);
+    await repository.setWalletAccounts(updated, walletId: walletId);
     state = updated;
   }
 
@@ -113,7 +141,7 @@ class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
           )
           .toIList(),
     );
-    await repository.setWalletAccounts(updated);
+    await repository.setWalletAccounts(updated, walletId: walletId);
     state = updated;
   }
 
@@ -130,7 +158,7 @@ class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
           )
           .toIList(),
     );
-    await repository.setWalletAccounts(updated);
+    await repository.setWalletAccounts(updated, walletId: walletId);
     state = updated;
   }
 
@@ -152,7 +180,7 @@ class WalletAccountsStateNotifier extends StateNotifier<WalletAccounts> {
           )
           .toIList(),
     );
-    await repository.setWalletAccounts(updated);
+    await repository.setWalletAccounts(updated, walletId: walletId);
     state = updated;
   }
 }

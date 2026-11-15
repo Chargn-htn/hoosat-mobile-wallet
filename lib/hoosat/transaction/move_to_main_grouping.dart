@@ -16,6 +16,7 @@ final BigInt moveToMainDustFloor = kSompiPerHoosat ~/ BigInt.from(10000);
 List<(String, List<Utxo>)> groupUtxosForMoveToMain(
   List<Utxo> utxos, {
   required String mainAddress,
+  Set<String> excludeAddresses = const {},
   BigInt? dustFloor,
   int chunkSize = kMaxInputsPerTransaction,
 }) {
@@ -23,7 +24,9 @@ List<(String, List<Utxo>)> groupUtxosForMoveToMain(
 
   final byAddress = <String, List<Utxo>>{};
   for (final utxo in utxos) {
-    if (utxo.address == mainAddress) {
+    // Main itself, and named accounts: money set aside in an account is
+    // deliberately kept separate, so a sweep never touches it.
+    if (utxo.address == mainAddress || excludeAddresses.contains(utxo.address)) {
       continue;
     }
     byAddress.putIfAbsent(utxo.address, () => []).add(utxo);
