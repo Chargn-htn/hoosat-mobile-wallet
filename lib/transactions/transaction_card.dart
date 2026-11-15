@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import '../app_icons.dart';
 import '../app_providers.dart';
-import '../app_styles.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
 import '../util/numberutil.dart';
@@ -26,7 +25,6 @@ class TransactionCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
     final l10n = l10nOf(context);
-    final styles = ref.watch(stylesProvider);
 
     final addressNotifier = ref.watch(addressNotifierProvider.notifier);
     final note = ref.watch(txNoteProvider(tx.id));
@@ -55,16 +53,6 @@ class TransactionCard extends ConsumerWidget {
     final formater = DateFormat('dd-MM-yyyy HH:mm', locale);
     final date = formater.format(txDate);
 
-    final txTypeIcon = switch (item.type) {
-      TxItemType.send => Icon(AppIcons.sent, color: theme.text60, size: 18),
-      TxItemType.receive =>
-        Icon(AppIcons.received, color: theme.primary, size: 18),
-      TxItemType.thisWallet =>
-        Icon(Icons.swap_vert, color: theme.primary, size: 18),
-      TxItemType.compound =>
-        Icon(Icons.refresh, color: theme.primary, size: 18),
-    };
-
     void showTxDetails() {
       Sheets.showAppHeightNineSheet(
         context: context,
@@ -79,116 +67,129 @@ class TransactionCard extends ConsumerWidget {
       );
     }
 
-    return Container(
-      margin: EdgeInsetsDirectional.fromSTEB(14, 4, 14, 4),
+    final tileIcon = switch (item.type) {
+      TxItemType.send => AppIcons.sent,
+      TxItemType.receive => AppIcons.received,
+      TxItemType.thisWallet => Icons.swap_vert,
+      TxItemType.compound => Icons.call_merge,
+    };
+    final title = switch (item.type) {
+      TxItemType.send => l10n.txTypeSent,
+      TxItemType.receive => l10n.txTypeReceived,
+      TxItemType.thisWallet => l10n.txTypeThisWallet,
+      TxItemType.compound => l10n.txTypeMerged,
+    };
+    final sign = switch (item.type) {
+      TxItemType.send => '\u2212',
+      TxItemType.receive => '+',
+      _ => '',
+    };
+    // A payment the explorer says was never accepted is not income: grey.
+    final notAccepted = ref.watch(txNotAcceptedProvider(item.tx.id));
+    final amountColor = notAccepted
+        ? theme.text60
+        : item.type == TxItemType.receive
+            ? theme.primary
+            : theme.text;
+    final who = isContact
+        ? contact.name
+        : (isThisWallet && isSendType ? l10n.thisWallet : null);
+
+    // Keep the row's layout steady whatever the phone's font-size setting is.
+    final mq = MediaQuery.of(context);
+    return MediaQuery(
+      data: mq.copyWith(
+        textScaler: mq.textScaler.clamp(minScaleFactor: 0.9, maxScaleFactor: 1.1),
+      ),
+      child: Container(
+      margin: const EdgeInsetsDirectional.fromSTEB(22, 5, 22, 5),
       decoration: BoxDecoration(
         color: theme.backgroundDark,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [theme.boxShadow],
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: theme.text10),
       ),
-      child: TextButton(
-        style: styles.cardButtonStyle,
-        onPressed: showTxDetails,
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: showTxDetails,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+          padding: const EdgeInsets.all(14),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsetsDirectional.only(end: 12),
-                child: txTypeIcon,
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: theme.primary15,
+                  borderRadius: BorderRadius.circular(13),
+                ),
+                child: Icon(tileIcon, size: 20, color: theme.primary),
               ),
+              const SizedBox(width: 12),
               Expanded(
-                flex: 1,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        RichText(
-                          maxLines: 2,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: formatedValue,
-                                style: styles.textStyleTransactionAmount
-                                    .copyWith(fontSize: AppFontSizes.small),
-                              ),
-                              TextSpan(
-                                text: ' ${kasSymbol}',
-                                style: styles.textStyleTransactionUnit
-                                    .copyWith(fontSize: AppFontSizes.small),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          item.pending ? l10n.txPending : date,
-                          textAlign: TextAlign.start,
-                          style: styles.textStyleTransactionType.copyWith(
-                            fontWeight: FontWeight.w400,
-                            fontSize: AppFontSizes.smallest,
-                            color: theme.text60,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 4),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              l10n.transactionId,
-                              style: styles.textStyleTransactionAmountSmall,
+                        Expanded(
+                          child: Text(
+                            title,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 14.5,
+                              fontWeight: FontWeight.w700,
+                              color: theme.text,
                             ),
-                            Consumer(builder: (context, ref, _) {
-                              final txState = ref.watch(
-                                txConfirmationStatusProvider(item),
-                              );
-                              return Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                  top: 0,
-                                  bottom: 4,
-                                ),
-                                child: TransactionStateTag(state: txState),
-                              );
-                            }),
-                          ],
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         Text(
-                          '${tx.id}',
-                          style: styles.textStyleTransactionType
-                              .copyWith(color: theme.text60),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                          '$sign$formatedValue $kasSymbol',
+                          maxLines: 1,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: amountColor,
+                          ),
                         ),
-                        Row(
-                          children: [
-                            if (isThisWallet && isSendType) ...[
-                              Text(
-                                '${l10n.thisWallet}',
-                                style: styles.textStyleTransactionAmountSmall,
-                              ),
-                              const SizedBox(width: 8),
-                            ],
-                            if (isContact) ...[
-                              Text(
-                                '${contact.name}',
-                                style: styles.textStyleTransactionAmountSmall,
-                              ),
-                            ],
-                          ],
-                        ),
-                        TxAddressWidget(address: address),
-                        if (note != null) ...[
-                          const SizedBox(height: 4),
-                          TxNoteWidget(note: note.note),
-                        ],
                       ],
                     ),
+                    const SizedBox(height: 3),
+                    Text(
+                      item.pending ? l10n.txPending : date,
+                      style: TextStyle(fontSize: 12, color: theme.text60),
+                    ),
+                    const SizedBox(height: 8),
+                    Consumer(builder: (context, ref, _) {
+                      final txState =
+                          ref.watch(txConfirmationStatusProvider(item));
+                      return Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: TransactionStateTag(
+                          state: txState,
+                          txItem: item,
+                        ),
+                      );
+                    }),
+                    if (who != null) ...[
+                      const SizedBox(height: 8),
+                      Text(
+                        who,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: theme.text,
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 4),
+                    TxAddressWidget(address: address),
+                    if (note != null) ...[
+                      const SizedBox(height: 4),
+                      TxNoteWidget(note: note.note),
+                    ],
                   ],
                 ),
               ),
@@ -196,6 +197,6 @@ class TransactionCard extends ConsumerWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }

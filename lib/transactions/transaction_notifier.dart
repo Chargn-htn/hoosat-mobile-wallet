@@ -8,6 +8,7 @@ import '../hoosat/hoosat.dart';
 import '../util/safe_change_notifier.dart';
 import 'transaction_types.dart';
 import 'tx_cache_service.dart';
+import 'tx_status.dart';
 
 class TransactionNotifier extends SafeChangeNotifier {
   final TxCacheService cache;
@@ -26,6 +27,40 @@ class TransactionNotifier extends SafeChangeNotifier {
 
   bool _firstLoad = true;
   bool get firstLoad => _firstLoad;
+
+  /// Transactions the explorer says were NEVER accepted (typically the reward
+  /// transaction of a block that is not on the main chain). Shown as "not
+  /// accepted", not as income.
+  var notAcceptedIds = ISet<String>();
+  final _staleAsked = <String>{};
+
+  /// Old records that still say "not accepted": ask the explorer once for the
+  /// real answer. A missed acceptance becomes confirmed; the rest are labelled
+  /// honestly. Each transaction is asked about once per session.
+  Future<void> resolveStaleTxs() async {
+    if (disposed) return;
+    final ids = staleUnacceptedIds(
+      loadedTxs.map((t) => t.apiTx),
+      alreadyAsked: _staleAsked,
+    );
+    if (ids.isEmpty) return;
+    _staleAsked.addAll(ids);
+    try {
+      final result = sortByAcceptance(await api.getTxsWithIds(ids));
+      if (disposed) return;
+      if (result.notAccepted.isNotEmpty) {
+        notAcceptedIds = notAcceptedIds.addAll(result.notAccepted);
+        notifyListeners();
+      }
+      if (result.accepted.isNotEmpty) {
+        await cache.cacheWalletTxs(result.accepted);
+        await reload();
+      }
+    } catch (e) {
+      log.e('Could not check old transactions with the explorer', error: e);
+      _staleAsked.removeAll(ids); // try again next time
+    }
+  }
 
   TransactionNotifier({required this.cache});
 
@@ -190,7 +225,8 @@ class TransactionNotifier extends SafeChangeNotifier {
   }
 
   Future<void> addWalletTx(ApiTransaction apiTx) async {
-    if (cache.isWalletTxId(apiTx.transactionId)) {
+    final known = cache.isWalletTxId(apiTx.transactionId);
+    if (known) {
       return;
     }
 
@@ -328,6 +364,7 @@ class TransactionNotifier extends SafeChangeNotifier {
       log.e(e);
     }
     _loading = false;
+    if (!disposed) unawaited(resolveStaleTxs());
   }
 
   Future<IList<String>> refreshWalletTxs({

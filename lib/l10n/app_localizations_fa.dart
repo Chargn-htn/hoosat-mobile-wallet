@@ -1098,6 +1098,20 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get txTagWaiting => 'waiting to be accepted';
+
+  @override
+  String get txTagStatusUnknown => 'status unknown';
+
+  @override
+  String get txTagNotAccepted => 'not accepted';
+
+  @override
+  String txTagConfirmingOf(String n, String total) {
+    return 'confirming $n / $total';
+  }
+
+  @override
   String get submittedTo => 'Submitted to';
 
   @override
@@ -1107,6 +1121,25 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get accountsOtherWalletNote =>
       'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+
+  @override
+  String get noActivityTitle => 'No activity yet';
+
+  @override
+  String get txTypeSent => 'Sent';
+
+  @override
+  String get txTypeReceived => 'Received';
+
+  @override
+  String get txTypeThisWallet => 'Within wallet';
+
+  @override
+  String get txTypeMerged => 'Merged coins';
+
+  @override
+  String get noActivityMessage =>
+      'When you send or receive HTN, it shows up here.';
 
   @override
   String get seeAll => 'See all';

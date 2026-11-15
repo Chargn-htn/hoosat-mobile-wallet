@@ -33,14 +33,14 @@ class TransactionDetails extends ConsumerWidget {
     final txId = txItem.tx.id;
     final note = ref.watch(txNoteProvider(txId))?.note;
     final title = switch (txItem.type) {
-      TxItemType.send => l10n.sent.toUpperCase(),
-      TxItemType.receive => l10n.received.toUpperCase(),
+      TxItemType.send => l10n.sent,
+      TxItemType.receive => l10n.received,
       TxItemType.thisWallet =>
-        l10n.thisWallet.replaceAll('#', '').toUpperCase(),
-      TxItemType.compound => l10n.compoundUppercased,
+        l10n.thisWallet.replaceAll('#', ''),
+      TxItemType.compound => l10n.txTypeMerged,
     };
     final addressTitle = switch (txItem.type) {
-      TxItemType.send => l10n.toAddress.toUpperCase(),
+      TxItemType.send => l10n.toAddress,
       TxItemType.receive ||
       TxItemType.thisWallet ||
       TxItemType.compound =>

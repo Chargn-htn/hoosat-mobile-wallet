@@ -159,8 +159,8 @@ class TransactionsWidget extends ConsumerWidget {
       final balanceNotifier = ref.read(balanceNotifierProvider);
       final utxosNotifier = ref.read(utxoNotifierProvider);
       final addresses = ref.read(allAddressesProvider);
-      await balanceNotifier.refresh(addresses);
-      await utxosNotifier.refresh(addresses: addresses);
+      await balanceNotifier.refresh(addresses, force: true);
+      await utxosNotifier.refresh(addresses: addresses, force: true);
 
       final addressNotifier = ref.read(addressNotifierProvider);
       final pendingAddresses = addressNotifier.receiveAddresses

@@ -9,6 +9,7 @@ import '../hoosat/hoosat.dart';
 import '../wallet/wallet_types.dart';
 import 'transaction_notifier.dart';
 import 'transaction_types.dart';
+import 'tx_status.dart';
 import 'tx_cache_service.dart';
 import 'live_feeds.dart';
 import 'recent_outpoints_provider.dart';
@@ -256,25 +257,74 @@ final txNotifierProvider = Provider.autoDispose((ref) {
   return txNotifier;
 });
 
+/// How many confirmations count as "done" for this transaction: 1000 when it
+/// pays this wallet (those coins cannot be spent earlier), else 100.
+final txConfirmTargetProvider =
+    Provider.autoDispose.family<BigInt, TxItem>((ref, txItem) {
+  final addresses = ref.watch(addressNotifierProvider);
+  final paysUs = txItem.tx.apiTx.outputs
+      .any((o) => addresses.containsAddress(o.scriptPublicKeyAddress));
+  return BigInt.from(paysUs ? kMinUtxoMaturityDaaScore : 100);
+});
+
+/// Age (in DAA score units) of the newest coin this transaction left in the
+/// wallet's coin list, or null if it left none. The node only lists coins of
+/// accepted transactions, so this is proof of acceptance that does not depend
+/// on us having caught the node's "accepted" message.
+final txCoinAgeProvider =
+    Provider.autoDispose.family<BigInt?, TxItem>((ref, txItem) {
+  final born = ref.watch(coinBirthByTxProvider)[txItem.tx.id];
+  if (born == null) return null;
+  return ref.watch(lastKnownVirtualDaaScoreProvider) - born;
+});
+
 final txConfirmationStatusProvider =
     Provider.autoDispose.family<TxState, TxItem>((ref, txItem) {
-  final blueScore = ref.watch(virtualSelectedParentBlueScoreProvider);
-
-  final tx = txItem.tx;
   if (txItem.pending) {
     return TxState.pending();
   }
-  final kNoConfirmations = BigInt.from(100);
-  final txBlueScore = tx.apiTx.acceptingBlockBlueScore;
-
-  if (!tx.apiTx.isAccepted || txBlueScore == null) {
-    return const TxState.unconfirmed();
-  }
-
-  final confirmations = blueScore - BigInt.from(txBlueScore);
-  if (confirmations >= kNoConfirmations) {
-    return const TxState.confirmed();
-  }
-
-  return TxState.confirming(confirmations);
+  final apiTx = txItem.tx.apiTx;
+  return decideTxState(
+    accepted: apiTx.isAccepted,
+    acceptingBlockBlueScore: apiTx.acceptingBlockBlueScore,
+    blueScore: ref.watch(virtualSelectedParentBlueScoreProvider),
+    coinAge: ref.watch(txCoinAgeProvider(txItem)),
+    target: ref.watch(txConfirmTargetProvider(txItem)),
+    coinStillMaturing: ref.watch(txMaturityProgressProvider(txItem)) != null,
+  );
 });
+
+/// "Confirmed" (100+ confirmations) and "mature enough to spend" (1000 DAA
+/// score units old) are two different thresholds -- this checks whether
+/// any of [txItem]'s outputs are still sitting in the wallet as an
+/// immature utxo, so the UI can show that a "Confirmed" transaction's
+/// funds aren't actually spendable yet, without needing a new TxState
+/// variant (freezed codegen is currently broken in this environment due
+/// to an analyzer/SDK version mismatch unrelated to this feature).
+final txIsMaturingProvider = Provider.autoDispose.family<bool, TxItem>(
+  (ref, txItem) => ref.watch(txMaturityProgressProvider(txItem)) != null,
+);
+
+/// How far (0 to 999) this transaction's received funds are towards the 1000
+/// DAA-score age the network needs before they can be spent, or null when
+/// nothing from it is still maturing. This is the ONE number the tag shows
+/// while funds mature, instead of a confirmation count that runs out at 100
+/// followed by a "confirmed" label while the coins still cannot be spent.
+final txMaturityProgressProvider = Provider.autoDispose.family<int?, TxItem>(
+  (ref, txItem) {
+    final born = ref.watch(coinBirthByTxProvider)[txItem.tx.id];
+    if (born == null) return null;
+    final virtualDaaScore = ref.watch(lastKnownVirtualDaaScoreProvider);
+    // the newest coin of the transaction decides: if it can be spent, all can
+    if (born + BigInt.from(kMinUtxoMaturityDaaScore) < virtualDaaScore) {
+      return null;
+    }
+    final progress = (virtualDaaScore - born).toInt();
+    return progress.clamp(0, kMinUtxoMaturityDaaScore - 1);
+  },
+);
+
+/// True when the explorer says this transaction was never accepted.
+final txNotAcceptedProvider = Provider.autoDispose.family<bool, String>(
+  (ref, id) => ref.watch(txNotifierProvider).notAcceptedIds.contains(id),
+);

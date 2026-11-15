@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import '../database/boxes.dart';
 import '../hoosat/hoosat.dart';
 import 'transaction_types.dart';
+import 'tx_status.dart';
 import 'tx_cache_index.dart';
 
 typedef OutpointResolver = (String address, int amount)? Function(
@@ -126,7 +127,13 @@ class TxCacheService {
     return txs;
   }
 
-  Future<List<Tx>> cacheWalletTxs(Iterable<ApiTransaction> apiTxs) async {
+  Future<List<Tx>> cacheWalletTxs(Iterable<ApiTransaction> incoming) async {
+    final apiTxs = <ApiTransaction>[];
+    for (final fresh in incoming) {
+      final before =
+          memCache[fresh.transactionId] ?? (await txBox.tryGet(fresh.transactionId))?.apiTx;
+      apiTxs.add(keepAcceptance(fresh, before));
+    }
     memCache.addEntries(apiTxs.map((e) => MapEntry(e.transactionId, e)));
 
     final txs = (await txsForApiTxs(apiTxs)).toList();
@@ -164,7 +171,12 @@ class TxCacheService {
     memCache[apiTx.transactionId] = apiTx;
   }
 
-  Future<Tx> addWalletTx(ApiTransaction apiTx) async {
+  Future<Tx> addWalletTx(ApiTransaction incoming) async {
+    // A slower source (the explorer) must not wipe out acceptance we already
+    // learned from the node.
+    final before =
+        memCache[incoming.transactionId] ?? (await txBox.tryGet(incoming.transactionId))?.apiTx;
+    final apiTx = keepAcceptance(incoming, before);
     addToMemcache(apiTx);
 
     await _cacheInputsFor([apiTx]);

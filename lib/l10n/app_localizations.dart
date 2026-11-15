@@ -2179,6 +2179,30 @@ abstract class AppLocalizations {
   /// **'Spendable now {amount}. The rest is still arriving.'**
   String sendSpendableRestArriving(String amount);
 
+  /// No description provided for @txTagWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'waiting to be accepted'**
+  String get txTagWaiting;
+
+  /// No description provided for @txTagStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'status unknown'**
+  String get txTagStatusUnknown;
+
+  /// No description provided for @txTagNotAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'not accepted'**
+  String get txTagNotAccepted;
+
+  /// No description provided for @txTagConfirmingOf.
+  ///
+  /// In en, this message translates to:
+  /// **'confirming {n} / {total}'**
+  String txTagConfirmingOf(String n, String total);
+
   /// No description provided for @submittedTo.
   ///
   /// In en, this message translates to:
@@ -2196,6 +2220,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.'**
   String get accountsOtherWalletNote;
+
+  /// No description provided for @noActivityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No activity yet'**
+  String get noActivityTitle;
+
+  /// No description provided for @txTypeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent'**
+  String get txTypeSent;
+
+  /// No description provided for @txTypeReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Received'**
+  String get txTypeReceived;
+
+  /// No description provided for @txTypeThisWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Within wallet'**
+  String get txTypeThisWallet;
+
+  /// No description provided for @txTypeMerged.
+  ///
+  /// In en, this message translates to:
+  /// **'Merged coins'**
+  String get txTypeMerged;
+
+  /// No description provided for @noActivityMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'When you send or receive HTN, it shows up here.'**
+  String get noActivityMessage;
 
   /// No description provided for @seeAll.
   ///
