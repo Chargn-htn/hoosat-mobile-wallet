@@ -6,16 +6,19 @@ import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../hoosat/transaction/move_to_main_grouping.dart';
 import '../l10n/l10n.dart';
+import '../util/friendly_error.dart';
+import '../util/keep_awake.dart';
 import '../util/numberutil.dart';
 import '../util/ui_util.dart';
+import '../transactions/live_feeds.dart';
 import '../widgets/app_simpledialog.dart';
+import '../widgets/hs_kit.dart';
 import '../transactions/recent_outpoints_provider.dart';
 
 /// Sweeps every other address's balance into the wallet's main address --
 /// a deliberate, separate action from Compound (which only ever merges an
 /// address's own utxos back into itself and never moves balance between
-/// addresses). See roadmap step 13b / the Node Manager "Move everything to
-/// Main" feature this mirrors.
+/// addresses). Mirrors the Node Manager's "Move everything to Main" action.
 class MoveToMainDialog extends ConsumerStatefulWidget {
   final bool rbf;
 
@@ -41,9 +44,11 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
     final allSpendableUtxos = ref.watch(spendableUtxosProvider);
     final kasSymbol = ref.watch(kasSymbolProvider);
 
+    final accountAddresses = ref.watch(accountAddressesProvider);
     final chunks = groupUtxosForMoveToMain(
       allSpendableUtxos,
       mainAddress: addressNotifier.defaultReceiveAddress.encoded,
+      excludeAddresses: accountAddresses,
     );
     final addressCount = chunks.map((c) => c.$1).toSet().length;
     final totalAmount = chunks
@@ -53,6 +58,13 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
         NumberUtil.formatedAmount(Amount.raw(totalAmount));
 
     Future<void> sendMoveToMainTx() async {
+      // A long job: stop listening to every block on the network meanwhile (a
+      // busy phone cannot keep up and the node would cut it off).
+      final feeds = ref.read(liveFeedsHoldersProvider.notifier);
+      final txNotifier = ref.read(txNotifierProvider);
+      feeds.pauseFeeds();
+      // ...and keep the screen on, so the wallet is not locked half way.
+      await KeepAwake.on();
       try {
         if (mounted) {
           setState(() {
@@ -70,6 +82,7 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
         final spendableChunks = groupUtxosForMoveToMain(
           spendableUtxos,
           mainAddress: mainAddress.encoded,
+          excludeAddresses: ref.read(accountAddressesProvider),
         );
 
         if (spendableChunks.isEmpty) {
@@ -92,11 +105,11 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
 
         // Pre-seed recent outpoints cache with the inputs we are about to spend
         final recent = ref.read(recentOutpointsProvider.notifier);
-        for (final (_, chunk) in spendableChunks) {
-          for (final u in chunk) {
-            recent.add(u.outpoint, u.address, u.utxoEntry.amount.toInt());
-          }
-        }
+        recent.addAll([
+          for (final (_, chunk) in spendableChunks)
+            for (final u in chunk)
+              (u.outpoint, u.address, u.utxoEntry.amount.toInt()),
+        ]);
         if (mounted) {
           setState(() {
             _totalChunks = spendableChunks.length;
@@ -142,8 +155,12 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
 
         UIUtil.showSnackbar(l10n.moveToMainSuccess, context);
       } catch (e) {
-        UIUtil.showSnackbar(l10n.moveToMainFailure, context);
+        UIUtil.showSnackbar(
+            '${l10n.moveToMainFailure}. ${friendlyError(e)}', context);
       } finally {
+        feeds.resumeFeeds();
+        txNotifier.reload().catchError((_) {});
+        await KeepAwake.off();
         if (mounted) {
           setState(() {
             _isMoving = false;
@@ -181,7 +198,7 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
           ),
           if (_isMoving) ...[
             const SizedBox(height: 16),
-            LinearProgressIndicator(
+            HsProgressBar(
               value: _totalChunks > 0 ? _completedChunks / _totalChunks : null,
             ),
           ],
@@ -223,7 +240,6 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
                 ),
         ),
       ],
-      contentPadding: const EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 0.0),
     );
   }
 }
