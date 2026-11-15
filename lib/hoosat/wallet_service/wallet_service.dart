@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'dart:typed_data';
+
+import 'package:flutter/foundation.dart' show visibleForTesting;
 
 import '../hoosat_client.dart';
 import '../transaction.dart';
@@ -93,7 +96,7 @@ class WalletService {
   }
 
   Future<String> sendTransaction(Transaction tx, {bool rbf = false}) async {
-    await _signTransaction(tx);
+    await signTransaction(tx);
 
     final rpcTx = tx.toRpc();
 
@@ -120,26 +123,54 @@ class WalletService {
     return (signature: signature.hex, hash: hash.hex);
   }
 
-  Future<void> _signTransaction(Transaction tx) async {
+  /// Signs every input of [tx] in place.
+  ///
+  /// All the sighashes are worked out first, then the inputs are grouped by
+  /// the address they spend from and each address's inputs are signed in ONE
+  /// call ([SignerBase.signMany]). A merge has up to 84 coins from one
+  /// address, so the key is derived once instead of 84 times.
+  ///
+  /// The signature scripts are written into [tx] only after EVERY address's
+  /// signatures came back complete, so a failure or a short result can never
+  /// leave the transaction half signed.
+  @visibleForTesting
+  Future<void> signTransaction(Transaction tx) async {
     final hashType = SigHashType.sigHashAll;
     final reusedValues = SighashReusedValues();
 
-    // Sign all inputs
-    for (int index = 0; index < tx.inputs.length; ++index) {
-      final input = tx.inputs[index];
+    final hashes = <Uint8List>[
+      for (var index = 0; index < tx.inputs.length; ++index)
+        calculateSignatureHashSchnorr(
+          tx: tx,
+          inputIndex: index,
+          hashType: hashType,
+          sighashReusedValues: reusedValues,
+        ),
+    ];
 
-      final hash = calculateSignatureHashSchnorr(
-        tx: tx,
-        inputIndex: index,
-        hashType: hashType,
-        sighashReusedValues: reusedValues,
+    // input indexes per address, in order of first appearance
+    final byAddress = <String, List<int>>{};
+    for (var index = 0; index < tx.inputs.length; ++index) {
+      byAddress.putIfAbsent(tx.inputs[index].address.encoded, () => []).add(index);
+    }
+
+    final scripts = <int, List<int>>{};
+    for (final indexes in byAddress.values) {
+      final signatures = await signer.signMany(
+        [for (final i in indexes) hashes[i]],
+        tx.inputs[indexes.first].address,
       );
-
-      final signature = await signer.sign(hash, input.address);
-
-      final signatureScript =
-          [signature.length + 1] + signature + [hashType.raw];
-      input.signatureScript.setAll(0, signatureScript);
+      if (signatures.length != indexes.length) {
+        throw StateError('The signer returned ${signatures.length} '
+            'signatures for ${indexes.length} inputs');
+      }
+      for (var n = 0; n < indexes.length; ++n) {
+        final signature = signatures[n];
+        scripts[indexes[n]] = [signature.length + 1] + signature + [hashType.raw];
+      }
+    }
+    for (final entry in scripts.entries) {
+      tx.inputs[entry.key].signatureScript.setAll(0, entry.value);
     }
   }
 }

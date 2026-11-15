@@ -1089,6 +1089,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get seeAll => 'See all';
 
   @override
+  String get show => 'Show';
+
+  @override
   String homeGreeting(String walletName) {
     return 'Hey, $walletName';
   }

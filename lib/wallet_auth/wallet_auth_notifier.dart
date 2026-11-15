@@ -10,6 +10,16 @@ Uint8List _computeSignDataSchnorr(List<Uint8List> params) {
   return signSchnorr(hash: params.first, privateKey: params.last);
 }
 
+/// params: [privateKey, hash1, hash2, ...] -> one signature per hash, signed in
+/// a single background isolate (one start-up instead of one per signature).
+List<Uint8List> _computeSignManySchnorr(List<Uint8List> params) {
+  final privateKey = params.first;
+  return [
+    for (final hash in params.skip(1))
+      signSchnorr(hash: hash, privateKey: privateKey),
+  ];
+}
+
 class WalletAuthNotifier extends StateNotifier<WalletAuth> {
   final WalletVault walletVault;
 
@@ -56,6 +66,21 @@ class WalletAuthNotifier extends StateNotifier<WalletAuth> {
 
     final sessionKey = await walletVault.getSessionKey();
     return EncryptionUtil.decryptHex(secret, sessionKey);
+  }
+
+  /// Signs many hashes with ONE key: the seed is read once, the key derived
+  /// once, and all signatures made in one background isolate.
+  Future<List<Uint8List>> signMany(
+    List<Uint8List> data, {
+    required int typeIndex,
+    required int index,
+  }) async {
+    if (data.isEmpty) return <Uint8List>[];
+    final walletKind = state.wallet.kind;
+    final seed = await _getSeed();
+    final wallet = HdWallet.forSeedHex(seed, type: walletKind.type);
+    final keyPair = wallet.deriveKeyPair(typeIndex: typeIndex, index: index);
+    return compute(_computeSignManySchnorr, [keyPair.privateKey, ...data]);
   }
 
   Future<Uint8List> sign(

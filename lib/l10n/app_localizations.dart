@@ -2155,6 +2155,12 @@ abstract class AppLocalizations {
   /// **'See all'**
   String get seeAll;
 
+  /// No description provided for @show.
+  ///
+  /// In en, this message translates to:
+  /// **'Show'**
+  String get show;
+
   /// No description provided for @homeGreeting.
   ///
   /// In en, this message translates to:

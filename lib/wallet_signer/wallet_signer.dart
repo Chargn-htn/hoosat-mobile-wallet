@@ -16,22 +16,26 @@ class WalletSigner implements SignerBase {
     return _wallet.containsAddress(address.toString());
   }
 
+  /// (type, index) of the address in the wallet's key tree; throws if it is
+  /// not one of ours.
+  (int, int) _pathOf(Address address) {
+    var index = _wallet.indexOfReceiveAddress(address.encoded);
+    if (index != null) return (0, index);
+    index = _wallet.indexOfChangeAddress(address.encoded);
+    if (index != null) return (1, index);
+    throw Exception('Address not found');
+  }
+
   @override
   Future<Uint8List> sign(Uint8List data, Address address) async {
-    int typeIndex = 0;
-    var index = _wallet.indexOfReceiveAddress(address.encoded);
-    if (index == null) {
-      index = _wallet.indexOfChangeAddress(address.encoded);
-      typeIndex = 1;
-      if (index == null) {
-        throw Exception('Address not found');
-      }
-    }
-    final signature = await _walletAuth.sign(
-      data,
-      typeIndex: typeIndex,
-      index: index,
-    );
-    return signature;
+    final (typeIndex, index) = _pathOf(address);
+    return _walletAuth.sign(data, typeIndex: typeIndex, index: index);
+  }
+
+  @override
+  Future<List<Uint8List>> signMany(
+      List<Uint8List> data, Address address) async {
+    final (typeIndex, index) = _pathOf(address);
+    return _walletAuth.signMany(data, typeIndex: typeIndex, index: index);
   }
 }
