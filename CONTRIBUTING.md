@@ -7,9 +7,8 @@ change what — see "Why" below.
 ## Merge rights (current, 2026-11-04)
 
 - **Chargn** — sole maintainer with merge rights.
-- **Foztor** will be added once the project reaches the iOS phase (he
-  compiles/tests the iOS builds on his own Mac). Not added before then —
-  no need to pull him in early.
+- A second maintainer will be added when the iOS phase starts, and recorded
+  here when that happens.
 - Anyone else gets added only with an explicit decision recorded here,
   updating this list.
 

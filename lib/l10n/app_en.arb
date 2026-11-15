@@ -175,7 +175,7 @@
       }
     }
   },
-  "feeTitle": "FEE",
+  "feeTitle": "Manage Fee",
   "fetchingTransactions": "Fetching Transactions",
   "fingerprintSeedBackup": "Authenticate to Backup Secret Phrase.",
   "goBackButton": "Go Back",
