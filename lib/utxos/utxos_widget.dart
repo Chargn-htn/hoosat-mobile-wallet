@@ -29,7 +29,7 @@ class UtxosWidget extends ConsumerWidget {
 
       final addresses = ref.read(activeAddressesProvider);
       final notifier = ref.read(utxoNotifierProvider);
-      await notifier.refresh(addresses: addresses);
+      await notifier.refresh(addresses: addresses, force: true);
     }
 
     return RefreshIndicator(

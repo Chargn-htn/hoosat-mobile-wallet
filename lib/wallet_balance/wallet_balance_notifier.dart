@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 
 import '../database/boxes.dart';
@@ -14,6 +17,16 @@ class WalletBalanceNotifier extends SafeChangeNotifier {
   BigInt _totalBalance = BigInt.zero;
   DateTime? _lastRefreshTime;
   static const _refreshInterval = Duration(seconds: 1);
+
+  // Refreshes asked for during the lockout are postponed, never dropped.
+  final _pendingAddresses = <String>{};
+  Timer? _pendingTimer;
+
+  @override
+  void dispose() {
+    _pendingTimer?.cancel();
+    super.dispose();
+  }
 
   WalletBalanceNotifier({
     required TypedBox<AddressBalance> balanceBox,
@@ -46,13 +59,31 @@ class WalletBalanceNotifier extends SafeChangeNotifier {
   Amount balanceForAddress(String address) =>
       Amount.raw(_balances[address] ?? BigInt.zero);
 
-  Future<void> refresh(Iterable<String> addresses) async {
+  int _failures = 0; // refreshes in a row that got no answer
+
+  Future<void> refresh(Iterable<String> addresses, {bool force = false}) async {
     final now = DateTime.now();
-    if (_lastRefreshTime != null &&
-        now.difference(_lastRefreshTime!).inSeconds <
-            _refreshInterval.inSeconds) {
+    if (!force &&
+        _lastRefreshTime != null &&
+        now.difference(_lastRefreshTime!) < _refreshInterval) {
+      _pendingAddresses.addAll(addresses);
+      _pendingTimer ??= Timer(
+        _refreshInterval - now.difference(_lastRefreshTime!),
+        () {
+          _pendingTimer = null;
+          if (disposed || _pendingAddresses.isEmpty) return;
+          final due = Set.of(_pendingAddresses);
+          _pendingAddresses.clear();
+          refresh(due);
+        },
+      );
       return;
     }
+
+    addresses = {...addresses, ..._pendingAddresses};
+    _pendingAddresses.clear();
+    _pendingTimer?.cancel();
+    _pendingTimer = null;
     _lastRefreshTime = now;
 
     if (addresses.isEmpty) {
@@ -61,6 +92,7 @@ class WalletBalanceNotifier extends SafeChangeNotifier {
 
     try {
       final newBalances = await client.getBalancesByAddresses(addresses);
+      _failures = 0;
       final entries = newBalances.map(AddressBalance.fromRpc);
 
       final changes = <String, AddressBalance>{};
@@ -88,9 +120,22 @@ class WalletBalanceNotifier extends SafeChangeNotifier {
         notifyListeners();
       }
     } catch (_) {
-      // A node blip should not fail the wallet refresh. Allow the next call
-      // to try again instead of waiting out the throttle.
+      // A node blip should not fail the wallet refresh -- and must not leave
+      // the balances stale either: allow the next call straight away and
+      // schedule one retry so it does not depend on something else changing.
       _lastRefreshTime = null;
+      _pendingAddresses.addAll(addresses);
+      // Wait longer after every failure (5 s, 15 s, 45 s, then 60 s at most), so
+      // a node that is down is not asked for every address again and again.
+      _failures++;
+      final wait = Duration(seconds: min(60, 5 * pow(3, _failures - 1).toInt()));
+      _pendingTimer ??= Timer(wait, () {
+        _pendingTimer = null;
+        if (disposed || _pendingAddresses.isEmpty) return;
+        final due = Set.of(_pendingAddresses);
+        _pendingAddresses.clear();
+        refresh(due);
+      });
     }
   }
 }

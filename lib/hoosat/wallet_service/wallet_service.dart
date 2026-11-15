@@ -15,9 +15,13 @@ class WalletService {
   final SignerBase signer;
   final HoosatClient client;
 
+  /// Called with the coins a transaction spent, once the node has accepted it.
+  final void Function(Iterable<Outpoint> spent)? onInputsSpent;
+
   const WalletService({
     required this.signer,
     required this.client,
+    this.onInputsSpent,
   });
 
   SendTx createSendTx({
@@ -100,12 +104,20 @@ class WalletService {
 
     final rpcTx = tx.toRpc();
 
+    final String txId;
     if (rbf) {
       final result = await client.submitTransactionReplacement(rpcTx);
-      return result.transactionId;
+      txId = result.transactionId;
+    } else {
+      txId = await client.submitTransaction(rpcTx);
     }
-
-    final txId = await client.submitTransaction(rpcTx);
+    try {
+      onInputsSpent?.call(tx.inputs.map((i) => i.previousOutpoint));
+    } catch (_) {
+      // The node already has the payment. Bookkeeping that fails here must
+      // never turn a successful send into a reported failure (the person
+      // might pay twice).
+    }
     return txId;
   }
 
