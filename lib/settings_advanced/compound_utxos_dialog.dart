@@ -76,7 +76,6 @@ class _CompoundUtxosDialogState extends ConsumerState<CompoundUtxosDialog> {
       // cannot keep up with them (the node then cuts it off): pause them.
       final feeds = ref.read(liveFeedsHoldersProvider.notifier);
       final txNotifier = ref.read(txNotifierProvider);
-      feeds.pauseFeeds();
       setState(() {
         _isCompounding = true;
         _progress = null;
@@ -84,6 +83,7 @@ class _CompoundUtxosDialogState extends ConsumerState<CompoundUtxosDialog> {
       // A long job: keep the screen on so the wallet is not locked half way.
       await KeepAwake.on();
       try {
+        feeds.pauseFeeds(); // first thing in the try: the resume below always pairs with it
         await for (final p in runner.run()) {
           if (!mounted) {
             runner.stop();

@@ -62,10 +62,10 @@ class _MoveToMainDialogState extends ConsumerState<MoveToMainDialog> {
       // busy phone cannot keep up and the node would cut it off).
       final feeds = ref.read(liveFeedsHoldersProvider.notifier);
       final txNotifier = ref.read(txNotifierProvider);
-      feeds.pauseFeeds();
       // ...and keep the screen on, so the wallet is not locked half way.
       await KeepAwake.on();
       try {
+        feeds.pauseFeeds(); // first thing in the try: the resume below always pairs with it
         if (mounted) {
           setState(() {
             _isMoving = true;
