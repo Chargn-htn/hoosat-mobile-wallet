@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,11 +11,14 @@ import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
 import '../wallet/wallet_types.dart';
 import '../wallet_address/address_discovery.dart';
+import '../wallet_address/discovery_incomplete.dart';
 import '../wallet_address/wallet_address.dart';
 import 'setup_failed_page.dart';
 
-const _importBalanceScanMaxIndex = 1000;
-const _importBalanceScanBatchSize = 100;
+// Imports stop once 100 addresses in a row have no funds (capped at 2000).
+const _importBalanceScanMaxIndex = 2000;
+const _importBalanceScanBatchSize = 20;
+const _importGapLimit = 300;
 
 class SetupWalletScreen extends HookConsumerWidget {
   const SetupWalletScreen({Key? key}) : super(key: key);
@@ -29,6 +34,10 @@ class SetupWalletScreen extends HookConsumerWidget {
 
     final message = useState(l10n.walletSetupMessage);
     final details = useState('');
+    // The funds search can be skipped (offered after a while); the wallet then
+    // opens with a banner offering to scan again later.
+    final skipRequested = useRef(false);
+    final showSkip = useState(false);
 
     Future<void> setupWallet() async {
       try {
@@ -86,6 +95,11 @@ class SetupWalletScreen extends HookConsumerWidget {
         final api = ref.read(HoosatApiServiceProvider);
         final addressGenerator = auth.addressGenerator(network);
 
+        var checkedLine = '';
+        var stageLine = '';
+        void refreshDetails() => details.value =
+            stageLine.isEmpty ? checkedLine : '$checkedLine\n($stageLine)';
+
         final addressDiscovery = AddressDiscovery(
           client: client,
           api: api,
@@ -95,28 +109,48 @@ class SetupWalletScreen extends HookConsumerWidget {
                 ? l10n.receiveIndexParam('$index')
                 : l10n.changeIndexParam('$index');
           },
+          onStage: (stage) {
+            stageLine = stage;
+            refreshDetails();
+          },
         );
 
         WalletDiscoveryResult discovery;
 
-        if (network == HoosatNetwork.mainnet && !introData.generated) {
+        if (!introData.generated) {
           message.value = l10n.walletSetupAddressDiscovery;
-          // Imported wallets need balance discovery first. The legacy
-          // tx-by-tx scanner is accurate but very slow for fresh installs
-          // because it checks one derived address at a time.
-          discovery = await addressDiscovery.balanceDiscovery(
-            startReceiveIndex: 0,
-            startChangeIndex: 0,
-            maxIndex: _importBalanceScanMaxIndex,
-            batchSize: _importBalanceScanBatchSize,
-            onProgress: (type, index) {
-              final name = type == AddressType.receive
-                  ? l10n.receiveIndex
-                  : l10n.changeIndex;
-              details.value = '$name $index / $_importBalanceScanMaxIndex';
-              return true;
-            },
-          );
+          // Imported wallets (any network) search the node for funded
+          // addresses. The old tx-by-tx scanner needed an explorer, which
+          // testnet does not have, and is far slower.
+          try {
+            final checkedByType = <AddressType, int>{};
+            discovery = await addressDiscovery.balanceDiscovery(
+              startReceiveIndex: 0,
+              startChangeIndex: 0,
+              maxIndex: _importBalanceScanMaxIndex,
+              batchSize: _importBalanceScanBatchSize,
+              gapLimit: _importGapLimit,
+              onProgress: (type, index) {
+                checkedByType[type] = index;
+                final checked =
+                    checkedByType.values.fold<int>(0, (a, b) => a + b);
+                checkedLine = 'Searching for your funds... '
+                    '$checked addresses checked';
+                refreshDetails();
+                return !skipRequested.value;
+              },
+            );
+          } on DiscoveryCancelled catch (e) {
+            // Keep whatever was found before stopping; flag the rest as
+            // "not searched yet" so Home offers to finish the scan later.
+            discovery =
+                e.walletPartial ?? addressDiscovery.newWalletDiscoveryResult;
+            await setDiscoveryIncomplete(ref, wallet.wid, true);
+          } on DiscoveryFailed catch (e) {
+            discovery =
+                e.walletPartial ?? addressDiscovery.newWalletDiscoveryResult;
+            await setDiscoveryIncomplete(ref, wallet.wid, true);
+          }
 
           if (discovery.receive.addresses.isEmpty) {
             discovery = (
@@ -163,7 +197,10 @@ class SetupWalletScreen extends HookConsumerWidget {
 
     useEffect(() {
       Future.delayed(const Duration(milliseconds: 200), setupWallet);
-      return null;
+      final timer = Timer(const Duration(seconds: 15), () {
+        showSkip.value = true;
+      });
+      return timer.cancel;
     }, const []);
 
     if (setupFailed.value) {
@@ -203,6 +240,25 @@ class SetupWalletScreen extends HookConsumerWidget {
                         details.value,
                         style: styles.textStyleSettingItemHeader60,
                       ),
+                      if (showSkip.value && details.value.isNotEmpty) ...[
+                        const SizedBox(height: 20),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 32),
+                          child: Text(
+                            'Taking a while? You can skip this and scan '
+                            'again later from Settings.',
+                            textAlign: TextAlign.center,
+                            style: styles.textStyleSettingItemHeader60,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => skipRequested.value = true,
+                          child: Text(
+                            'Skip for now',
+                            style: styles.textStyleSettingItemHeaderLarge,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ],

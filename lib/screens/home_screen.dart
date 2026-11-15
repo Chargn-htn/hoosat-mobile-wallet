@@ -16,6 +16,7 @@ import '../widgets/network_banner.dart';
 import '../widgets/node_unreachable_banner.dart';
 import 'lock_screen.dart';
 import 'password_lock_screen.dart';
+import '../widgets/discovery_incomplete_banner.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -114,9 +115,11 @@ class HomeScreen extends HookConsumerWidget {
         child: ClipRect(
           child: NetworkBanner(
             child: NodeUnreachableBanner(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: const MainTabScaffold(),
+              child: DiscoveryIncompleteBanner(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: const MainTabScaffold(),
+                ),
               ),
             ),
           ),
