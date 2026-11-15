@@ -107,7 +107,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get available => 'Në dispozicion';
 
   @override
-  String get back => 'Back';
+  String get back => 'Mbrapa';
 
   @override
   String get backupConfirmButton => 'Unë e kam ruajtur atë';
@@ -116,7 +116,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get backupSecretPhrase => 'Ruaj Frazën Sekrete';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Mungon fraza sekrete';
 
   @override
   String get biometricsMethod => 'Biometrike';
@@ -168,7 +168,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get confirmed => 'konfirmuar';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'konfirmuar · duke u pjekur';
 
   @override
   String get confirming => 'duke konfirmuar';
@@ -617,24 +617,24 @@ class AppLocalizationsSq extends AppLocalizations {
   String get scanQrCodeError => 'Analizimi i kodit qr dështoi';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Skano nga imazhi';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Ndiz/fik elektrikun';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Para se të filloni';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet është një portofol jo-kujdestar (non-custodial). Fraza juaj sekrete dhe çelësat privatë krijohen dhe ruhen vetëm në këtë pajisje — ne nuk i shohim kurrë, nuk i ruajmë në asnjë server dhe nuk mund t\'i rikuperojmë për ju.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Nëse humbni frazën sekrete, nuk ka rivendosje fjalëkalimi dhe asnjë ekip mbështetjeje nuk mund t\'jua kthejë fondet. Vetëm ju jeni përgjegjës për ta mbajtur të sigurt.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'E kuptoj, vazhdo';
 
   @override
   String get secretInfo =>
@@ -647,26 +647,26 @@ class AppLocalizationsSq extends AppLocalizations {
   String get secretPhrase => 'Fraze Sekrete';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Verifikoni kopjen rezervë';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Zgjidhni fjalën e saktë për çdo pozicion për të konfirmuar se e keni ruajtur frazën sekrete.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Cila është fjala nr. $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Jo plotësisht e saktë. Kontrolloni kopjen rezervë dhe provoni përsëri.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 fjalë';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 fjalë';
 
   @override
   String get secretWarning =>
@@ -677,45 +677,46 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Vërtetohuni për të hyrë te cilësimet e sigurisë';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Futni PIN-in për të hyrë te cilësimet e sigurisë';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Nënshkruaj mesazhin';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopjo nënshkrimin';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Nënshkruani një mesazh me një nga adresat e portofolit tuaj';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Futni një mesazh për ta nënshkruar';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Nënshkrimi u kopjua';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Mesazhi u nënshkrua';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Mesazhi është shumë i gjatë';
 
   @override
   String get seedInvalid => 'Seed është i pavlefshëm';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Nuk mund të arrihet nyja juaj. Bilancet mund të jenë të vjetruara.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Provo përsëri';
 
   @override
   String get send => 'Dërgo';
@@ -798,7 +799,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get themeLight => 'Tema e lehtë';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Ndrysho temën';
 
   @override
   String get thisWallet => '#Ky Portofol';
@@ -1006,181 +1007,181 @@ class AppLocalizationsSq extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Fondet ende po konfirmohen';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Një pjesë e fondeve në këtë llogari u pranua shumë së fundmi për t\'u dërguar ende — rrjeti kërkon fillimisht një kohë të shkurtër pjekjeje, zakonisht disa minuta. Mund të prisni dhe të provoni përsëri, ose të dërgoni nga një llogari tjetër që ka fonde të pjekura.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Ndërro llogarinë';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Mblidh te Kryesorja';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Transferoni bilancin e të gjitha adresave të tjera te adresa juaj kryesore';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Të zhvendosen të gjitha te Kryesorja?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Kjo do të zhvendosë $amount $symbol nga $count adresa të tjera te adresa juaj kryesore. Do të krijohen një ose më shumë transaksione dhe do të aplikohen tarifa rrjeti.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Bilanci i të gjitha adresave është tashmë te Kryesorja';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Po mblidhet te Kryesorja';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Zhvendosja te Kryesorja u krye me sukses';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Zhvendosja te Kryesorja dështoi';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ZHVENDOS';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Llogaritë';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => 'Shtoni dhe menaxhoni adresa me emër';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Kryesore';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arkivo';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Rikthe';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Të arkivuara';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Ende nuk ka llogari shtesë';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Riemërto llogarinë';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Emri i llogarisë';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'RUAJ';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'SHTO';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Nga';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Çdo';
 
   @override
-  String get home => 'Home';
+  String get home => 'Kreu';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktiviteti';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Bilanci total';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'E shpenzueshme tani $spendable · Ende në rrugë $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Monedhat që janë ende në rrugë janë tuajat dhe do të mund të shpenzohen së shpejti.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Monedhat që janë ende në rrugë do të mund të shpenzohen pas $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'E shpenzueshme tani $amount. Pjesa tjetër mund të shpenzohet pas $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'E shpenzueshme tani $amount. Pjesa tjetër është ende në rrugë.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'në pritje të pranimit';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'gjendje e panjohur';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'nuk u pranua';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'konfirmim $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Dërguar te';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Testo lidhjen';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Ruajtur nga një portofol tjetër (vetëm shikim)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Ky portofol nuk mund t\'i shpenzojë, ndaj nuk llogariten në totalin e tij. Hapni portofolin të cilit i përkasin për t\'i përdorur.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Ende pa aktivitet';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Dërguar';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Pranuar';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Brenda portofolit';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Monedha të bashkuara';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Kur dërgoni ose pranoni HTN, do të shfaqet këtu.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Shiko të gjitha';
 
   @override
-  String get show => 'Show';
+  String get show => 'Shfaq';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Llogaritë e mia';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Përshëndetje, $walletName';
   }
 
   @override
@@ -1250,18 +1251,18 @@ class AppLocalizationsSq extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Importo portofol standard';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Portofolë me 12 ose 24 fjalë me derivim standard dhe fraza kalimi BIP39 opsionale';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importo portofol të vjetër';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Portofolë me 12 fjalë me derivim të vjetër, të përputhshëm me Web Wallet të vjetër dhe KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1480,121 +1481,120 @@ class AppLocalizationsSq extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Sjellja e adresës së kusurit';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Çdo adresë mban bilancin e vet dhe kusuri mbetet aty';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Çdo herë përdoret një adresë e re (privat, bilanci shpërndahet)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Sjellja e adresës së kusurit';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Mbaj bilancet në çdo adresë';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privat';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Kërko fjalëkalimin';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Gjatë nisjes';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Kur është i kyçur';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Gjatë nënshkrimit';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Opsione të avancuara';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Fraza e kalimit BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'SHËNIM: Ky nuk është fjalëkalim portofoli; fraza të ndryshme kalimi BIP39 hapin portofolë të ndryshëm.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Futni frazën e kalimit';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Konfirmoni frazën e kalimit';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Frazat e kalimit nuk përputhen!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Portofol me frazë kalimi BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Futni tarifën e përparësisë';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'TARIFA BAZË';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'TARIFA E PËRPARËSISË';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Adresa e destinacionit nuk u njoh';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Transaksioni nuk u rindërtua dot';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Transaksioni nuk u rindërtua dot me tarifën e re';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Tarifa nuk u përditësua dot';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Përditëso tarifën';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Po përditësohet tarifa';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Tarifa përparësie të rekomanduara';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Tarifa e re e përparësisë duhet të jetë të paktën $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'NË PRITJE';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Ky transaksion është në pritje';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Transaksion në pritje';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Ka transaksione në pritje në mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Përditëso tarifën e transaksionit';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Zëvendëso me tarifë (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'në mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Zgjidh UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Ju lutemi zgjidhni më shumë UTXO';
 }

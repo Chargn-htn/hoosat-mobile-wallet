@@ -107,7 +107,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get available => 'Tersedia';
 
   @override
-  String get back => 'Back';
+  String get back => 'Kembali';
 
   @override
   String get backupConfirmButton => 'Saya telah menyokongnya';
@@ -116,7 +116,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get backupSecretPhrase => 'Cadangkan Frasa Rahsia ';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Frasa Rahsia tiada';
 
   @override
   String get biometricsMethod => 'Biometrik';
@@ -168,7 +168,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get confirmed => 'disahkan';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'disahkan · sedang matang';
 
   @override
   String get confirming => 'mengesahkan';
@@ -615,24 +615,24 @@ class AppLocalizationsMs extends AppLocalizations {
   String get scanQrCodeError => 'Gagal menghuraikan kod qr';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Imbas daripada imej';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Hidup/matikan lampu suluh';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Sebelum anda bermula';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet ialah dompet bukan jagaan (non-custodial). Frasa Rahsia dan kunci peribadi anda dijana dan disimpan pada peranti ini sahaja — kami tidak pernah melihatnya, tidak menyimpannya pada mana-mana pelayan dan tidak boleh memulihkannya untuk anda.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Jika anda kehilangan Frasa Rahsia anda, tiada tetapan semula kata laluan dan tiada pasukan sokongan yang boleh mendapatkan semula dana anda. Anda sahaja yang bertanggungjawab menyimpannya dengan selamat.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Saya faham, teruskan';
 
   @override
   String get secretInfo =>
@@ -645,26 +645,26 @@ class AppLocalizationsMs extends AppLocalizations {
   String get secretPhrase => 'Frasa Rahsia';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Sahkan sandaran anda';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Pilih perkataan yang betul bagi setiap kedudukan untuk mengesahkan bahawa anda telah menyimpan Frasa Rahsia anda.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Apakah perkataan #$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Kurang tepat. Semak sandaran anda dan cuba lagi.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 perkataan';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 perkataan';
 
   @override
   String get secretWarning =>
@@ -675,45 +675,46 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Sahkan untuk mengakses tetapan keselamatan';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Masukkan PIN untuk mengakses tetapan keselamatan';
 
   @override
   String get seed => 'Benih';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Tandatangani mesej';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Salin tandatangan';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Tandatangani mesej dengan salah satu alamat dompet anda';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Masukkan mesej untuk ditandatangani';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Tandatangan disalin';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Mesej ditandatangani';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Mesej terlalu panjang';
 
   @override
   String get seedInvalid => 'Benih tidak sah';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Tidak dapat menghubungi nod anda. Baki mungkin sudah lapuk.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Cuba lagi';
 
   @override
   String get send => 'Hantar';
@@ -797,7 +798,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get themeLight => 'Tema Cahaya';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Tukar tema';
 
   @override
   String get thisWallet => '#Dompet Ini';
@@ -1007,181 +1008,181 @@ class AppLocalizationsMs extends AppLocalizations {
   String get compoundFailure => 'Gagal untuk mengkompaun transaksi';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Dana masih disahkan';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Sebahagian dana dalam akaun ini baru diterima dan belum boleh dihantar — rangkaian memerlukan tempoh pematangan yang singkat dahulu, biasanya beberapa minit. Anda boleh menunggu dan cuba lagi, atau menghantar daripada akaun lain yang mempunyai dana matang.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Tukar akaun';
 
   @override
   String get compoundTooFewUtxos => 'Sekurang-kurangnya dua UTXO diperlukan';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Kumpulkan ke Utama';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Pindahkan baki semua alamat lain ke alamat utama anda';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Pindahkan semuanya ke Utama?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Ini akan memindahkan $amount $symbol daripada $count alamat lain ke alamat utama anda. Satu atau lebih transaksi akan dicipta dan bayaran rangkaian akan dikenakan.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Baki semua alamat sudah berada di Utama';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Mengumpulkan ke Utama';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Pemindahan ke Utama berjaya';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Gagal memindahkan ke Utama';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'PINDAH';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Akaun';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => 'Tambah dan urus alamat bernama';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Utama';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arkibkan';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Pulihkan';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Diarkibkan';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Belum ada akaun tambahan';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Namakan semula akaun';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Nama akaun';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'SIMPAN';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'TAMBAH';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Daripada';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Mana-mana';
 
   @override
-  String get home => 'Home';
+  String get home => 'Laman Utama';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktiviti';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Jumlah baki';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Boleh dibelanjakan sekarang $spendable · Masih dalam perjalanan $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Syiling yang masih dalam perjalanan adalah milik anda dan akan dapat dibelanjakan tidak lama lagi.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Syiling yang masih dalam perjalanan boleh dibelanjakan dalam $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Boleh dibelanjakan sekarang $amount. Bakinya boleh dibelanjakan dalam $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Boleh dibelanjakan sekarang $amount. Bakinya masih dalam perjalanan.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'menunggu diterima';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'status tidak diketahui';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'tidak diterima';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'mengesahkan $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Dihantar kepada';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Uji sambungan';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Disimpan daripada dompet lain (lihat sahaja)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Dompet ini tidak dapat membelanjakannya, jadi ia tidak dikira dalam jumlahnya. Buka dompet tempat ia berada untuk menggunakannya.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Belum ada aktiviti';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Dihantar';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Diterima';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Dalam dompet';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Syiling digabungkan';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Apabila anda menghantar atau menerima HTN, ia akan dipaparkan di sini.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Lihat semua';
 
   @override
-  String get show => 'Show';
+  String get show => 'Tunjuk';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Akaun saya';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Hai, $walletName';
   }
 
   @override
@@ -1251,18 +1252,18 @@ class AppLocalizationsMs extends AppLocalizations {
       'Serasi dengan Dompet Web dan KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Import dompet standard';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Dompet 12 atau 24 perkataan dengan terbitan standard dan frasa laluan BIP39 pilihan';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Import dompet lama';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Dompet 12 perkataan dengan terbitan lama, serasi dengan Web Wallet lama dan KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Dompet Hanya Lihat Sahaja';
@@ -1481,121 +1482,121 @@ class AppLocalizationsMs extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Tingkah laku alamat wang baki';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Setiap alamat menyimpan bakinya sendiri, dan wang baki kekal di tempatnya';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Alamat baharu digunakan setiap kali (peribadi, baki tersebar)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Tingkah laku alamat wang baki';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Kekalkan baki pada setiap alamat';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Peribadi';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Minta kata laluan';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Semasa dibuka';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Apabila dikunci';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Semasa menandatangani';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Pilihan lanjutan';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Frasa laluan BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'NOTA: Ini bukan kata laluan dompet; frasa laluan BIP39 yang berbeza membuka dompet yang berbeza.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Masukkan frasa laluan';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Sahkan frasa laluan';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Frasa laluan tidak sepadan!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Dompet dengan frasa laluan BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Masukkan bayaran keutamaan';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'BAYARAN ASAS';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'BAYARAN KEUTAMAAN';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Gagal mengenali alamat destinasi';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Gagal membina semula transaksi';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Gagal membina semula transaksi dengan bayaran baharu';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Gagal mengemas kini bayaran';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Kemas kini bayaran';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Mengemas kini bayaran';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Bayaran keutamaan disyorkan';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Bayaran keutamaan baharu mestilah sekurang-kurangnya $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'BELUM SELESAI';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Transaksi ini belum selesai';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Transaksi belum selesai';
 
   @override
   String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+      'Terdapat transaksi belum selesai dalam mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Kemas kini bayaran transaksi';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Ganti dengan bayaran (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'dalam mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Pilih UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Sila pilih lebih banyak UTXO';
 }

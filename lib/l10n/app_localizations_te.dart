@@ -108,7 +108,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get available => 'అందుబాటులో ఉంది';
 
   @override
-  String get back => 'Back';
+  String get back => 'వెనుకకు';
 
   @override
   String get backupConfirmButton => 'నేను దానిని బ్యాకప్ చేసాను';
@@ -117,7 +117,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get backupSecretPhrase => 'బ్యాకప్ రహస్య పదబంధం';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'రహస్య పదబంధం లేదు';
 
   @override
   String get biometricsMethod => 'బయోమెట్రిక్స్';
@@ -169,7 +169,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get confirmed => 'ధ్రువీకరించారు';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'ధ్రువీకరించబడింది · పరిపక్వం అవుతోంది';
 
   @override
   String get confirming => 'నిర్ధారిస్తూ';
@@ -622,24 +622,24 @@ class AppLocalizationsTe extends AppLocalizations {
   String get scanQrCodeError => 'qr కోడ్‌ని స్కాన్ చేయండి';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'చిత్రం నుండి స్కాన్ చేయండి';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'టార్చ్ ఆన్/ఆఫ్ చేయండి';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'ప్రారంభించే ముందు';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet ఒక నాన్-కస్టోడియల్ వాలెట్. మీ రహస్య పదబంధం మరియు ప్రైవేట్ కీలు ఈ పరికరంలో మాత్రమే సృష్టించబడి నిల్వ చేయబడతాయి — మేము వాటిని ఎప్పుడూ చూడము, ఏ సర్వర్‌లోనూ నిల్వ చేయము, మీ కోసం వాటిని తిరిగి పొందలేము.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'మీరు మీ రహస్య పదబంధాన్ని కోల్పోతే, పాస్‌వర్డ్ రీసెట్ ఉండదు, మీ నిధులను తిరిగి ఇవ్వగల సపోర్ట్ బృందం కూడా లేదు. దాన్ని సురక్షితంగా ఉంచుకునే బాధ్యత పూర్తిగా మీదే.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'నాకు అర్థమైంది, కొనసాగించండి';
 
   @override
   String get secretInfo =>
@@ -652,26 +652,26 @@ class AppLocalizationsTe extends AppLocalizations {
   String get secretPhrase => 'రహస్య పదబంధం';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'మీ బ్యాకప్‌ను ధృవీకరించండి';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'మీరు రహస్య పదబంధాన్ని సేవ్ చేశారని నిర్ధారించడానికి ప్రతి స్థానానికి సరైన పదాన్ని ఎంచుకోండి.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return '$indexవ పదం ఏమిటి?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'సరిగ్గా లేదు. మీ బ్యాకప్‌ను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 పదాలు';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 పదాలు';
 
   @override
   String get secretWarning =>
@@ -682,45 +682,46 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'భద్రతా సెట్టింగ్‌లను యాక్సెస్ చేయడానికి ప్రమాణీకరించండి';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'భద్రతా సెట్టింగ్‌లను యాక్సెస్ చేయడానికి PIN నమోదు చేయండి';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'సందేశంపై సంతకం చేయండి';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'సంతకాన్ని కాపీ చేయండి';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'మీ వాలెట్ చిరునామాలలో ఒకదానితో సందేశంపై సంతకం చేయండి';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'సంతకం చేయడానికి సందేశాన్ని నమోదు చేయండి';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'సంతకం కాపీ అయింది';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'సందేశంపై సంతకం చేయబడింది';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'సందేశం చాలా పొడవుగా ఉంది';
 
   @override
   String get seedInvalid => 'Seed చెల్లదు';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'మీ నోడ్‌ను చేరుకోలేకపోతున్నాం. బ్యాలెన్స్‌లు పాతవి కావచ్చు.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'మళ్లీ ప్రయత్నించండి';
 
   @override
   String get send => 'పంపండి';
@@ -803,7 +804,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get themeLight => 'కాంతి థీమ్';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'థీమ్ మార్చండి';
 
   @override
   String get thisWallet => '#ఈ వాలెట్';
@@ -1012,181 +1013,182 @@ class AppLocalizationsTe extends AppLocalizations {
   String get compoundFailure => 'లావాదేవీలను సమ్మేళనం చేయడంలో విఫలమైంది';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'నిధులు ఇంకా ధృవీకరించబడుతున్నాయి';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'ఈ ఖాతాలోని కొన్ని నిధులు ఇటీవలే అందాయి, కాబట్టి ఇంకా పంపలేరు — నెట్‌వర్క్‌కు ముందుగా కొద్దిపాటి పరిపక్వత సమయం అవసరం, సాధారణంగా కొన్ని నిమిషాలు. మీరు వేచి ఉండి మళ్లీ ప్రయత్నించవచ్చు, లేదా పరిపక్వమైన నిధులు ఉన్న మరొక ఖాతా నుండి పంపవచ్చు.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'ఖాతా మార్చండి';
 
   @override
   String get compoundTooFewUtxos => 'కనీసం రెండు UTXOలు అవసరం';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'ప్రధాన ఖాతాలో సేకరించండి';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'ఇతర అన్ని చిరునామాల బ్యాలెన్స్‌ను మీ ప్రధాన చిరునామాకు తరలించండి';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'అన్నింటినీ ప్రధాన ఖాతాకు తరలించాలా?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'ఇది $count ఇతర చిరునామాల నుండి $amount $symbol ను మీ ప్రధాన చిరునామాకు తరలిస్తుంది. ఒకటి లేదా అంతకంటే ఎక్కువ లావాదేవీలు సృష్టించబడతాయి మరియు నెట్‌వర్క్ ఫీజులు వర్తిస్తాయి.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'అన్ని చిరునామాల బ్యాలెన్స్ ఇప్పటికే ప్రధాన ఖాతాలో ఉంది';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'ప్రధాన ఖాతాలో సేకరిస్తోంది';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'ప్రధాన ఖాతాకు తరలింపు విజయవంతమైంది';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'ప్రధాన ఖాతాకు తరలించడం విఫలమైంది';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'తరలించండి';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'ఖాతాలు';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'పేరున్న చిరునామాలను జోడించండి మరియు నిర్వహించండి';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'ప్రధాన';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'ఆర్కైవ్ చేయండి';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'పునరుద్ధరించండి';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'ఆర్కైవ్ చేసినవి';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'ఇంకా అదనపు ఖాతాలు లేవు';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'ఖాతా పేరు మార్చండి';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'ఖాతా పేరు';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'సేవ్ చేయండి';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'జోడించండి';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'నుండి';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'ఏదైనా';
 
   @override
-  String get home => 'Home';
+  String get home => 'హోమ్';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'కార్యకలాపం';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'మొత్తం బ్యాలెన్స్';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'ఇప్పుడు ఖర్చు చేయగలిగేది $spendable · ఇంకా వస్తున్నది $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'ఇంకా వస్తున్న నాణేలు మీవే, త్వరలో ఖర్చు చేయవచ్చు.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'ఇంకా వస్తున్న నాణేలను $time తర్వాత ఖర్చు చేయవచ్చు.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'ఇప్పుడు ఖర్చు చేయగలిగేది $amount. మిగిలినది $time తర్వాత ఖర్చు చేయవచ్చు.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'ఇప్పుడు ఖర్చు చేయగలిగేది $amount. మిగిలినది ఇంకా వస్తోంది.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'ఆమోదం కోసం వేచి ఉంది';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'స్థితి తెలియదు';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'ఆమోదించబడలేదు';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'ధృవీకరిస్తోంది $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'ఇక్కడికి సమర్పించబడింది';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'కనెక్షన్ పరీక్షించండి';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'మరొక వాలెట్ నుండి సేవ్ చేసినవి (చూడటానికి మాత్రమే)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'ఈ వాలెట్‌తో వీటిని ఖర్చు చేయడం సాధ్యం కాదు, కాబట్టి ఇవి దాని మొత్తంలో లెక్కించబడవు. వాటిని ఉపయోగించడానికి అవి చెందిన వాలెట్‌ను తెరవండి.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'ఇంకా కార్యకలాపం లేదు';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'పంపబడింది';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'అందింది';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'వాలెట్ లోపల';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'విలీనం చేసిన నాణేలు';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'మీరు HTN పంపినా లేదా అందుకున్నా, అది ఇక్కడ కనిపిస్తుంది.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'అన్నీ చూడండి';
 
   @override
-  String get show => 'Show';
+  String get show => 'చూపించు';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'నా ఖాతాలు';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'హలో, $walletName';
   }
 
   @override
@@ -1260,18 +1262,19 @@ class AppLocalizationsTe extends AppLocalizations {
       'వెబ్ వాలెట్ మరియు KDXతో అనుకూలమైనది';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle =>
+      'ప్రామాణిక వాలెట్‌ను దిగుమతి చేయండి';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'ప్రామాణిక డెరివేషన్‌తో 12 లేదా 24 పదాల వాలెట్‌లు, ఐచ్ఛిక BIP39 పాస్‌ఫ్రేజ్‌తో';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'పాత వాలెట్‌ను దిగుమతి చేయండి';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'పాత డెరివేషన్‌తో 12 పదాల వాలెట్‌లు, పాత Web Wallet మరియు KDXతో అనుకూలమైనవి';
 
   @override
   String get importOptionKpubTitle => 'వాచ్ మాత్రమే వాలెట్‌ని దిగుమతి చేయండి';
@@ -1492,121 +1495,120 @@ class AppLocalizationsTe extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'చేంజ్ చిరునామా ప్రవర్తన';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'ప్రతి చిరునామా తన సొంత బ్యాలెన్స్‌ను ఉంచుకుంటుంది, చేంజ్ అక్కడే ఉంటుంది';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'ప్రతిసారీ కొత్త చిరునామా ఉపయోగించబడుతుంది (ప్రైవేట్, బ్యాలెన్స్ చెదరిపోతుంది)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'చేంజ్ చిరునామా ప్రవర్తన';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'ప్రతి చిరునామాపై బ్యాలెన్స్‌లను ఉంచండి';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'ప్రైవేట్';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'పాస్‌వర్డ్ అడగండి';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'ప్రారంభంలో';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'లాక్ అయినప్పుడు';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'సంతకం చేసేటప్పుడు';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'అధునాతన ఎంపికలు';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 పాస్‌ఫ్రేజ్';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'గమనిక: ఇది వాలెట్ పాస్‌వర్డ్ కాదు; వేర్వేరు BIP39 పాస్‌ఫ్రేజ్‌లు వేర్వేరు వాలెట్‌లను తెరుస్తాయి.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'పాస్‌ఫ్రేజ్ నమోదు చేయండి';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'పాస్‌ఫ్రేజ్ నిర్ధారించండి';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'పాస్‌ఫ్రేజ్‌లు సరిపోలడం లేదు!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39 పాస్‌ఫ్రేజ్‌తో ఉన్న వాలెట్.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'ప్రాధాన్యత ఫీజు నమోదు చేయండి';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'బేస్ ఫీజు';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'ప్రాధాన్యత ఫీజు';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'గమ్యస్థాన చిరునామాను గుర్తించలేకపోయింది';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'లావాదేవీని మళ్లీ నిర్మించలేకపోయింది';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'కొత్త ఫీజుతో లావాదేవీని మళ్లీ నిర్మించలేకపోయింది';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'ఫీజును అప్‌డేట్ చేయలేకపోయింది';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'ఫీజును అప్‌డేట్ చేయండి';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'ఫీజును అప్‌డేట్ చేస్తోంది';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'సిఫార్సు చేసిన ప్రాధాన్యత ఫీజులు';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'కొత్త ప్రాధాన్యత ఫీజు కనీసం $amount $symbol ఉండాలి';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'పెండింగ్';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'ఈ లావాదేవీ పెండింగ్‌లో ఉంది';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'పెండింగ్ లావాదేవీ';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'మెంపూల్‌లో పెండింగ్ లావాదేవీలు ఉన్నాయి.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'లావాదేవీ ఫీజును అప్‌డేట్ చేయండి';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'ఫీజుతో భర్తీ చేయండి (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'మెంపూల్‌లో';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO ఎంచుకోండి';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'దయచేసి మరిన్ని UTXO ఎంచుకోండి';
 }

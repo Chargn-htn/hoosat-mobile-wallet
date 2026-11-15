@@ -107,7 +107,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get available => 'Available';
 
   @override
-  String get back => 'Back';
+  String get back => 'Atpakaļ';
 
   @override
   String get backupConfirmButton => 'Esmu izveidojis rezerves kopiju';
@@ -116,7 +116,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get backupSecretPhrase => 'Backup Secret Phrase';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Trūkst slepenās frāzes';
 
   @override
   String get biometricsMethod => 'Biometriskā atpazīšana';
@@ -168,7 +168,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get confirmed => 'confirmed';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'apstiprināts · nogatavojas';
 
   @override
   String get confirming => 'confirming';
@@ -613,24 +613,24 @@ class AppLocalizationsLv extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Skenēt no attēla';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Ieslēgt/izslēgt lukturīti';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Pirms sākat';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet ir nekustodiāls maks. Jūsu slepenā frāze un privātās atslēgas tiek izveidotas un glabātas tikai šajā ierīcē — mēs tās nekad neredzam, neglabājam nevienā serverī un nevaram tās atjaunot jūsu vietā.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Ja pazaudēsiet slepeno frāzi, paroles atiestatīšana nav iespējama un neviena atbalsta komanda nevar atgūt jūsu līdzekļus. Par tās drošu glabāšanu atbildat tikai jūs.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Saprotu, turpināt';
 
   @override
   String get secretInfo =>
@@ -643,26 +643,26 @@ class AppLocalizationsLv extends AppLocalizations {
   String get secretPhrase => 'Slepenā frāze';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Pārbaudiet rezerves kopiju';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Izvēlieties pareizo vārdu katrai pozīcijai, lai apstiprinātu, ka slepenā frāze ir saglabāta.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Kāds ir vārds Nr. $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Ne gluži pareizi. Pārbaudiet rezerves kopiju un mēģiniet vēlreiz.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 vārdi';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 vārdi';
 
   @override
   String get secretWarning =>
@@ -673,45 +673,46 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Autentificējieties, lai piekļūtu drošības iestatījumiem';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Ievadiet PIN, lai piekļūtu drošības iestatījumiem';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Parakstīt ziņojumu';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopēt parakstu';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Parakstiet ziņojumu ar vienu no sava maka adresēm';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Ievadiet ziņojumu, ko parakstīt';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Paraksts nokopēts';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Ziņojums parakstīts';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Ziņojums ir pārāk garš';
 
   @override
   String get seedInvalid => 'Sēkla nav derīga';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Nevar sasniegt jūsu mezglu. Atlikumi var būt novecojuši.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Mēģināt vēlreiz';
 
   @override
   String get send => 'Sūtīt';
@@ -794,7 +795,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get themeLight => 'Light Theme';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Pārslēgt motīvu';
 
   @override
   String get thisWallet => '#This Wallet';
@@ -1000,181 +1001,181 @@ class AppLocalizationsLv extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Līdzekļi vēl tiek apstiprināti';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Daļa līdzekļu šajā kontā tika saņemta pārāk nesen, lai tos varētu nosūtīt — tīkls vispirms pieprasa īsu nogatavošanās laiku, parasti dažas minūtes. Varat uzgaidīt un mēģināt vēlreiz vai nosūtīt no cita konta, kurā ir nogatavojušies līdzekļi.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Mainīt kontu';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Apkopot Galvenajā';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Pārvietot visu pārējo adrešu atlikumu uz savu galveno adresi';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Pārvietot visu uz Galveno?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Tas pārvietos $amount $symbol no $count citām adresēm uz jūsu galveno adresi. Tiks izveidots viens vai vairāki darījumi, un tiks piemērota tīkla komisija.';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => 'Visu adrešu atlikums jau ir Galvenajā';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Apkopošana Galvenajā';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Pārvietošana uz Galveno veiksmīga';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Neizdevās pārvietot uz Galveno';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'PĀRVIETOT';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Konti';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Pievienojiet un pārvaldiet nosauktas adreses';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Galvenais';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arhivēt';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Atjaunot';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arhivēti';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Papildu kontu vēl nav';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Pārdēvēt kontu';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Konta nosaukums';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'SAGLABĀT';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'PIEVIENOT';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'No';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Jebkurš';
 
   @override
-  String get home => 'Home';
+  String get home => 'Sākums';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktivitāte';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Kopējais atlikums';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Tērējams tagad $spendable · Vēl ceļā $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Monētas, kas vēl ir ceļā, pieder jums, un tās drīz varēs iztērēt.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Monētas, kas vēl ir ceļā, varēs iztērēt pēc $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Tērējams tagad $amount. Atlikumu varēs iztērēt pēc $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Tērējams tagad $amount. Atlikums vēl ir ceļā.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'gaida pieņemšanu';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'statuss nezināms';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'nav pieņemts';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'apstiprina $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Iesniegts';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Pārbaudīt savienojumu';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Saglabāts no cita maka (tikai skatīšanai)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Šis maks tos nevar iztērēt, tāpēc tie netiek ieskaitīti tā kopsummā. Atveriet maku, kuram tie pieder, lai tos izmantotu.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Aktivitātes vēl nav';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Nosūtīts';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Saņemts';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Maka iekšienē';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Apvienotās monētas';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Kad nosūtīsiet vai saņemsiet HTN, tas parādīsies šeit.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Skatīt visu';
 
   @override
-  String get show => 'Show';
+  String get show => 'Rādīt';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Mani konti';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Sveiki, $walletName';
   }
 
   @override
@@ -1244,18 +1245,18 @@ class AppLocalizationsLv extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Importēt standarta maku';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Maki ar 12 vai 24 vārdiem un standarta atvasināšanu, ar izvēles BIP39 paroles frāzi';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importēt vecāko maku';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Maki ar 12 vārdiem un vecāko atvasināšanu, saderīgi ar veco Web Wallet un KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1474,121 +1475,120 @@ class AppLocalizationsLv extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Sīknaudas adreses darbība';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Katra adrese saglabā savu atlikumu, un sīknauda paliek uz vietas';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Katru reizi tiek izmantota jauna adrese (privāti, atlikums izkliedējas)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Sīknaudas adreses darbība';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Saglabāt atlikumus katrā adresē';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privāti';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Pieprasīt paroli';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Palaišanas brīdī';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Kad bloķēts';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Parakstīšanas laikā';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Papildu opcijas';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 paroles frāze';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'PIEZĪME: Šī nav maka parole; dažādas BIP39 paroles frāzes atver dažādus makus.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Ievadiet paroles frāzi';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Apstipriniet paroles frāzi';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Paroles frāzes nesakrīt!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Maks ar BIP39 paroles frāzi.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Ievadiet prioritātes komisiju';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'PAMATKOMISIJA';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITĀTES KOMISIJA';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Neizdevās atpazīt mērķa adresi';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Neizdevās atkārtoti izveidot darījumu';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Neizdevās atkārtoti izveidot darījumu ar jauno komisiju';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Neizdevās atjaunināt komisiju';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Atjaunināt komisiju';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Komisijas atjaunināšana';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Ieteiktās prioritātes komisijas';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Jaunajai prioritātes komisijai jābūt vismaz $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'GAIDA';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Šis darījums gaida';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Gaidošs darījums';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Mempool ir gaidoši darījumi.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Atjaunināt darījuma komisiju';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Aizstāt ar komisiju (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Izvēlēties UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Lūdzu, izvēlieties vairāk UTXO';
 }
