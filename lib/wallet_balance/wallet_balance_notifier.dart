@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 
 import '../database/boxes.dart';
 import '../hoosat/hoosat.dart';
+import '../util/retry_delay.dart';
 import '../util/safe_change_notifier.dart';
 import '../wallet_address/wallet_address_aware.dart';
 
@@ -128,8 +128,7 @@ class WalletBalanceNotifier extends SafeChangeNotifier {
       // Wait longer after every failure (5 s, 15 s, 45 s, then 60 s at most), so
       // a node that is down is not asked for every address again and again.
       _failures++;
-      final wait = Duration(seconds: min(60, 5 * pow(3, _failures - 1).toInt()));
-      _pendingTimer ??= Timer(wait, () {
+      _pendingTimer ??= Timer(retryDelay(_failures), () {
         _pendingTimer = null;
         if (disposed || _pendingAddresses.isEmpty) return;
         final due = Set.of(_pendingAddresses);

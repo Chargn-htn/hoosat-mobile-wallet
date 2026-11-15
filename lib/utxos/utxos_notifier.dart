@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
@@ -7,6 +6,7 @@ import 'package:logger/logger.dart';
 
 import '../database/boxes.dart';
 import '../hoosat/hoosat.dart';
+import '../util/retry_delay.dart';
 import '../util/safe_change_notifier.dart';
 
 String _outpointKey(Outpoint outpoint) =>
@@ -250,9 +250,8 @@ class UtxosNotifier extends SafeChangeNotifier {
       lastRefreshFailed = true;
       _lastRefreshTime = null;
       _pendingAddresses.addAll(addresses);
-      final seconds = min(retryBase.inMilliseconds * pow(3, _failures - 1), 60000);
       _pendingTimer?.cancel();
-      _pendingTimer = Timer(Duration(milliseconds: seconds.toInt()), () {
+      _pendingTimer = Timer(retryDelay(_failures, base: retryBase), () {
         _pendingTimer = null;
         if (disposed || _pendingAddresses.isEmpty) return;
         final due = Set.of(_pendingAddresses);
