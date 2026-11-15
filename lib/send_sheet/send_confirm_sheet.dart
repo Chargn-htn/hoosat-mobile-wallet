@@ -269,7 +269,7 @@ class SendConfirmSheet extends HookConsumerWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 30, bottom: 10),
                   child: Text(
-                    l10n.sendToAddressTitle.toUpperCase(),
+                    l10n.sendToAddressTitle,
                     style: styles.textStyleSubHeader,
                   ),
                 ),
@@ -277,7 +277,7 @@ class SendConfirmSheet extends HookConsumerWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 30, bottom: 10),
                   child: Text(
-                    l10n.fee.toUpperCase(),
+                    l10n.fee,
                     style: styles.textStyleSubHeader,
                   ),
                 ),

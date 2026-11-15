@@ -115,7 +115,7 @@ class BuySheet extends ConsumerWidget {
           Container(
             margin: const EdgeInsets.only(top: 30, bottom: 10),
             child: Text(
-              l10n.receiveAddress.toUpperCase(),
+              l10n.receiveAddress,
               style: styles.textStyleSubHeader,
             ),
           ),

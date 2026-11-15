@@ -415,7 +415,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              widget.title ?? l10n.send.toUpperCase(),
+                              widget.title ?? l10n.send,
                               style: styles.textStyleHeader(context),
                               textAlign: TextAlign.center,
                               maxLines: 1,

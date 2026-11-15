@@ -207,19 +207,19 @@ abstract class AppLocalizations {
   /// No description provided for @addAccount.
   ///
   /// In en, this message translates to:
-  /// **'Add Account'**
+  /// **'Add account'**
   String get addAccount;
 
   /// No description provided for @addContact.
   ///
   /// In en, this message translates to:
-  /// **'Add Contact'**
+  /// **'Add contact'**
   String get addContact;
 
   /// No description provided for @addNode.
   ///
   /// In en, this message translates to:
-  /// **'Add Node'**
+  /// **'Add node'**
   String get addNode;
 
   /// No description provided for @addNodeFailed.
@@ -237,7 +237,7 @@ abstract class AppLocalizations {
   /// No description provided for @addNodeSuccess.
   ///
   /// In en, this message translates to:
-  /// **'Node Added Successfully'**
+  /// **'Node added successfully'**
   String get addNodeSuccess;
 
   /// No description provided for @addingNodeMessage.
@@ -249,7 +249,7 @@ abstract class AppLocalizations {
   /// No description provided for @addingNodeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Adding Node'**
+  /// **'Adding node'**
   String get addingNodeTitle;
 
   /// No description provided for @address.
@@ -261,7 +261,7 @@ abstract class AppLocalizations {
   /// No description provided for @addressCopied.
   ///
   /// In en, this message translates to:
-  /// **'Address Copied'**
+  /// **'Address copied'**
   String get addressCopied;
 
   /// No description provided for @addressCopiedFailed.
@@ -273,25 +273,25 @@ abstract class AppLocalizations {
   /// No description provided for @addressHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter Address'**
+  /// **'Enter address'**
   String get addressHint;
 
   /// No description provided for @addressMising.
   ///
   /// In en, this message translates to:
-  /// **'Please Enter an Address'**
+  /// **'Please enter an address'**
   String get addressMising;
 
   /// No description provided for @addressShare.
   ///
   /// In en, this message translates to:
-  /// **'Share Address'**
+  /// **'Share address'**
   String get addressShare;
 
   /// No description provided for @hoosatUriCopied.
   ///
   /// In en, this message translates to:
-  /// **'Hoosat URI Copied'**
+  /// **'Hoosat URI copied'**
   String get hoosatUriCopied;
 
   /// No description provided for @hoosatUriCopyFailed.
@@ -321,7 +321,7 @@ abstract class AppLocalizations {
   /// No description provided for @amountMissing.
   ///
   /// In en, this message translates to:
-  /// **'Please Enter an Amount'**
+  /// **'Please enter an amount'**
   String get amountMissing;
 
   /// No description provided for @amountZero.
@@ -339,25 +339,25 @@ abstract class AppLocalizations {
   /// No description provided for @authBiometricMessage.
   ///
   /// In en, this message translates to:
-  /// **'Authenticate to Add Wallet'**
+  /// **'Authenticate to add wallet'**
   String get authBiometricMessage;
 
   /// No description provided for @authMethod.
   ///
   /// In en, this message translates to:
-  /// **'Authentication Method'**
+  /// **'Authentication method'**
   String get authMethod;
 
   /// No description provided for @authPinMessage.
   ///
   /// In en, this message translates to:
-  /// **'Enter PIN to Add Wallet'**
+  /// **'Enter PIN to add wallet'**
   String get authPinMessage;
 
   /// No description provided for @autoLockHeader.
   ///
   /// In en, this message translates to:
-  /// **'Automatically Lock'**
+  /// **'Automatically lock'**
   String get autoLockHeader;
 
   /// No description provided for @available.
@@ -375,19 +375,19 @@ abstract class AppLocalizations {
   /// No description provided for @backupConfirmButton.
   ///
   /// In en, this message translates to:
-  /// **'I\'ve Backed It Up'**
+  /// **'I\'ve backed it up'**
   String get backupConfirmButton;
 
   /// No description provided for @backupSecretPhrase.
   ///
   /// In en, this message translates to:
-  /// **'Backup Secret Phrase'**
+  /// **'Backup secret phrase'**
   String get backupSecretPhrase;
 
   /// No description provided for @missingSecretPhrase.
   ///
   /// In en, this message translates to:
-  /// **'Missing Secret Phrase'**
+  /// **'Missing secret phrase'**
   String get missingSecretPhrase;
 
   /// No description provided for @biometricsMethod.
@@ -399,7 +399,7 @@ abstract class AppLocalizations {
   /// No description provided for @blockExplorer.
   ///
   /// In en, this message translates to:
-  /// **'Block Explorer'**
+  /// **'Block explorer'**
   String get blockExplorer;
 
   /// No description provided for @cancel.
@@ -417,7 +417,7 @@ abstract class AppLocalizations {
   /// No description provided for @changeAddress.
   ///
   /// In en, this message translates to:
-  /// **'Change Address'**
+  /// **'Change address'**
   String get changeAddress;
 
   /// No description provided for @changeAddressCopied.
@@ -429,7 +429,7 @@ abstract class AppLocalizations {
   /// No description provided for @changeIndex.
   ///
   /// In en, this message translates to:
-  /// **'Change Index'**
+  /// **'Change index'**
   String get changeIndex;
 
   /// No description provided for @changeIndexParam.
@@ -507,7 +507,7 @@ abstract class AppLocalizations {
   /// No description provided for @contactExists.
   ///
   /// In en, this message translates to:
-  /// **'Contact Already Exists'**
+  /// **'Contact already exists'**
   String get contactExists;
 
   /// No description provided for @contactHeader.
@@ -519,13 +519,13 @@ abstract class AppLocalizations {
   /// No description provided for @contactInvalid.
   ///
   /// In en, this message translates to:
-  /// **'Invalid Contact Name'**
+  /// **'Invalid contact name'**
   String get contactInvalid;
 
   /// No description provided for @contactNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter a Name @'**
+  /// **'Enter a name @'**
   String get contactNameHint;
 
   /// No description provided for @contactNameMissing.
@@ -573,13 +573,13 @@ abstract class AppLocalizations {
   /// No description provided for @copyAddress.
   ///
   /// In en, this message translates to:
-  /// **'Copy Address'**
+  /// **'Copy address'**
   String get copyAddress;
 
   /// No description provided for @copyErrorButton.
   ///
   /// In en, this message translates to:
-  /// **'Copy Error'**
+  /// **'Copy error'**
   String get copyErrorButton;
 
   /// No description provided for @createAPasswordHeader.
@@ -657,7 +657,7 @@ abstract class AppLocalizations {
   /// No description provided for @disableWalletPassword.
   ///
   /// In en, this message translates to:
-  /// **'Disable Wallet Password'**
+  /// **'Disable wallet password'**
   String get disableWalletPassword;
 
   /// No description provided for @doContinue.
@@ -693,7 +693,7 @@ abstract class AppLocalizations {
   /// No description provided for @emptyResult.
   ///
   /// In en, this message translates to:
-  /// **'Empty Result'**
+  /// **'Empty result'**
   String get emptyResult;
 
   /// No description provided for @emptyWalletName.
@@ -711,25 +711,25 @@ abstract class AppLocalizations {
   /// No description provided for @enterAddress.
   ///
   /// In en, this message translates to:
-  /// **'Enter Address'**
+  /// **'Enter address'**
   String get enterAddress;
 
   /// No description provided for @enterAmount.
   ///
   /// In en, this message translates to:
-  /// **'Enter Amount'**
+  /// **'Enter amount'**
   String get enterAmount;
 
   /// No description provided for @enterFiatValue.
   ///
   /// In en, this message translates to:
-  /// **'Enter Fiat Value'**
+  /// **'Enter fiat value'**
   String get enterFiatValue;
 
   /// No description provided for @enterNote.
   ///
   /// In en, this message translates to:
-  /// **'Enter Note'**
+  /// **'Enter note'**
   String get enterNote;
 
   /// No description provided for @enterPasswordHint.
@@ -771,13 +771,13 @@ abstract class AppLocalizations {
   /// No description provided for @feeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Manage Fee'**
+  /// **'Manage fee'**
   String get feeTitle;
 
   /// No description provided for @fetchingTransactions.
   ///
   /// In en, this message translates to:
-  /// **'Fetching Transactions'**
+  /// **'Fetching transactions'**
   String get fetchingTransactions;
 
   /// No description provided for @fingerprintSeedBackup.
@@ -789,7 +789,7 @@ abstract class AppLocalizations {
   /// No description provided for @goBackButton.
   ///
   /// In en, this message translates to:
-  /// **'Go Back'**
+  /// **'Go back'**
   String get goBackButton;
 
   /// No description provided for @gotItButton.
@@ -807,7 +807,7 @@ abstract class AppLocalizations {
   /// No description provided for @importSecretPhrase.
   ///
   /// In en, this message translates to:
-  /// **'Import Secret Phrase'**
+  /// **'Import secret phrase'**
   String get importSecretPhrase;
 
   /// No description provided for @importSecretPhraseHint.
@@ -831,7 +831,7 @@ abstract class AppLocalizations {
   /// No description provided for @importWallet.
   ///
   /// In en, this message translates to:
-  /// **'Import Wallet'**
+  /// **'Import wallet'**
   String get importWallet;
 
   /// No description provided for @importWalletDescription.
@@ -849,7 +849,7 @@ abstract class AppLocalizations {
   /// No description provided for @insufficientBalance.
   ///
   /// In en, this message translates to:
-  /// **'Insufficient Balance'**
+  /// **'Insufficient balance'**
   String get insufficientBalance;
 
   /// No description provided for @insufficientBalanceDetails.
@@ -867,7 +867,7 @@ abstract class AppLocalizations {
   /// No description provided for @invalidAmount.
   ///
   /// In en, this message translates to:
-  /// **'Invalid Amount'**
+  /// **'Invalid amount'**
   String get invalidAmount;
 
   /// No description provided for @invalidChecksumMessage.
@@ -885,13 +885,13 @@ abstract class AppLocalizations {
   /// No description provided for @invalidDestinationAddress.
   ///
   /// In en, this message translates to:
-  /// **'Invalid Destination Address'**
+  /// **'Invalid destination address'**
   String get invalidDestinationAddress;
 
   /// No description provided for @invalidPassword.
   ///
   /// In en, this message translates to:
-  /// **'Invalid Password'**
+  /// **'Invalid password'**
   String get invalidPassword;
 
   /// No description provided for @hoosatDevFund.
@@ -921,7 +921,7 @@ abstract class AppLocalizations {
   /// No description provided for @lockAppSetting.
   ///
   /// In en, this message translates to:
-  /// **'Authenticate on Launch'**
+  /// **'Authenticate on launch'**
   String get lockAppSetting;
 
   /// No description provided for @locked.
@@ -963,7 +963,7 @@ abstract class AppLocalizations {
   /// No description provided for @manualEntry.
   ///
   /// In en, this message translates to:
-  /// **'Manual Entry'**
+  /// **'Manual entry'**
   String get manualEntry;
 
   /// No description provided for @networkHeader.
@@ -975,13 +975,13 @@ abstract class AppLocalizations {
   /// No description provided for @newAddress.
   ///
   /// In en, this message translates to:
-  /// **'New Address'**
+  /// **'New address'**
   String get newAddress;
 
   /// No description provided for @newWallet.
   ///
   /// In en, this message translates to:
-  /// **'New Wallet'**
+  /// **'New wallet'**
   String get newWallet;
 
   /// No description provided for @nextButton.
@@ -1029,7 +1029,7 @@ abstract class AppLocalizations {
   /// No description provided for @nodeAddress.
   ///
   /// In en, this message translates to:
-  /// **'Hoosat Node'**
+  /// **'Hoosat node'**
   String get nodeAddress;
 
   /// No description provided for @nodeDeleteMessage.
@@ -1053,13 +1053,13 @@ abstract class AppLocalizations {
   /// No description provided for @nodeNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter Node Name'**
+  /// **'Enter node name'**
   String get nodeNameHint;
 
   /// No description provided for @nodeUrlHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter Node URL'**
+  /// **'Enter node URL'**
   String get nodeUrlHint;
 
   /// No description provided for @nodeUrlInvalid.
@@ -1071,7 +1071,7 @@ abstract class AppLocalizations {
   /// No description provided for @nodesSheetTitle.
   ///
   /// In en, this message translates to:
-  /// **'Hoosat Nodes'**
+  /// **'Hoosat nodes'**
   String get nodesSheetTitle;
 
   /// No description provided for @off.
@@ -1167,7 +1167,7 @@ abstract class AppLocalizations {
   /// No description provided for @pinSeedBackup.
   ///
   /// In en, this message translates to:
-  /// **'Enter PIN to Backup Secret Phrase'**
+  /// **'Enter PIN to backup secret phrase'**
   String get pinSeedBackup;
 
   /// No description provided for @preferences.
@@ -1179,7 +1179,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyPolicy.
   ///
   /// In en, this message translates to:
-  /// **'Privacy Policy'**
+  /// **'Privacy policy'**
   String get privacyPolicy;
 
   /// No description provided for @qrInvalidAddress.
@@ -1209,7 +1209,7 @@ abstract class AppLocalizations {
   /// No description provided for @receiveAddress.
   ///
   /// In en, this message translates to:
-  /// **'Receive Address'**
+  /// **'Receive address'**
   String get receiveAddress;
 
   /// No description provided for @receiveAddressCopied.
@@ -1221,7 +1221,7 @@ abstract class AppLocalizations {
   /// No description provided for @receiveIndex.
   ///
   /// In en, this message translates to:
-  /// **'Receive Index'**
+  /// **'Receive index'**
   String get receiveIndex;
 
   /// No description provided for @receiveIndexParam.
@@ -1239,7 +1239,7 @@ abstract class AppLocalizations {
   /// No description provided for @removeContact.
   ///
   /// In en, this message translates to:
-  /// **'Remove Contact'**
+  /// **'Remove contact'**
   String get removeContact;
 
   /// No description provided for @removeContactConfirmation.
@@ -1251,13 +1251,13 @@ abstract class AppLocalizations {
   /// No description provided for @removeWalletAction.
   ///
   /// In en, this message translates to:
-  /// **'Remove Wallet'**
+  /// **'Remove wallet'**
   String get removeWalletAction;
 
   /// No description provided for @removeWalletBiometricsMessage.
   ///
   /// In en, this message translates to:
-  /// **'Authenticate to Remove Wallet'**
+  /// **'Authenticate to remove wallet'**
   String get removeWalletBiometricsMessage;
 
   /// No description provided for @removeWalletDetail.
@@ -1269,7 +1269,7 @@ abstract class AppLocalizations {
   /// No description provided for @removeWalletPinMessage.
   ///
   /// In en, this message translates to:
-  /// **'Enter PIN to Remove Wallet'**
+  /// **'Enter PIN to remove wallet'**
   String get removeWalletPinMessage;
 
   /// No description provided for @removeWalletReassurance.
@@ -1287,13 +1287,13 @@ abstract class AppLocalizations {
   /// No description provided for @restartSetupButton.
   ///
   /// In en, this message translates to:
-  /// **'Restart Setup'**
+  /// **'Restart setup'**
   String get restartSetupButton;
 
   /// No description provided for @scanQrCode.
   ///
   /// In en, this message translates to:
-  /// **'Scan QR Code'**
+  /// **'Scan QR code'**
   String get scanQrCode;
 
   /// No description provided for @scanQrCodeError.
@@ -1317,7 +1317,7 @@ abstract class AppLocalizations {
   /// No description provided for @riskDisclosureHeader.
   ///
   /// In en, this message translates to:
-  /// **'Before You Begin'**
+  /// **'Before you begin'**
   String get riskDisclosureHeader;
 
   /// No description provided for @riskDisclosureBody.
@@ -1353,13 +1353,13 @@ abstract class AppLocalizations {
   /// No description provided for @secretPhrase.
   ///
   /// In en, this message translates to:
-  /// **'Secret Phrase'**
+  /// **'Secret phrase'**
   String get secretPhrase;
 
   /// No description provided for @verifyBackupTitle.
   ///
   /// In en, this message translates to:
-  /// **'Verify Your Backup'**
+  /// **'Verify your backup'**
   String get verifyBackupTitle;
 
   /// No description provided for @verifyBackupInstruction.
@@ -1383,13 +1383,13 @@ abstract class AppLocalizations {
   /// No description provided for @secretPhrase12Words.
   ///
   /// In en, this message translates to:
-  /// **'12 WORDS'**
+  /// **'12 words'**
   String get secretPhrase12Words;
 
   /// No description provided for @secretPhrase24Words.
   ///
   /// In en, this message translates to:
-  /// **'24 WORDS'**
+  /// **'24 words'**
   String get secretPhrase24Words;
 
   /// No description provided for @secretWarning.
@@ -1407,13 +1407,13 @@ abstract class AppLocalizations {
   /// No description provided for @securitySettingsBiometrics.
   ///
   /// In en, this message translates to:
-  /// **'Authenticate to Access Security Settings'**
+  /// **'Authenticate to access security settings'**
   String get securitySettingsBiometrics;
 
   /// No description provided for @securitySettingsPin.
   ///
   /// In en, this message translates to:
-  /// **'Enter PIN to Access Security Settings'**
+  /// **'Enter PIN to access security settings'**
   String get securitySettingsPin;
 
   /// No description provided for @seed.
@@ -1425,13 +1425,13 @@ abstract class AppLocalizations {
   /// No description provided for @signMessage.
   ///
   /// In en, this message translates to:
-  /// **'Sign Message'**
+  /// **'Sign message'**
   String get signMessage;
 
   /// No description provided for @signMessageCopySignature.
   ///
   /// In en, this message translates to:
-  /// **'Copy Signature'**
+  /// **'Copy signature'**
   String get signMessageCopySignature;
 
   /// No description provided for @signMessageDescription.
@@ -1449,13 +1449,13 @@ abstract class AppLocalizations {
   /// No description provided for @signMessageSignatureCopied.
   ///
   /// In en, this message translates to:
-  /// **'Signature Copied'**
+  /// **'Signature copied'**
   String get signMessageSignatureCopied;
 
   /// No description provided for @signMessageSigned.
   ///
   /// In en, this message translates to:
-  /// **'Message Signed'**
+  /// **'Message signed'**
   String get signMessageSigned;
 
   /// No description provided for @signMessageTooLong.
@@ -1467,7 +1467,7 @@ abstract class AppLocalizations {
   /// No description provided for @seedInvalid.
   ///
   /// In en, this message translates to:
-  /// **'Seed is Invalid'**
+  /// **'Seed is invalid'**
   String get seedInvalid;
 
   /// No description provided for @nodeUnreachable.
@@ -1521,7 +1521,7 @@ abstract class AppLocalizations {
   /// No description provided for @sendTxProgressTitle.
   ///
   /// In en, this message translates to:
-  /// **'Sending Transaction'**
+  /// **'Sending transaction'**
   String get sendTxProgressTitle;
 
   /// No description provided for @sending.
@@ -1545,7 +1545,7 @@ abstract class AppLocalizations {
   /// No description provided for @setPassword.
   ///
   /// In en, this message translates to:
-  /// **'Set Password'**
+  /// **'Set password'**
   String get setPassword;
 
   /// No description provided for @setPasswordSuccess.
@@ -1557,7 +1557,7 @@ abstract class AppLocalizations {
   /// No description provided for @setWalletPassword.
   ///
   /// In en, this message translates to:
-  /// **'Set Wallet Password'**
+  /// **'Set wallet password'**
   String get setWalletPassword;
 
   /// No description provided for @settingsHeader.
@@ -1605,7 +1605,7 @@ abstract class AppLocalizations {
   /// No description provided for @systemDefault.
   ///
   /// In en, this message translates to:
-  /// **'System Default'**
+  /// **'System default'**
   String get systemDefault;
 
   /// No description provided for @tapToHide.
@@ -1623,7 +1623,7 @@ abstract class AppLocalizations {
   /// No description provided for @themeDark.
   ///
   /// In en, this message translates to:
-  /// **'Dark Theme'**
+  /// **'Dark theme'**
   String get themeDark;
 
   /// No description provided for @themeHeader.
@@ -1635,7 +1635,7 @@ abstract class AppLocalizations {
   /// No description provided for @themeLight.
   ///
   /// In en, this message translates to:
-  /// **'Light Theme'**
+  /// **'Light theme'**
   String get themeLight;
 
   /// No description provided for @toggleTheme.
@@ -1647,7 +1647,7 @@ abstract class AppLocalizations {
   /// No description provided for @thisWallet.
   ///
   /// In en, this message translates to:
-  /// **'#This Wallet'**
+  /// **'#This wallet'**
   String get thisWallet;
 
   /// No description provided for @to.
@@ -1671,7 +1671,7 @@ abstract class AppLocalizations {
   /// No description provided for @totalValue.
   ///
   /// In en, this message translates to:
-  /// **'Total Value'**
+  /// **'Total value'**
   String get totalValue;
 
   /// No description provided for @transactionId.
@@ -1731,7 +1731,7 @@ abstract class AppLocalizations {
   /// No description provided for @transferHeader.
   ///
   /// In en, this message translates to:
-  /// **'Transfer Funds'**
+  /// **'Transfer funds'**
   String get transferHeader;
 
   /// No description provided for @transferIntro.
@@ -1803,13 +1803,13 @@ abstract class AppLocalizations {
   /// No description provided for @unlockBiometrics.
   ///
   /// In en, this message translates to:
-  /// **'Authenticate to Unlock Wallet'**
+  /// **'Authenticate to unlock wallet'**
   String get unlockBiometrics;
 
   /// No description provided for @unlockPin.
   ///
   /// In en, this message translates to:
-  /// **'Enter PIN to Unlock Wallet'**
+  /// **'Enter PIN to unlock wallet'**
   String get unlockPin;
 
   /// No description provided for @utxosUppercase.
@@ -1821,25 +1821,25 @@ abstract class AppLocalizations {
   /// No description provided for @viewAddress.
   ///
   /// In en, this message translates to:
-  /// **'View Address'**
+  /// **'View address'**
   String get viewAddress;
 
   /// No description provided for @viewTransaction.
   ///
   /// In en, this message translates to:
-  /// **'View Transaction'**
+  /// **'View transaction'**
   String get viewTransaction;
 
   /// No description provided for @walletAddresses.
   ///
   /// In en, this message translates to:
-  /// **'Wallet Addresses'**
+  /// **'Wallet addresses'**
   String get walletAddresses;
 
   /// No description provided for @walletAddress.
   ///
   /// In en, this message translates to:
-  /// **'Wallet Address'**
+  /// **'Wallet address'**
   String get walletAddress;
 
   /// No description provided for @walletName.
@@ -1857,13 +1857,13 @@ abstract class AppLocalizations {
   /// No description provided for @walletNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Wallet Name'**
+  /// **'Wallet name'**
   String get walletNameHint;
 
   /// No description provided for @walletSetupAddressDiscovery.
   ///
   /// In en, this message translates to:
-  /// **'Running Address Discovery'**
+  /// **'Running address discovery'**
   String get walletSetupAddressDiscovery;
 
   /// No description provided for @walletSetupMessage.
@@ -1947,7 +1947,7 @@ abstract class AppLocalizations {
   /// No description provided for @compoundUtxos.
   ///
   /// In en, this message translates to:
-  /// **'Compound transactions'**
+  /// **'Merge coins'**
   String get compoundUtxos;
 
   /// No description provided for @compoundRequired.
@@ -1965,13 +1965,13 @@ abstract class AppLocalizations {
   /// No description provided for @compoundUtxosDescription.
   ///
   /// In en, this message translates to:
-  /// **'Combine multiple UTXOs into one'**
+  /// **'Combine many small coins into fewer, larger ones'**
   String get compoundUtxosDescription;
 
   /// No description provided for @compoundUtxosConfirmation.
   ///
   /// In en, this message translates to:
-  /// **'Compound transactions?'**
+  /// **'Merge small coins?'**
   String get compoundUtxosConfirmation;
 
   /// No description provided for @compoundingUtxos.
@@ -2019,13 +2019,13 @@ abstract class AppLocalizations {
   /// No description provided for @compoundTooFewUtxos.
   ///
   /// In en, this message translates to:
-  /// **'At least two UTXOs are required'**
+  /// **'Nothing to compound: no single address has 2 or more UTXOs to merge (compounding only combines UTXOs within the same address, not across your whole wallet)'**
   String get compoundTooFewUtxos;
 
   /// No description provided for @moveToMain.
   ///
   /// In en, this message translates to:
-  /// **'Move to Main'**
+  /// **'Gather onto Main'**
   String get moveToMain;
 
   /// No description provided for @moveToMainDescription.
@@ -2056,7 +2056,7 @@ abstract class AppLocalizations {
   /// No description provided for @movingToMain.
   ///
   /// In en, this message translates to:
-  /// **'Moving to Main'**
+  /// **'Gathering onto Main'**
   String get movingToMain;
 
   /// No description provided for @moveToMainSuccess.
@@ -2122,7 +2122,7 @@ abstract class AppLocalizations {
   /// No description provided for @renameAccount.
   ///
   /// In en, this message translates to:
-  /// **'Rename Account'**
+  /// **'Rename account'**
   String get renameAccount;
 
   /// No description provided for @accountLabelHint.
@@ -2320,7 +2320,7 @@ abstract class AppLocalizations {
   /// No description provided for @maxSend.
   ///
   /// In en, this message translates to:
-  /// **'Max Send'**
+  /// **'Max send'**
   String get maxSend;
 
   /// No description provided for @compoundUppercased.
@@ -2338,13 +2338,13 @@ abstract class AppLocalizations {
   /// No description provided for @scanMoreAddresses.
   ///
   /// In en, this message translates to:
-  /// **'Scan For More Addresses'**
+  /// **'Scan for more addresses'**
   String get scanMoreAddresses;
 
   /// No description provided for @addressDiscovery.
   ///
   /// In en, this message translates to:
-  /// **'Address Discovery'**
+  /// **'Address discovery'**
   String get addressDiscovery;
 
   /// No description provided for @scanningTitle.
@@ -2398,25 +2398,25 @@ abstract class AppLocalizations {
   /// No description provided for @addressFilterDialogTitle.
   ///
   /// In en, this message translates to:
-  /// **'Address Filter'**
+  /// **'Address filter'**
   String get addressFilterDialogTitle;
 
   /// No description provided for @addressFilterDialogOptionAllAddresses.
   ///
   /// In en, this message translates to:
-  /// **'View All Addresses'**
+  /// **'View all addresses'**
   String get addressFilterDialogOptionAllAddresses;
 
   /// No description provided for @addressFilterDialogOptionNonZeroBalances.
   ///
   /// In en, this message translates to:
-  /// **'View Addresses With Balance'**
+  /// **'View addresses with balance'**
   String get addressFilterDialogOptionNonZeroBalances;
 
   /// No description provided for @importOption24WordsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Import 24 Word Secret Phrase'**
+  /// **'Import 24 word secret phrase'**
   String get importOption24WordsTitle;
 
   /// No description provided for @importOption24WordsDescription.
@@ -2428,7 +2428,7 @@ abstract class AppLocalizations {
   /// No description provided for @importOption12WordsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Import 12 Word Secret Phrase'**
+  /// **'Import 12 word secret phrase'**
   String get importOption12WordsTitle;
 
   /// No description provided for @importOption12WordsDescription.
@@ -2440,7 +2440,7 @@ abstract class AppLocalizations {
   /// No description provided for @importOptionStandardWalletTitle.
   ///
   /// In en, this message translates to:
-  /// **'Import Standard Wallet'**
+  /// **'Import standard wallet'**
   String get importOptionStandardWalletTitle;
 
   /// No description provided for @importOptionStandardWalletDescription.
@@ -2452,7 +2452,7 @@ abstract class AppLocalizations {
   /// No description provided for @importOptionLegacyWalletTitle.
   ///
   /// In en, this message translates to:
-  /// **'Import Legacy Wallet'**
+  /// **'Import legacy wallet'**
   String get importOptionLegacyWalletTitle;
 
   /// No description provided for @importOptionLegacyWalletDescription.
@@ -2524,7 +2524,7 @@ abstract class AppLocalizations {
   /// No description provided for @invalidSecretPhrase.
   ///
   /// In en, this message translates to:
-  /// **'Invalid Secret Phrase'**
+  /// **'Invalid secret phrase'**
   String get invalidSecretPhrase;
 
   /// No description provided for @invalidSecretPhraseDetails.
@@ -2542,7 +2542,7 @@ abstract class AppLocalizations {
   /// No description provided for @contactSupport.
   ///
   /// In en, this message translates to:
-  /// **'Contact Support'**
+  /// **'Contact support'**
   String get contactSupport;
 
   /// No description provided for @emailAction.
@@ -2590,7 +2590,7 @@ abstract class AppLocalizations {
   /// No description provided for @getStarted.
   ///
   /// In en, this message translates to:
-  /// **'Get Started'**
+  /// **'Get started'**
   String get getStarted;
 
   /// No description provided for @aboutTopperTitle.
@@ -2608,13 +2608,13 @@ abstract class AppLocalizations {
   /// No description provided for @moreInfo.
   ///
   /// In en, this message translates to:
-  /// **'More Info'**
+  /// **'More info'**
   String get moreInfo;
 
   /// No description provided for @selectAddress.
   ///
   /// In en, this message translates to:
-  /// **'Select Address'**
+  /// **'Select address'**
   String get selectAddress;
 
   /// No description provided for @kpubTitle.
@@ -2668,7 +2668,7 @@ abstract class AppLocalizations {
   /// No description provided for @txReport.
   ///
   /// In en, this message translates to:
-  /// **'Transaction Report'**
+  /// **'Transaction report'**
   String get txReport;
 
   /// No description provided for @txReportSubtitle.
@@ -2728,7 +2728,7 @@ abstract class AppLocalizations {
   /// No description provided for @txReportGetReport.
   ///
   /// In en, this message translates to:
-  /// **'Get Report'**
+  /// **'Get report'**
   String get txReportGetReport;
 
   /// No description provided for @txReportDate.
@@ -2740,37 +2740,37 @@ abstract class AppLocalizations {
   /// No description provided for @txReportSentAmount.
   ///
   /// In en, this message translates to:
-  /// **'Sent Amount'**
+  /// **'Sent amount'**
   String get txReportSentAmount;
 
   /// No description provided for @txReportSentCurrency.
   ///
   /// In en, this message translates to:
-  /// **'Sent Currency'**
+  /// **'Sent currency'**
   String get txReportSentCurrency;
 
   /// No description provided for @txReportReceivedAmount.
   ///
   /// In en, this message translates to:
-  /// **'Received Amount'**
+  /// **'Received amount'**
   String get txReportReceivedAmount;
 
   /// No description provided for @txReportReceivedCurrency.
   ///
   /// In en, this message translates to:
-  /// **'Received Currency'**
+  /// **'Received currency'**
   String get txReportReceivedCurrency;
 
   /// No description provided for @txReportFeeAmount.
   ///
   /// In en, this message translates to:
-  /// **'Fee Amount'**
+  /// **'Fee amount'**
   String get txReportFeeAmount;
 
   /// No description provided for @txReportFeeCurrency.
   ///
   /// In en, this message translates to:
-  /// **'Fee Currency'**
+  /// **'Fee currency'**
   String get txReportFeeCurrency;
 
   /// No description provided for @txReportLabel.
@@ -2806,7 +2806,7 @@ abstract class AppLocalizations {
   /// No description provided for @txReportFeeForCompound.
   ///
   /// In en, this message translates to:
-  /// **'Fee for Compound Transaction'**
+  /// **'Fee for compound transaction'**
   String get txReportFeeForCompound;
 
   /// No description provided for @txReportFeeForSelfSend.
@@ -2836,31 +2836,31 @@ abstract class AppLocalizations {
   /// No description provided for @txFilterDialogTitle.
   ///
   /// In en, this message translates to:
-  /// **'Transaction Filter'**
+  /// **'Transaction filter'**
   String get txFilterDialogTitle;
 
   /// No description provided for @txFilterDialogOptionAllTxs.
   ///
   /// In en, this message translates to:
-  /// **'Show All Transactions'**
+  /// **'Show all transactions'**
   String get txFilterDialogOptionAllTxs;
 
   /// No description provided for @txFilterDialogOptionHideNotAcceptedCoinbase.
   ///
   /// In en, this message translates to:
-  /// **'Hide Not Accepted Coinbase Transactions'**
+  /// **'Hide not accepted coinbase transactions'**
   String get txFilterDialogOptionHideNotAcceptedCoinbase;
 
   /// No description provided for @changeAddressModeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Change Address Behavior'**
+  /// **'Change address behavior'**
   String get changeAddressModeTitle;
 
   /// No description provided for @changeAddressModeDescriptionKeepPerAddress.
   ///
   /// In en, this message translates to:
-  /// **'Change and compounds return to your main address'**
+  /// **'Each address keeps its own balance, and the change stays put'**
   String get changeAddressModeDescriptionKeepPerAddress;
 
   /// No description provided for @changeAddressModeDescriptionPrivate.
@@ -2872,13 +2872,13 @@ abstract class AppLocalizations {
   /// No description provided for @changeAddressModeDialogTitle.
   ///
   /// In en, this message translates to:
-  /// **'Change Address Behavior'**
+  /// **'Change address behavior'**
   String get changeAddressModeDialogTitle;
 
   /// No description provided for @changeAddressModeDialogOptionKeepPerAddress.
   ///
   /// In en, this message translates to:
-  /// **'Keep Balances On Each Address'**
+  /// **'Keep balances on each address'**
   String get changeAddressModeDialogOptionKeepPerAddress;
 
   /// No description provided for @changeAddressModeDialogOptionPrivate.
@@ -2890,7 +2890,7 @@ abstract class AppLocalizations {
   /// No description provided for @requestPasswordHeader.
   ///
   /// In en, this message translates to:
-  /// **'Request Password'**
+  /// **'Request password'**
   String get requestPasswordHeader;
 
   /// No description provided for @requestPasswordAtLaunch.
@@ -2902,25 +2902,25 @@ abstract class AppLocalizations {
   /// No description provided for @requestPasswordWhenLocked.
   ///
   /// In en, this message translates to:
-  /// **'When Locked'**
+  /// **'When locked'**
   String get requestPasswordWhenLocked;
 
   /// No description provided for @requestPasswordWhenSigning.
   ///
   /// In en, this message translates to:
-  /// **'When Signing'**
+  /// **'When signing'**
   String get requestPasswordWhenSigning;
 
   /// No description provided for @importWalletAdvancedOptions.
   ///
   /// In en, this message translates to:
-  /// **'Advanced Options'**
+  /// **'Advanced options'**
   String get importWalletAdvancedOptions;
 
   /// No description provided for @bip39Passphrase.
   ///
   /// In en, this message translates to:
-  /// **'BIP39 Passphrase'**
+  /// **'BIP39 passphrase'**
   String get bip39Passphrase;
 
   /// No description provided for @bip39PassphraseWarning.
@@ -2932,13 +2932,13 @@ abstract class AppLocalizations {
   /// No description provided for @bip39PassphraseEnter.
   ///
   /// In en, this message translates to:
-  /// **'Enter Passphrase'**
+  /// **'Enter passphrase'**
   String get bip39PassphraseEnter;
 
   /// No description provided for @bip39PassphraseConfirm.
   ///
   /// In en, this message translates to:
-  /// **'Confirm Passphrase'**
+  /// **'Confirm passphrase'**
   String get bip39PassphraseConfirm;
 
   /// No description provided for @bip39PassphraseMismatch.
@@ -2956,7 +2956,7 @@ abstract class AppLocalizations {
   /// No description provided for @feePriorityHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter Priority Fee'**
+  /// **'Enter priority fee'**
   String get feePriorityHint;
 
   /// No description provided for @feeBaseUppercase.
@@ -2998,7 +2998,7 @@ abstract class AppLocalizations {
   /// No description provided for @feeUpdate.
   ///
   /// In en, this message translates to:
-  /// **'Update Fee'**
+  /// **'Update fee'**
   String get feeUpdate;
 
   /// No description provided for @feeUpdateTitle.
@@ -3010,7 +3010,7 @@ abstract class AppLocalizations {
   /// No description provided for @feeSheetRecommendedPriority.
   ///
   /// In en, this message translates to:
-  /// **'Recommended Priority Fees'**
+  /// **'Recommended priority fees'**
   String get feeSheetRecommendedPriority;
 
   /// No description provided for @feeSheetPriorityFeeWarning.
@@ -3034,7 +3034,7 @@ abstract class AppLocalizations {
   /// No description provided for @txPendingTitle.
   ///
   /// In en, this message translates to:
-  /// **'Pending Transaction'**
+  /// **'Pending transaction'**
   String get txPendingTitle;
 
   /// No description provided for @txPendingContent.
@@ -3046,13 +3046,13 @@ abstract class AppLocalizations {
   /// No description provided for @txPendingActionUpdateFee.
   ///
   /// In en, this message translates to:
-  /// **'Update Tx Fee'**
+  /// **'Update tx fee'**
   String get txPendingActionUpdateFee;
 
   /// No description provided for @txPendingActionRbf.
   ///
   /// In en, this message translates to:
-  /// **'Replace By Fee'**
+  /// **'Replace by fee'**
   String get txPendingActionRbf;
 
   /// No description provided for @txInMempool.
@@ -3064,7 +3064,7 @@ abstract class AppLocalizations {
   /// No description provided for @utxoSelectionTitle.
   ///
   /// In en, this message translates to:
-  /// **'Select UTXOs'**
+  /// **'Select utxos'**
   String get utxoSelectionTitle;
 
   /// No description provided for @utxoSelectionHint.

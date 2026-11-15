@@ -117,7 +117,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get backupSecretPhrase => 'Резервна копія секретної фрази';
 
   @override
-  String get missingSecretPhrase => 'Missing Secret Phrase';
+  String get missingSecretPhrase => 'Missing secret phrase';
 
   @override
   String get biometricsMethod => 'Біометрія';
@@ -626,7 +626,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get toggleFlash => 'Toggle flashlight';
 
   @override
-  String get riskDisclosureHeader => 'Before You Begin';
+  String get riskDisclosureHeader => 'Before you begin';
 
   @override
   String get riskDisclosureBody =>
@@ -650,7 +650,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get secretPhrase => 'Секретна seed-фраза';
 
   @override
-  String get verifyBackupTitle => 'Verify Your Backup';
+  String get verifyBackupTitle => 'Verify your backup';
 
   @override
   String get verifyBackupInstruction =>
@@ -666,10 +666,10 @@ class AppLocalizationsUk extends AppLocalizations {
       'That\'s not quite right. Check your backup and try again.';
 
   @override
-  String get secretPhrase12Words => '12 WORDS';
+  String get secretPhrase12Words => '12 words';
 
   @override
-  String get secretPhrase24Words => '24 WORDS';
+  String get secretPhrase24Words => '24 words';
 
   @override
   String get secretWarning =>
@@ -680,19 +680,19 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to Access Security Settings';
+      'Authenticate to access security settings';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to Access Security Settings';
+  String get securitySettingsPin => 'Enter PIN to access security settings';
 
   @override
   String get seed => 'Seed-фраза';
 
   @override
-  String get signMessage => 'Sign Message';
+  String get signMessage => 'Sign message';
 
   @override
-  String get signMessageCopySignature => 'Copy Signature';
+  String get signMessageCopySignature => 'Copy signature';
 
   @override
   String get signMessageDescription =>
@@ -702,10 +702,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get signMessageHint => 'Enter a message to sign';
 
   @override
-  String get signMessageSignatureCopied => 'Signature Copied';
+  String get signMessageSignatureCopied => 'Signature copied';
 
   @override
-  String get signMessageSigned => 'Message Signed';
+  String get signMessageSigned => 'Message signed';
 
   @override
   String get signMessageTooLong => 'Message is too long';
@@ -1023,7 +1023,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get compoundTooFewUtxos => 'Потрібно принаймні два UTXO';
 
   @override
-  String get moveToMain => 'Move to Main';
+  String get moveToMain => 'Gather onto Main';
 
   @override
   String get moveToMainDescription =>
@@ -1043,7 +1043,7 @@ class AppLocalizationsUk extends AppLocalizations {
       'Every address\'s balance is already on Main';
 
   @override
-  String get movingToMain => 'Moving to Main';
+  String get movingToMain => 'Gathering onto Main';
 
   @override
   String get moveToMainSuccess => 'Move to Main successful';
@@ -1076,7 +1076,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get noAdditionalAccountsYet => 'No additional accounts yet';
 
   @override
-  String get renameAccount => 'Rename Account';
+  String get renameAccount => 'Rename account';
 
   @override
   String get accountLabelHint => 'Account name';
@@ -1253,14 +1253,14 @@ class AppLocalizationsUk extends AppLocalizations {
   String get importOption12WordsDescription => 'Сумісний з веб-гаманцем та KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import Standard Wallet';
+  String get importOptionStandardWalletTitle => 'Import standard wallet';
 
   @override
   String get importOptionStandardWalletDescription =>
       'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import Legacy Wallet';
+  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
 
   @override
   String get importOptionLegacyWalletDescription =>
@@ -1485,53 +1485,53 @@ class AppLocalizationsUk extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change Address Behavior';
+  String get changeAddressModeTitle => 'Change address behavior';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Change and compounds return to your main address';
+      'Each address keeps its own balance, and the change stays put';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
       'A new address is used each time (private, balance spreads out)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change Address Behavior';
+  String get changeAddressModeDialogTitle => 'Change address behavior';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep Balances On Each Address';
+      'Keep balances on each address';
 
   @override
   String get changeAddressModeDialogOptionPrivate => 'Private';
 
   @override
-  String get requestPasswordHeader => 'Request Password';
+  String get requestPasswordHeader => 'Request password';
 
   @override
   String get requestPasswordAtLaunch => 'At Launch';
 
   @override
-  String get requestPasswordWhenLocked => 'When Locked';
+  String get requestPasswordWhenLocked => 'When locked';
 
   @override
-  String get requestPasswordWhenSigning => 'When Signing';
+  String get requestPasswordWhenSigning => 'When signing';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced Options';
+  String get importWalletAdvancedOptions => 'Advanced options';
 
   @override
-  String get bip39Passphrase => 'BIP39 Passphrase';
+  String get bip39Passphrase => 'BIP39 passphrase';
 
   @override
   String get bip39PassphraseWarning =>
       'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter Passphrase';
+  String get bip39PassphraseEnter => 'Enter passphrase';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm Passphrase';
+  String get bip39PassphraseConfirm => 'Confirm passphrase';
 
   @override
   String get bip39PassphraseMismatch => 'Passphrases do not match!';
@@ -1540,7 +1540,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
 
   @override
-  String get feePriorityHint => 'Enter Priority Fee';
+  String get feePriorityHint => 'Enter priority fee';
 
   @override
   String get feeBaseUppercase => 'BASE FEE';
@@ -1562,13 +1562,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String get feeUpdateError => 'Failed to update fee';
 
   @override
-  String get feeUpdate => 'Update Fee';
+  String get feeUpdate => 'Update fee';
 
   @override
   String get feeUpdateTitle => 'Updating fee';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended Priority Fees';
+  String get feeSheetRecommendedPriority => 'Recommended priority fees';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
@@ -1582,23 +1582,23 @@ class AppLocalizationsUk extends AppLocalizations {
   String get txPendingMessage => 'This transaction is pending';
 
   @override
-  String get txPendingTitle => 'Pending Transaction';
+  String get txPendingTitle => 'Pending transaction';
 
   @override
   String get txPendingContent =>
       'There is a pending transactions in the mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update Tx Fee';
+  String get txPendingActionUpdateFee => 'Update tx fee';
 
   @override
-  String get txPendingActionRbf => 'Replace By Fee';
+  String get txPendingActionRbf => 'Replace by fee';
 
   @override
   String get txInMempool => 'in mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select UTXOs';
+  String get utxoSelectionTitle => 'Select utxos';
 
   @override
   String get utxoSelectionHint => 'Please select more UTXOs';

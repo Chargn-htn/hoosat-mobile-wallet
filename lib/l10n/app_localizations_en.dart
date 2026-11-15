@@ -22,13 +22,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get add => 'Add';
 
   @override
-  String get addAccount => 'Add Account';
+  String get addAccount => 'Add account';
 
   @override
-  String get addContact => 'Add Contact';
+  String get addContact => 'Add contact';
 
   @override
-  String get addNode => 'Add Node';
+  String get addNode => 'Add node';
 
   @override
   String get addNodeFailed => 'Failed to add Hoosat node';
@@ -39,34 +39,34 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get addNodeSuccess => 'Node Added Successfully';
+  String get addNodeSuccess => 'Node added successfully';
 
   @override
   String get addingNodeMessage => 'Please wait while contacting node';
 
   @override
-  String get addingNodeTitle => 'Adding Node';
+  String get addingNodeTitle => 'Adding node';
 
   @override
   String get address => 'Address';
 
   @override
-  String get addressCopied => 'Address Copied';
+  String get addressCopied => 'Address copied';
 
   @override
   String get addressCopiedFailed => 'Failed to copy address';
 
   @override
-  String get addressHint => 'Enter Address';
+  String get addressHint => 'Enter address';
 
   @override
-  String get addressMising => 'Please Enter an Address';
+  String get addressMising => 'Please enter an address';
 
   @override
-  String get addressShare => 'Share Address';
+  String get addressShare => 'Share address';
 
   @override
-  String get hoosatUriCopied => 'Hoosat URI Copied';
+  String get hoosatUriCopied => 'Hoosat URI copied';
 
   @override
   String get hoosatUriCopyFailed => 'Failed to copy Hoosat URI';
@@ -83,7 +83,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get amountMissing => 'Please Enter an Amount';
+  String get amountMissing => 'Please enter an amount';
 
   @override
   String get amountZero => 'Amount can\'t be zero';
@@ -92,16 +92,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get areYouSure => 'Are you sure?';
 
   @override
-  String get authBiometricMessage => 'Authenticate to Add Wallet';
+  String get authBiometricMessage => 'Authenticate to add wallet';
 
   @override
-  String get authMethod => 'Authentication Method';
+  String get authMethod => 'Authentication method';
 
   @override
-  String get authPinMessage => 'Enter PIN to Add Wallet';
+  String get authPinMessage => 'Enter PIN to add wallet';
 
   @override
-  String get autoLockHeader => 'Automatically Lock';
+  String get autoLockHeader => 'Automatically lock';
 
   @override
   String get available => 'Available';
@@ -110,19 +110,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get back => 'Back';
 
   @override
-  String get backupConfirmButton => 'I\'ve Backed It Up';
+  String get backupConfirmButton => 'I\'ve backed it up';
 
   @override
-  String get backupSecretPhrase => 'Backup Secret Phrase';
+  String get backupSecretPhrase => 'Backup secret phrase';
 
   @override
-  String get missingSecretPhrase => 'Missing Secret Phrase';
+  String get missingSecretPhrase => 'Missing secret phrase';
 
   @override
   String get biometricsMethod => 'Biometrics';
 
   @override
-  String get blockExplorer => 'Block Explorer';
+  String get blockExplorer => 'Block explorer';
 
   @override
   String get cancel => 'Cancel';
@@ -131,13 +131,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get change => 'Change';
 
   @override
-  String get changeAddress => 'Change Address';
+  String get changeAddress => 'Change address';
 
   @override
   String get changeAddressCopied => 'Change address copied';
 
   @override
-  String get changeIndex => 'Change Index';
+  String get changeIndex => 'Change index';
 
   @override
   String changeIndexParam(String addressIndex) {
@@ -184,16 +184,16 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get contactExists => 'Contact Already Exists';
+  String get contactExists => 'Contact already exists';
 
   @override
   String get contactHeader => 'Contact';
 
   @override
-  String get contactInvalid => 'Invalid Contact Name';
+  String get contactInvalid => 'Invalid contact name';
 
   @override
-  String get contactNameHint => 'Enter a Name @';
+  String get contactNameHint => 'Enter a name @';
 
   @override
   String get contactNameMissing => 'Choose a Name for this Contact';
@@ -221,10 +221,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get copy => 'Copy';
 
   @override
-  String get copyAddress => 'Copy Address';
+  String get copyAddress => 'Copy address';
 
   @override
-  String get copyErrorButton => 'Copy Error';
+  String get copyErrorButton => 'Copy error';
 
   @override
   String get createAPasswordHeader => 'Create a password.';
@@ -267,7 +267,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get disablePasswordSuccess => 'Password has been disabled';
 
   @override
-  String get disableWalletPassword => 'Disable Wallet Password';
+  String get disableWalletPassword => 'Disable wallet password';
 
   @override
   String get doContinue => 'Continue';
@@ -286,7 +286,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'This is the UTXOs tab. All UTXOs in your wallet will appear here';
 
   @override
-  String get emptyResult => 'Empty Result';
+  String get emptyResult => 'Empty result';
 
   @override
   String get emptyWalletName => 'Wallet Name cannot be empty';
@@ -295,16 +295,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get encryptionFailedError => 'Failed to set a wallet password';
 
   @override
-  String get enterAddress => 'Enter Address';
+  String get enterAddress => 'Enter address';
 
   @override
-  String get enterAmount => 'Enter Amount';
+  String get enterAmount => 'Enter amount';
 
   @override
-  String get enterFiatValue => 'Enter Fiat Value';
+  String get enterFiatValue => 'Enter fiat value';
 
   @override
-  String get enterNote => 'Enter Note';
+  String get enterNote => 'Enter note';
 
   @override
   String get enterPasswordHint => 'Enter your password';
@@ -328,16 +328,16 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get feeTitle => 'Manage Fee';
+  String get feeTitle => 'Manage fee';
 
   @override
-  String get fetchingTransactions => 'Fetching Transactions';
+  String get fetchingTransactions => 'Fetching transactions';
 
   @override
   String get fingerprintSeedBackup => 'Authenticate to Backup Secret Phrase.';
 
   @override
-  String get goBackButton => 'Go Back';
+  String get goBackButton => 'Go back';
 
   @override
   String get gotItButton => 'Got It!';
@@ -346,7 +346,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get import => 'Import';
 
   @override
-  String get importSecretPhrase => 'Import Secret Phrase';
+  String get importSecretPhrase => 'Import secret phrase';
 
   @override
   String get importSecretPhraseHint =>
@@ -361,7 +361,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter your 12 word secret phrase below.';
 
   @override
-  String get importWallet => 'Import Wallet';
+  String get importWallet => 'Import wallet';
 
   @override
   String get importWalletDescription => 'Please select an option below.';
@@ -370,7 +370,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get instantly => 'Instantly';
 
   @override
-  String get insufficientBalance => 'Insufficient Balance';
+  String get insufficientBalance => 'Insufficient balance';
 
   @override
   String get insufficientBalanceDetails =>
@@ -380,7 +380,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get invalidAddress => 'Address entered was invalid';
 
   @override
-  String get invalidAmount => 'Invalid Amount';
+  String get invalidAmount => 'Invalid amount';
 
   @override
   String get invalidChecksumMessage =>
@@ -391,10 +391,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please check that your extended public key is entered correctly!';
 
   @override
-  String get invalidDestinationAddress => 'Invalid Destination Address';
+  String get invalidDestinationAddress => 'Invalid destination address';
 
   @override
-  String get invalidPassword => 'Invalid Password';
+  String get invalidPassword => 'Invalid password';
 
   @override
   String get hoosatDevFund => 'Hoosat Dev Fund';
@@ -409,7 +409,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loadingTransactions => 'Loading Transactions...';
 
   @override
-  String get lockAppSetting => 'Authenticate on Launch';
+  String get lockAppSetting => 'Authenticate on launch';
 
   @override
   String get locked => 'Locked';
@@ -431,16 +431,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get manage => 'Manage';
 
   @override
-  String get manualEntry => 'Manual Entry';
+  String get manualEntry => 'Manual entry';
 
   @override
   String get networkHeader => 'Network';
 
   @override
-  String get newAddress => 'New Address';
+  String get newAddress => 'New address';
 
   @override
-  String get newWallet => 'New Wallet';
+  String get newWallet => 'New wallet';
 
   @override
   String get nextButton => 'Next';
@@ -464,7 +464,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noUppercase => 'NO';
 
   @override
-  String get nodeAddress => 'Hoosat Node';
+  String get nodeAddress => 'Hoosat node';
 
   @override
   String get nodeDeleteMessage => 'Are you sure you want to delete?';
@@ -476,16 +476,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nodeNameEmpty => 'Node name cannot be empty';
 
   @override
-  String get nodeNameHint => 'Enter Node Name';
+  String get nodeNameHint => 'Enter node name';
 
   @override
-  String get nodeUrlHint => 'Enter Node URL';
+  String get nodeUrlHint => 'Enter node URL';
 
   @override
   String get nodeUrlInvalid => 'Invalid node URL';
 
   @override
-  String get nodesSheetTitle => 'Hoosat Nodes';
+  String get nodesSheetTitle => 'Hoosat nodes';
 
   @override
   String get off => 'Off';
@@ -536,13 +536,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pinMethod => 'PIN';
 
   @override
-  String get pinSeedBackup => 'Enter PIN to Backup Secret Phrase';
+  String get pinSeedBackup => 'Enter PIN to backup secret phrase';
 
   @override
   String get preferences => 'Preferences';
 
   @override
-  String get privacyPolicy => 'Privacy Policy';
+  String get privacyPolicy => 'Privacy policy';
 
   @override
   String get qrInvalidAddress => 'QR code does not contain a valid address';
@@ -559,13 +559,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get receive => 'Receive';
 
   @override
-  String get receiveAddress => 'Receive Address';
+  String get receiveAddress => 'Receive address';
 
   @override
   String get receiveAddressCopied => 'Receive address copied';
 
   @override
-  String get receiveIndex => 'Receive Index';
+  String get receiveIndex => 'Receive index';
 
   @override
   String receiveIndexParam(String addressIndex) {
@@ -576,7 +576,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get received => 'Received';
 
   @override
-  String get removeContact => 'Remove Contact';
+  String get removeContact => 'Remove contact';
 
   @override
   String removeContactConfirmation(String contactName) {
@@ -584,17 +584,17 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get removeWalletAction => 'Remove Wallet';
+  String get removeWalletAction => 'Remove wallet';
 
   @override
-  String get removeWalletBiometricsMessage => 'Authenticate to Remove Wallet';
+  String get removeWalletBiometricsMessage => 'Authenticate to remove wallet';
 
   @override
   String get removeWalletDetail =>
       'Removing this wallet will remove the Secret Phrase and all wallet-related data from this device. If the Secret Phrase is not backed up, you will never be able to access your funds again.';
 
   @override
-  String get removeWalletPinMessage => 'Enter PIN to Remove Wallet';
+  String get removeWalletPinMessage => 'Enter PIN to remove wallet';
 
   @override
   String get removeWalletReassurance =>
@@ -605,10 +605,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Require a password to open this wallet?';
 
   @override
-  String get restartSetupButton => 'Restart Setup';
+  String get restartSetupButton => 'Restart setup';
 
   @override
-  String get scanQrCode => 'Scan QR Code';
+  String get scanQrCode => 'Scan QR code';
 
   @override
   String get scanQrCodeError => 'Failed to parse qr code';
@@ -620,7 +620,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get toggleFlash => 'Toggle flashlight';
 
   @override
-  String get riskDisclosureHeader => 'Before You Begin';
+  String get riskDisclosureHeader => 'Before you begin';
 
   @override
   String get riskDisclosureBody =>
@@ -641,10 +641,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get secretInfoHeader => 'Safety First!';
 
   @override
-  String get secretPhrase => 'Secret Phrase';
+  String get secretPhrase => 'Secret phrase';
 
   @override
-  String get verifyBackupTitle => 'Verify Your Backup';
+  String get verifyBackupTitle => 'Verify your backup';
 
   @override
   String get verifyBackupInstruction =>
@@ -660,10 +660,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'That\'s not quite right. Check your backup and try again.';
 
   @override
-  String get secretPhrase12Words => '12 WORDS';
+  String get secretPhrase12Words => '12 words';
 
   @override
-  String get secretPhrase24Words => '24 WORDS';
+  String get secretPhrase24Words => '24 words';
 
   @override
   String get secretWarning =>
@@ -674,19 +674,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to Access Security Settings';
+      'Authenticate to access security settings';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to Access Security Settings';
+  String get securitySettingsPin => 'Enter PIN to access security settings';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign Message';
+  String get signMessage => 'Sign message';
 
   @override
-  String get signMessageCopySignature => 'Copy Signature';
+  String get signMessageCopySignature => 'Copy signature';
 
   @override
   String get signMessageDescription =>
@@ -696,16 +696,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signMessageHint => 'Enter a message to sign';
 
   @override
-  String get signMessageSignatureCopied => 'Signature Copied';
+  String get signMessageSignatureCopied => 'Signature copied';
 
   @override
-  String get signMessageSigned => 'Message Signed';
+  String get signMessageSigned => 'Message signed';
 
   @override
   String get signMessageTooLong => 'Message is too long';
 
   @override
-  String get seedInvalid => 'Seed is Invalid';
+  String get seedInvalid => 'Seed is invalid';
 
   @override
   String get nodeUnreachable =>
@@ -734,7 +734,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please wait while the transaction is sent';
 
   @override
-  String get sendTxProgressTitle => 'Sending Transaction';
+  String get sendTxProgressTitle => 'Sending transaction';
 
   @override
   String get sending => 'Send';
@@ -746,13 +746,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sentTo => 'Sent to';
 
   @override
-  String get setPassword => 'Set Password';
+  String get setPassword => 'Set password';
 
   @override
   String get setPasswordSuccess => 'Wallet password has been set';
 
   @override
-  String get setWalletPassword => 'Set Wallet Password';
+  String get setWalletPassword => 'Set wallet password';
 
   @override
   String get settingsHeader => 'Settings';
@@ -777,7 +777,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get somethingWentWrong => 'Something went wrong';
 
   @override
-  String get systemDefault => 'System Default';
+  String get systemDefault => 'System default';
 
   @override
   String get tapToHide => 'Tap to hide';
@@ -786,19 +786,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tapToReveal => 'Tap to reveal';
 
   @override
-  String get themeDark => 'Dark Theme';
+  String get themeDark => 'Dark theme';
 
   @override
   String get themeHeader => 'Theme';
 
   @override
-  String get themeLight => 'Light Theme';
+  String get themeLight => 'Light theme';
 
   @override
   String get toggleTheme => 'Switch theme';
 
   @override
-  String get thisWallet => '#This Wallet';
+  String get thisWallet => '#This wallet';
 
   @override
   String get to => 'To';
@@ -810,7 +810,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tooManyFailedAttempts => 'Too many failed unlock attempts.';
 
   @override
-  String get totalValue => 'Total Value';
+  String get totalValue => 'Total value';
 
   @override
   String get transactionId => 'Transaction ID';
@@ -847,7 +847,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'An error has occurred during the transfer. Please try again later.';
 
   @override
-  String get transferHeader => 'Transfer Funds';
+  String get transferHeader => 'Transfer funds';
 
   @override
   String transferIntro(String button) {
@@ -886,25 +886,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unlock => 'Unlock';
 
   @override
-  String get unlockBiometrics => 'Authenticate to Unlock Wallet';
+  String get unlockBiometrics => 'Authenticate to unlock wallet';
 
   @override
-  String get unlockPin => 'Enter PIN to Unlock Wallet';
+  String get unlockPin => 'Enter PIN to unlock wallet';
 
   @override
   String get utxosUppercase => 'UTXOs';
 
   @override
-  String get viewAddress => 'View Address';
+  String get viewAddress => 'View address';
 
   @override
-  String get viewTransaction => 'View Transaction';
+  String get viewTransaction => 'View transaction';
 
   @override
-  String get walletAddresses => 'Wallet Addresses';
+  String get walletAddresses => 'Wallet addresses';
 
   @override
-  String get walletAddress => 'Wallet Address';
+  String get walletAddress => 'Wallet address';
 
   @override
   String get walletName => 'Wallet name';
@@ -913,10 +913,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get walletNameDescription => 'Enter a name for your wallet';
 
   @override
-  String get walletNameHint => 'Wallet Name';
+  String get walletNameHint => 'Wallet name';
 
   @override
-  String get walletSetupAddressDiscovery => 'Running Address Discovery';
+  String get walletSetupAddressDiscovery => 'Running address discovery';
 
   @override
   String get walletSetupMessage => 'Setting up wallet';
@@ -974,7 +974,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hoosatUriInvalid => 'Invalid Hoosat URI';
 
   @override
-  String get compoundUtxos => 'Compound transactions';
+  String get compoundUtxos => 'Merge coins';
 
   @override
   String get compoundRequired => 'Consolidate small UTXOs';
@@ -984,10 +984,11 @@ class AppLocalizationsEn extends AppLocalizations {
       'You have many small unspent outputs. Consolidating will merge them into fewer, larger UTXOs so future sends are faster and may require lower fees. This creates one or more transactions and will incur network fees.';
 
   @override
-  String get compoundUtxosDescription => 'Combine multiple UTXOs into one';
+  String get compoundUtxosDescription =>
+      'Combine many small coins into fewer, larger ones';
 
   @override
-  String get compoundUtxosConfirmation => 'Compound transactions?';
+  String get compoundUtxosConfirmation => 'Merge small coins?';
 
   @override
   String get compoundingUtxos => 'Compounding transactions';
@@ -1012,10 +1013,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fundsStillConfirmingSwitchAccount => 'Switch account';
 
   @override
-  String get compoundTooFewUtxos => 'At least two UTXOs are required';
+  String get compoundTooFewUtxos =>
+      'Nothing to compound: no single address has 2 or more UTXOs to merge (compounding only combines UTXOs within the same address, not across your whole wallet)';
 
   @override
-  String get moveToMain => 'Move to Main';
+  String get moveToMain => 'Gather onto Main';
 
   @override
   String get moveToMainDescription =>
@@ -1035,7 +1037,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Every address\'s balance is already on Main';
 
   @override
-  String get movingToMain => 'Moving to Main';
+  String get movingToMain => 'Gathering onto Main';
 
   @override
   String get moveToMainSuccess => 'Move to Main successful';
@@ -1068,7 +1070,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noAdditionalAccountsYet => 'No additional accounts yet';
 
   @override
-  String get renameAccount => 'Rename Account';
+  String get renameAccount => 'Rename account';
 
   @override
   String get accountLabelHint => 'Account name';
@@ -1183,7 +1185,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get balance => 'Balance';
 
   @override
-  String get maxSend => 'Max Send';
+  String get maxSend => 'Max send';
 
   @override
   String get compoundUppercased => 'COMPOUND';
@@ -1192,10 +1194,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get closeUppercased => 'CLOSE';
 
   @override
-  String get scanMoreAddresses => 'Scan For More Addresses';
+  String get scanMoreAddresses => 'Scan for more addresses';
 
   @override
-  String get addressDiscovery => 'Address Discovery';
+  String get addressDiscovery => 'Address discovery';
 
   @override
   String get scanningTitle => 'Scanning';
@@ -1222,38 +1224,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newIndex => 'New';
 
   @override
-  String get addressFilterDialogTitle => 'Address Filter';
+  String get addressFilterDialogTitle => 'Address filter';
 
   @override
-  String get addressFilterDialogOptionAllAddresses => 'View All Addresses';
+  String get addressFilterDialogOptionAllAddresses => 'View all addresses';
 
   @override
   String get addressFilterDialogOptionNonZeroBalances =>
-      'View Addresses With Balance';
+      'View addresses with balance';
 
   @override
-  String get importOption24WordsTitle => 'Import 24 Word Secret Phrase';
+  String get importOption24WordsTitle => 'Import 24 word secret phrase';
 
   @override
   String get importOption24WordsDescription =>
       'Compatible with Cli Wallet and Ledger';
 
   @override
-  String get importOption12WordsTitle => 'Import 12 Word Secret Phrase';
+  String get importOption12WordsTitle => 'Import 12 word secret phrase';
 
   @override
   String get importOption12WordsDescription =>
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import Standard Wallet';
+  String get importOptionStandardWalletTitle => 'Import standard wallet';
 
   @override
   String get importOptionStandardWalletDescription =>
       'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import Legacy Wallet';
+  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
 
   @override
   String get importOptionLegacyWalletDescription =>
@@ -1295,7 +1297,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Check address filter from the top right corner';
 
   @override
-  String get invalidSecretPhrase => 'Invalid Secret Phrase';
+  String get invalidSecretPhrase => 'Invalid secret phrase';
 
   @override
   String get invalidSecretPhraseDetails =>
@@ -1305,7 +1307,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get invalidSecretPhraseConfirmation => 'I know what I\'m doing';
 
   @override
-  String get contactSupport => 'Contact Support';
+  String get contactSupport => 'Contact support';
 
   @override
   String emailAction(String email) {
@@ -1332,7 +1334,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Service provided by Topper, Uphold\'s fiat-to-crypto onramp.';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'Get started';
 
   @override
   String get aboutTopperTitle => 'About Topper';
@@ -1342,10 +1344,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Topper by Uphold is an easy to use fiat-to-crypto onramp that allows users to buy cryptocurencies using a credit/debit card or with a bank account.';
 
   @override
-  String get moreInfo => 'More Info';
+  String get moreInfo => 'More info';
 
   @override
-  String get selectAddress => 'Select Address';
+  String get selectAddress => 'Select address';
 
   @override
   String get kpubTitle => 'Extended Public Key';
@@ -1377,7 +1379,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get txReport => 'Transaction Report';
+  String get txReport => 'Transaction report';
 
   @override
   String get txReportSubtitle => 'Get CSV file with transaction history';
@@ -1408,28 +1410,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get txReportStatusReady => 'Transaction report is ready!';
 
   @override
-  String get txReportGetReport => 'Get Report';
+  String get txReportGetReport => 'Get report';
 
   @override
   String get txReportDate => 'Date';
 
   @override
-  String get txReportSentAmount => 'Sent Amount';
+  String get txReportSentAmount => 'Sent amount';
 
   @override
-  String get txReportSentCurrency => 'Sent Currency';
+  String get txReportSentCurrency => 'Sent currency';
 
   @override
-  String get txReportReceivedAmount => 'Received Amount';
+  String get txReportReceivedAmount => 'Received amount';
 
   @override
-  String get txReportReceivedCurrency => 'Received Currency';
+  String get txReportReceivedCurrency => 'Received currency';
 
   @override
-  String get txReportFeeAmount => 'Fee Amount';
+  String get txReportFeeAmount => 'Fee amount';
 
   @override
-  String get txReportFeeCurrency => 'Fee Currency';
+  String get txReportFeeCurrency => 'Fee currency';
 
   @override
   String get txReportLabel => 'Label';
@@ -1447,7 +1449,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get txReportLabelCost => 'cost';
 
   @override
-  String get txReportFeeForCompound => 'Fee for Compound Transaction';
+  String get txReportFeeForCompound => 'Fee for compound transaction';
 
   @override
   String get txReportFeeForSelfSend => 'Fee to send to own addresses';
@@ -1466,63 +1468,63 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get txFilterDialogTitle => 'Transaction Filter';
+  String get txFilterDialogTitle => 'Transaction filter';
 
   @override
-  String get txFilterDialogOptionAllTxs => 'Show All Transactions';
+  String get txFilterDialogOptionAllTxs => 'Show all transactions';
 
   @override
   String get txFilterDialogOptionHideNotAcceptedCoinbase =>
-      'Hide Not Accepted Coinbase Transactions';
+      'Hide not accepted coinbase transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change Address Behavior';
+  String get changeAddressModeTitle => 'Change address behavior';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Change and compounds return to your main address';
+      'Each address keeps its own balance, and the change stays put';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
       'A new address is used each time (private, balance spreads out)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change Address Behavior';
+  String get changeAddressModeDialogTitle => 'Change address behavior';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep Balances On Each Address';
+      'Keep balances on each address';
 
   @override
   String get changeAddressModeDialogOptionPrivate => 'Private';
 
   @override
-  String get requestPasswordHeader => 'Request Password';
+  String get requestPasswordHeader => 'Request password';
 
   @override
   String get requestPasswordAtLaunch => 'At Launch';
 
   @override
-  String get requestPasswordWhenLocked => 'When Locked';
+  String get requestPasswordWhenLocked => 'When locked';
 
   @override
-  String get requestPasswordWhenSigning => 'When Signing';
+  String get requestPasswordWhenSigning => 'When signing';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced Options';
+  String get importWalletAdvancedOptions => 'Advanced options';
 
   @override
-  String get bip39Passphrase => 'BIP39 Passphrase';
+  String get bip39Passphrase => 'BIP39 passphrase';
 
   @override
   String get bip39PassphraseWarning =>
       'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter Passphrase';
+  String get bip39PassphraseEnter => 'Enter passphrase';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm Passphrase';
+  String get bip39PassphraseConfirm => 'Confirm passphrase';
 
   @override
   String get bip39PassphraseMismatch => 'Passphrases do not match!';
@@ -1531,7 +1533,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
 
   @override
-  String get feePriorityHint => 'Enter Priority Fee';
+  String get feePriorityHint => 'Enter priority fee';
 
   @override
   String get feeBaseUppercase => 'BASE FEE';
@@ -1553,13 +1555,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get feeUpdateError => 'Failed to update fee';
 
   @override
-  String get feeUpdate => 'Update Fee';
+  String get feeUpdate => 'Update fee';
 
   @override
   String get feeUpdateTitle => 'Updating fee';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended Priority Fees';
+  String get feeSheetRecommendedPriority => 'Recommended priority fees';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
@@ -1573,23 +1575,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get txPendingMessage => 'This transaction is pending';
 
   @override
-  String get txPendingTitle => 'Pending Transaction';
+  String get txPendingTitle => 'Pending transaction';
 
   @override
   String get txPendingContent =>
       'There is a pending transactions in the mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update Tx Fee';
+  String get txPendingActionUpdateFee => 'Update tx fee';
 
   @override
-  String get txPendingActionRbf => 'Replace By Fee';
+  String get txPendingActionRbf => 'Replace by fee';
 
   @override
   String get txInMempool => 'in mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select UTXOs';
+  String get utxoSelectionTitle => 'Select utxos';
 
   @override
   String get utxoSelectionHint => 'Please select more UTXOs';

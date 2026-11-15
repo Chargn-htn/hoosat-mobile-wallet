@@ -36,8 +36,8 @@ class AddressDetailsSheet extends HookConsumerWidget {
     final nameController = useTextEditingController(text: address.name);
 
     final title = address.type == AddressType.receive
-        ? l10n.receiveAddress.toUpperCase()
-        : l10n.changeAddress.toUpperCase();
+        ? l10n.receiveAddress
+        : l10n.changeAddress;
 
     Future<void> copyAddress() async {
       try {
