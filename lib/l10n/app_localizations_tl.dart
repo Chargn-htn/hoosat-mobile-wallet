@@ -107,7 +107,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get available => 'Available';
 
   @override
-  String get back => 'Back';
+  String get back => 'Bumalik';
 
   @override
   String get backupConfirmButton => 'Na-backup ko na ito';
@@ -116,7 +116,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get backupSecretPhrase => 'Backup Secret Phrase';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Walang Secret Phrase';
 
   @override
   String get biometricsMethod => 'Biometrics';
@@ -168,7 +168,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get confirmed => 'confirmed';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'kumpirmado · hinog pa';
 
   @override
   String get confirming => 'confirming';
@@ -614,24 +614,24 @@ class AppLocalizationsTl extends AppLocalizations {
   String get scanQrCodeError => 'Failed to parse qr code';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'I-scan mula sa larawan';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'I-on/i-off ang flashlight';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Bago ka magsimula';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Ang Hoosat Mobile Wallet ay non-custodial na wallet. Ang iyong Secret Phrase at mga private key ay ginagawa at iniimbak lamang sa device na ito — hindi namin sila nakikita kailanman, hindi namin iniimbak sa anumang server, at hindi namin maibabalik para sa iyo.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Kung mawala mo ang iyong Secret Phrase, walang password reset at walang support team na makakabawi ng iyong pondo. Ikaw lamang ang responsable sa pagpapanatili nitong ligtas.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Naiintindihan ko, magpatuloy';
 
   @override
   String get secretInfo =>
@@ -644,26 +644,26 @@ class AppLocalizationsTl extends AppLocalizations {
   String get secretPhrase => 'Secret Phrase';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'I-verify ang iyong backup';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Piliin ang tamang salita para sa bawat posisyon upang kumpirmahing na-save mo ang iyong Secret Phrase.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Ano ang salita #$index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Hindi pa tama. Suriin ang iyong backup at subukan muli.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 salita';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 na salita';
 
   @override
   String get secretWarning =>
@@ -674,45 +674,46 @@ class AppLocalizationsTl extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Mag-authenticate para ma-access ang mga setting ng seguridad';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Ilagay ang PIN para ma-access ang mga setting ng seguridad';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Lagdaan ang mensahe';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Kopyahin ang lagda';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Lagdaan ang isang mensahe gamit ang isa sa mga address ng iyong wallet';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Maglagay ng mensaheng lalagdaan';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Nakopya ang lagda';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Nalagdaan ang mensahe';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Masyadong mahaba ang mensahe';
 
   @override
   String get seedInvalid => 'Ang seed ay hindi wasto';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Hindi maabot ang iyong node. Maaaring luma na ang mga balanse.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Subukan muli';
 
   @override
   String get send => 'Magpadala';
@@ -795,7 +796,7 @@ class AppLocalizationsTl extends AppLocalizations {
   String get themeLight => 'Light Theme';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Palitan ang tema';
 
   @override
   String get thisWallet => '#This Wallet';
@@ -1003,181 +1004,182 @@ class AppLocalizationsTl extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Kinukumpirma pa ang pondo';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Ang ilang pondo sa account na ito ay kamakailan lang natanggap kaya hindi pa maipapadala — kailangan muna ng network ng maikling oras ng pagkahinog, karaniwang ilang minuto. Maaari kang maghintay at subukan muli, o magpadala mula sa ibang account na may hinog nang pondo.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Magpalit ng account';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Ipunin sa Pangunahin';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Ilipat ang balanse ng lahat ng ibang address sa iyong pangunahing address';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Ilipat ang lahat sa Pangunahin?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Ililipat nito ang $amount $symbol mula sa $count pang address papunta sa iyong pangunahing address. Gagawa ito ng isa o higit pang transaksyon at may sisingilin na network fee.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Nasa Pangunahin na ang balanse ng lahat ng address';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Iniipon sa Pangunahin';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Matagumpay ang paglipat sa Pangunahin';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Nabigo ang paglipat sa Pangunahin';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ILIPAT';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Mga Account';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Magdagdag at mamahala ng mga pinangalanang address';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Pangunahin';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'I-archive';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Ibalik';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Naka-archive';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Wala pang karagdagang account';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Palitan ang pangalan ng account';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Pangalan ng account';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'I-SAVE';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'IDAGDAG';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Mula sa';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Alinman';
 
   @override
   String get home => 'Home';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Aktibidad';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Kabuuang balanse';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Magagastos ngayon $spendable · Parating pa $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Ang mga coin na parating pa ay iyo at magagastos na sa lalong madaling panahon.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Ang mga coin na parating pa ay magagastos sa loob ng $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Magagastos ngayon $amount. Ang natitira ay magagastos sa loob ng $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Magagastos ngayon $amount. Ang natitira ay parating pa.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'naghihintay na tanggapin';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'hindi alam ang status';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'hindi tinanggap';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'kinukumpirma $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Isinumite sa';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Subukan ang koneksyon';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Na-save mula sa ibang wallet (tingnan lang)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Hindi ito magagastos ng wallet na ito, kaya hindi ito binibilang sa kabuuan nito. Buksan ang wallet na pinagmulan nito para magamit ito.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Wala pang aktibidad';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Naipadala';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Natanggap';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Sa loob ng wallet';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Pinagsamang coin';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Kapag nagpadala o tumanggap ka ng HTN, lalabas ito rito.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Tingnan lahat';
 
   @override
-  String get show => 'Show';
+  String get show => 'Ipakita';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Aking mga Account';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Kumusta, $walletName';
   }
 
   @override
@@ -1247,18 +1249,19 @@ class AppLocalizationsTl extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle =>
+      'Mag-import ng karaniwang wallet';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Mga wallet na may 12 o 24 na salita at karaniwang derivation, na may opsyonal na BIP39 passphrase';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Mag-import ng lumang wallet';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Mga wallet na may 12 salita at lumang derivation, tugma sa lumang Web Wallet at KDX';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1477,121 +1480,120 @@ class AppLocalizationsTl extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Gawi ng change address';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Bawat address ay may sariling balanse, at nananatili ang sukli';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Bagong address ang ginagamit sa bawat pagkakataon (pribado, kumakalat ang balanse)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Gawi ng change address';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Panatilihin ang balanse sa bawat address';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Pribado';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Humingi ng password';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Sa pagbukas';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Kapag naka-lock';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Kapag pumipirma';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Mga advanced na opsyon';
 
   @override
   String get bip39Passphrase => 'BIP39 passphrase';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'PAALALA: Hindi ito password ng wallet; magkaibang BIP39 passphrase ang nagbubukas ng magkaibang wallet.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Ilagay ang passphrase';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Kumpirmahin ang passphrase';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Hindi magkatugma ang mga passphrase!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Wallet na may BIP39 passphrase.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Ilagay ang priority fee';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'PANGUNAHING FEE';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRAYORIDAD NA FEE';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'Hindi makilala ang destination address';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Hindi nabuo muli ang transaksyon';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Hindi nabuo muli ang transaksyon gamit ang bagong fee';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Hindi na-update ang fee';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'I-update ang fee';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Ina-update ang fee';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Mga inirerekomendang priority fee';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Ang bagong priority fee ay dapat hindi bababa sa $amount $symbol';
   }
 
   @override
   String get txPending => 'PENDING';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Naka-pending ang transaksyong ito';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Pending na transaksyon';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'May mga pending na transaksyon sa mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'I-update ang fee ng transaksyon';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Palitan gamit ang fee (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'sa mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Pumili ng UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Pumili ng higit pang UTXO';
 }

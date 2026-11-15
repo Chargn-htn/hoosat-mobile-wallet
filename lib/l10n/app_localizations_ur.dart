@@ -107,7 +107,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get available => 'دستیاب';
 
   @override
-  String get back => 'Back';
+  String get back => 'واپس';
 
   @override
   String get backupConfirmButton => 'میں نے اس کا بیک اپ لیا ہے';
@@ -116,7 +116,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get backupSecretPhrase => 'بیک اپ خفیہ جملہ';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'خفیہ جملہ موجود نہیں';
 
   @override
   String get biometricsMethod => 'بایومیٹرکس';
@@ -168,7 +168,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get confirmed => 'تصدیق شدہ';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'تصدیق شدہ · پختہ ہو رہا ہے';
 
   @override
   String get confirming => 'تصدیق کی جا رہی ہے';
@@ -612,24 +612,24 @@ class AppLocalizationsUr extends AppLocalizations {
   String get scanQrCodeError => 'کیو آر کوڈ کو پارس کرنے میں ناکام';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'تصویر سے اسکین کریں';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'ٹارچ آن/آف کریں';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'شروع کرنے سے پہلے';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet ایک نان-کسٹوڈیل بٹوا ہے۔ آپ کا خفیہ جملہ اور نجی کلیدیں صرف اسی ڈیوائس پر بنتی اور محفوظ ہوتی ہیں — ہم انہیں کبھی نہیں دیکھتے، کسی سرور پر محفوظ نہیں کرتے اور آپ کے لیے بحال نہیں کر سکتے۔';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'اگر آپ اپنا خفیہ جملہ کھو دیتے ہیں تو پاس ورڈ ری سیٹ کی کوئی سہولت نہیں اور نہ ہی کوئی سپورٹ ٹیم آپ کے فنڈز واپس دلا سکتی ہے۔ اسے محفوظ رکھنے کی پوری ذمہ داری صرف آپ کی ہے۔';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'میں سمجھتا/سمجھتی ہوں، جاری رکھیں';
 
   @override
   String get secretInfo =>
@@ -642,26 +642,26 @@ class AppLocalizationsUr extends AppLocalizations {
   String get secretPhrase => 'خفیہ جملہ';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'اپنے بیک اپ کی تصدیق کریں';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'اس بات کی تصدیق کے لیے کہ آپ نے اپنا خفیہ جملہ محفوظ کر لیا ہے، ہر مقام کے لیے درست لفظ منتخب کریں۔';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'لفظ نمبر $index کیا ہے؟';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'بالکل درست نہیں۔ اپنا بیک اپ چیک کریں اور دوبارہ کوشش کریں۔';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 الفاظ';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 الفاظ';
 
   @override
   String get secretWarning =>
@@ -672,45 +672,46 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'سیکیورٹی سیٹنگز تک رسائی کے لیے تصدیق کریں';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'سیکیورٹی سیٹنگز تک رسائی کے لیے PIN درج کریں';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'پیغام پر دستخط کریں';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'دستخط کاپی کریں';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'اپنے بٹوے کے کسی ایک پتے سے پیغام پر دستخط کریں';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'دستخط کرنے کے لیے پیغام درج کریں';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'دستخط کاپی ہو گئے';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'پیغام پر دستخط ہو گئے';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'پیغام بہت لمبا ہے';
 
   @override
   String get seedInvalid => 'سیڈ غلط ہے';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'آپ کے نوڈ تک رسائی نہیں ہو پا رہی۔ بیلنس پرانے ہو سکتے ہیں۔';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'دوبارہ کوشش کریں';
 
   @override
   String get send => 'بھیجیں';
@@ -793,7 +794,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get themeLight => 'ہلکی تھیم';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'تھیم تبدیل کریں';
 
   @override
   String get thisWallet => '#یہ بٹوا';
@@ -999,181 +1000,182 @@ class AppLocalizationsUr extends AppLocalizations {
   String get compoundFailure => 'Failed to compound transactions';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'فنڈز کی تصدیق ابھی جاری ہے';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'اس اکاؤنٹ کے کچھ فنڈز حال ہی میں موصول ہوئے ہیں اور ابھی بھیجے نہیں جا سکتے — نیٹ ورک پہلے مختصر پختگی کا وقت مانگتا ہے، عموماً چند منٹ۔ آپ انتظار کر کے دوبارہ کوشش کر سکتے ہیں، یا پختہ فنڈز والے کسی دوسرے اکاؤنٹ سے بھیج سکتے ہیں۔';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'اکاؤنٹ تبدیل کریں';
 
   @override
   String get compoundTooFewUtxos => 'At least two UTXOs are required';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'مرکزی میں جمع کریں';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'باقی تمام پتوں کا بیلنس اپنے مرکزی پتے پر منتقل کریں';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'سب کچھ مرکزی میں منتقل کریں؟';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'یہ $count دوسرے پتوں سے $amount $symbol آپ کے مرکزی پتے پر منتقل کرے گا۔ ایک یا زیادہ ٹرانزیکشنز بنیں گی اور نیٹ ورک فیس لگے گی۔';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'تمام پتوں کا بیلنس پہلے سے مرکزی میں ہے';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'مرکزی میں جمع کیا جا رہا ہے';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'مرکزی میں منتقلی کامیاب رہی';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'مرکزی میں منتقلی ناکام رہی';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'منتقل کریں';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'اکاؤنٹس';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'نام والے پتے شامل کریں اور ان کا انتظام کریں';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'مرکزی';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'آرکائیو کریں';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'بحال کریں';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'آرکائیو شدہ';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'ابھی کوئی اضافی اکاؤنٹ نہیں';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'اکاؤنٹ کا نام تبدیل کریں';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'اکاؤنٹ کا نام';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'محفوظ کریں';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'شامل کریں';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'از';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'کوئی بھی';
 
   @override
-  String get home => 'Home';
+  String get home => 'ہوم';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'سرگرمی';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'کل بیلنس';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'ابھی خرچ کرنے کے قابل $spendable · ابھی آ رہا ہے $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'جو سکے ابھی آ رہے ہیں وہ آپ کے ہیں اور جلد خرچ کیے جا سکیں گے۔';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'جو سکے ابھی آ رہے ہیں انہیں $time میں خرچ کیا جا سکے گا۔';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'ابھی خرچ کرنے کے قابل $amount۔ باقی $time میں خرچ کیا جا سکے گا۔';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'ابھی خرچ کرنے کے قابل $amount۔ باقی ابھی آ رہا ہے۔';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'قبولیت کا انتظار ہے';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'حیثیت نامعلوم';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'قبول نہیں ہوا';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'تصدیق ہو رہی ہے $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'یہاں جمع کرایا گیا';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'کنکشن ٹیسٹ کریں';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'دوسرے بٹوے سے محفوظ کردہ (صرف دیکھنے کے لیے)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'یہ بٹوا انہیں خرچ نہیں کر سکتا، اس لیے یہ اس کے کل میں شمار نہیں ہوتے۔ انہیں استعمال کرنے کے لیے وہ بٹوا کھولیں جس سے یہ تعلق رکھتے ہیں۔';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'ابھی کوئی سرگرمی نہیں';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'بھیجا گیا';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'موصول ہوا';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'بٹوے کے اندر';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'ضم شدہ سکے';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'جب آپ HTN بھیجیں یا وصول کریں گے تو یہاں نظر آئے گا۔';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'سب دیکھیں';
 
   @override
-  String get show => 'Show';
+  String get show => 'دکھائیں';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'میرے اکاؤنٹس';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'ہیلو، $walletName';
   }
 
   @override
@@ -1243,18 +1245,18 @@ class AppLocalizationsUr extends AppLocalizations {
       'Compatible with Web Wallet and KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'معیاری بٹوا درآمد کریں';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'معیاری ڈیریویشن والے 12 یا 24 الفاظ کے بٹوے، اختیاری BIP39 پاس فریز کے ساتھ';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'پرانا بٹوا درآمد کریں';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'پرانی ڈیریویشن والے 12 الفاظ کے بٹوے، پرانے Web Wallet اور KDX کے ساتھ ہم آہنگ';
 
   @override
   String get importOptionKpubTitle => 'Import Watch Only Wallet';
@@ -1473,121 +1475,120 @@ class AppLocalizationsUr extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'بقایا رقم کے پتے کا رویہ';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'ہر پتہ اپنا بیلنس رکھتا ہے اور بقایا رقم وہیں رہتی ہے';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'ہر بار نیا پتہ استعمال ہوتا ہے (نجی، بیلنس بکھر جاتا ہے)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'بقایا رقم کے پتے کا رویہ';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'ہر پتے پر بیلنس رکھیں';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'نجی';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'پاس ورڈ مانگیں';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'شروع کرتے وقت';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'لاک ہونے پر';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'دستخط کرتے وقت';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'جدید اختیارات';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 پاس فریز';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'نوٹ: یہ بٹوے کا پاس ورڈ نہیں ہے؛ مختلف BIP39 پاس فریز مختلف بٹوے کھولتے ہیں۔';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'پاس فریز درج کریں';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'پاس فریز کی تصدیق کریں';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'پاس فریز مماثل نہیں ہیں!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'BIP39 پاس فریز والا بٹوا۔';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'ترجیحی فیس درج کریں';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'بنیادی فیس';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'ترجیحی فیس';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'منزل کا پتہ پہچانا نہیں جا سکا';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'ٹرانزیکشن دوبارہ نہیں بنائی جا سکی';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'نئی فیس کے ساتھ ٹرانزیکشن دوبارہ نہیں بنائی جا سکی';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'فیس اپ ڈیٹ نہیں ہو سکی';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'فیس اپ ڈیٹ کریں';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'فیس اپ ڈیٹ ہو رہی ہے';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'تجویز کردہ ترجیحی فیسیں';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'نئی ترجیحی فیس کم از کم $amount $symbol ہونی چاہیے';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'زیر التواء';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'یہ ٹرانزیکشن زیر التواء ہے';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'زیر التواء ٹرانزیکشن';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'mempool میں زیر التواء ٹرانزیکشنز ہیں۔';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'ٹرانزیکشن فیس اپ ڈیٹ کریں';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'فیس کے ذریعے تبدیل کریں (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'mempool میں';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO منتخب کریں';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'براہ کرم مزید UTXO منتخب کریں';
 }
