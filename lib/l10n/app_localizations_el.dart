@@ -110,7 +110,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get available => 'Διαθέσιμο';
 
   @override
-  String get back => 'Back';
+  String get back => 'Πίσω';
 
   @override
   String get backupConfirmButton => 'Κράτησα αντίγραφο ασφαλείας';
@@ -119,7 +119,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get backupSecretPhrase => 'Αντίγραφο ασφαλείας μυστικής φράσης';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Λείπει η μυστική φράση';
 
   @override
   String get biometricsMethod => 'Βιομετρικά στοιχεία';
@@ -171,7 +171,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get confirmed => 'επιβεβαιωμένο';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'επιβεβαιωμένο · ωριμάζει';
 
   @override
   String get confirming => 'γίνεται επιβεβαίωση';
@@ -630,24 +630,24 @@ class AppLocalizationsEl extends AppLocalizations {
   String get scanQrCodeError => 'Η σάρωση του κωδικού QR απέτυχε';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Σάρωση από εικόνα';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Ενεργοποίηση/απενεργοποίηση φακού';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Πριν ξεκινήσετε';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Το Hoosat Mobile Wallet είναι πορτοφόλι χωρίς φύλαξη (non-custodial). Η μυστική φράση και τα ιδιωτικά κλειδιά σας δημιουργούνται και αποθηκεύονται μόνο σε αυτήν τη συσκευή — δεν τα βλέπουμε ποτέ, δεν τα αποθηκεύουμε σε κανέναν διακομιστή και δεν μπορούμε να τα ανακτήσουμε για εσάς.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Αν χάσετε τη μυστική φράση σας, δεν υπάρχει επαναφορά κωδικού ούτε ομάδα υποστήριξης που να μπορεί να σας επιστρέψει τα κεφάλαιά σας. Είστε αποκλειστικά υπεύθυνοι για την ασφαλή φύλαξή της.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Κατάλαβα, συνέχεια';
 
   @override
   String get secretInfo =>
@@ -660,26 +660,26 @@ class AppLocalizationsEl extends AppLocalizations {
   String get secretPhrase => 'Μυστική φράση';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Επαληθεύστε το αντίγραφο ασφαλείας';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Επιλέξτε τη σωστή λέξη για κάθε θέση ώστε να επιβεβαιώσετε ότι αποθηκεύσατε τη μυστική φράση σας.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Ποια είναι η λέξη #$index;';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Όχι ακριβώς. Ελέγξτε το αντίγραφο ασφαλείας και δοκιμάστε ξανά.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 λέξεις';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 λέξεις';
 
   @override
   String get secretWarning =>
@@ -690,45 +690,46 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Πραγματοποιήστε ταυτοποίηση για πρόσβαση στις ρυθμίσεις ασφαλείας';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Εισαγάγετε το PIN για πρόσβαση στις ρυθμίσεις ασφαλείας';
 
   @override
   String get seed => 'Η φράση';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Υπογραφή μηνύματος';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Αντιγραφή υπογραφής';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Υπογράψτε ένα μήνυμα με μία από τις διευθύνσεις του πορτοφολιού σας';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Εισαγάγετε ένα μήνυμα για υπογραφή';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Η υπογραφή αντιγράφηκε';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Το μήνυμα υπογράφηκε';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Το μήνυμα είναι πολύ μεγάλο';
 
   @override
   String get seedInvalid => 'Η μυστική σας φράση δεν είναι έγκυρη.';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Δεν είναι δυνατή η σύνδεση με τον κόμβο σας. Τα υπόλοιπα μπορεί να μην είναι ενημερωμένα.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Επανάληψη';
 
   @override
   String get send => 'Αποστολή';
@@ -814,7 +815,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get themeLight => 'Φωτεινό θέμα';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Αλλαγή θέματος';
 
   @override
   String get thisWallet => '#Αυτό το πορτοφόλι';
@@ -1031,182 +1032,184 @@ class AppLocalizationsEl extends AppLocalizations {
   String get compoundFailure => 'Αποτυχία σύνθεσης συναλλαγών';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Τα κεφάλαια επιβεβαιώνονται ακόμη';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Μέρος των κεφαλαίων αυτού του λογαριασμού ελήφθη πολύ πρόσφατα για να σταλεί — το δίκτυο απαιτεί πρώτα έναν σύντομο χρόνο ωρίμανσης, συνήθως λίγα λεπτά. Μπορείτε να περιμένετε και να δοκιμάσετε ξανά ή να στείλετε από άλλον λογαριασμό που έχει ώριμα κεφάλαια.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Αλλαγή λογαριασμού';
 
   @override
   String get compoundTooFewUtxos =>
       'Απαιτούνται τουλάχιστον δύο εκροές αδιάθετων συναλλαγών';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Συγκέντρωση στον Κύριο';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Μεταφέρετε το υπόλοιπο όλων των άλλων διευθύνσεων στην κύρια διεύθυνσή σας';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Μεταφορά όλων στον Κύριο;';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Αυτό θα μεταφέρει $amount $symbol από $count άλλες διευθύνσεις στην κύρια διεύθυνσή σας. Θα δημιουργηθούν μία ή περισσότερες συναλλαγές και θα χρεωθούν τέλη δικτύου.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Το υπόλοιπο όλων των διευθύνσεων βρίσκεται ήδη στον Κύριο';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Συγκέντρωση στον Κύριο';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Η μεταφορά στον Κύριο ολοκληρώθηκε';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Η μεταφορά στον Κύριο απέτυχε';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ΜΕΤΑΦΟΡΑ';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Λογαριασμοί';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Προσθέστε και διαχειριστείτε διευθύνσεις με όνομα';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Κύριος';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Αρχειοθέτηση';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Επαναφορά';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Αρχειοθετημένοι';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet =>
+      'Δεν υπάρχουν ακόμη επιπλέον λογαριασμοί';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Μετονομασία λογαριασμού';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Όνομα λογαριασμού';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'ΑΠΟΘΗΚΕΥΣΗ';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'ΠΡΟΣΘΗΚΗ';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Από';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Οποιοσδήποτε';
 
   @override
-  String get home => 'Home';
+  String get home => 'Αρχική';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Δραστηριότητα';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Συνολικό υπόλοιπο';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Διαθέσιμα τώρα $spendable · Ακόμη καταφθάνουν $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Τα νομίσματα που ακόμη καταφθάνουν είναι δικά σας και σύντομα θα μπορείτε να τα ξοδέψετε.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Τα νομίσματα που ακόμη καταφθάνουν θα μπορούν να ξοδευτούν σε $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Διαθέσιμα τώρα $amount. Τα υπόλοιπα μπορούν να ξοδευτούν σε $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Διαθέσιμα τώρα $amount. Τα υπόλοιπα ακόμη καταφθάνουν.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'αναμονή αποδοχής';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'άγνωστη κατάσταση';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'δεν έγινε αποδεκτή';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'επιβεβαίωση $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Υποβλήθηκε σε';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Δοκιμή σύνδεσης';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Αποθηκευμένα από άλλο πορτοφόλι (μόνο προβολή)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Αυτό το πορτοφόλι δεν μπορεί να τα ξοδέψει, γι\' αυτό δεν προσμετρώνται στο σύνολό του. Ανοίξτε το πορτοφόλι στο οποίο ανήκουν για να τα χρησιμοποιήσετε.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Δεν υπάρχει ακόμη δραστηριότητα';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Απεστάλη';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Ελήφθη';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'Εντός πορτοφολιού';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Συγχωνευμένα νομίσματα';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Όταν στείλετε ή λάβετε HTN, θα εμφανιστεί εδώ.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Εμφάνιση όλων';
 
   @override
-  String get show => 'Show';
+  String get show => 'Εμφάνιση';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Οι λογαριασμοί μου';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Γεια σας, $walletName';
   }
 
   @override
@@ -1278,18 +1281,18 @@ class AppLocalizationsEl extends AppLocalizations {
       'Συμβατό με πορτοφόλι Web και KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Εισαγωγή τυπικού πορτοφολιού';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Πορτοφόλια 12 ή 24 λέξεων με τυπική παραγωγή και προαιρετική φράση πρόσβασης BIP39';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Εισαγωγή παλαιού πορτοφολιού';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Πορτοφόλια 12 λέξεων με παλαιά παραγωγή, συμβατά με το παλιό Web Wallet και το KDX';
 
   @override
   String get importOptionKpubTitle =>
@@ -1510,121 +1513,121 @@ class AppLocalizationsEl extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Συμπεριφορά διεύθυνσης ρέστων';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Κάθε διεύθυνση κρατά το δικό της υπόλοιπο και τα ρέστα μένουν στη θέση τους';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Κάθε φορά χρησιμοποιείται νέα διεύθυνση (ιδιωτικά, το υπόλοιπο διασκορπίζεται)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Συμπεριφορά διεύθυνσης ρέστων';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Διατήρηση υπολοίπων σε κάθε διεύθυνση';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Ιδιωτικό';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Αίτηση κωδικού';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Κατά την εκκίνηση';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Όταν είναι κλειδωμένο';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Κατά την υπογραφή';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Σύνθετες επιλογές';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Φράση πρόσβασης BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'ΣΗΜΕΙΩΣΗ: Αυτός δεν είναι κωδικός πορτοφολιού· διαφορετικές φράσεις πρόσβασης BIP39 ανοίγουν διαφορετικά πορτοφόλια.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Εισαγάγετε τη φράση πρόσβασης';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Επιβεβαιώστε τη φράση πρόσβασης';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Οι φράσεις πρόσβασης δεν ταιριάζουν!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Πορτοφόλι με φράση πρόσβασης BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Εισαγάγετε το τέλος προτεραιότητας';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'ΒΑΣΙΚΟ ΤΕΛΟΣ';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'ΤΕΛΟΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError =>
+      'Η διεύθυνση προορισμού δεν αναγνωρίστηκε';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Η ανακατασκευή της συναλλαγής απέτυχε';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Η ανακατασκευή της συναλλαγής με το νέο τέλος απέτυχε';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Η ενημέρωση του τέλους απέτυχε';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Ενημέρωση τέλους';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Ενημέρωση τέλους';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Προτεινόμενα τέλη προτεραιότητας';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Το νέο τέλος προτεραιότητας πρέπει να είναι τουλάχιστον $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ΕΚΚΡΕΜΕΙ';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Αυτή η συναλλαγή εκκρεμεί';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Εκκρεμής συναλλαγή';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Υπάρχουν εκκρεμείς συναλλαγές στο mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Ενημέρωση τέλους συναλλαγής';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Αντικατάσταση με τέλος (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'στο mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Επιλογή UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Παρακαλούμε επιλέξτε περισσότερα UTXO';
 }
