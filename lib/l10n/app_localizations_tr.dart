@@ -1054,7 +1054,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get moveToMainFailure => 'Ana hesaba taşıma başarısız';
 
   @override
-  String get moveToMainUppercased => 'TAŞI';
+  String get moveToMainUppercased => 'Taşı';
 
   @override
   String get manageAccounts => 'Hesaplar';
@@ -1085,10 +1085,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get accountLabelHint => 'Hesap adı';
 
   @override
-  String get saveUppercased => 'KAYDET';
+  String get saveUppercased => 'Kaydet';
 
   @override
-  String get addUppercased => 'EKLE';
+  String get addUppercased => 'Ekle';
 
   @override
   String get sendFromLabel => 'Kaynak';

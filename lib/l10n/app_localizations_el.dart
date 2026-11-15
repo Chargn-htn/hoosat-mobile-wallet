@@ -1075,7 +1075,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get moveToMainFailure => 'Η μεταφορά στον Κύριο απέτυχε';
 
   @override
-  String get moveToMainUppercased => 'ΜΕΤΑΦΟΡΑ';
+  String get moveToMainUppercased => 'Μεταφορά';
 
   @override
   String get manageAccounts => 'Λογαριασμοί';
@@ -1107,10 +1107,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get accountLabelHint => 'Όνομα λογαριασμού';
 
   @override
-  String get saveUppercased => 'ΑΠΟΘΗΚΕΥΣΗ';
+  String get saveUppercased => 'Αποθήκευση';
 
   @override
-  String get addUppercased => 'ΠΡΟΣΘΗΚΗ';
+  String get addUppercased => 'Προσθήκη';
 
   @override
   String get sendFromLabel => 'Από';
