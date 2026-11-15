@@ -106,7 +106,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get available => 'זמין';
 
   @override
-  String get back => 'Back';
+  String get back => 'חזרה';
 
   @override
   String get backupConfirmButton => 'גיביתי במקום בטוח';
@@ -115,7 +115,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get backupSecretPhrase => 'גבה את הביטוי הסודי';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'הביטוי הסודי חסר';
 
   @override
   String get biometricsMethod => 'ביומטריה';
@@ -167,7 +167,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get confirmed => 'מאושר';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'מאושר · בהבשלה';
 
   @override
   String get confirming => 'מאשר';
@@ -604,24 +604,24 @@ class AppLocalizationsHe extends AppLocalizations {
   String get scanQrCodeError => 'ניתוח קוד ה-QR נכשל';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'סריקה מתמונה';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'הפעלה/כיבוי של הפנס';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'לפני שמתחילים';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet הוא ארנק לא-משמורתי (non-custodial). הביטוי הסודי והמפתחות הפרטיים שלך נוצרים ונשמרים אך ורק במכשיר זה — אנחנו לא רואים אותם לעולם, לא שומרים אותם בשום שרת ולא יכולים לשחזר אותם עבורך.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'אם תאבד את הביטוי הסודי, אין איפוס סיסמה ואין צוות תמיכה שיכול להחזיר את הכספים שלך. האחריות לשמור עליו בטוח היא שלך בלבד.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'הבנתי, המשך';
 
   @override
   String get secretInfo =>
@@ -634,26 +634,26 @@ class AppLocalizationsHe extends AppLocalizations {
   String get secretPhrase => 'ביטוי סודי';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'אימות הגיבוי';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'בחר את המילה הנכונה לכל מיקום כדי לאשר ששמרת את הביטוי הסודי שלך.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'מהי מילה מספר $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'זה לא ממש נכון. בדוק את הגיבוי ונסה שוב.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 מילים';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 מילים';
 
   @override
   String get secretWarning =>
@@ -663,46 +663,44 @@ class AppLocalizationsHe extends AppLocalizations {
   String get securityHeader => 'אבטחה';
 
   @override
-  String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+  String get securitySettingsBiometrics => 'בצע אימות כדי לגשת להגדרות האבטחה';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin => 'הזן קוד PIN כדי לגשת להגדרות האבטחה';
 
   @override
   String get seed => 'סיד';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'חתימה על הודעה';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'העתקת החתימה';
 
   @override
-  String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+  String get signMessageDescription => 'חתום על הודעה באחת מכתובות הארנק שלך';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'הזן הודעה לחתימה';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'החתימה הועתקה';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'ההודעה נחתמה';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'ההודעה ארוכה מדי';
 
   @override
   String get seedInvalid => 'ה\"סיד\" אינו תקין';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'לא ניתן להתחבר לצומת שלך. ייתכן שהיתרות אינן מעודכנות.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'נסה שוב';
 
   @override
   String get send => 'שלח';
@@ -784,7 +782,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get themeLight => 'מצב תצוגה בהיר';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'החלפת ערכת נושא';
 
   @override
   String get thisWallet => '#ארנק זה';
@@ -987,181 +985,178 @@ class AppLocalizationsHe extends AppLocalizations {
   String get compoundFailure => 'נכשל בהרכבת העסקאות';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'הכספים עדיין באישור';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'חלק מהכספים בחשבון זה התקבלו לאחרונה מדי מכדי שניתן יהיה לשלוח אותם — הרשת דורשת תחילה זמן המתנה קצר להבשלה, בדרך כלל כמה דקות. ניתן להמתין ולנסות שוב, או לשלוח מחשבון אחר שיש בו כספים בשלים.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'החלפת חשבון';
 
   @override
   String get compoundTooFewUtxos => 'נדרשים לפחות שני UTXOs';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'איסוף לראשי';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'העבר את היתרה של כל הכתובות האחרות לכתובת הראשית שלך';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'להעביר הכול לראשי?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'פעולה זו תעביר $amount $symbol מ-$count כתובות אחרות לכתובת הראשית שלך. ייווצרו עסקה אחת או יותר, ויחולו עמלות רשת.';
   }
 
   @override
-  String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+  String get moveToMainNothingToMove => 'היתרה של כל הכתובות כבר נמצאת בראשי';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'אוסף לראשי';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'ההעברה לראשי הצליחה';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'ההעברה לראשי נכשלה';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'העברה';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'חשבונות';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription => 'הוספה וניהול של כתובות בעלות שם';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'ראשי';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'העבר לארכיון';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'שחזור';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'בארכיון';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'עדיין אין חשבונות נוספים';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'שינוי שם החשבון';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'שם החשבון';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'שמירה';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'הוספה';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'מאת';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'כל חשבון';
 
   @override
-  String get home => 'Home';
+  String get home => 'בית';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'פעילות';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'יתרה כוללת';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'זמין להוצאה עכשיו $spendable · עדיין בדרך $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'מטבעות שעדיין בדרך הם שלך וניתן יהיה להוציא אותם בקרוב.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'ניתן יהיה להוציא את המטבעות שעדיין בדרך בעוד $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'זמין להוצאה עכשיו $amount. את היתר ניתן להוציא בעוד $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'זמין להוצאה עכשיו $amount. היתר עדיין בדרך.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'ממתין לקבלה';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'סטטוס לא ידוע';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'לא התקבלה';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'מאשר $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'נשלח אל';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'בדיקת חיבור';
 
   @override
-  String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+  String get accountsOtherWalletHeader => 'נשמרו מארנק אחר (לצפייה בלבד)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'ארנק זה אינו יכול להוציא אותם, ולכן הם אינם נכללים בסכום שלו. פתח את הארנק שאליו הם שייכים כדי להשתמש בהם.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'עדיין אין פעילות';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'נשלח';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'התקבל';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'בתוך הארנק';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'מטבעות שאוחדו';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => 'כששולחים או מקבלים HTN, זה יופיע כאן.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'הצג הכול';
 
   @override
-  String get show => 'Show';
+  String get show => 'הצג';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'החשבונות שלי';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'היי, $walletName';
   }
 
   @override
@@ -1228,18 +1223,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get importOption12WordsDescription => 'תואם עם ארנק Web ו-KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'ייבוא ארנק רגיל';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'ארנקים של 12 או 24 מילים עם גזירה רגילה וביטוי סיסמה BIP39 אופציונלי';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'ייבוא ארנק ישן';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'ארנקים של 12 מילים עם גזירה ישנה, תואמים ל-Web Wallet הישן ול-KDX';
 
   @override
   String get importOptionKpubTitle => 'ייבוא ארנק צפייה בלבד';
@@ -1457,121 +1452,120 @@ class AppLocalizationsHe extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'התנהגות כתובת העודף';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'כל כתובת שומרת על היתרה שלה, והעודף נשאר במקומו';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'בכל פעם נעשה שימוש בכתובת חדשה (פרטי, היתרה מתפזרת)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'התנהגות כתובת העודף';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'שמירת יתרות בכל כתובת';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'פרטי';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'בקשת סיסמה';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'בהפעלה';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'כשנעול';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'בעת חתימה';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'אפשרויות מתקדמות';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'ביטוי סיסמה BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'שים לב: זו אינה סיסמת ארנק; ביטויי סיסמה שונים של BIP39 פותחים ארנקים שונים.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'הזן ביטוי סיסמה';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'אשר ביטוי סיסמה';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'ביטויי הסיסמה אינם תואמים!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'ארנק עם ביטוי סיסמה BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'הזן עמלת עדיפות';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'עמלת בסיס';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'עמלת עדיפות';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'לא ניתן היה לזהות את כתובת היעד';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'לא ניתן היה לבנות מחדש את העסקה';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'לא ניתן היה לבנות מחדש את העסקה עם העמלה החדשה';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'לא ניתן היה לעדכן את העמלה';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'עדכון עמלה';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'מעדכן עמלה';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'עמלות עדיפות מומלצות';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'עמלת העדיפות החדשה חייבת להיות לפחות $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'בהמתנה';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'עסקה זו בהמתנה';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'עסקה בהמתנה';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'יש עסקאות בהמתנה ב-mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'עדכון עמלת העסקה';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'החלפה בעמלה (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'ב-mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'בחירת UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'נא לבחור UTXO נוספים';
 }
