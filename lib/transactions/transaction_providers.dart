@@ -4,47 +4,50 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app_providers.dart';
 import '../database/boxes.dart';
+import '../hoosat/grpc/rpc.pb.dart' show RpcAcceptedTransactionIds;
 import '../hoosat/hoosat.dart';
 import '../wallet/wallet_types.dart';
 import 'transaction_notifier.dart';
 import 'transaction_types.dart';
 import 'tx_cache_service.dart';
+import 'live_feeds.dart';
 import 'recent_outpoints_provider.dart';
 
 // All new transactions from hoosat node
-final _newTransactionProvider = StreamProvider.autoDispose((ref) {
-  final client = ref.watch(hoosatClientProvider);
+final _newTransactionProvider = StreamProvider.autoDispose<ApiTransaction>(
+    (ref) => feedUnlessPaused(ref, () {
+          final client = ref.watch(hoosatClientProvider);
 
-  final newBlock = client.notifyBlockAdded();
+          final newBlock = client.notifyBlockAdded();
 
-  return newBlock.asyncExpand((message) async* {
-    final isChainBlock = message.block.verboseData.isChainBlock;
-    var block = message.block;
+          return newBlock.asyncExpand((message) async* {
+            final isChainBlock = message.block.verboseData.isChainBlock;
+            var block = message.block;
 
-    // Some nodes send header-only blocks (no transactions) over
-    // notifyBlockAdded. Fetch the full block before emitting txs.
-    final headerOnly = block.verboseData.isHeaderOnly;
-    if ((headerOnly || block.transactions.isEmpty) &&
-        block.verboseData.hash.isNotEmpty) {
-      try {
-        block = await client.getBlockByHash(
-          block.verboseData.hash,
-          includeTransactions: true,
-        );
-      } catch (_) {
-        // Fall back to whatever we got in the notification.
-      }
-    }
+            // Some nodes send header-only blocks (no transactions) over
+            // notifyBlockAdded. Fetch the full block before emitting txs.
+            final headerOnly = block.verboseData.isHeaderOnly;
+            if ((headerOnly || block.transactions.isEmpty) &&
+                block.verboseData.hash.isNotEmpty) {
+              try {
+                block = await client.getBlockByHash(
+                  block.verboseData.hash,
+                  includeTransactions: true,
+                );
+              } catch (_) {
+                // Fall back to whatever we got in the notification.
+              }
+            }
 
-    for (final rpcTx in block.transactions) {
-      var apiTx = ApiTransaction.fromRpc(rpcTx);
-      if (isChainBlock) {
-        apiTx = apiTx.copyWith(isAccepted: true);
-      }
-      yield apiTx;
-    }
-  });
-});
+            for (final rpcTx in block.transactions) {
+              var apiTx = ApiTransaction.fromRpc(rpcTx);
+              if (isChainBlock) {
+                apiTx = apiTx.copyWith(isAccepted: true);
+              }
+              yield apiTx;
+            }
+          });
+        }));
 
 // New transactions associated with this wallet
 final _newWalletTransactionProvider = StreamProvider.autoDispose((ref) {
@@ -78,16 +81,17 @@ final _newWalletTransactionProvider = StreamProvider.autoDispose((ref) {
   return controller.stream;
 });
 
-final _acceptedTransactionIdsProvider = StreamProvider.autoDispose((ref) {
-  final client = ref.watch(hoosatClientProvider);
-  return client
-      .notifyVirtualSelectedParentChainChanged(
-    includeAcceptedTransactionIds: true,
-  )
-      .expand((message) {
-    return message.acceptedTransactionIds;
-  });
-});
+final _acceptedTransactionIdsProvider =
+    StreamProvider.autoDispose<RpcAcceptedTransactionIds>((ref) => feedUnlessPaused(ref, () {
+          final client = ref.watch(hoosatClientProvider);
+          return client
+              .notifyVirtualSelectedParentChainChanged(
+            includeAcceptedTransactionIds: true,
+          )
+              .expand((message) {
+            return message.acceptedTransactionIds;
+          });
+        }));
 
 final _txBoxProvider =
     Provider.autoDispose.family<LazyTypedBox<Tx>, WalletInfo>((ref, wallet) {
