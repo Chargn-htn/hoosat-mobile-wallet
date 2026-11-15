@@ -25,6 +25,15 @@ start: signing (`lib/hoosat/wallet_service`, `lib/wallet_auth`), transaction
 building (`lib/hoosat/transaction`), key and seed storage, and address and
 amount handling in Send and Merge.
 
+## Known limitations
+
+- **The default node connection is not encrypted.** The wallet talks to its
+  node over plain gRPC unless the node offers TLS (those nodes show a padlock in
+  the node list). Anyone on the network path can see which addresses the app
+  asks about and could show it wrong balances. They cannot change where a
+  payment goes: transactions are built and signed on the phone.
+- This is a pre-release wallet and has not had an independent security audit.
+
 ## Supported versions
 
 The project is pre-release. Only the latest code on `main` is supported.
