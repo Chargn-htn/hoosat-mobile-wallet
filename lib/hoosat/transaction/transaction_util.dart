@@ -192,6 +192,45 @@ Uint8List _getOutputsHash({
   return reusedValues.outputsHash!;
 }
 
+/// The "payload hash" slot of the signature hash (HTND: getPayloadHash).
+///
+///  * normal (native) transactions cannot carry a payload: 32 zero bytes;
+///  * every other kind (e.g. the data subnetwork, which carries a JSON note)
+///    signs a fingerprint of its payload: keyed BLAKE3 over the payload with
+///    its length in front (8 bytes, little-endian), like every other
+///    variable-length part of the hash.
+///
+/// Before this existed the wallet always wrote zeros, which is only right for
+/// normal transactions; a data transaction signed that way is rejected.
+Uint8List _getPayloadHash({
+  required Transaction tx,
+  required SighashReusedValues reusedValues,
+}) {
+  if (tx.subnetworkId.length != kDomainSubnetworkIDSize) {
+    throw ArgumentError('A subnetwork id is $kDomainSubnetworkIDSize bytes, '
+        'got ${tx.subnetworkId.length}');
+  }
+  if (_isNativeSubnetwork(tx.subnetworkId)) {
+    // A normal transaction cannot carry a payload. Signing one over a zero
+    // payload hash would leave the payload outside the signature, so refuse.
+    if (tx.payload != null && tx.payload!.isNotEmpty) {
+      throw ArgumentError('A normal transaction cannot carry a payload');
+    }
+    return Uint8List(kDomainHashSize);
+  }
+  if (reusedValues.payloadHash == null) {
+    final payload = tx.payload ?? Uint8List(0);
+    final builder = BytesBuilder();
+    builder.add(Int64(payload.length).toBytes());
+    builder.add(payload);
+    final key = stringToBytesUtf8(kTransactionSigningDomain);
+    reusedValues.payloadHash = blake3WithKey(builder.takeBytes(), key);
+  }
+  return reusedValues.payloadHash!;
+}
+
+bool _isNativeSubnetwork(Uint8List id) => id.every((b) => b == 0);
+
 Uint8List calculateSignatureHash({
   required Transaction tx,
   required int inputIndex,
@@ -266,8 +305,8 @@ Uint8List calculateSignatureHash({
   // gas
   builder.add(tx.gas.toBytes());
 
-  // payloadHash
-  builder.add(Uint8List(32));
+  // payloadHash: zeros for a normal transaction, a hash of the payload otherwise
+  builder.add(_getPayloadHash(tx: tx, reusedValues: reusedValues));
 
   // hashType
   builder.addByte(hashType.raw);

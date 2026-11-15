@@ -26,6 +26,10 @@ final kSubnetworkIdNative = Uint8List(kDomainSubnetworkIDSize);
 final kSubnetworkIdCoinbase = Uint8List(kDomainSubnetworkIDSize)..[0] = 1;
 final kSubnetworkIdRegistry = Uint8List(kDomainSubnetworkIDSize)..[0] = 2;
 
+/// The data subnetwork: its transactions may carry a JSON payload (HTND rules:
+/// a JSON object, at most 10,000 bytes, key names must not look like file data).
+final kSubnetworkIdData = Uint8List(kDomainSubnetworkIDSize)..[0] = 3;
+
 final kSubnetworkIdNativeHex = kSubnetworkIdNative.hex;
 final kSubnetworkIdCoinbaseHex = kSubnetworkIdCoinbase.hex;
 final kSubnetworkIdRegistryHex = kSubnetworkIdRegistry.hex;
