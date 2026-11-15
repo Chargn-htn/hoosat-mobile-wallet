@@ -8,6 +8,7 @@ import '../app_providers.dart';
 import '../app_router.dart';
 import '../hoosat/utils.dart';
 import '../l10n/l10n.dart';
+import '../util/screen_secure.dart';
 import '../util/formatters.dart';
 import '../util/ui_util.dart';
 import '../util/user_data_util.dart';
@@ -54,6 +55,12 @@ class IntroImportSeed extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // No screenshots or screen recording while the phrase is on this screen.
+    useEffect(() {
+      ScreenSecure.on();
+      return ScreenSecure.off;
+    }, const []);
+
     final theme = ref.watch(themeProvider);
     final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);

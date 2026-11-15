@@ -34,6 +34,19 @@ class MainActivity: FlutterFragmentActivity() {
                         }
                     }
                     result.success(null)
+                } else if (call.method == "secure") {
+                    // FLAG_SECURE: no screenshots, no screen recording, and the
+                    // app switcher shows a blank card, while a screen that shows
+                    // or takes the secret phrase is open.
+                    val on = call.arguments as? Boolean ?: false
+                    runOnUiThread {
+                        if (on) {
+                            window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+                        } else {
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+                        }
+                    }
+                    result.success(null)
                 } else {
                     result.notImplemented()
                 }

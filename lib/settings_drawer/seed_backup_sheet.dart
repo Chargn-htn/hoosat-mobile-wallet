@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../app_providers.dart';
 import '../app_router.dart';
 import '../l10n/l10n.dart';
+import '../util/screen_secure.dart';
 import '../widgets/buttons.dart';
 import '../widgets/mnemonic_display.dart';
 import '../widgets/sheet_widget.dart';
@@ -24,7 +25,9 @@ class SeedBackupSheet extends HookConsumerWidget {
       mainWidget: ListView(
         children: [
           Container(
-            child: MnemonicDisplay(wordList: mnemonic, obscured: true),
+            child: SecureScreen(
+              child: MnemonicDisplay(wordList: mnemonic, obscured: true),
+            ),
           ),
           const SizedBox(height: 30),
           if (wallet.usesBip39Passphrase)

@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../app_providers.dart';
 import '../l10n/l10n.dart';
+import '../util/screen_secure.dart';
 import 'backup_verify_questions.dart';
 import 'intro_back_button.dart';
 import 'intro_providers.dart';
@@ -15,6 +16,12 @@ class IntroBackupVerify extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // No screenshots or screen recording while the phrase is on this screen.
+    useEffect(() {
+      ScreenSecure.on();
+      return ScreenSecure.off;
+    }, const []);
+
     final theme = ref.watch(themeProvider);
     final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);

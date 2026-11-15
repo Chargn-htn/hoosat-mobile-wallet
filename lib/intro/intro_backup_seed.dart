@@ -5,6 +5,7 @@ import '../app_providers.dart';
 import '../l10n/l10n.dart';
 import '../widgets/buttons/primary_button.dart';
 import '../widgets/mnemonic_display.dart';
+import '../util/screen_secure.dart';
 import 'intro_back_button.dart';
 import 'intro_providers.dart';
 import 'widgets/new_mnemonic_button.dart';
@@ -107,7 +108,7 @@ class IntroBackupSeed extends ConsumerWidget {
               ),
               // Mnemonic word list
               if (mnemonic != null) ...[
-                MnemonicDisplay(wordList: mnemonic),
+                SecureScreen(child: MnemonicDisplay(wordList: mnemonic)),
                 const SizedBox(height: 20),
                 NewMnemonicButton(
                   strength: mnemonic.length == 12 ? 256 : 128,
