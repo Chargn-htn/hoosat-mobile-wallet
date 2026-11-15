@@ -90,7 +90,15 @@ class App extends HookConsumerWidget {
                   useMaterial3: false,
                   primaryColor: theme.primary,
                   fontFamily: kDefaultFontFamily,
-                  brightness: Brightness.dark,
+                  // Was hardcoded to Brightness.dark regardless of the
+                  // app's own light/dark toggle -- this ambient ThemeData
+                  // is what native Android widgets (the text-selection
+                  // copy/paste toolbar included) derive their colors from,
+                  // so it needs to actually track theme.isLightTheme, not
+                  // be fixed. Found via a real tester report: copy/paste
+                  // toolbar text invisible on a OnePlus device.
+                  brightness:
+                      theme.isLightTheme ? Brightness.light : Brightness.dark,
                   tooltipTheme: TooltipThemeData(
                     preferBelow: false,
                     margin: EdgeInsets.symmetric(vertical: 10),
@@ -107,12 +115,20 @@ class App extends HookConsumerWidget {
                   colorScheme: ThemeData()
                       .colorScheme
                       .copyWith(
-                        brightness: Brightness.dark,
+                        brightness: theme.isLightTheme
+                            ? Brightness.light
+                            : Brightness.dark,
                         secondary: theme.primary10,
+                        onSurface: theme.text,
                       )
                       .copyWith(surface: theme.backgroundDark),
-                  dialogTheme:
-                      DialogThemeData(backgroundColor: theme.backgroundDark),
+                  dialogTheme: DialogThemeData(
+                    backgroundColor: theme.backgroundDark,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
+                      side: BorderSide(color: theme.text10),
+                    ),
+                  ),
                 ),
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
                 supportedLocales: AppLocalizations.supportedLocales,

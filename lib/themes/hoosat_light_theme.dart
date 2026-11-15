@@ -4,11 +4,11 @@ import 'package:flutter/services.dart';
 import 'base_theme.dart';
 
 class HoosatLightTheme extends BaseTheme {
-  // Mock4 home-screen design (2026-11, owner-approved), reskinned across
-  // the whole app per the owner's call: one accent, near-black/white
-  // backgrounds instead of stark black/white, "colours need to be smooth."
+  // Home-screen redesign (2026-11), applied across the whole app: one
+  // accent, near-black/white backgrounds instead of stark black/white,
+  // smooth colours.
   static const accentGreen = Color(0xFF1FAE66);
-  static const accentGreenDarkened = Color(0xFF188850); // darken(accentGreen, 0.22), matching Mock4's own darken() helper exactly
+  static const accentGreenDarkened = Color(0xFF188850); // darken(accentGreen, 0.22)
 
   static const teal = Color(0xFF1E7A7A);
 

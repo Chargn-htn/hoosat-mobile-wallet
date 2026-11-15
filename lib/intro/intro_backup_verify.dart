@@ -58,7 +58,7 @@ class IntroBackupVerify extends HookConsumerWidget {
       // a real mnemonic before this screen is reachable), but never leave
       // the user on a dead screen with no way forward if it somehow does.
       return Scaffold(
-        backgroundColor: theme.backgroundDark,
+        backgroundColor: theme.background,
         body: SafeArea(
           child: Center(
             child: TextButton(onPressed: goBack, child: const Text('Back')),
@@ -71,7 +71,7 @@ class IntroBackupVerify extends HookConsumerWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.backgroundDark,
+      backgroundColor: theme.background,
       body: SafeArea(
         minimum: EdgeInsets.only(
           bottom: MediaQuery.of(context).size.height * 0.035,

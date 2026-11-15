@@ -60,7 +60,7 @@ class PasswordLockPage extends HookConsumerWidget {
       resizeToAvoidBottomInset: false,
       body: TapOutsideUnfocus(
         child: Container(
-          color: theme.backgroundDark,
+          color: theme.background,
           width: double.infinity,
           child: SafeArea(
             minimum: EdgeInsets.only(

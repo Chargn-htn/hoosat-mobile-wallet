@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/hs_kit.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app_icons.dart';
@@ -9,9 +10,7 @@ import '../settings/authentication_method.dart';
 import '../settings/device_unlock_option.dart';
 import '../settings/wallet_settings.dart';
 import '../util/lock_settings.dart';
-import '../widgets/app_icon_button.dart';
 import '../widgets/app_simpledialog.dart';
-import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_util.dart';
 import 'disable_password_sheet.dart';
 import 'double_line_item.dart';
@@ -72,7 +71,6 @@ class _SecurityMenuState extends ConsumerState<SecurityMenu> {
   @override
   Widget build(BuildContext context) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
     final wallet = ref.watch(walletProvider);
@@ -83,66 +81,11 @@ class _SecurityMenuState extends ConsumerState<SecurityMenu> {
     );
     final requestPasswordSetting = RequestPasswordSetting(requestPassword);
 
-    return Container(
-      decoration: BoxDecoration(
-        color: theme.backgroundDark,
-        boxShadow: [
-          BoxShadow(
-            color: theme.barrierWeakest,
-            offset: Offset(-5, 0),
-            blurRadius: 20,
-          ),
-        ],
-      ),
-      child: SafeArea(
-        minimum: const EdgeInsets.only(top: 60),
-        child: Column(
-          children: [
-            // Back button and Security Text
-            Container(
-              margin: const EdgeInsets.only(bottom: 10, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      //Back button
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Tooltip(
-                          message: l10n.back,
-                          child: AppIconButton(
-                            icon: AppIcons.back,
-                            onPressed: widget.onBackAction,
-                          ),
-                        ),
-                      ),
-                      //Security Header Text
-                      Text(
-                        l10n.securityHeader,
-                        style: styles.textStyleSettingsHeader,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-                child: Stack(
-              children: [
-                ListView(
-                  padding: const EdgeInsets.only(top: 15),
-                  children: [
-                    Container(
-                      margin: const EdgeInsetsDirectional.only(
-                        start: 30,
-                        bottom: 10,
-                      ),
-                      child: Text(
-                        l10n.preferences,
-                        style: styles.textStyleAppTextFieldHint,
-                      ),
-                    ),
+    return HsSubPage(
+      title: l10n.securityHeader,
+      onBack: widget.onBackAction,
+      child: HsMenuList(children: [
+                    HsSectionLabel(l10n.preferences),
                     // Authentication Method
                     if (_hasBiometrics) ...[
                       Divider(height: 2, color: theme.text15),
@@ -208,14 +151,7 @@ class _SecurityMenuState extends ConsumerState<SecurityMenu> {
                         ),
                       ],
                     Divider(height: 2, color: theme.text15),
-                  ],
-                ),
-                const ListTopGradient(),
-              ],
-            )),
-          ],
-        ),
-      ),
+                  ]),
     );
   }
 

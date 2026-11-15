@@ -21,7 +21,8 @@ class VersionWidget extends HookConsumerWidget {
     final l10n = l10nOf(context);
 
     final packageInfo = useFuture(
-      PackageInfo.fromPlatform().then((value) => 'v${value.version}'),
+      PackageInfo.fromPlatform()
+          .then((value) => 'v${value.version}+${value.buildNumber}'),
     );
 
     void showPrivacyPolicy() => openUrl(kPrivacyUrl);

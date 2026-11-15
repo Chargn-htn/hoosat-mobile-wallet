@@ -83,6 +83,7 @@
     }
   },
   "confirmed": "confirmed",
+  "confirmedMaturing": "confirmed · maturing",
   "confirming": "confirming",
   "contactAdded": "{contactName} added to contacts",
   "@contactAdded": {
@@ -479,6 +480,11 @@
   "home": "Home",
   "activity": "Activity",
   "totalBalance": "Total balance",
+  "homeSpendableNow": "Spendable now {spendable} · Still arriving {arriving} {symbol}",
+  "@homeSpendableNow": {"placeholders": {"spendable": {"type": "String"}, "arriving": {"type": "String"}, "symbol": {"type": "String"}}},
+  "homeArrivingSoon": "Coins still arriving are yours and can be spent soon.",
+  "homeArrivingReadyIn": "The coins still arriving can be spent in {time}.",
+  "@homeArrivingReadyIn": {"placeholders": {"time": {"type": "String"}}},
   "sendSpendableRestIn": "Spendable now {amount}. The rest can be spent in {time}.",
   "@sendSpendableRestIn": {"placeholders": {"amount": {"type": "String"}, "time": {"type": "String"}}},
   "sendSpendableRestArriving": "Spendable now {amount}. The rest is still arriving.",

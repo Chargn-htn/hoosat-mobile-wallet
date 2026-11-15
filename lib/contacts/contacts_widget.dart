@@ -7,9 +7,8 @@ import '../app_icons.dart';
 import '../app_providers.dart';
 import '../l10n/l10n.dart';
 import '../util/contacts.dart' as contactsHelper;
-import '../widgets/app_icon_button.dart';
-import '../widgets/buttons/text_outline_button.dart';
-import '../widgets/gradient_widgets.dart';
+import '../widgets/buttons.dart';
+import '../widgets/hs_kit.dart';
 import '../widgets/sheet_util.dart';
 import 'contact_add_sheet.dart';
 import 'contact_list_widget.dart';
@@ -25,7 +24,6 @@ class ContactsWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
     Future<void> importContacts() =>
@@ -42,82 +40,28 @@ class ContactsWidget extends ConsumerWidget {
       );
     }
 
-    return Container(
-      decoration: BoxDecoration(
-        color: theme.backgroundDark,
-        boxShadow: [
-          BoxShadow(
-            color: theme.barrierWeakest,
-            offset: Offset(-5, 0),
-            blurRadius: 20,
-          ),
-        ],
-      ),
-      child: SafeArea(
-        minimum: EdgeInsets.only(
-          bottom: MediaQuery.of(context).size.height * 0.035,
-          top: 60,
+    return HsSubPage(
+      title: l10n.contactsHeader,
+      onBack: onBackAction,
+      trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+        HsCircleButton(
+          icon: AppIcons.import_icon,
+          tooltip: l10n.import,
+          onPressed: importContacts,
         ),
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 10, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Tooltip(
-                        message: l10n.back,
-                        child: AppIconButton(
-                          icon: AppIcons.back,
-                          onPressed: onBackAction,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      l10n.contactsHeader,
-                      style: styles.textStyleSettingsHeader,
-                    ),
-                  ]),
-                  Row(children: [
-                    Tooltip(
-                      message: l10n.import,
-                      child: AppIconButton(
-                        icon: AppIcons.import_icon,
-                        onPressed: importContacts,
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    Tooltip(
-                      message: l10n.export,
-                      child: AppIconButton(
-                        icon: AppIcons.export_icon,
-                        onPressed: exportContacts,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                  ]),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Stack(children: [
-                const ContactListWidget(),
-                const ContactListTopGradient(),
-                const ContactListBottomGradient(),
-              ]),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: TextOutlineButton(
-                title: l10n.addContact,
-                margin: const EdgeInsets.only(left: 28, right: 28, top: 8),
-                onPressed: addContact,
-              ),
-            ),
-          ],
+        const SizedBox(width: 10),
+        HsCircleButton(
+          icon: AppIcons.export_icon,
+          tooltip: l10n.export,
+          onPressed: exportContacts,
+        ),
+      ]),
+      child: const ContactListWidget(),
+      bottom: Padding(
+        padding: const EdgeInsets.fromLTRB(22, 8, 22, 20),
+        child: PrimaryButton(
+          title: l10n.addContact,
+          onPressed: addContact,
         ),
       ),
     );

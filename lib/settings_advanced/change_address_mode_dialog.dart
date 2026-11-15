@@ -30,6 +30,21 @@ class ChangeAddressModeDialog extends ConsumerWidget {
     final l10n = l10nOf(context);
 
     final style = styles.textStyleDialogOptions;
+    final current = ref.watch(changeAddressModeProvider);
+
+    // A tick on the option that is active now, so the dialog itself shows
+    // which mode the wallet is in.
+    Widget option(String text, ChangeAddressMode mode) => Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            children: [
+              Expanded(child: Text(text, style: style)),
+              if (current == mode)
+                Icon(Icons.check_circle,
+                    size: 20, color: ref.watch(themeProvider).primary),
+            ],
+          ),
+        );
 
     return AppSimpleDialog(
       title: Padding(
@@ -45,12 +60,9 @@ class ChangeAddressModeDialog extends ConsumerWidget {
             context,
             withResult: ChangeAddressMode.keepPerAddress,
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(
-              l10n.changeAddressModeDialogOptionKeepPerAddress,
-              style: style,
-            ),
+          child: option(
+            l10n.changeAddressModeDialogOptionKeepPerAddress,
+            ChangeAddressMode.keepPerAddress,
           ),
         ),
         SimpleDialogOption(
@@ -58,12 +70,9 @@ class ChangeAddressModeDialog extends ConsumerWidget {
             context,
             withResult: ChangeAddressMode.private,
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(
-              l10n.changeAddressModeDialogOptionPrivate,
-              style: style,
-            ),
+          child: option(
+            l10n.changeAddressModeDialogOptionPrivate,
+            ChangeAddressMode.private,
           ),
         ),
       ],

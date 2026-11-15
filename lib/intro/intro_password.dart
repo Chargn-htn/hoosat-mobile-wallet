@@ -62,7 +62,7 @@ class IntroPassword extends HookConsumerWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.backgroundDark,
+      backgroundColor: theme.background,
       body: TapOutsideUnfocus(
         child: SafeArea(
           minimum: EdgeInsets.only(

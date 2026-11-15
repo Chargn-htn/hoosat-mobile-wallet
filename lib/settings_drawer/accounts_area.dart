@@ -5,8 +5,6 @@ import '../app_providers.dart';
 import '../wallet_address/address_details_sheet.dart';
 import '../widgets/selected_wallet_button.dart';
 import '../widgets/sheet_util.dart';
-import 'account_switcher.dart';
-import 'account_widget.dart';
 
 class AccountsArea extends ConsumerWidget {
   const AccountsArea({Key? key}) : super(key: key);
@@ -14,7 +12,6 @@ class AccountsArea extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
 
     final account = ref.watch(receiveAddressProvider);
     final wallet = ref.watch(walletProvider);
@@ -27,57 +24,44 @@ class AccountsArea extends ConsumerWidget {
       );
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(22, 4, 22, 0),
+      child: Row(
+        children: [
+          const SelectedWalletButton(),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(width: 30),
-                const SelectedWalletButton(),
-                const SizedBox(width: 20),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FittedBox(
-                      alignment: Alignment.centerLeft,
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '${wallet.name}',
-                        style: styles.textStyleAppTextFieldSimple.copyWith(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                Text(
+                  '${wallet.name}',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: theme.text,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                InkWell(
+                  onTap: showAccountDetails,
+                  child: Text(
+                    _short(account.encoded),
+                    maxLines: 1,
+                    style: TextStyle(fontSize: 12.5, color: theme.text60),
+                  ),
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: AccountSwitcher(),
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 18,
-            right: 18,
-            top: 12,
-            bottom: 8,
           ),
-          child: TextButton(
-            style: styles.accountButtonStyle,
-            onPressed: showAccountDetails,
-            child: const AccountWidget(),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
+
+  static String _short(String a) => a.length > 24
+      ? '${a.substring(0, 12)}...${a.substring(a.length - 8)}'
+      : a;
 }

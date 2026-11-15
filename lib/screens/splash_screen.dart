@@ -113,7 +113,7 @@ class SplashScreen extends HookConsumerWidget {
     }, const []);
 
     return Scaffold(
-      backgroundColor: theme.backgroundDark,
+      backgroundColor: theme.background,
     );
   }
 }

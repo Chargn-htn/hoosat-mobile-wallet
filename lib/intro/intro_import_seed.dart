@@ -196,7 +196,7 @@ class IntroImportSeed extends HookConsumerWidget {
 
     return Scaffold(
       key: scaffoldKey.value,
-      backgroundColor: theme.backgroundDark,
+      backgroundColor: theme.background,
       body: SafeArea(
         minimum: EdgeInsets.only(
           bottom: MediaQuery.of(context).size.height * 0.035,

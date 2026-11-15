@@ -5,7 +5,7 @@ import '../app_providers.dart';
 import '../l10n/l10n.dart';
 import 'main_tab_provider.dart';
 
-/// Floating pill tab bar from the Mock4 design: Home/Accounts/Activity/
+/// Floating pill tab bar: Home/Accounts/Activity/
 /// Settings, with an animated sliding highlight behind the selected tab.
 class MainTabBar extends ConsumerWidget {
   const MainTabBar({super.key});

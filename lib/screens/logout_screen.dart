@@ -35,7 +35,7 @@ class LogoutScreen extends HookConsumerWidget {
     }, const []);
 
     return Scaffold(
-      backgroundColor: theme.backgroundDark,
+      backgroundColor: theme.background,
       body: SafeArea(
         minimum: EdgeInsets.only(
           bottom: MediaQuery.of(context).size.height * 0.035,

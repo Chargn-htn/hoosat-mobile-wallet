@@ -480,6 +480,12 @@ abstract class AppLocalizations {
   /// **'confirmed'**
   String get confirmed;
 
+  /// No description provided for @confirmedMaturing.
+  ///
+  /// In en, this message translates to:
+  /// **'confirmed · maturing'**
+  String get confirmedMaturing;
+
   /// No description provided for @confirming.
   ///
   /// In en, this message translates to:
@@ -2166,6 +2172,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Total balance'**
   String get totalBalance;
+
+  /// No description provided for @homeSpendableNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Spendable now {spendable} · Still arriving {arriving} {symbol}'**
+  String homeSpendableNow(String spendable, String arriving, String symbol);
+
+  /// No description provided for @homeArrivingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coins still arriving are yours and can be spent soon.'**
+  String get homeArrivingSoon;
+
+  /// No description provided for @homeArrivingReadyIn.
+  ///
+  /// In en, this message translates to:
+  /// **'The coins still arriving can be spent in {time}.'**
+  String homeArrivingReadyIn(String time);
 
   /// No description provided for @sendSpendableRestIn.
   ///

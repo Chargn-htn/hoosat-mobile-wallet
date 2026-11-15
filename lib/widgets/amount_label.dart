@@ -15,7 +15,6 @@ class AmountLabel extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
 
     final symbol = ref.watch(symbolProvider(amount));
 
@@ -35,8 +34,8 @@ class AmountLabel extends HookConsumerWidget {
       amount: amount,
       child: Container(
         margin: EdgeInsets.only(
-          left: MediaQuery.of(context).size.width * 0.105,
-          right: MediaQuery.of(context).size.width * 0.105,
+          left: 22.0,
+          right: 22.0,
         ),
         padding: const EdgeInsets.symmetric(
           horizontal: 25,
@@ -46,6 +45,7 @@ class AmountLabel extends HookConsumerWidget {
         decoration: BoxDecoration(
           color: theme.backgroundDarkest,
           borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: theme.text10),
         ),
         child: Tooltip(
           message: exactAmount,
@@ -59,11 +59,19 @@ class AmountLabel extends HookConsumerWidget {
                   children: [
                     TextSpan(
                       text: formatedAmount,
-                      style: styles.textStyleApproxAmountSuccess,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: theme.text,
+                      ),
                     ),
                     TextSpan(
                       text: ' $symbol',
-                      style: styles.textStyleTokenSymbolSuccess,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: theme.text60,
+                      ),
                     ),
                   ],
                 ),

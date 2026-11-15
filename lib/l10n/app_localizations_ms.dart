@@ -168,6 +168,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get confirmed => 'disahkan';
 
   @override
+  String get confirmedMaturing => 'confirmed · maturing';
+
+  @override
   String get confirming => 'mengesahkan';
 
   @override
@@ -1095,6 +1098,20 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get totalBalance => 'Total balance';
+
+  @override
+  String homeSpendableNow(String spendable, String arriving, String symbol) {
+    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+  }
+
+  @override
+  String get homeArrivingSoon =>
+      'Coins still arriving are yours and can be spent soon.';
+
+  @override
+  String homeArrivingReadyIn(String time) {
+    return 'The coins still arriving can be spent in $time.';
+  }
 
   @override
   String sendSpendableRestIn(String amount, String time) {

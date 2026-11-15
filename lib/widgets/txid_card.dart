@@ -27,7 +27,7 @@ class TxIdCard extends HookConsumerWidget {
 
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.105,
+        horizontal: 22.0,
       ),
       width: double.infinity,
       child: Material(
@@ -45,8 +45,8 @@ class TxIdCard extends HookConsumerWidget {
             child: Column(
               children: [
                 Text(
-                  l10n.transactionId.toUpperCase(),
-                  style: styles.textStyleDataTypeHeaderHighlight,
+                  l10n.transactionId,
+                  style: styles.textStyleSubHeader,
                 ),
                 SeedThreeLineText(
                   seed: txId,

@@ -244,7 +244,7 @@ class _LockScreenState extends ConsumerState<LockScreen> {
 
     return Scaffold(
       body: Container(
-        color: theme.backgroundDark,
+        color: theme.background,
         width: double.infinity,
         child: SafeArea(
           minimum: EdgeInsets.only(

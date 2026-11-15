@@ -108,8 +108,8 @@ class AppTextField extends ConsumerWidget {
 
     return Container(
       margin: EdgeInsets.only(
-        left: leftMargin ?? MediaQuery.of(context).size.width * 0.105,
-        right: rightMargin ?? MediaQuery.of(context).size.width * 0.105,
+        left: leftMargin ?? 22.0,
+        right: rightMargin ?? 22.0,
         top: topMargin,
       ),
       padding: padding,
@@ -117,6 +117,7 @@ class AppTextField extends ConsumerWidget {
       decoration: BoxDecoration(
         color: theme.backgroundDarkest,
         borderRadius: BorderRadius.circular(25),
+        border: Border.all(color: theme.text10),
       ),
       child: overrideTextFieldWidget == null
           ? Stack(

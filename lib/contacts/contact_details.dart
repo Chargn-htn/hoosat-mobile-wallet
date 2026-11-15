@@ -138,8 +138,8 @@ class ContactDetails extends HookConsumerWidget {
                       Container(
                         width: double.infinity,
                         margin: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.105,
-                          right: MediaQuery.of(context).size.width * 0.105,
+                          left: 22.0,
+                          right: 22.0,
                         ),
                         padding: const EdgeInsets.symmetric(
                           horizontal: 25,
@@ -161,8 +161,8 @@ class ContactDetails extends HookConsumerWidget {
                         child: Container(
                           width: double.infinity,
                           margin: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width * 0.105,
-                            right: MediaQuery.of(context).size.width * 0.105,
+                            left: 22.0,
+                            right: 22.0,
                             top: 15,
                           ),
                           padding: const EdgeInsets.symmetric(

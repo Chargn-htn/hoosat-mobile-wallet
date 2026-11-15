@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../widgets/hs_kit.dart';
+import 'account_switcher.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app_icons.dart';
@@ -16,7 +18,6 @@ import '../util/ui_util.dart';
 import '../wallet_home/main_tab_provider.dart';
 import '../widgets/app_simpledialog.dart';
 import '../widgets/dialog.dart';
-import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_util.dart';
 import 'accounts_area.dart';
 import 'currency_dialog.dart';
@@ -193,7 +194,7 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
         child: Stack(children: [
           Consumer(builder: (context, ref, _) {
             return Container(
-              color: ref.watch(themeProvider).backgroundDark,
+              color: ref.watch(themeProvider).background,
               constraints: BoxConstraints.expand(),
             );
           }),
@@ -241,7 +242,6 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
   Widget buildMainSettings(BuildContext context) {
     return Consumer(builder: (context, ref, _) {
       final theme = ref.watch(themeProvider);
-      final styles = ref.watch(stylesProvider);
       final l10n = l10nOf(context);
 
       // final network = ref.watch(networkProvider);
@@ -294,29 +294,17 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
       }
 
       return Container(
-        decoration: BoxDecoration(color: theme.backgroundDark),
+        color: theme.background,
         child: SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: const AccountsArea(),
+              HsPageHeader(
+                title: l10n.settingsHeader,
+                trailing: const AccountSwitcher(),
               ),
-              // Settings items
-              Expanded(
-                child: Stack(children: [
-                  ListView(
-                    primary: false,
-                    padding: const EdgeInsets.only(top: 15),
-                    children: [
-                      Container(
-                        margin:
-                            EdgeInsetsDirectional.only(start: 30, bottom: 10),
-                        child: Text(
-                          l10n.preferences,
-                          style: styles.textStyleAppTextFieldHint,
-                        ),
-                      ),
+              const AccountsArea(),
+              Expanded(child: HsMenuList(children: [
+                      HsSectionLabel(l10n.preferences),
                       Divider(height: 2, color: theme.text15),
                       Consumer(builder: (context, ref, _) {
                         final currency = ref.watch(currencyProvider);
@@ -375,17 +363,7 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
                         },
                       ),
                       Divider(height: 2, color: theme.text15),
-                      Container(
-                        margin: const EdgeInsetsDirectional.only(
-                          start: 30,
-                          top: 20,
-                          bottom: 10,
-                        ),
-                        child: Text(
-                          l10n.manage,
-                          style: styles.textStyleAppTextFieldHint,
-                        ),
-                      ),
+                      HsSectionLabel(l10n.manage),
                       Divider(height: 2, color: theme.text15),
                       SingleLineItem(
                         heading: l10n.contactsHeader,
@@ -462,11 +440,7 @@ class _SettingsSheetState extends ConsumerState<SettingsSheet>
                       ),
                       Divider(height: 2, color: theme.text15),
                       const VersionWidget(),
-                    ],
-                  ),
-                  const ListTopGradient()
-                ]),
-              ),
+                    ])),
             ],
           ),
         ),

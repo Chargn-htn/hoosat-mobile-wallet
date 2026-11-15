@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'base_theme.dart';
 
 class HoosatDarkTheme extends BaseTheme {
-  // Mock4 home-screen design (2026-11, owner-approved), reskinned across
-  // the whole app per the owner's call: one accent, near-black/white
-  // backgrounds instead of stark black/white, "colours need to be smooth."
+  // Home-screen redesign (2026-11), applied across the whole app: one
+  // accent, near-black/white backgrounds instead of stark black/white,
+  // smooth colours.
   static const accentGreen = Color(0xFF1FAE66);
 
   static const teal = Color(0xFF1E7A7A);
@@ -16,7 +16,7 @@ class HoosatDarkTheme extends BaseTheme {
   static const nearBlackBg = Color(0xFF0B0B0C);
   static const nearBlackCard = Color(0xFF17181A);
 
-  static const blueishGreyDarkest = Color.fromARGB(255, 99, 99, 100);
+  static const blueishGreyDarkest = Color(0xFF232528); // soft input/card surface (was a heavy grey)
 
   static const white = Color(0xffffffff);
 

@@ -62,7 +62,7 @@ class KpubSheet extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   margin: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.105,
+                    horizontal: 22.0,
                   ),
                   width: double.infinity,
                   decoration: BoxDecoration(

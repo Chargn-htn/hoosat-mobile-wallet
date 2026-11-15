@@ -92,7 +92,13 @@ class MnemonicDisplay extends HookConsumerWidget {
         },
         child: Column(children: [
           Container(
-            margin: EdgeInsets.only(top: 15),
+            margin: const EdgeInsets.fromLTRB(22, 15, 22, 0),
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              color: theme.backgroundDark,
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(color: theme.text10),
+            ),
             child: Column(
               children: buildMnemonicRows(wordList.length ~/ 3),
             ),

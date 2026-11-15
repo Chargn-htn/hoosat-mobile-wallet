@@ -242,7 +242,7 @@ class _PinScreenState extends ConsumerState<PinScreen>
         return Container(
           constraints: BoxConstraints.expand(),
           child: Material(
-            color: widget.pinScreenBackgroundColor ?? theme.backgroundDark,
+            color: widget.pinScreenBackgroundColor ?? theme.background,
             child: Column(
               children: [
                 Container(

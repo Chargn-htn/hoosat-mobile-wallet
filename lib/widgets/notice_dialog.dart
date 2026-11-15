@@ -28,7 +28,6 @@ class NoticeDialog extends HookConsumerWidget {
         title,
         style: styles.textStyleButtonPrimaryOutline,
       ),
-      contentPadding: const EdgeInsetsDirectional.fromSTEB(12, 20, 24, 12),
       content: SingleChildScrollView(
         child: Column(
           children: [

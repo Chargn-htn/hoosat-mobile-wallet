@@ -23,7 +23,6 @@ class AmountCard extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
 
     final symbol = ref.watch(symbolProvider(amount));
 
@@ -41,14 +40,15 @@ class AmountCard extends HookConsumerWidget {
 
     return Container(
       margin: EdgeInsets.only(
-        left: MediaQuery.of(context).size.width * 0.105,
-        right: MediaQuery.of(context).size.width * 0.105,
+        left: 22.0,
+        right: 22.0,
       ),
       height: 48,
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.backgroundDarkest,
         borderRadius: BorderRadius.circular(50),
+        border: Border.all(color: theme.text10),
       ),
       // Amount text
       child: FiatValueContainer(
@@ -80,11 +80,19 @@ class AmountCard extends HookConsumerWidget {
                         children: [
                           TextSpan(
                             text: '$formatedAmount',
-                            style: styles.textStyleParagraphPrimary,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w800,
+                              color: theme.text,
+                            ),
                           ),
                           TextSpan(
                             text: ' $symbol',
-                            style: styles.textStyleParagraphPrimaryW100,
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: theme.text60,
+                            ),
                           ),
                         ],
                       ),

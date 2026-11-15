@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app_providers.dart';
+import 'hs_kit.dart';
 
 // Examples can assume:
 // enum Department { treasury, state }
@@ -75,7 +76,7 @@ class Dialog extends StatelessWidget {
 
   static const RoundedRectangleBorder _defaultDialogShape =
       RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4.0)));
+          borderRadius: BorderRadius.all(Radius.circular(28.0)));
   @override
   Widget build(BuildContext context) {
     final dialogTheme = DialogTheme.of(context);
@@ -192,7 +193,7 @@ class AppAlertDialog extends StatelessWidget {
     this.titlePadding,
     this.content,
     this.contentPadding =
-        const EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 24.0, 24.0),
+        const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 22.0),
     this.actions,
     this.semanticLabel,
     this.shape,
@@ -271,7 +272,7 @@ class AppAlertDialog extends StatelessWidget {
       children.add(Padding(
         padding: titlePadding ??
             EdgeInsetsDirectional.fromSTEB(
-                24.0, 24.0, 24.0, content == null ? 20.0 : 0.0),
+                24.0, 26.0, 24.0, content == null ? 20.0 : 0.0),
         child: DefaultTextStyle(
           style: Theme.of(context).textTheme.titleLarge!,
           child: Semantics(child: title, namesRoute: true),
@@ -296,7 +297,10 @@ class AppAlertDialog extends StatelessWidget {
     if (content != null) {
       children.add(Flexible(
         child: Padding(
-          padding: contentPadding,
+          // room between the text and the buttons, whatever the caller set
+          padding: actions != null && actions!.isNotEmpty
+              ? contentPadding.add(const EdgeInsets.only(bottom: 20))
+              : contentPadding,
           child: DefaultTextStyle(
             style: Theme.of(context).textTheme.titleMedium!,
             child: content!,
@@ -305,12 +309,11 @@ class AppAlertDialog extends StatelessWidget {
       ));
     }
 
-    if (actions != null) {
-      children.add(ButtonBarTheme(
-          child: OverflowBar(
-            children: actions!,
-          ),
-          data: ButtonBarTheme.of(context)));
+    if (actions != null && actions!.isNotEmpty) {
+      children.add(Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        child: _HsDialogActions(actions: actions!),
+      ));
     }
 
     Widget dialogChild = IntrinsicWidth(
@@ -657,4 +660,47 @@ Future<T?> showAppDialog<T>({
     transitionDuration: const Duration(milliseconds: 150),
     transitionBuilder: _buildMaterialDialogTransitions,
   );
+}
+
+
+/// Lays the dialog's buttons out as equal pills. Callers still pass
+/// [TextButton]s; each one is turned into the new style here, so every dialog
+/// in the app looks the same: the LAST button is the main (filled) action, the
+/// others are outlined. Labels lose their ALL CAPS.
+class _HsDialogActions extends StatelessWidget {
+  final List<Widget> actions;
+  const _HsDialogActions({required this.actions});
+
+  @override
+  Widget build(BuildContext context) {
+    final converted = <Widget>[];
+    for (var i = 0; i < actions.length; i++) {
+      final a = actions[i];
+      final isLast = i == actions.length - 1;
+      if (a is TextButton && a.child is Text && (a.child as Text).data != null) {
+        converted.add(HsDialogButton(
+          label: hsLabelCase((a.child as Text).data!),
+          onPressed: a.onPressed,
+          primary: isLast,
+        ));
+      } else {
+        converted.add(a);
+      }
+    }
+    // One or two short buttons share a row; more than two stack.
+    if (converted.length <= 2) {
+      return Row(children: [
+        for (var i = 0; i < converted.length; i++) ...[
+          if (i > 0) const SizedBox(width: 12),
+          Expanded(child: converted[i]),
+        ],
+      ]);
+    }
+    return Column(children: [
+      for (var i = 0; i < converted.length; i++) ...[
+        if (i > 0) const SizedBox(height: 10),
+        SizedBox(width: double.infinity, child: converted[i]),
+      ],
+    ]);
+  }
 }

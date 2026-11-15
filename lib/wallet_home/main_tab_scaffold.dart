@@ -9,13 +9,15 @@ import 'home_tab_content.dart';
 import 'main_tab_bar.dart';
 import 'main_tab_provider.dart';
 import 'wallet_background_tasks.dart';
+import '../l10n/l10n.dart';
+import '../widgets/hs_kit.dart';
 
-/// Root content for the main screen: whichever of the 4 tabs (Mock4
-/// design) is selected, plus the floating pill tab bar underneath.
+/// Root content for the main screen: whichever of the 4 tabs is selected,
+/// plus the floating pill tab bar underneath.
 ///
 /// Accounts, Activity, and Settings all reuse screens/widgets that
 /// already exist (built as a sheet/drawer originally) rather than
-/// duplicating them -- only Home gets genuinely new Mock4 content.
+/// duplicating them -- only Home gets genuinely new content.
 class MainTabScaffold extends ConsumerWidget {
   const MainTabScaffold({super.key});
 
@@ -26,7 +28,7 @@ class MainTabScaffold extends ConsumerWidget {
 
     final content = switch (tab) {
       MainTab.home => const HomeTabContent(),
-      MainTab.accounts => const AccountsScreen(),
+      MainTab.accounts => const AccountsScreen(isTab: true),
       MainTab.activity => const _ActivityTab(),
       MainTab.settings => const SettingsSheet(),
     };
@@ -54,8 +56,12 @@ class _ActivityTab extends StatelessWidget {
     // SingleChildScrollView gives its inner ListViews unbounded height,
     // which overflows whenever the empty state (TransactionEmptyList,
     // itself a ListView) renders -- only visible once an Activity-tab
-    // fetch can actually complete without throwing first, see
-    // htn_phone_wallet_roadmap.md.
-    return const TransactionsWidget();
+    // fetch can actually complete without throwing first.
+    return Column(
+      children: [
+        HsPageHeader(title: l10nOf(context).activity),
+        const Expanded(child: TransactionsWidget()),
+      ],
+    );
   }
 }
