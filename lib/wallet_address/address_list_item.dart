@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../app_icons.dart';
 import '../app_providers.dart';
 import '../l10n/l10n.dart';
 import '../send_sheet/balance_text_widget.dart';
 import '../util/ui_util.dart';
 import '../widgets/address_widgets.dart';
 import '../widgets/sheet_util.dart';
+import 'account_display_name_provider.dart';
 import 'address_details_sheet.dart';
 import 'wallet_address.dart';
 
@@ -25,10 +25,17 @@ class AddressListItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
     final accounts = ref.watch(addressNotifierProvider);
+
+    final displayName = resolveAccountDisplayName(
+      ref: ref,
+      encodedAddress: address.encoded,
+      mainAddress: accounts.defaultReceiveAddress.encoded,
+      mainLabel: l10n.mainAccountLabel,
+      fallbackName: address.name,
+    );
 
     void showAddressDetails() {
       if (onSelection != null) {
@@ -49,99 +56,79 @@ class AddressListItem extends ConsumerWidget {
       UIUtil.showSnackbar(message, context);
     }
 
-    return Column(
-      children: [
-        TextButton(
-          style: styles.defaultTextButtonStyle,
-          onPressed: showAddressDetails,
-          child: Container(
-            height: 120,
-            padding: const EdgeInsets.only(top: 8),
-            margin: const EdgeInsets.symmetric(horizontal: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: Icon(
-                          AppIcons.accountwallet,
-                          size: 30,
-                          color: accounts.isAddressSelected(address)
-                              ? theme.success
-                              : theme.primary,
-                        ),
-                      ),
-                      Center(
-                        child: Container(
-                          width: 40,
-                          height: 30,
-                          alignment: AlignmentDirectional(0, 0.3),
-                          child: Text(
-                            address.getShortName().toUpperCase(),
-                            style: styles.textStyleAccountShortName,
-                          ),
-                        ),
-                      ),
-                    ],
+    final selected = accounts.isAddressSelected(address);
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 5),
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: theme.backgroundDark,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: selected ? theme.primary45 : theme.text10,
+        ),
+      ),
+      child: InkWell(
+        onTap: showAddressDetails,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(14, 14, 6, 14),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: theme.primary15,
+                  borderRadius: BorderRadius.circular(13),
+                ),
+                child: Text(
+                  address.getShortName().toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800,
+                    color: theme.primary,
                   ),
                 ),
-                // Account name and address
-                Expanded(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            margin: EdgeInsetsDirectional.only(start: 20),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    address.name,
-                                    style: styles.textStyleDialogOptions,
-                                  ),
-                                ),
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: AddressThreeLineText(
-                                    address: address.encoded,
-                                    textAlign: TextAlign.start,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            height: 40,
-                            width: 40,
-                            child: TextButton(
-                              style: styles.roundedTextButtonStyle,
-                              child: Icon(Icons.copy, color: theme.text),
-                              onPressed: copyAddress,
-                            ),
-                          ),
-                        ],
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      displayName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 15.5,
+                        fontWeight: FontWeight.w700,
+                        color: theme.text,
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.only(top: 4, start: 20),
-                        child: BalanceRowWidget(address: address),
-                      )
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 4),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: AlignmentDirectional.centerStart,
+                      child: AddressThreeLineText(
+                        address: address.encoded,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    BalanceRowWidget(address: address),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              IconButton(
+                icon: Icon(Icons.copy, size: 18, color: theme.text60),
+                tooltip: l10n.copyAddress,
+                onPressed: copyAddress,
+              ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

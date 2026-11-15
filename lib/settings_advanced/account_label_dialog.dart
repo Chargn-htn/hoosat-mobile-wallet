@@ -78,7 +78,6 @@ class AccountLabelDialog extends HookConsumerWidget {
           ),
         ),
       ],
-      contentPadding: const EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 0.0),
     );
   }
 }

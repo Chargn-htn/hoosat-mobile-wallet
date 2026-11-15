@@ -25,7 +25,6 @@ class WalletAddressesSheet extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    final styles = ref.watch(stylesProvider);
     final l10n = l10nOf(context);
 
     final addressNotifier = ref.watch(addressNotifierProvider);
@@ -119,41 +118,44 @@ class WalletAddressesSheet extends HookConsumerWidget {
           ),
           mainWidget: Column(
             children: [
+              // Receive / Change: a soft pill switch, like the rest of the wallet.
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.fromLTRB(22, 4, 22, 0),
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: theme.text05,
+                  borderRadius: BorderRadius.circular(999),
+                ),
                 child: TabBar(
-                  indicatorWeight: 3,
-                  indicatorColor: theme.primary60,
-                  indicatorPadding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
+                  dividerColor: Colors.transparent,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: BoxDecoration(
+                    color: theme.primary15,
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  labelColor: theme.primary,
+                  unselectedLabelColor: theme.text60,
+                  labelStyle: const TextStyle(
+                    fontSize: 14.5,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  unselectedLabelStyle: const TextStyle(
+                    fontSize: 14.5,
+                    fontWeight: FontWeight.w700,
                   ),
                   tabs: [
                     Tab(
+                      height: 38,
                       child: GestureDetector(
                         onLongPress: () => copyAddresses(AddressType.receive),
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 20),
-                          child: Text(
-                            l10n.receive.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: styles.textStyleTabLabel,
-                          ),
-                        ),
+                        child: Center(child: Text(l10n.receive)),
                       ),
                     ),
                     Tab(
+                      height: 38,
                       child: GestureDetector(
                         onLongPress: () => copyAddresses(AddressType.change),
-                        child: Container(
-                          padding: const EdgeInsets.only(top: 20),
-                          width: double.infinity,
-                          child: Text(
-                            l10n.change.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: styles.textStyleTabLabel,
-                          ),
-                        ),
+                        child: Center(child: Text(l10n.change)),
                       ),
                     ),
                   ],

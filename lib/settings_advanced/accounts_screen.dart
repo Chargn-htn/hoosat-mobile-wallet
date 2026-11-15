@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../app_providers.dart';
+import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
 import '../settings/wallet_accounts.dart';
 import '../util/numberutil.dart';
+import '../wallet_address/account_adoption.dart';
 import '../util/ui_util.dart';
+import '../widgets/app_simpledialog.dart';
+import '../widgets/qr_code_widget.dart';
+import '../widgets/hs_kit.dart';
+import 'account_row.dart';
 import '../widgets/sheet_header_button.dart';
 import '../widgets/sheet_widget.dart';
 import 'account_label_dialog.dart';
@@ -16,7 +23,9 @@ import 'account_label_dialog.dart';
 /// from the Advanced menu; the real home screen (step 13e) will surface
 /// this more prominently once it's built.
 class AccountsScreen extends ConsumerWidget {
-  const AccountsScreen({super.key});
+  /// true when shown as the Accounts tab (page header), false as a sheet.
+  final bool isTab;
+  const AccountsScreen({super.key, this.isTab = false});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,14 +44,13 @@ class AccountsScreen extends ConsumerWidget {
       ...active.map((a) => a.address),
       ...archived.map((a) => a.address),
     ];
-    final balancesAsync =
-        ref.watch(balancesForAddressesProvider(allAddresses));
+    final allAddressesKey = allAddresses.join(',');
 
     // Archived accounts auto-restore if money shows up on them later --
     // the underlying address can't really be deleted, so archiving only
     // ever hides it. Checked whenever fresh balances come in for this
     // screen, rather than via a dedicated background listener.
-    ref.listen(balancesForAddressesProvider(allAddresses), (_, next) {
+    ref.listen(balancesForAddressesProvider(allAddressesKey), (_, next) {
       next.whenData((balances) {
         final funded = balances
             .where((b) => b.balance.toInt() > 0)
@@ -56,12 +64,11 @@ class AccountsScreen extends ConsumerWidget {
       });
     });
 
+    // Same source as Home: saved balances. Main = total minus the accounts.
     String balanceFor(String address) {
-      final balances = balancesAsync.valueOrNull;
-      if (balances == null) return '';
-      final entry = balances.where((b) => b.address == address).firstOrNull;
-      if (entry == null) return '';
-      final amount = Amount.raw(BigInt.from(entry.balance.toInt()));
+      final Amount amount = address == mainAddress.encoded
+          ? ref.watch(mainBalanceProvider)
+          : ref.watch(balanceForAddressProvider(address));
       return '${NumberUtil.formatedAmount(amount)} $kasSymbol';
     }
 
@@ -107,60 +114,115 @@ class AccountsScreen extends ConsumerWidget {
           .restoreAccount(account.address);
     }
 
+    Future<void> copyAddress(String address) async {
+      await Clipboard.setData(ClipboardData(text: address));
+      if (context.mounted) {
+        UIUtil.showSnackbar(l10n.addressCopied, context);
+      }
+    }
+
+    Future<void> showAccountDetails(String label, String address,
+        {String? balance}) async {
+      await showAppDialog(
+        context: context,
+        builder: (_) => AppAlertDialog(
+          title: Text(label, style: styles.textStyleDialogHeader),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(l10n.totalBalance, style: styles.textStyleSettingItemSubheader),
+              Padding(
+                padding: const EdgeInsets.only(top: 4, bottom: 16),
+                child: Text(
+                  balance ?? balanceFor(address),
+                  style: styles.textStyleSettingItemHeader,
+                ),
+              ),
+              Text(l10n.address, style: styles.textStyleSettingItemSubheader),
+              Padding(
+                padding: const EdgeInsets.only(top: 4, bottom: 16),
+                child: SelectableText(
+                  address,
+                  style: styles.textStyleAddressText90,
+                ),
+              ),
+              Center(
+                child: QrCodeWidget(
+                  data: address,
+                  onTap: () => copyAddress(address),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              style: styles.dialogButtonStyle,
+              onPressed: () => copyAddress(address),
+              child: Text(
+                l10n.copy.toUpperCase(),
+                style: styles.textStyleDialogButtonText,
+              ),
+            ),
+            TextButton(
+              style: styles.dialogButtonStyle,
+              onPressed: () => appRouter.pop(context),
+              child: Text(
+                l10n.close.toUpperCase(),
+                style: styles.textStyleDialogButtonText,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     Widget accountRow({
       required String label,
       required String address,
       VoidCallback? onTap,
       Widget? trailing,
+      String? balanceOverride,
     }) {
-      final truncated = address.length > 20
-          ? '${address.substring(0, 10)}…${address.substring(address.length - 6)}'
-          : address;
-      return InkWell(
+      return AccountRow(
+        label: label,
+        address: address,
+        balance: balanceOverride ?? balanceFor(address),
         onTap: onTap,
-        child: Container(
-          height: 64,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(label, style: styles.textStyleSettingItemHeader),
-                    Text(
-                      truncated,
-                      style: styles.textStyleSettingItemSubheader,
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                balanceFor(address),
-                style: styles.textStyleSettingItemHeader,
-              ),
-              if (trailing != null) ...[
-                const SizedBox(width: 8),
-                trailing,
-              ],
-            ],
-          ),
-        ),
+        onCopy: () => copyAddress(address),
+        copyTooltip: l10n.addressCopied,
+        trailing: trailing,
       );
     }
 
-    return SheetWidget(
-      title: l10n.manageAccounts,
-      rightWidget: SheetHeaderButton(
-        icon: Icons.add,
-        onPressed: active.length < maxActiveAdditionalAccounts
-            ? addAccount
-            : null,
-      ),
-      mainWidget: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        children: [
+    // Saved accounts this wallet cannot spend (they belong to another wallet).
+    final foreignAddresses =
+        ref.watch(accountAdoptionProvider).valueOrNull?.foreign ?? const [];
+    final foreignAccounts = ref
+        .watch(walletAccountsProvider)
+        .accounts
+        .where((a) => foreignAddresses.contains(a.address))
+        .toList();
+    final foreignLive = foreignAccounts.isEmpty
+        ? null
+        : ref.watch(balancesForAddressesProvider(
+            foreignAccounts.map((a) => a.address).join(',')));
+    String foreignBalance(String address) {
+      final entries = foreignLive?.valueOrNull;
+      if (entries == null) return '…';
+      final e = entries.where((b) => b.address == address).firstOrNull;
+      final raw = e == null ? BigInt.zero : BigInt.from(e.balance.toInt());
+      return '${NumberUtil.formatedAmount(Amount.raw(raw))} $kasSymbol';
+    }
+
+    final addButton = HsCircleButton(
+      icon: Icons.add,
+      tooltip: l10n.manageAccounts,
+      onPressed:
+          active.length < maxActiveAdditionalAccounts ? addAccount : null,
+    );
+    final list = HsMenuList(children: [
+
           accountRow(
             label: l10n.mainAccountLabel,
             address: mainAddress.encoded,
@@ -180,22 +242,23 @@ class AccountsScreen extends ConsumerWidget {
             Divider(height: 1, color: theme.text15),
           ],
           if (active.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 24),
-              child: Text(
-                l10n.noAdditionalAccountsYet,
-                textAlign: TextAlign.center,
-                style: styles.textStyleSettingItemSubheader,
+            HsNote(l10n.noAdditionalAccountsYet),
+          if (foreignAccounts.isNotEmpty) ...[
+            HsSectionLabel(l10n.accountsOtherWalletHeader),
+            for (final account in foreignAccounts) ...[
+              accountRow(
+                label: account.label,
+                address: account.address,
+                onTap: () => showAccountDetails(account.label, account.address,
+                    balance: foreignBalance(account.address)),
+                balanceOverride: foreignBalance(account.address),
               ),
-            ),
+              Divider(height: 1, color: theme.text15),
+            ],
+            HsNote(l10n.accountsOtherWalletNote),
+          ],
           if (archived.isNotEmpty) ...[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 4),
-              child: Text(
-                l10n.archivedAccountsHeader,
-                style: styles.textStyleSettingItemSubheader,
-              ),
-            ),
+            HsSectionLabel(l10n.archivedAccountsHeader),
             for (final account in archived) ...[
               accountRow(
                 label: account.label,
@@ -209,8 +272,24 @@ class AccountsScreen extends ConsumerWidget {
               Divider(height: 1, color: theme.text15),
             ],
           ],
+        
+    ]);
+    if (isTab) {
+      return Column(
+        children: [
+          HsPageHeader(title: l10n.manageAccounts, trailing: addButton),
+          Expanded(child: list),
         ],
+      );
+    }
+    return SheetWidget(
+      title: l10n.manageAccounts,
+      rightWidget: SheetHeaderButton(
+        icon: Icons.add,
+        onPressed:
+            active.length < maxActiveAdditionalAccounts ? addAccount : null,
       ),
+      mainWidget: list,
     );
   }
 }

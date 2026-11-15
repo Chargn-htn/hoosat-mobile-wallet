@@ -6,21 +6,37 @@ import '../app_providers.dart';
 import '../hoosat/hoosat.dart';
 import '../wallet_address/wallet_address.dart';
 
-/// Which address this send draws from -- null means "any" (today's
-/// default: pools balance from every address in the wallet). Set by the
-/// picker on the Send compose screen (step 13d).
-final sendFromAddressProvider =
-    StateProvider.autoDispose<WalletAddress?>((ref) => null);
+/// Which address this send draws from. It starts as MAIN: everything that is
+/// not set aside in a named account. Money in an account is only spent when the
+/// user picks that account (or picks "Any", which is null and means every
+/// address, accounts included). Set by the picker on the Send screen (13d).
+final sendFromAddressProvider = StateProvider.autoDispose<WalletAddress?>(
+  (ref) => ref.read(addressNotifierProvider).defaultReceiveAddress,
+);
 
 /// spendableUtxosProvider filtered down to [address]'s own utxos, or the
 /// full wallet-wide pool when [address] is null.
 final sendSpendableUtxosForProvider =
     Provider.autoDispose.family<List<Utxo>, WalletAddress?>((ref, address) {
   final utxos = ref.watch(spendableUtxosProvider);
-  if (address == null) {
-    return utxos;
+  return spendableForFrom(
+    utxos,
+    fromAddress: address?.encoded,
+    mainAddress: ref.watch(mainAddressProvider),
+    accountAddresses: ref.watch(accountAddressesProvider),
+  );
+});
+
+/// What can be spent right now from a "From" choice (the sum of its spendable
+/// coins). A provider, so a wallet with tens of thousands of coins adds them
+/// up once and not on every keystroke.
+final sendSpendableAmountProvider =
+    Provider.autoDispose.family<BigInt, WalletAddress?>((ref, address) {
+  var sum = BigInt.zero;
+  for (final u in ref.watch(sendSpendableUtxosForProvider(address))) {
+    sum += u.utxoEntry.amount;
   }
-  return utxos.where((u) => u.address == address.encoded).toList();
+  return sum;
 });
 
 /// Same formula as maxSendProvider, but scoped to [address] -- the most a

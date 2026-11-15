@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../app_providers.dart';
 import '../hoosat/hoosat.dart';
+import '../l10n/l10n.dart';
+import '../wallet_address/account_display_name_provider.dart';
 import 'address_widgets.dart';
 
-class AddressCard extends HookConsumerWidget {
+class AddressCard extends ConsumerWidget {
   final Address address;
   final bool showLabel;
   final AddressTextType type;
@@ -22,34 +23,40 @@ class AddressCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
 
-    final label = useMemoized(() {
-      if (!showLabel) return null;
+    // The same name for an address everywhere it is shown: a saved contact's
+    // name, else the account name the user gave it, else "Main", and only then
+    // the generic automatic name (Receive N). This used to jump to the generic
+    // name on the confirm screen, after the Send screen had shown the account's
+    // own name.
+    final contacts = ref.watch(contactsProvider);
+    final accountLabel = ref.watch(accountLabelProvider(address.encoded));
+    final mainAddress = ref.watch(mainAddressProvider);
+    final mainLabel = l10nOf(context).mainAccountLabel;
 
-      final contacts = ref.read(contactsProvider);
-      final contact = contacts.getContactWithAddress(
-        address.encoded,
-        includeLabels: true,
+    String? label;
+    if (showLabel) {
+      label = displayLabelFor(
+        contactName: contacts
+            .getContactWithAddress(address.encoded, includeLabels: true)
+            ?.name,
+        accountLabel: accountLabel,
+        isMain: address.encoded == mainAddress,
+        mainLabel: mainLabel,
+        genericName:
+            ref.read(addressNotifierProvider).nameForAddress(address.encoded),
       );
-      if (contact == null) {
-        final addressNotifier = ref.read(addressNotifierProvider);
-        final addressLabel = addressNotifier.nameForAddress(address.encoded);
-        if (addressLabel != null) {
-          return addressLabel;
-        }
-      }
-
-      return contact?.name;
-    }, [address, showLabel]);
+    }
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
       margin: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.105,
+        horizontal: 22.0,
       ),
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.backgroundDarkest,
         borderRadius: BorderRadius.circular(25),
+        border: Border.all(color: theme.text10),
       ),
       child: AddressThreeLineText(
         address: address.encoded,

@@ -23,8 +23,8 @@ class ContactsPopoverWidget extends ConsumerWidget {
 
     return Container(
       margin: EdgeInsets.only(
-        left: MediaQuery.of(context).size.width * 0.105,
-        right: MediaQuery.of(context).size.width * 0.105,
+        left: 22.0,
+        right: 22.0,
       ),
       alignment: Alignment.bottomCenter,
       constraints: const BoxConstraints(

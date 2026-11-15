@@ -23,8 +23,8 @@ class FeeWidget extends ConsumerWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.only(
-        left: MediaQuery.of(context).size.width * 0.105,
-        right: MediaQuery.of(context).size.width * 0.105,
+        left: 22.0,
+        right: 22.0,
         top: 5,
       ),
       padding: const EdgeInsets.symmetric(

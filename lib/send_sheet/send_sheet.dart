@@ -12,6 +12,7 @@ import '../app_router.dart';
 import '../contacts/contact.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
+import '../wallet_address/account_display_name_provider.dart';
 import '../settings_advanced/compound_utxos_dialog.dart';
 import '../util/numberutil.dart';
 import '../util/ui_util.dart';
@@ -24,9 +25,11 @@ import '../widgets/fiat_mode_icon.dart';
 import '../widgets/fiat_value_container.dart';
 import '../widgets/gradient_widgets.dart';
 import '../widgets/sheet_handle.dart';
+import '../widgets/sheet_util.dart';
 import '../widgets/tap_outside_unfocus.dart';
 import 'balance_text_widget.dart';
 import 'fee_widget.dart';
+import 'my_accounts_picker_sheet.dart';
 import 'send_from_picker.dart';
 import 'send_from_providers.dart';
 import 'send_note_widget.dart';
@@ -80,6 +83,12 @@ class _SendSheetState extends ConsumerState<SendSheet> {
   // Set to true when a contact is being entered
   bool _isContact = false;
 
+  // Set when the user picks one of their OWN accounts from "My accounts": the
+  // field then shows the account's name (reassurance) while the real address
+  // is kept here and used when sending.
+  String? _pickedAccountAddress;
+  String? _pickedAccountLabel;
+
   // Buttons States (Used because we hide the buttons under certain conditions)
   bool _contactButtonVisible = true;
   bool _pasteButtonVisible = true;
@@ -100,7 +109,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
     // Do an UTXO refresh for all active addresses
     final addresses = ref.read(activeAddressesProvider);
     final utxoNotifier = ref.read(utxoNotifierProvider);
-    utxoNotifier.refresh(addresses: addresses);
+    utxoNotifier.refresh(addresses: addresses, force: true);
 
     _contacts = [];
     if (widget.contact != null) {
@@ -268,6 +277,64 @@ class _SendSheetState extends ConsumerState<SendSheet> {
       setState(() {});
     }
 
+    Future<void> pickMyAccount() async {
+      FocusManager.instance.primaryFocus?.unfocus();
+
+      final theme = ref.read(themeProvider);
+      final picked = await Sheets.showAppHeightNineSheet<String>(
+        context: context,
+        theme: theme,
+        widget: const MyAccountsPickerSheet(),
+      );
+      if (picked == null) {
+        return;
+      }
+
+      final prefix = ref.read(addressPrefixProvider);
+      final address = Address.tryParse(picked, expectedPrefix: prefix);
+      if (address == null) {
+        return;
+      }
+
+      final contacts = ref.read(contactsProvider);
+      final contact = contacts.getContactWithAddress(address.encoded);
+
+      _addressValidationText = '';
+      _pasteButtonVisible = false;
+      _contactButtonVisible = false;
+
+      final mainAddress =
+          ref.read(addressNotifierProvider).defaultReceiveAddress.encoded;
+      final accountLabel = address.encoded == mainAddress
+          ? l10n.mainAccountLabel
+          : ref.read(accountLabelProvider(address.encoded));
+
+      _pickedAccountAddress = null;
+      _pickedAccountLabel = null;
+
+      if (contact == null && accountLabel != null) {
+        // Show the name the user gave this account, like a contact.
+        _isContact = true;
+        _sendAddressStyle = AddressStyle.PRIMARY;
+        _addressController.text = accountLabel;
+        _addressValidAndUnfocused = false;
+        _pickedAccountAddress = address.encoded;
+        _pickedAccountLabel = accountLabel;
+      } else if (contact == null) {
+        _isContact = false;
+        _sendAddressStyle = AddressStyle.TEXT90;
+        _addressController.text = address.encoded;
+        _addressValidAndUnfocused = true;
+      } else {
+        _isContact = true;
+        _sendAddressStyle = AddressStyle.PRIMARY;
+        _addressController.text = contact.name;
+        _addressValidAndUnfocused = false;
+      }
+
+      setState(() {});
+    }
+
     void sendAction() {
       final validRequest = _validateRequest();
       if (!validRequest) {
@@ -276,7 +343,11 @@ class _SendSheetState extends ConsumerState<SendSheet> {
       final addressText = _addressController.text.trim();
       String destination;
 
-      if (addressText.startsWith("@")) {
+      if (_pickedAccountAddress != null && addressText == _pickedAccountLabel) {
+        // An account the person picked from "My accounts" (its name may start
+        // with "@" too, so this must be checked before the contact rule).
+        destination = _pickedAccountAddress!;
+      } else if (addressText.startsWith("@")) {
         final contacts = ref.read(contactsProvider);
         // Need to make sure its a valid contact
         final contact = contacts.getContactWithName(addressText);
@@ -377,6 +448,28 @@ class _SendSheetState extends ConsumerState<SendSheet> {
               ),
             ),
             BalanceTextWidget(address: ref.watch(sendFromAddressProvider)),
+            // When part of the balance cannot be spent yet (coins that have just
+            // arrived), say how much CAN be, and when the rest will be ready.
+            Builder(builder: (context) {
+              final from = ref.watch(sendFromAddressProvider);
+              final balance = ref.watch(fromBalanceProvider(from)).raw;
+              final spendable = ref.watch(sendSpendableAmountProvider(from));
+              if (spendable >= balance) return const SizedBox.shrink();
+              final ready = ref.watch(nextCoinsReadyProvider);
+              return Padding(
+                padding: const EdgeInsets.only(top: 4, left: 30, right: 30),
+                child: Text(
+                  ready == null
+                      ? l10nOf(context).sendSpendableRestArriving(
+                          NumberUtil.formatedAmount(Amount.raw(spendable)))
+                      : l10nOf(context).sendSpendableRestIn(
+                          NumberUtil.formatedAmount(Amount.raw(spendable)),
+                          ready),
+                  textAlign: TextAlign.center,
+                  style: styles.textStyleParagraphThinPrimary,
+                ),
+              );
+            }),
             // A main container that holds everything
             Expanded(
               child: Container(
@@ -471,6 +564,22 @@ class _SendSheetState extends ConsumerState<SendSheet> {
                                 ),
                               ),
 
+                              // The real address under a picked account's name, so the
+                              // user can check both the name AND the address.
+                              if (_pickedAccountAddress != null &&
+                                  _addressController.text.trim() ==
+                                      _pickedAccountLabel)
+                                Container(
+                                  alignment: const AlignmentDirectional(0, 0),
+                                  margin: const EdgeInsets.only(
+                                      top: 6, left: 30, right: 30),
+                                  child: Text(
+                                    _pickedAccountAddress!,
+                                    textAlign: TextAlign.center,
+                                    style: styles.textStyleAddressText60,
+                                  ),
+                                ),
+
                               // ******* Enter Address Error Container ******* //
                               Container(
                                 alignment: const AlignmentDirectional(0, 0),
@@ -516,12 +625,17 @@ class _SendSheetState extends ConsumerState<SendSheet> {
                     onPressed: sendAction,
                   ),
                   const SizedBox(height: 16),
-                  if (widget.uri == null)
+                  if (widget.uri == null) ...[
                     PrimaryOutlineButton(
                       title: l10n.scanQrCode,
                       onPressed: scanQrCode,
-                    )
-                  else
+                    ),
+                    const SizedBox(height: 16),
+                    PrimaryOutlineButton(
+                      title: l10n.myAccounts,
+                      onPressed: pickMyAccount,
+                    ),
+                  ] else
                     PrimaryOutlineButton(
                       title: l10n.cancel,
                       onPressed: () => appRouter.pop(context),
@@ -601,9 +715,7 @@ class _SendSheetState extends ConsumerState<SendSheet> {
     }
 
     final fromAddress = ref.read(sendFromAddressProvider);
-    final balanceRaw = fromAddress == null
-        ? ref.read(totalBalanceProvider).raw
-        : ref.read(balanceForAddressProvider(fromAddress.encoded)).raw;
+    final balanceRaw = ref.read(fromBalanceProvider(fromAddress)).raw;
     final utxoCount = ref.read(sendSpendableUtxosForProvider(fromAddress)).length;
     final maxFees = BigInt.from(utxoCount) * kFeePerInput;
 
@@ -616,6 +728,71 @@ class _SendSheetState extends ConsumerState<SendSheet> {
 
     final maxSend = ref.read(maxSendForProvider(fromAddress));
     if (amountRaw! > maxSend.raw) {
+      // Two different reasons this can happen, and they need different
+      // messages: either this account's utxos are genuinely fragmented
+      // (compounding helps), or the shortfall is because recently-received
+      // funds haven't hit the network's 1000-DAA-score maturity threshold
+      // yet (compounding does NOT help here -- it would hit the exact
+      // same maturity rejection, and just confuses the user into thinking
+      // "consolidate" is the fix when "wait a few minutes" is).
+      final scopeCoins = spendableForFrom(
+        ref.read(utxoListProvider),
+        fromAddress: fromAddress?.encoded,
+        mainAddress: ref.read(mainAddressProvider),
+        accountAddresses: ref.read(accountAddressesProvider),
+      );
+      final score = ref.read(matureScoreProvider);
+      final heldBack = ref.read(heldBackCoinsProvider.notifier).active();
+      // What is in this "From" choice but cannot be spent yet: coins still
+      // maturing and coins just spent in a payment that is not confirmed.
+      var notYet = BigInt.zero;
+      for (final u in scopeCoins) {
+        final maturing = score != null &&
+            u.utxoEntry.blockDaaScore + BigInt.from(kMinUtxoMaturityDaaScore) >=
+                score;
+        final held = heldBack
+            .contains(outpointKey(u.outpoint.transactionId, u.outpoint.index));
+        if (maturing || held) notYet += u.utxoEntry.amount;
+      }
+      // Waiting only helps when those coins would cover what is missing;
+      // otherwise the coins are too scattered and merging is the fix.
+      final waitingHelps = notYet >= amountRaw! - maxSend.raw;
+
+      if (waitingHelps) {
+        final styles = ref.read(stylesProvider);
+        showAppDialog(
+          context: context,
+          builder: (_) => AppAlertDialog(
+            title: Text(l10n.fundsStillConfirmingTitle,
+                style: styles.textStyleDialogHeader),
+            content: Text(l10n.fundsStillConfirmingBody,
+                style: styles.textStyleParagraph),
+            actions: [
+              TextButton(
+                style: styles.dialogButtonStyle,
+                onPressed: () {
+                  appRouter.pop(context);
+                  showSendFromDialog(context, ref);
+                },
+                child: Text(
+                  l10n.fundsStillConfirmingSwitchAccount.toUpperCase(),
+                  style: styles.textStyleDialogButtonText,
+                ),
+              ),
+              TextButton(
+                style: styles.dialogButtonStyle,
+                onPressed: () => appRouter.pop(context),
+                child: Text(
+                  l10n.close.toUpperCase(),
+                  style: styles.textStyleDialogButtonText,
+                ),
+              ),
+            ],
+          ),
+        );
+        return false;
+      }
+
       showAppDialog(
         context: context,
         builder: (_) => CompoundUtxosDialog(lightMode: true, rbf: widget.rbf),
@@ -625,7 +802,9 @@ class _SendSheetState extends ConsumerState<SendSheet> {
 
     // Validate address
     final addressText = _addressController.text.trim();
-    bool isContact = addressText.startsWith('@');
+    final pickedAccount = _pickedAccountAddress != null &&
+        addressText == _pickedAccountLabel;
+    bool isContact = addressText.startsWith('@') || pickedAccount;
     if (addressText.isEmpty) {
       setState(() {
         _addressValidationText = l10n.addressMising;

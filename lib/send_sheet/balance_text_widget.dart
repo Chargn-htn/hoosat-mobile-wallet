@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app_providers.dart';
+import '../util/numberutil.dart';
 import '../wallet_address/wallet_address.dart';
 
 final _balanceProvider =
@@ -9,8 +10,7 @@ final _balanceProvider =
   if (address == null) {
     return ref.watch(formatedTotalBalanceProvider);
   }
-  final balance = ref.watch(formatedBalanceForAddressProvider(address.encoded));
-  return balance;
+  return NumberUtil.formatedAmount(ref.watch(fromBalanceProvider(address)));
 });
 
 final _fiatProvider =
@@ -18,8 +18,7 @@ final _fiatProvider =
   if (address == null) {
     return ref.watch(formatedTotalFiatProvider);
   }
-  final balance = ref.watch(formatedFiatForAddressProvider(address.encoded));
-  return balance;
+  return ref.watch(formatedFiatForAmountProvider(ref.watch(fromBalanceProvider(address))));
 });
 
 class BalanceRowWidget extends ConsumerWidget {

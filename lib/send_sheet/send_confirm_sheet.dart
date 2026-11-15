@@ -113,8 +113,11 @@ class SendConfirmSheet extends HookConsumerWidget {
     }) async {
       final addressNotifier = ref.read(addressNotifierProvider);
       final changeAddressMode = ref.read(changeAddressModeProvider);
-      final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
       final sendFromAddress = ref.read(sendFromAddressProvider);
+      final changeAddress = await addressNotifier.changeAddressFor(
+        changeAddressMode,
+        fromAddress: sendFromAddress,
+      );
       final spendableUtxos = ref.read(sendSpendableUtxosForProvider(sendFromAddress));
       final txBuilder = TransactionBuilder(
         utxos: spendableUtxos,

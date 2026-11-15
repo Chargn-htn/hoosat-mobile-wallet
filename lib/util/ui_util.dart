@@ -290,7 +290,10 @@ abstract class UIUtil {
 
     try {
       final changeAddressMode = ref.read(changeAddressModeProvider);
-      final changeAddress = await addressNotifier.changeAddressFor(changeAddressMode);
+      final changeAddress = await addressNotifier.changeAddressFor(
+        changeAddressMode,
+        fromAddress: sendFromAddress,
+      );
 
       Amount? priorityFee;
       if (rbf) {

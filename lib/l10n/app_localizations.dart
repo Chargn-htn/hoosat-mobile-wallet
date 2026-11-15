@@ -1992,6 +1992,24 @@ abstract class AppLocalizations {
   /// **'Failed to compound transactions'**
   String get compoundFailure;
 
+  /// No description provided for @fundsStillConfirmingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Funds still confirming'**
+  String get fundsStillConfirmingTitle;
+
+  /// No description provided for @fundsStillConfirmingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.'**
+  String get fundsStillConfirmingBody;
+
+  /// No description provided for @fundsStillConfirmingSwitchAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch account'**
+  String get fundsStillConfirmingSwitchAccount;
+
   /// No description provided for @compoundTooFewUtxos.
   ///
   /// In en, this message translates to:
@@ -2149,6 +2167,36 @@ abstract class AppLocalizations {
   /// **'Total balance'**
   String get totalBalance;
 
+  /// No description provided for @sendSpendableRestIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Spendable now {amount}. The rest can be spent in {time}.'**
+  String sendSpendableRestIn(String amount, String time);
+
+  /// No description provided for @sendSpendableRestArriving.
+  ///
+  /// In en, this message translates to:
+  /// **'Spendable now {amount}. The rest is still arriving.'**
+  String sendSpendableRestArriving(String amount);
+
+  /// No description provided for @submittedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted to'**
+  String get submittedTo;
+
+  /// No description provided for @accountsOtherWalletHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved from another wallet (view only)'**
+  String get accountsOtherWalletHeader;
+
+  /// No description provided for @accountsOtherWalletNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.'**
+  String get accountsOtherWalletNote;
+
   /// No description provided for @seeAll.
   ///
   /// In en, this message translates to:
@@ -2160,6 +2208,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show'**
   String get show;
+
+  /// No description provided for @myAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'My Accounts'**
+  String get myAccounts;
 
   /// No description provided for @homeGreeting.
   ///

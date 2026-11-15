@@ -1007,6 +1007,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get compoundFailure => 'Не вдалося об\'єднати транзакції';
 
   @override
+  String get fundsStillConfirmingTitle => 'Funds still confirming';
+
+  @override
+  String get fundsStillConfirmingBody =>
+      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+
+  @override
+  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+
+  @override
   String get compoundTooFewUtxos => 'Потрібно принаймні два UTXO';
 
   @override
@@ -1090,10 +1100,34 @@ class AppLocalizationsUk extends AppLocalizations {
   String get totalBalance => 'Total balance';
 
   @override
+  String sendSpendableRestIn(String amount, String time) {
+    return 'Spendable now $amount. The rest can be spent in $time.';
+  }
+
+  @override
+  String sendSpendableRestArriving(String amount) {
+    return 'Spendable now $amount. The rest is still arriving.';
+  }
+
+  @override
+  String get submittedTo => 'Submitted to';
+
+  @override
+  String get accountsOtherWalletHeader =>
+      'Saved from another wallet (view only)';
+
+  @override
+  String get accountsOtherWalletNote =>
+      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+
+  @override
   String get seeAll => 'See all';
 
   @override
   String get show => 'Show';
+
+  @override
+  String get myAccounts => 'My Accounts';
 
   @override
   String homeGreeting(String walletName) {

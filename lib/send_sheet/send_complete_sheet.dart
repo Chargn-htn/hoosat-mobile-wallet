@@ -69,7 +69,7 @@ class SendCompleteSheet extends HookConsumerWidget {
                         margin: const EdgeInsets.only(top: 30, bottom: 10),
                         alignment: Alignment.center,
                         child: Text(
-                          l10n.sentTo.toUpperCase(),
+                          l10n.submittedTo,
                           style: styles.textStyleHeader2Colored,
                         ),
                       ),

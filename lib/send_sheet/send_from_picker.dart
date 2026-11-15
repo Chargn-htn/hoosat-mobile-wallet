@@ -5,6 +5,7 @@ import '../app_providers.dart';
 import '../app_router.dart';
 import '../l10n/l10n.dart';
 import '../settings/wallet_accounts.dart';
+import '../wallet_address/account_display_name_provider.dart';
 import '../widgets/app_simpledialog.dart';
 import 'send_from_providers.dart';
 
@@ -26,7 +27,16 @@ class SendFromRow extends ConsumerWidget {
     final l10n = l10nOf(context);
 
     final fromAddress = ref.watch(sendFromAddressProvider);
-    final label = fromAddress == null ? l10n.sendFromAny : fromAddress.name;
+    final mainAddress = ref.watch(addressNotifierProvider).defaultReceiveAddress;
+    final label = fromAddress == null
+        ? l10n.sendFromAny
+        : resolveAccountDisplayName(
+            ref: ref,
+            encodedAddress: fromAddress.encoded,
+            mainAddress: mainAddress.encoded,
+            mainLabel: l10n.mainAccountLabel,
+            fallbackName: fromAddress.name,
+          );
 
     return InkWell(
       onTap: () => showSendFromDialog(context, ref),
@@ -106,7 +116,7 @@ class SendFromDialog extends ConsumerWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(mainAddress.name, style: style),
+            child: Text(l10n.mainAccountLabel, style: style),
           ),
         ),
         for (final account in active)

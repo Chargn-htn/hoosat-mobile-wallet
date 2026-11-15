@@ -156,9 +156,15 @@ final hoosatClientProvider = Provider((ref) {
   return client;
 });
 
+// Keyed by a joined address string rather than List<String> -- Dart's List
+// uses identity equality, so a fresh list literal (e.g. rebuilt every
+// widget build) would never hit Riverpod's family cache and would
+// re-fetch (and transiently show null/blank) on every rebuild even when
+// the actual addresses hadn't changed.
 final balancesForAddressesProvider = FutureProvider.family
-    .autoDispose<Iterable<RpcBalancesByAddressesEntry>, List<String>>(
-        (ref, addresses) async {
+    .autoDispose<Iterable<RpcBalancesByAddressesEntry>, String>(
+        (ref, addressesKey) async {
+  final addresses = addressesKey.split(',');
   final client = ref.watch(hoosatClientProvider);
   final balance = await client.getBalancesByAddresses(addresses);
   return balance;

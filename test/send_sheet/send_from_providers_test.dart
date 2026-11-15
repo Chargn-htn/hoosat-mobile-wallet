@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hoosat_mobile/hoosat/hoosat.dart';
 import 'package:hoosat_mobile/send_sheet/send_from_providers.dart';
 import 'package:hoosat_mobile/utxos/utxos_providers.dart';
+import 'package:hoosat_mobile/wallet_balance/main_balance.dart';
 import 'package:hoosat_mobile/wallet_address/wallet_address.dart';
 
 // Arbitrary-but-valid-shaped public key bytes (not a real key, just the
@@ -54,6 +55,8 @@ void main() {
       ];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
@@ -69,6 +72,8 @@ void main() {
       ];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
@@ -82,6 +87,8 @@ void main() {
       final utxos = [_utxo(addressA.encoded, 'tx1')];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
@@ -99,6 +106,8 @@ void main() {
       ];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
@@ -114,6 +123,8 @@ void main() {
       ];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
@@ -127,6 +138,8 @@ void main() {
       final utxos = [_utxo(addressA.encoded, 'tx1')];
       final container = ProviderContainer(overrides: [
         spendableUtxosProvider.overrideWithValue(utxos),
+        mainAddressProvider.overrideWithValue('hoosat:not-any-test-address'),
+        accountAddressesProvider.overrideWithValue(<String>{}),
       ]);
       addTearDown(container.dispose);
 
