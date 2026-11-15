@@ -9,6 +9,7 @@ import '../app_providers.dart';
 import '../app_router.dart';
 import '../hoosat/hoosat.dart';
 import '../l10n/l10n.dart';
+import '../util/friendly_error.dart';
 import '../util/numberutil.dart';
 import '../util/ui_util.dart';
 import '../utxos/utxos_selection_page.dart';
@@ -89,7 +90,7 @@ class SendConfirmSheet extends HookConsumerWidget {
         final log = ref.read(loggerProvider);
         log.e('Failed to send transaction', error: e, stackTrace: st);
 
-        UIUtil.showSnackbar(l10n.sendError, context);
+        UIUtil.showSnackbar(friendlyError(e), context);
         appRouter.pop(context);
       }
     }
