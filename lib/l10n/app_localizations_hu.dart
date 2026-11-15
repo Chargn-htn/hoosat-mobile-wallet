@@ -107,7 +107,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get available => 'Egyenleg';
 
   @override
-  String get back => 'Back';
+  String get back => 'Vissza';
 
   @override
   String get backupConfirmButton => 'Mentés kész!';
@@ -116,7 +116,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get backupSecretPhrase => 'Seed Phrase mentése';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Hiányzik a Seed Phrase';
 
   @override
   String get biometricsMethod => 'Biometrikus';
@@ -168,7 +168,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get confirmed => 'megerősített';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'megerősítve · érlelődik';
 
   @override
   String get confirming => 'megerősítve';
@@ -614,24 +614,24 @@ class AppLocalizationsHu extends AppLocalizations {
   String get scanQrCodeError => 'Nem sikerült a QR-kód elemzése';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Beolvasás képből';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Zseblámpa be/ki';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Mielőtt elkezdenéd';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'A Hoosat Mobile Wallet nem letétkezelő (non-custodial) tárca. A Seed Phrase-ed és a privát kulcsaid kizárólag ezen az eszközön jönnek létre és tárolódnak – soha nem látjuk őket, nem tároljuk őket semmilyen szerveren, és nem tudjuk helyetted visszaállítani őket.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Ha elveszíted a Seed Phrase-t, nincs jelszó-visszaállítás, és nincs olyan ügyfélszolgálat, amely visszaszerezhetné a pénzedet. Kizárólag te vagy felelős a biztonságos megőrzéséért.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Értem, folytatom';
 
   @override
   String get secretInfo =>
@@ -644,26 +644,26 @@ class AppLocalizationsHu extends AppLocalizations {
   String get secretPhrase => 'Seed Phrase';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Mentés ellenőrzése';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Minden pozícióhoz válaszd ki a helyes szót, hogy megerősítsd, hogy elmentetted a Seed Phrase-t.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Mi a(z) $index. szó?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Ez nem egészen helyes. Ellenőrizd a mentésedet, és próbáld újra.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 szó';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 szó';
 
   @override
   String get secretWarning =>
@@ -674,45 +674,46 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Hitelesítsd magad a biztonsági beállítások eléréséhez';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Add meg a PIN-kódot a biztonsági beállítások eléréséhez';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Üzenet aláírása';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Aláírás másolása';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Írj alá egy üzenetet a tárcád egyik címével';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Add meg az aláírandó üzenetet';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Aláírás másolva';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Üzenet aláírva';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Az üzenet túl hosszú';
 
   @override
   String get seedInvalid => 'Helytelen Seed Phrase';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'A csomópontod nem érhető el. Az egyenlegek elavultak lehetnek.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Újra';
 
   @override
   String get send => 'Küldés';
@@ -795,7 +796,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get themeLight => 'Világos';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Téma váltása';
 
   @override
   String get thisWallet => '#Ez a tárca';
@@ -1004,181 +1005,182 @@ class AppLocalizationsHu extends AppLocalizations {
   String get compoundFailure => 'Tranzakciók egyesítése sikertelen';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'A pénz még megerősítés alatt áll';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'Az ezen a fiókon lévő pénz egy része túl nemrég érkezett ahhoz, hogy elküldhető legyen – a hálózat először rövid érlelési időt kér, általában néhány percet. Várhatsz és újra próbálkozhatsz, vagy küldhetsz egy másik fiókból, amelyen érett pénz van.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Fiókváltás';
 
   @override
   String get compoundTooFewUtxos => 'Legalább két Maradék szükséges';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Gyűjtés a Főre';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Az összes többi cím egyenlegének átvitele a fő címedre';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Mindent átviszel a Főre?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Ez $amount $symbol összeget visz át $count másik címről a fő címedre. Egy vagy több tranzakció jön létre, és hálózati díj terheli.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Az összes cím egyenlege már a Fő fiókon van';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Gyűjtés a Főre';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Az átvitel a Főre sikerült';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Az átvitel a Főre nem sikerült';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'ÁTVITEL';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Fiókok';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Elnevezett címek hozzáadása és kezelése';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Fő';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Archiválás';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Visszaállítás';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Archivált';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Még nincsenek további fiókok';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Fiók átnevezése';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Fiók neve';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'MENTÉS';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'HOZZÁADÁS';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Honnan';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Bármelyik';
 
   @override
-  String get home => 'Home';
+  String get home => 'Kezdőlap';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Tevékenység';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Teljes egyenleg';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Most elkölthető $spendable · Még érkezik $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'A még érkező érmék a tieid, és hamarosan elkölthetők lesznek.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'A még érkező érmék $time múlva költhetők el.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Most elkölthető $amount. A többi $time múlva költhető el.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Most elkölthető $amount. A többi még érkezik.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'elfogadásra vár';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'ismeretlen állapot';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'nem fogadták el';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'megerősítés $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Elküldve ide';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Kapcsolat tesztelése';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Másik tárcából mentve (csak megtekintés)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Ez a tárca nem tudja elkölteni ezeket, ezért nem számítanak bele az összegébe. Nyisd meg azt a tárcát, amelyikhez tartoznak, hogy használhasd őket.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Még nincs tevékenység';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Elküldve';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Megérkezett';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'A tárcán belül';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Összevont érmék';
 
   @override
   String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+      'Amikor HTN-t küldesz vagy kapsz, itt jelenik meg.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Összes megtekintése';
 
   @override
-  String get show => 'Show';
+  String get show => 'Mutat';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Fiókjaim';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Szia, $walletName';
   }
 
   @override
@@ -1247,18 +1249,18 @@ class AppLocalizationsHu extends AppLocalizations {
       'Kompatibilis a webes pénztárcával és KDX mentéssel.';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Szabványos tárca importálása';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      '12 vagy 24 szavas, szabványos levezetésű tárcák, opcionális BIP39 jelmondattal';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Régi tárca importálása';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      '12 szavas, régi levezetésű tárcák, a régi Web Wallettel és a KDX-szel kompatibilisek';
 
   @override
   String get importOptionKpubTitle => 'Tárca figyelés importálása';
@@ -1477,121 +1479,120 @@ class AppLocalizationsHu extends AppLocalizations {
       'Hide Not Accepted Coinbase Transactions';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Visszajáró cím viselkedése';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Minden cím megtartja a saját egyenlegét, és a visszajáró a helyén marad';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Minden alkalommal új címet használ (privát, az egyenleg szétoszlik)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Visszajáró cím viselkedése';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Egyenlegek megtartása minden címen';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privát';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Jelszó kérése';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'Indításkor';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Zároláskor';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'Aláíráskor';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Speciális beállítások';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'BIP39 jelmondat';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'MEGJEGYZÉS: Ez nem tárcajelszó; a különböző BIP39 jelmondatok különböző tárcákat nyitnak meg.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Add meg a jelmondatot';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Erősítsd meg a jelmondatot';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'A jelmondatok nem egyeznek!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Tárca BIP39 jelmondattal.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Add meg a prioritási díjat';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'ALAPDÍJ';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'PRIORITÁSI DÍJ';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError => 'A célcím nem ismerhető fel';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'A tranzakciót nem sikerült újraépíteni';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'A tranzakciót nem sikerült az új díjjal újraépíteni';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'A díj frissítése nem sikerült';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Díj frissítése';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Díj frissítése folyamatban';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Ajánlott prioritási díjak';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Az új prioritási díj legalább $amount $symbol kell legyen';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'FÜGGŐBEN';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Ez a tranzakció függőben van';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Függő tranzakció';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'A mempoolban függő tranzakciók vannak.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Tranzakciós díj frissítése';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Cseréje díjjal (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'a mempoolban';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'UTXO-k kiválasztása';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Válassz további UTXO-kat';
 }

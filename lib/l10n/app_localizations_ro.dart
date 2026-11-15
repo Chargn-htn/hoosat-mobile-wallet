@@ -110,7 +110,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get available => 'Disponibil';
 
   @override
-  String get back => 'Back';
+  String get back => 'Înapoi';
 
   @override
   String get backupConfirmButton => 'Am salvat-o într-un loc sigur';
@@ -119,7 +119,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get backupSecretPhrase => 'Backup formulă secretă';
 
   @override
-  String get missingSecretPhrase => 'Missing secret phrase';
+  String get missingSecretPhrase => 'Formula secretă lipsește';
 
   @override
   String get biometricsMethod => 'Biometria';
@@ -172,7 +172,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get confirmed => 'confirmat';
 
   @override
-  String get confirmedMaturing => 'confirmed · maturing';
+  String get confirmedMaturing => 'confirmat · se maturizează';
 
   @override
   String get confirming => 'în confirmare';
@@ -623,24 +623,24 @@ class AppLocalizationsRo extends AppLocalizations {
   String get scanQrCodeError => 'Codul QR nu a putut fi analizat';
 
   @override
-  String get scanFromImage => 'Scan from image';
+  String get scanFromImage => 'Scanează dintr-o imagine';
 
   @override
-  String get toggleFlash => 'Toggle flashlight';
+  String get toggleFlash => 'Pornește/oprește lanterna';
 
   @override
-  String get riskDisclosureHeader => 'Before you begin';
+  String get riskDisclosureHeader => 'Înainte să începi';
 
   @override
   String get riskDisclosureBody =>
-      'Hoosat Mobile Wallet is non-custodial. Your recovery phrase and private keys are generated and stored only on this device -- we never see them, never store them on any server, and cannot recover them for you.';
+      'Hoosat Mobile Wallet este un portofel non-custodial. Formula ta secretă și cheile private sunt generate și stocate doar pe acest dispozitiv – nu le vedem niciodată, nu le stocăm pe niciun server și nu le putem recupera pentru tine.';
 
   @override
   String get riskDisclosureWarning =>
-      'If you lose your recovery phrase, there is no password reset and no support team that can get your funds back. You are solely responsible for keeping it safe.';
+      'Dacă îți pierzi formula secretă, nu există resetare de parolă și nici echipă de suport care să-ți poată recupera fondurile. Ești singurul responsabil pentru păstrarea ei în siguranță.';
 
   @override
-  String get riskDisclosureAccept => 'I Understand, Continue';
+  String get riskDisclosureAccept => 'Am înțeles, continuă';
 
   @override
   String get secretInfo =>
@@ -653,26 +653,26 @@ class AppLocalizationsRo extends AppLocalizations {
   String get secretPhrase => 'Formula secretă';
 
   @override
-  String get verifyBackupTitle => 'Verify your backup';
+  String get verifyBackupTitle => 'Verifică copia de siguranță';
 
   @override
   String get verifyBackupInstruction =>
-      'Select the correct word for each position to confirm you\'ve saved your secret phrase.';
+      'Selectează cuvântul corect pentru fiecare poziție pentru a confirma că ți-ai salvat formula secretă.';
 
   @override
   String verifyBackupWordPrompt(int index) {
-    return 'What is word #$index?';
+    return 'Care este cuvântul nr. $index?';
   }
 
   @override
   String get verifyBackupWrongAnswer =>
-      'That\'s not quite right. Check your backup and try again.';
+      'Nu e tocmai corect. Verifică copia de siguranță și încearcă din nou.';
 
   @override
-  String get secretPhrase12Words => '12 words';
+  String get secretPhrase12Words => '12 cuvinte';
 
   @override
-  String get secretPhrase24Words => '24 words';
+  String get secretPhrase24Words => '24 de cuvinte';
 
   @override
   String get secretWarning =>
@@ -683,45 +683,46 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get securitySettingsBiometrics =>
-      'Authenticate to access security settings';
+      'Autentifică-te pentru a accesa setările de securitate';
 
   @override
-  String get securitySettingsPin => 'Enter PIN to access security settings';
+  String get securitySettingsPin =>
+      'Introdu PIN-ul pentru a accesa setările de securitate';
 
   @override
   String get seed => 'Seed';
 
   @override
-  String get signMessage => 'Sign message';
+  String get signMessage => 'Semnează mesajul';
 
   @override
-  String get signMessageCopySignature => 'Copy signature';
+  String get signMessageCopySignature => 'Copiază semnătura';
 
   @override
   String get signMessageDescription =>
-      'Sign a message with one of your wallet addresses';
+      'Semnează un mesaj cu una dintre adresele portofelului tău';
 
   @override
-  String get signMessageHint => 'Enter a message to sign';
+  String get signMessageHint => 'Introdu un mesaj de semnat';
 
   @override
-  String get signMessageSignatureCopied => 'Signature copied';
+  String get signMessageSignatureCopied => 'Semnătură copiată';
 
   @override
-  String get signMessageSigned => 'Message signed';
+  String get signMessageSigned => 'Mesaj semnat';
 
   @override
-  String get signMessageTooLong => 'Message is too long';
+  String get signMessageTooLong => 'Mesajul este prea lung';
 
   @override
   String get seedInvalid => 'Seed invalid';
 
   @override
   String get nodeUnreachable =>
-      'Can\'t reach your node. Balances may be out of date.';
+      'Nu se poate ajunge la nodul tău. Soldurile pot fi neactualizate.';
 
   @override
-  String get nodeUnreachableRetry => 'Retry';
+  String get nodeUnreachableRetry => 'Încearcă din nou';
 
   @override
   String get send => 'Trimite';
@@ -804,7 +805,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get themeLight => 'Aspect deschis';
 
   @override
-  String get toggleTheme => 'Switch theme';
+  String get toggleTheme => 'Schimbă tema';
 
   @override
   String get thisWallet => '#Acest Portofel';
@@ -1017,181 +1018,181 @@ class AppLocalizationsRo extends AppLocalizations {
   String get compoundFailure => 'Eroare la agregarea tranzacțiilor.';
 
   @override
-  String get fundsStillConfirmingTitle => 'Funds still confirming';
+  String get fundsStillConfirmingTitle => 'Fondurile încă se confirmă';
 
   @override
   String get fundsStillConfirmingBody =>
-      'Some funds on this account were received too recently to send yet -- the network requires a short maturity wait first, usually a few minutes. You can wait and try again, or send from a different account that has mature funds.';
+      'O parte din fondurile din acest cont au fost primite prea recent pentru a fi trimise – rețeaua cere mai întâi o scurtă perioadă de maturizare, de obicei câteva minute. Poți aștepta și încerca din nou sau poți trimite din alt cont care are fonduri mature.';
 
   @override
-  String get fundsStillConfirmingSwitchAccount => 'Switch account';
+  String get fundsStillConfirmingSwitchAccount => 'Schimbă contul';
 
   @override
   String get compoundTooFewUtxos => 'Cel putin două UTXOs sunt necesare';
 
   @override
-  String get moveToMain => 'Gather onto Main';
+  String get moveToMain => 'Adună în Principal';
 
   @override
   String get moveToMainDescription =>
-      'Sweep every other address\'s balance into your main address';
+      'Mută soldul tuturor celorlalte adrese în adresa ta principală';
 
   @override
-  String get moveToMainConfirmation => 'Move everything to Main?';
+  String get moveToMainConfirmation => 'Muți totul în Principal?';
 
   @override
   String moveToMainConfirmationDescription(
       String amount, String symbol, int count) {
-    return 'This will move $amount $symbol from $count other address(es) into your main address. This creates one or more transactions and will incur network fees.';
+    return 'Aceasta va muta $amount $symbol din $count alte adrese în adresa ta principală. Se creează una sau mai multe tranzacții și se aplică taxe de rețea.';
   }
 
   @override
   String get moveToMainNothingToMove =>
-      'Every address\'s balance is already on Main';
+      'Soldul tuturor adreselor este deja în Principal';
 
   @override
-  String get movingToMain => 'Gathering onto Main';
+  String get movingToMain => 'Se adună în Principal';
 
   @override
-  String get moveToMainSuccess => 'Move to Main successful';
+  String get moveToMainSuccess => 'Mutarea în Principal a reușit';
 
   @override
-  String get moveToMainFailure => 'Failed to move to Main';
+  String get moveToMainFailure => 'Mutarea în Principal a eșuat';
 
   @override
-  String get moveToMainUppercased => 'MOVE';
+  String get moveToMainUppercased => 'MUTĂ';
 
   @override
-  String get manageAccounts => 'Accounts';
+  String get manageAccounts => 'Conturi';
 
   @override
-  String get manageAccountsDescription => 'Add and manage named addresses';
+  String get manageAccountsDescription =>
+      'Adaugă și gestionează adrese cu nume';
 
   @override
-  String get mainAccountLabel => 'Main';
+  String get mainAccountLabel => 'Principal';
 
   @override
-  String get archiveAction => 'Archive';
+  String get archiveAction => 'Arhivează';
 
   @override
-  String get restoreAction => 'Restore';
+  String get restoreAction => 'Restaurează';
 
   @override
-  String get archivedAccountsHeader => 'Archived';
+  String get archivedAccountsHeader => 'Arhivate';
 
   @override
-  String get noAdditionalAccountsYet => 'No additional accounts yet';
+  String get noAdditionalAccountsYet => 'Încă nu există conturi suplimentare';
 
   @override
-  String get renameAccount => 'Rename account';
+  String get renameAccount => 'Redenumește contul';
 
   @override
-  String get accountLabelHint => 'Account name';
+  String get accountLabelHint => 'Numele contului';
 
   @override
-  String get saveUppercased => 'SAVE';
+  String get saveUppercased => 'SALVEAZĂ';
 
   @override
-  String get addUppercased => 'ADD';
+  String get addUppercased => 'ADAUGĂ';
 
   @override
-  String get sendFromLabel => 'From';
+  String get sendFromLabel => 'Din';
 
   @override
-  String get sendFromAny => 'Any';
+  String get sendFromAny => 'Oricare';
 
   @override
-  String get home => 'Home';
+  String get home => 'Acasă';
 
   @override
-  String get activity => 'Activity';
+  String get activity => 'Activitate';
 
   @override
-  String get totalBalance => 'Total balance';
+  String get totalBalance => 'Sold total';
 
   @override
   String homeSpendableNow(String spendable, String arriving, String symbol) {
-    return 'Spendable now $spendable · Still arriving $arriving $symbol';
+    return 'Disponibil acum $spendable · Încă în drum $arriving $symbol';
   }
 
   @override
   String get homeArrivingSoon =>
-      'Coins still arriving are yours and can be spent soon.';
+      'Monedele care încă sosesc sunt ale tale și vor putea fi cheltuite în curând.';
 
   @override
   String homeArrivingReadyIn(String time) {
-    return 'The coins still arriving can be spent in $time.';
+    return 'Monedele care încă sosesc vor putea fi cheltuite în $time.';
   }
 
   @override
   String sendSpendableRestIn(String amount, String time) {
-    return 'Spendable now $amount. The rest can be spent in $time.';
+    return 'Disponibil acum $amount. Restul poate fi cheltuit în $time.';
   }
 
   @override
   String sendSpendableRestArriving(String amount) {
-    return 'Spendable now $amount. The rest is still arriving.';
+    return 'Disponibil acum $amount. Restul încă sosește.';
   }
 
   @override
-  String get txTagWaiting => 'waiting to be accepted';
+  String get txTagWaiting => 'așteaptă acceptarea';
 
   @override
-  String get txTagStatusUnknown => 'status unknown';
+  String get txTagStatusUnknown => 'stare necunoscută';
 
   @override
-  String get txTagNotAccepted => 'not accepted';
+  String get txTagNotAccepted => 'neacceptată';
 
   @override
   String txTagConfirmingOf(String n, String total) {
-    return 'confirming $n / $total';
+    return 'confirmare $n / $total';
   }
 
   @override
-  String get submittedTo => 'Submitted to';
+  String get submittedTo => 'Trimis către';
 
   @override
-  String get testConnection => 'Test connection';
+  String get testConnection => 'Testează conexiunea';
 
   @override
   String get accountsOtherWalletHeader =>
-      'Saved from another wallet (view only)';
+      'Salvate din alt portofel (doar vizualizare)';
 
   @override
   String get accountsOtherWalletNote =>
-      'This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.';
+      'Acest portofel nu le poate cheltui, deci nu sunt incluse în totalul lui. Deschide portofelul căruia îi aparțin ca să le folosești.';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'Încă nicio activitate';
 
   @override
-  String get txTypeSent => 'Sent';
+  String get txTypeSent => 'Trimis';
 
   @override
-  String get txTypeReceived => 'Received';
+  String get txTypeReceived => 'Primit';
 
   @override
-  String get txTypeThisWallet => 'Within wallet';
+  String get txTypeThisWallet => 'În interiorul portofelului';
 
   @override
-  String get txTypeMerged => 'Merged coins';
+  String get txTypeMerged => 'Monede combinate';
 
   @override
-  String get noActivityMessage =>
-      'When you send or receive HTN, it shows up here.';
+  String get noActivityMessage => 'Când trimiți sau primești HTN, apare aici.';
 
   @override
-  String get seeAll => 'See all';
+  String get seeAll => 'Vezi tot';
 
   @override
-  String get show => 'Show';
+  String get show => 'Arată';
 
   @override
-  String get myAccounts => 'My Accounts';
+  String get myAccounts => 'Conturile mele';
 
   @override
   String homeGreeting(String walletName) {
-    return 'Hey, $walletName';
+    return 'Salut, $walletName';
   }
 
   @override
@@ -1261,18 +1262,18 @@ class AppLocalizationsRo extends AppLocalizations {
       'Compatibil cu Web Wallet și KDX';
 
   @override
-  String get importOptionStandardWalletTitle => 'Import standard wallet';
+  String get importOptionStandardWalletTitle => 'Importă portofel standard';
 
   @override
   String get importOptionStandardWalletDescription =>
-      'Standard derivation 12 or 24 word wallets with optional BIP39 passphrase';
+      'Portofele de 12 sau 24 de cuvinte cu derivare standard și frază de acces BIP39 opțională';
 
   @override
-  String get importOptionLegacyWalletTitle => 'Import legacy wallet';
+  String get importOptionLegacyWalletTitle => 'Importă portofel vechi';
 
   @override
   String get importOptionLegacyWalletDescription =>
-      'Legacy derivation 12 word wallets compatible with legacy Web Wallet and KDX';
+      'Portofele de 12 cuvinte cu derivare veche, compatibile cu vechiul Web Wallet și KDX';
 
   @override
   String get importOptionKpubTitle => 'Importă Portofelul Watch Only';
@@ -1496,121 +1497,121 @@ class AppLocalizationsRo extends AppLocalizations {
       'Ascundeți tranzacțiile Coinbase care nu sunt acceptate';
 
   @override
-  String get changeAddressModeTitle => 'Change address behavior';
+  String get changeAddressModeTitle => 'Comportamentul adresei de rest';
 
   @override
   String get changeAddressModeDescriptionKeepPerAddress =>
-      'Each address keeps its own balance, and the change stays put';
+      'Fiecare adresă își păstrează soldul propriu, iar restul rămâne pe loc';
 
   @override
   String get changeAddressModeDescriptionPrivate =>
-      'A new address is used each time (private, balance spreads out)';
+      'Se folosește o adresă nouă de fiecare dată (privat, soldul se împrăștie)';
 
   @override
-  String get changeAddressModeDialogTitle => 'Change address behavior';
+  String get changeAddressModeDialogTitle => 'Comportamentul adresei de rest';
 
   @override
   String get changeAddressModeDialogOptionKeepPerAddress =>
-      'Keep balances on each address';
+      'Păstrează soldurile pe fiecare adresă';
 
   @override
-  String get changeAddressModeDialogOptionPrivate => 'Private';
+  String get changeAddressModeDialogOptionPrivate => 'Privat';
 
   @override
-  String get requestPasswordHeader => 'Request password';
+  String get requestPasswordHeader => 'Cere parola';
 
   @override
-  String get requestPasswordAtLaunch => 'At Launch';
+  String get requestPasswordAtLaunch => 'La pornire';
 
   @override
-  String get requestPasswordWhenLocked => 'When locked';
+  String get requestPasswordWhenLocked => 'Când este blocat';
 
   @override
-  String get requestPasswordWhenSigning => 'When signing';
+  String get requestPasswordWhenSigning => 'La semnare';
 
   @override
-  String get importWalletAdvancedOptions => 'Advanced options';
+  String get importWalletAdvancedOptions => 'Opțiuni avansate';
 
   @override
-  String get bip39Passphrase => 'BIP39 passphrase';
+  String get bip39Passphrase => 'Frază de acces BIP39';
 
   @override
   String get bip39PassphraseWarning =>
-      'NOTE: This is not a wallet password, different BIP39 passphrases will open different wallets.';
+      'NOTĂ: Aceasta nu este o parolă a portofelului; fraze de acces BIP39 diferite deschid portofele diferite.';
 
   @override
-  String get bip39PassphraseEnter => 'Enter passphrase';
+  String get bip39PassphraseEnter => 'Introdu fraza de acces';
 
   @override
-  String get bip39PassphraseConfirm => 'Confirm passphrase';
+  String get bip39PassphraseConfirm => 'Confirmă fraza de acces';
 
   @override
-  String get bip39PassphraseMismatch => 'Passphrases do not match!';
+  String get bip39PassphraseMismatch => 'Frazele de acces nu se potrivesc!';
 
   @override
-  String get bip39PassphraseNote => 'Wallet with BIP39 passphrase.';
+  String get bip39PassphraseNote => 'Portofel cu frază de acces BIP39.';
 
   @override
-  String get feePriorityHint => 'Enter priority fee';
+  String get feePriorityHint => 'Introdu taxa de prioritate';
 
   @override
-  String get feeBaseUppercase => 'BASE FEE';
+  String get feeBaseUppercase => 'TAXĂ DE BAZĂ';
 
   @override
-  String get feePriorityUppsercase => 'PRIORITY FEE';
+  String get feePriorityUppsercase => 'TAXĂ DE PRIORITATE';
 
   @override
-  String get feeUpdateAddressError => 'Failed to recognise destination address';
+  String get feeUpdateAddressError =>
+      'Adresa de destinație nu a putut fi recunoscută';
 
   @override
-  String get feeUpdateRebuildError => 'Failed to rebuild transaction';
+  String get feeUpdateRebuildError => 'Tranzacția nu a putut fi reconstruită';
 
   @override
   String get feeUpdateRebuildError2 =>
-      'Failed to rebuild transaction with new fee';
+      'Tranzacția nu a putut fi reconstruită cu noua taxă';
 
   @override
-  String get feeUpdateError => 'Failed to update fee';
+  String get feeUpdateError => 'Taxa nu a putut fi actualizată';
 
   @override
-  String get feeUpdate => 'Update fee';
+  String get feeUpdate => 'Actualizează taxa';
 
   @override
-  String get feeUpdateTitle => 'Updating fee';
+  String get feeUpdateTitle => 'Se actualizează taxa';
 
   @override
-  String get feeSheetRecommendedPriority => 'Recommended priority fees';
+  String get feeSheetRecommendedPriority => 'Taxe de prioritate recomandate';
 
   @override
   String feeSheetPriorityFeeWarning(String amount, String symbol) {
-    return 'New priority fee must be at least $amount $symbol';
+    return 'Noua taxă de prioritate trebuie să fie de cel puțin $amount $symbol';
   }
 
   @override
-  String get txPending => 'PENDING';
+  String get txPending => 'ÎN AȘTEPTARE';
 
   @override
-  String get txPendingMessage => 'This transaction is pending';
+  String get txPendingMessage => 'Această tranzacție este în așteptare';
 
   @override
-  String get txPendingTitle => 'Pending transaction';
+  String get txPendingTitle => 'Tranzacție în așteptare';
 
   @override
-  String get txPendingContent =>
-      'There is a pending transactions in the mempool.';
+  String get txPendingContent => 'Există tranzacții în așteptare în mempool.';
 
   @override
-  String get txPendingActionUpdateFee => 'Update tx fee';
+  String get txPendingActionUpdateFee => 'Actualizează taxa tranzacției';
 
   @override
-  String get txPendingActionRbf => 'Replace by fee';
+  String get txPendingActionRbf => 'Înlocuiește cu taxă (RBF)';
 
   @override
-  String get txInMempool => 'in mempool';
+  String get txInMempool => 'în mempool';
 
   @override
-  String get utxoSelectionTitle => 'Select utxos';
+  String get utxoSelectionTitle => 'Selectează UTXO';
 
   @override
-  String get utxoSelectionHint => 'Please select more UTXOs';
+  String get utxoSelectionHint => 'Selectează mai multe UTXO';
 }
