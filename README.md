@@ -4,6 +4,8 @@
 
 Hoosat Mobile is a non-custodial wallet for Hoosat, available for Android and iOS. It is written in [Dart](https://dart.dev) using [Flutter](https://flutter.dev).
 
+> **Status: pre-release.** This wallet is being reviewed and tested and is not on any app store yet. Please do not use it with more than you can afford to lose. Found a security problem? Please report it privately: see [SECURITY.md](./SECURITY.md).
+
 | Link                           | Description                        |
 | :----------------------------- | :--------------------------------- |
 | [hoosat.fi](https://hoosat.fi) | Hoosat Network Blockchain Homepage |
@@ -48,8 +50,14 @@ For some details regarding translations, have a look at [Translations and transl
 
 ## Have a question?
 
-If you need any help, feel free to [file a feature request or an issue](https://github.com/azbuky/hoosat_mobile/issues/new/choose) if you do not manage to find a solution.
+If you need any help, feel free to [file a feature request or an issue](https://github.com/Chargn-htn/hoosat-mobile-wallet/issues/new/choose) if you do not manage to find a solution.
 
 ## License
 
-Hoosat Mobile is released under the MIT License
+Hoosat Mobile is released under the MIT License (see [LICENSE](./LICENSE)).
+
+## Credits
+
+- Hoosat Mobile Wallet is a fork of Hoosat Mobile (© 2024 Hoosat Oy), which builds on Kaspium Wallet (© 2021 Kaspium Wallet authors).
+- Fonts: Inter, Comfortaa, Nunito Sans and Overpass Mono are used under the SIL Open Font License 1.1; Roboto Mono under the Apache License 2.0. The licence texts are in the [fonts](./fonts) folder.
+- The icon font `AppIcons.ttf` came with the original code. Its origin and licence are still being checked.
