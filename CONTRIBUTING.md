@@ -23,8 +23,7 @@ change what — see "Why" below.
 
 ## Why this exists
 
-The previous maintainer of this codebase controlled every credential,
-account, and store listing alone, which became a real problem when he
-left the project. This doc is the direct fix: a short, explicit, written
-record of who can merge code, so that never happens again — not a
-formality, an actual continuity measure for a wallet holding real funds.
+A wallet that holds real funds should not depend on one person. This
+document records who can merge code and who holds the project's accounts
+and store listings, so the project can always continue if any one person
+is unavailable. It is a continuity measure, not a formality.
