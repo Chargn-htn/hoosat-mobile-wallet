@@ -48,7 +48,9 @@ class NodeSettingsNotifier extends StateNotifier<NodeConfigSettings> {
   }
 
   Future<bool> removeOption(NodeConfig config) async {
-    if (config == state.selected) {
+    // The built-in mainnet node can never be removed, and neither can the
+    // node currently in use.
+    if (config == state.selected || config == mainnetNodeConfig) {
       return false;
     }
     final options = state.options.remove(config);

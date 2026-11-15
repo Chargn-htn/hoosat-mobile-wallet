@@ -2209,6 +2209,12 @@ abstract class AppLocalizations {
   /// **'Submitted to'**
   String get submittedTo;
 
+  /// No description provided for @testConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test connection'**
+  String get testConnection;
+
   /// No description provided for @accountsOtherWalletHeader.
   ///
   /// In en, this message translates to:

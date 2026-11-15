@@ -11,6 +11,7 @@ import '../widgets/sheet_widget.dart';
 import 'node_add_sheet.dart';
 import 'node_item.dart';
 import 'node_types.dart';
+import '../node_status/node_test_dialog.dart';
 
 class ListViewEndItem extends ConsumerWidget {
   final Widget child;
@@ -82,6 +83,11 @@ class ViteNodesSheet extends ConsumerWidget {
           PrimaryButton(
             title: l10n.addNode,
             onPressed: addNode,
+          ),
+          const SizedBox(height: 16),
+          PrimaryOutlineButton(
+            title: l10n.testConnection,
+            onPressed: () => showNodeTestDialog(context),
           ),
           const SizedBox(height: 16),
           PrimaryOutlineButton(

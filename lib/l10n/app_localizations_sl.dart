@@ -1113,6 +1113,9 @@ class AppLocalizationsSl extends AppLocalizations {
   String get submittedTo => 'Submitted to';
 
   @override
+  String get testConnection => 'Test connection';
+
+  @override
   String get accountsOtherWalletHeader =>
       'Saved from another wallet (view only)';
 

@@ -7,6 +7,7 @@ import '../auth_sign/auth_sign_util.dart';
 import '../hoosat/hoosat.dart';
 import '../hoosat/types.dart';
 import '../l10n/l10n.dart';
+import '../node_status/connection_status.dart';
 import '../settings_advanced/compound_utxos_dialog.dart';
 import '../util/ui_util.dart';
 import '../wallet_address/account_adoption.dart';
@@ -43,6 +44,8 @@ class WalletBackgroundTasks extends HookConsumerWidget {
     final l10n = l10nOf(context);
 
     ref.watch(_walletWatcherProvider);
+    // Keeps the auto-reconnect watcher running while the wallet is open.
+    ref.watch(connectionStatusProvider.notifier);
     // Ensure stable hook order: declare useRef outside useEffect
     final isHandling = useRef(false);
 

@@ -58,8 +58,12 @@ class NodeItem extends ConsumerWidget {
       );
     }
 
+    final isDefault = item.config == mainnetNodeConfig;
+    final isActive = item == activeConfig;
+    final canDelete = !isDefault && !isActive;
+
     return Slidable(
-      enabled: item != activeConfig,
+      enabled: canDelete,
       endActionPane: ActionPane(
         extentRatio: 0.16,
         motion: const StretchMotion(),
@@ -151,6 +155,17 @@ class NodeItem extends ConsumerWidget {
                       ],
                     ),
                   ),
+                  if (!isDefault)
+                    IconButton(
+                      tooltip: isActive
+                          ? 'Switch to another node first'
+                          : 'Remove node',
+                      icon: Icon(
+                        Icons.delete_outline,
+                        color: canDelete ? theme.primary : theme.text30,
+                      ),
+                      onPressed: canDelete ? confirmDelete : null,
+                    ),
                 ],
               ),
             ),

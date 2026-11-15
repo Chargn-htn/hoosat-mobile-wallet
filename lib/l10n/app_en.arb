@@ -489,6 +489,7 @@
   "txTagConfirmingOf": "confirming {n} / {total}",
   "@txTagConfirmingOf": {"placeholders": {"n": {"type": "String"}, "total": {"type": "String"}}},
   "submittedTo": "Submitted to",
+  "testConnection": "Test connection",
   "accountsOtherWalletHeader": "Saved from another wallet (view only)",
   "accountsOtherWalletNote": "This wallet cannot spend these, so they are not counted in its total. Open the wallet they belong to, to use them.",
   "noActivityTitle": "No activity yet",
