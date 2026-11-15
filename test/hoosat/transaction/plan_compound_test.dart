@@ -182,5 +182,23 @@ void main() {
       final two = firstAddresses([...b.reversed, ...a.reversed]);
       expect(one, two);
     });
+
+    test('coins of EQUAL value are chosen the same way whatever the order', () {
+      // 120 coins of exactly the same value (long lists are where Dart's sort is
+      // not stable): which ones merge must not depend on the order the node
+      // happened to list them in.
+      final same = [for (var i = 0; i < 120; i++) coin('A-addr', i, 200000000)];
+      List<String> merged(List<Utxo> all) => [
+            for (final (_, c) in planCompound(
+                allCoins: all, spendable: all, accountAddresses: const {}))
+              ...c.map((u) => u.outpoint.transactionId)
+          ];
+      final forward = merged(same);
+      final backward = merged(same.reversed.toList());
+      final shuffled = merged([...same.sublist(57), ...same.sublist(0, 57)]);
+      expect(forward, isNotEmpty);
+      expect(backward, forward);
+      expect(shuffled, forward);
+    });
   });
 }

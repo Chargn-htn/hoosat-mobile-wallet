@@ -108,8 +108,15 @@ List<(String, List<Utxo>)> planCompound({
       });
     for (final a in addresses) {
       if (excess <= 0) break;
+      // Smallest first; coins of equal value are ordered by their outpoint, so
+      // the same coins always give the same plan (a plain sort is not stable).
       final coins = List.of(a.value)
-        ..sort((x, y) => x.utxoEntry.amount.compareTo(y.utxoEntry.amount));
+        ..sort((x, y) {
+          final c = x.utxoEntry.amount.compareTo(y.utxoEntry.amount);
+          if (c != 0) return c;
+          final t = x.outpoint.transactionId.compareTo(y.outpoint.transactionId);
+          return t != 0 ? t : x.outpoint.index.compareTo(y.outpoint.index);
+        });
       final m = coinsToMergeToRemove(
         excess < coins.length - 1 ? excess : coins.length - 1,
         available: coins.length,
