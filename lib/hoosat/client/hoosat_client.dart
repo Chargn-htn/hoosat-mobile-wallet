@@ -31,7 +31,10 @@ class VoidHoosatClient extends HoosatClient {
         );
 
   @override
-  Future<HoosatdResponse> _singleRequest(HoosatdRequest message) async {
+  Future<HoosatdResponse> _singleRequest(
+    HoosatdRequest message, {
+    Duration? timeout,
+  }) async {
     return HoosatdResponse();
   }
 
@@ -51,7 +54,13 @@ class HoosatClient {
   late final ClientChannel channel;
   late final RPCClient rpcClient;
 
-  HoosatClient({required this.channel}) : rpcClient = RPCClient(channel);
+  /// How long a balances query may wait for the node before failing.
+  final Duration balancesTimeout;
+
+  HoosatClient({
+    required this.channel,
+    this.balancesTimeout = const Duration(seconds: 25),
+  }) : rpcClient = RPCClient(channel);
 
   factory HoosatClient.url(String url, {bool isSecure = false}) {
     final components = url.split(':');
@@ -78,17 +87,31 @@ class HoosatClient {
 
   Future<void> terminate() => channel.terminate();
 
-  Future<HoosatdResponse> _singleRequest(HoosatdRequest message) async {
+  /// [timeout] is opt-in: the channel itself waits up to 10 minutes for a
+  /// connection, so a slow or dead node would otherwise leave a caller
+  /// waiting in silence. Callers that need a clear failure pass one
+  /// (throws [TimeoutException]).
+  Future<HoosatdResponse> _singleRequest(
+    HoosatdRequest message, {
+    Duration? timeout,
+  }) async {
     final request = StreamController<HoosatdRequest>();
     final response = rpcClient.messageStream(request.stream);
 
     request.sink.add(message);
-    final result = await response.first;
-
-    response.cancel();
-    request.close();
-
-    return result;
+    try {
+      final first = response.first;
+      return timeout == null
+          ? await first
+          : await first.timeout(
+              timeout,
+              onTimeout: () => throw TimeoutException(
+                  'Request timed out after ${timeout.inSeconds} seconds'),
+            );
+    } finally {
+      response.cancel();
+      request.close();
+    }
   }
 
   Stream<HoosatdResponse> _streamRequest(HoosatdRequest message) {
@@ -109,7 +132,10 @@ class HoosatClient {
       ),
     );
 
-    final response = await _singleRequest(message);
+    final response = await _singleRequest(
+      message,
+      timeout: balancesTimeout,
+    );
     final error = response.getBalancesByAddressesResponse.error;
     if (error.message.isNotEmpty) {
       throw RpcException(error);
@@ -131,12 +157,10 @@ class HoosatClient {
     );
 
     try {
-      final result = await _singleRequest(message).timeout(
-        Duration(seconds: 60),
-        onTimeout: () {
-          throw TimeoutException('Request timed out after 60 seconds');
-        },
-      );
+      // The request's own timeout (not an outer one): it also cancels the
+      // stream, so nothing is left waiting on a dead connection.
+      final result =
+          await _singleRequest(message, timeout: const Duration(seconds: 60));
       final endTime = DateTime.now();
       final duration = endTime.difference(startTime).inMilliseconds;
       print('Received response after $duration ms');
@@ -222,9 +246,16 @@ class HoosatClient {
 
   // Submit Transaction
 
+  /// Sends a transaction. [timeout] matters: without one a connection that
+  /// has gone quiet leaves the caller waiting for the network layer's own
+  /// limit (10 minutes or more). A merge froze for half an hour that way.
+  /// On timeout the outcome is UNKNOWN (the node may have accepted the
+  /// transaction and only the answer was lost), so callers must check the
+  /// coin list before sending the same coins again.
   Future<String> submitTransaction(
     RpcTransaction transaction, {
     bool allowOrphan = false,
+    Duration timeout = const Duration(seconds: 60),
   }) async {
     final message = HoosatdRequest(
       submitTransactionRequest: SubmitTransactionRequestMessage(
@@ -233,7 +264,13 @@ class HoosatClient {
       ),
     );
 
-    final result = await _singleRequest(message);
+    final HoosatdResponse result;
+    try {
+      result = await _singleRequest(message, timeout: timeout);
+    } on TimeoutException {
+      throw TimeoutException(
+          'Request timed out after ${timeout.inSeconds} seconds');
+    }
     final error = result.submitTransactionResponse.error;
     if (error.message.isNotEmpty) {
       throw RpcException(error);

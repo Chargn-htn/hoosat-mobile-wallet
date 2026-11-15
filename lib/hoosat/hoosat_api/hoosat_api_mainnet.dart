@@ -5,6 +5,11 @@ import 'package:http/http.dart' as http;
 import 'hoosat_api_base.dart';
 import 'types.dart';
 
+/// No explorer request may wait longer than this. Without a limit a blocked
+/// or unreachable explorer (e.g. one that is unreachable from the user's network)
+/// left the wallet waiting for minutes.
+const Duration kApiRequestTimeout = Duration(seconds: 8);
+
 class HoosatApiMainnet implements HoosatApi {
   final String baseUrl;
 
@@ -18,9 +23,10 @@ class HoosatApiMainnet implements HoosatApi {
     final url = '$baseUrl/addresses/$address/balance';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode != 200) {
-        throw Exception('Failed to get balance');
+        throw ApiHttpError(response.statusCode, 'Failed to get balance');
       }
       final data = json.decode(response.body);
       final addressBalance = ApiAddressBalance.fromJson(data);
@@ -47,13 +53,14 @@ class HoosatApiMainnet implements HoosatApi {
     final url = '$baseUrl/addresses/$address/utxos';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final utxos = (data as List).map((e) => ApiUtxo.fromJson(e)).toList();
         return utxos;
       } else {
-        throw Exception('Failed to get utxos');
+        throw ApiHttpError(response.statusCode, 'Failed to get utxos');
       }
     } catch (e) {
       if (retryCount == 0) {
@@ -77,7 +84,8 @@ class HoosatApiMainnet implements HoosatApi {
     final url = '$baseUrl/addresses/$address/transactions';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final txLinks = (data['transactions'] as List)
@@ -85,7 +93,7 @@ class HoosatApiMainnet implements HoosatApi {
             .toList();
         return txLinks;
       } else {
-        throw Exception('Failed to get transactions');
+        throw ApiHttpError(response.statusCode, 'Failed to get transactions');
       }
     } catch (e) {
       if (retryCount == 0) {
@@ -111,9 +119,10 @@ class HoosatApiMainnet implements HoosatApi {
     final url =
         '$baseUrl/transactions/$id?resolve_previous_outpoints=${resolvePreviousOutpoints.name}';
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode != 200) {
-        throw Exception('Failed to get transaction');
+        throw ApiHttpError(response.statusCode, 'Failed to get transaction');
       }
 
       final data = json.decode(response.body);
@@ -147,9 +156,9 @@ class HoosatApiMainnet implements HoosatApi {
     try {
       final response = await http.post(Uri.parse(url), body: body, headers: {
         'Content-Type': 'application/json',
-      });
+      }).timeout(kApiRequestTimeout);
       if (response.statusCode != 200) {
-        throw Exception('Failed to get transactions');
+        throw ApiHttpError(response.statusCode, 'Failed to get transactions');
       }
       final data = json.decode(response.body);
       final transactions =
@@ -187,14 +196,15 @@ class HoosatApiMainnet implements HoosatApi {
         '$baseUrl/addresses/$address/full-transactions?${params.join('&')}';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final txs =
             (data as List).map((e) => ApiTransaction.fromJson(e)).toList();
         return txs;
       } else {
-        throw Exception('Failed to get transactions');
+        throw ApiHttpError(response.statusCode, 'Failed to get transactions');
       }
     } catch (e) {
       if (retryCount == 0) {
@@ -220,14 +230,15 @@ class HoosatApiMainnet implements HoosatApi {
     final url = '$baseUrl/addresses/$address/transactions-count';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         if (data case {'total': int count}) {
           return count;
         }
       }
-      throw Exception('Failed to get transactions count');
+      throw ApiHttpError(response.statusCode, 'Failed to get transactions count');
     } catch (e) {
       if (retryCount == 0) {
         rethrow;
@@ -258,7 +269,8 @@ class HoosatApiMainnet implements HoosatApi {
         '$baseUrl/addresses/$address/full-transactions?${params.join("&")}';
 
     try {
-      final response = await http.get(Uri.parse(url));
+      final response =
+          await http.get(Uri.parse(url)).timeout(kApiRequestTimeout);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final txs = (data as List)
@@ -266,7 +278,7 @@ class HoosatApiMainnet implements HoosatApi {
             .toList();
         return txs;
       } else {
-        throw Exception('Failed to get tx ids');
+        throw ApiHttpError(response.statusCode, 'Failed to get tx ids');
       }
     } catch (e) {
       if (retryCount == 0) {

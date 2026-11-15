@@ -92,21 +92,14 @@ final addressPrefixProvider = Provider((ref) {
   return prefix;
 });
 
-// api.network.hoosat.fi was Tonto's own explorer API (indexed/database
-// backed -- full-transactions, search, etc. -- not something a bare node
-// can serve) and is now dead/hijacked, along with every other *.hoosat.fi
-// domain. explorer-nz.hoosat.network is the current, correct domain for
-// our own Retro500 explorer's REST API since Tonto's departure -- schema
-// confirmed compatible (same /addresses/{address}/full-transactions
-// shape) and already proven in htn-rest's own /txhistory handler.
-// api.explorer-eu.hoosat.network is a genuinely independent third-party
-// explorer already proven reliable as a fallback (used by the Owl bank's
-// chain.go). Mainnet tries ours first, falls back to the EU one only on
-// a clean failure. Note: this LAN cannot reach explorer-nz.hoosat.network
-// itself (router hairpin-NAT gap for this VLAN, not a code bug -- see
-// htn_wallet_monitor_revamp.md) so this can only be verified from a
-// genuinely external device (e.g. the owner's phone), never from Node1/
-// Node2/Retro500/Retro600 or this app's own emulator.
+// The original api.network.hoosat.fi explorer API (indexed/database backed --
+// full-transactions, search, etc. -- not something a bare node can serve) is
+// gone, along with every other *.hoosat.fi domain. explorer-nz.hoosat.network
+// is the current domain for the explorer REST API -- schema confirmed
+// compatible (same /addresses/{address}/full-transactions shape).
+// api.explorer-eu.hoosat.network is an independent explorer used as the
+// fallback. Mainnet tries the first and falls back to the EU one only on a
+// clean failure.
 final _mainnetHoosatApiProvider = Provider<HoosatApi>((ref) {
   return HoosatApiFallback(
     HoosatApiMainnet('https://explorer-nz.hoosat.network'),

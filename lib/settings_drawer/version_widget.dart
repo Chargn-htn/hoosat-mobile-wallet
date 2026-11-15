@@ -7,8 +7,8 @@ import '../core/core_providers.dart';
 import '../l10n/l10n.dart';
 import '../util/util.dart';
 
-// network.hoosat.fi was Tonto's dead domain. Both privacy policy and EULA
-// are live on our own infra now (deployed 2026-11-05).
+// The original network.hoosat.fi host is gone. The privacy policy and EULA
+// are hosted on hoosatworld.net.
 const kPrivacyUrl = 'https://hoosatworld.net/privacy.html';
 const kEulaUrl = 'https://hoosatworld.net/eula.html';
 

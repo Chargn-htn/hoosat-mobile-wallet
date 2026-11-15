@@ -17,10 +17,9 @@ import '../widgets/buttons.dart';
 /// real on-device testing (2026-11-05) that an Expanded sibling before an
 /// interactive widget silently breaks touch on that widget in this app's
 /// context specifically (reproduced in isolation, does not happen in a
-/// bare Flutter app -- see the phone-wallet-roadmap memory for the full
-/// writeup). A SingleChildScrollView + fixed spacing sidesteps it entirely
-/// and is the pattern to prefer on any new screen until the real cause is
-/// found.
+/// bare Flutter app). A SingleChildScrollView + fixed spacing sidesteps it
+/// entirely and is the pattern to prefer on any new screen until the real
+/// cause is found.
 class IntroRiskDisclosure extends ConsumerWidget {
   final VoidCallback onAccept;
 

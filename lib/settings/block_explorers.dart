@@ -27,13 +27,12 @@ class BlockExplorer with _$BlockExplorer {
       _$BlockExplorerFromJson(json);
 }
 
-// explorer.hoosat.fi and explorer-testnet.hoosat.fi were Tonto's domains,
-// dead/hijacked since he left the project. explorer-nz.hoosat.network is
-// the current, real replacement (confirmed /addresses/:addr and /txs/:id
-// routes match exactly, see htn-explorer's App.js). No real testnet
-// explorer exists anywhere in our infra -- kHoosatExplorerTestnet is kept
-// only as a typed default value (block_explorer_settings.dart needs one),
-// never shown as a pickable option below, so no dead link is exposed.
+// The original explorer.hoosat.fi and explorer-testnet.hoosat.fi domains are
+// gone. explorer-nz.hoosat.network is the current replacement (its
+// /addresses/:addr and /txs/:id routes match exactly). No testnet explorer
+// exists -- kHoosatExplorerTestnet is kept only as a typed default value
+// (block_explorer_settings.dart needs one), never shown as a pickable option
+// below, so no dead link is exposed.
 const kHoosatExplorerMainnet = BlockExplorer(
   network: HoosatNetwork.mainnet,
   name: 'Hoosat Explorer',

@@ -1,5 +1,5 @@
 const kWalletTitle = 'Hoosat Mobile';
-// toni.lukkaroinen@hoosat.fi was Tonto's personal email, dead/wrong since
-// he left the project. Placeholder pending owner confirming this mailbox
-// is actually set up and receiving mail (not yet verified as of 2026-11-05).
+// Support contact shown in the app. The previous address (from the original
+// app) is no longer monitored; this mailbox must be confirmed to receive mail
+// before release.
 const kSupportEmail = 'support@hoosatworld.net';
