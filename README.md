@@ -4,11 +4,20 @@
 
 Hoosat Mobile is a non-custodial wallet for Hoosat, available for Android and iOS. It is written in [Dart](https://dart.dev) using [Flutter](https://flutter.dev).
 
-> **Status: pre-release.** This wallet is being reviewed and tested and is not on any app store yet. Please do not use it with more than you can afford to lose. Found a security problem? Please report it privately: see [SECURITY.md](./SECURITY.md).
+> **Status: pre-release, Android sideload only.** This wallet is not on Google Play or the App Store and there is no plan to publish it there for now. It is released here, on GitHub, as a downloadable APK. **Use it at your own risk** - it has not been independently audited, only reviewed and tested by the maintainer and GitHub PR reviewers (see [SECURITY.md](./SECURITY.md) to report a problem privately, and the Known limitations in each [release](https://github.com/Chargn-htn/hoosat-mobile-wallet/releases)). Start with a small amount, and keep your recovery phrase written down on paper, offline.
 
 | Link                           | Description                        |
 | :----------------------------- | :--------------------------------- |
 | [hoosat.fi](https://hoosat.fi) | Hoosat Network Blockchain Homepage |
+
+## Download (Android)
+
+1. Go to [Releases](https://github.com/Chargn-htn/hoosat-mobile-wallet/releases) and download the latest `hoosat-mobile-wallet-*.apk`.
+2. Check its SHA-256 checksum matches the value printed on the release page (on a PC: `sha256sum hoosat-mobile-wallet-*.apk`, or any SHA-256 checksum app on the phone itself).
+3. Open the downloaded file. Android will ask to allow installs from this source for your browser/file manager - allow it only for this install, then install.
+4. There is no auto-update. Check the Releases page for new versions and repeat these steps; your wallet and funds are not affected by updating.
+
+There is no iOS build right now. Only install APKs from this repository's own Releases page - never from a link someone sends you, even if it looks identical.
 
 ## Contributing
 
